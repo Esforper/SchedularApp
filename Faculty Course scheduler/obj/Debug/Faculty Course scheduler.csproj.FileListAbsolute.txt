@@ -1,0 +1,18 @@
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\Debug\Faculty Course scheduler.exe.config
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\Debug\Faculty Course scheduler.exe
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\Debug\Faculty Course scheduler.pdb
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty Course scheduler.csproj.AssemblyReference.cache
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.Form1.resources
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.Properties.Resources.resources
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty Course scheduler.csproj.GenerateResource.cache
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty Course scheduler.csproj.CoreCompileInputs.cache
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty Course scheduler.exe
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty Course scheduler.pdb
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\Debug\FontAwesome.Sharp.dll
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.informationEntry.resources
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty Course scheduler.csproj.CopyComplete
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\Debug\Microsoft.Win32.SystemEvents.dll
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\Debug\Microsoft.Win32.SystemEvents.xml
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.infoShowControl.resources
