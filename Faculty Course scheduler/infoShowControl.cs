@@ -32,15 +32,38 @@ namespace Faculty_Course_scheduler
                 btn.Size = defaultBtn.Size;
                 btn.Margin = defaultBtn.Margin;
                 btn.Text = academian.AcademianName;
+
+                btn.Click += (s, ev) => {
+                    OpenTabControlForAcademian(academian);
+                };
             }
+
         }
 
         private void OpenTabControlForAcademian(AcademianClass academian)
         {
             
             TabPage tabPage = new TabPage(academian.AcademianName);
-            // Oluşturulan TabPage'i TabControl'e ekleyin
-            tabControl1.TabPages.Add(tabPage);
+            if (!IsTabPageAlreadyOpen(tabControl1, academian.AcademianName))
+            {
+                // Oluşturulan TabPage'i TabControl'e ekleyin
+                tabControl1.TabPages.Add(tabPage);
+                tabControl1.SelectedTab = tabPage;
+            }
+            
+        }
+        private bool IsTabPageAlreadyOpen(TabControl tabControl, string tabName)
+        {
+            foreach (TabPage tabPage in tabControl.TabPages)
+            {
+                if (tabPage.Text == tabName)
+                {
+                    // İlgili sekme zaten açılmış
+                    tabControl.SelectedTab = tabPage; // Açık olan sekme üzerine odaklan
+                    return true;
+                }
+            }
+            return false;
         }
 
     }
