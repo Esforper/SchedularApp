@@ -47,7 +47,20 @@ namespace Faculty_Course_scheduler
             database.SaveAcademian(academian);
         }
 
-
-
+        private void addClassBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {   //kapasite değerini inte çevirmeye çalış sonra da yeni class nesnesi oluşturup database ye kaydet
+                int capacity_ = Convert.ToInt32(classCapacityTextBox.Text);
+                ClassClass class_ = new ClassClass();
+                class_.setClass(classNameTextBox.Text, capacity_);
+                database.saveClass(class_);
+            }
+            catch
+            {
+                MessageBox.Show("int değerinde bir kapasite giriniz");
+            }
+           
+        }
     }
 }

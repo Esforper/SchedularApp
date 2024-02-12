@@ -98,28 +98,28 @@
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.addClassBtn = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.classCapacityTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.classNameTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -858,7 +858,7 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.button4);
             this.splitContainer1.Panel1.Controls.Add(this.button3);
-            this.splitContainer1.Panel1.Controls.Add(this.button2);
+            this.splitContainer1.Panel1.Controls.Add(this.addClassBtn);
             this.splitContainer1.Panel1.Controls.Add(this.textBox9);
             this.splitContainer1.Panel1.Controls.Add(this.label17);
             this.splitContainer1.Panel1.Controls.Add(this.textBox8);
@@ -869,10 +869,10 @@
             this.splitContainer1.Panel1.Controls.Add(this.textBox7);
             this.splitContainer1.Panel1.Controls.Add(this.label12);
             this.splitContainer1.Panel1.Controls.Add(this.label15);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox3);
+            this.splitContainer1.Panel1.Controls.Add(this.classCapacityTextBox);
             this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.label14);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
+            this.splitContainer1.Panel1.Controls.Add(this.classNameTextBox);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
             this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
@@ -885,134 +885,33 @@
             this.splitContainer1.SplitterDistance = 472;
             this.splitContainer1.TabIndex = 0;
             // 
-            // label7
+            // button4
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(188, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Sınıf Ekle";
+            this.button4.Location = new System.Drawing.Point(179, 381);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(111, 33);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "Dersi Ekle";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // button3
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(171, 484);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 25);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Bölüm Ekle";
+            this.button3.Location = new System.Drawing.Point(154, 591);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(156, 33);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Bölümü Ekle";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // addClassBtn
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(75, 75);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 25);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Sınıf İsmi:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(19, 111);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(152, 25);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Sınıf Kapasitesi:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(193, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 30);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(193, 108);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(210, 30);
-            this.textBox3.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(193, 555);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(210, 30);
-            this.textBox4.TabIndex = 8;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 558);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(168, 25);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Bölüm Kişi Sayısı:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(74, 522);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 25);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Bölüm İsmi:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(193, 519);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(210, 30);
-            this.textBox5.TabIndex = 7;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(194, 236);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(96, 25);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Ders Ekle";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(193, 264);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(210, 30);
-            this.textBox7.TabIndex = 13;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(88, 267);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 25);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "Ders İsmi:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(193, 300);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(210, 30);
-            this.textBox8.TabIndex = 15;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(42, 303);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(145, 25);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "Dersin Bölümü:";
+            this.addClassBtn.Location = new System.Drawing.Point(179, 144);
+            this.addClassBtn.Name = "addClassBtn";
+            this.addClassBtn.Size = new System.Drawing.Size(111, 33);
+            this.addClassBtn.TabIndex = 18;
+            this.addClassBtn.Text = "Sınıfı Ekle";
+            this.addClassBtn.UseVisualStyleBackColor = true;
+            this.addClassBtn.Click += new System.EventHandler(this.addClassBtn_Click);
             // 
             // textBox9
             // 
@@ -1030,43 +929,134 @@
             this.label17.TabIndex = 16;
             this.label17.Text = "Bölümün Dönemi:";
             // 
-            // label18
+            // textBox8
             // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox8.Location = new System.Drawing.Point(193, 300);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(210, 30);
+            this.textBox8.TabIndex = 15;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(193, 555);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(210, 30);
+            this.textBox4.TabIndex = 8;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(193, 519);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(210, 30);
+            this.textBox5.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(42, 303);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(145, 25);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "Dersin Bölümü:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(19, 558);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(168, 25);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Bölüm Kişi Sayısı:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(193, 264);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(210, 30);
+            this.textBox7.TabIndex = 13;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(74, 522);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(113, 25);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Bölüm İsmi:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(88, 267);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(99, 25);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Ders İsmi:";
+            // 
+            // classCapacityTextBox
+            // 
+            this.classCapacityTextBox.Location = new System.Drawing.Point(193, 108);
+            this.classCapacityTextBox.Name = "classCapacityTextBox";
+            this.classCapacityTextBox.Size = new System.Drawing.Size(210, 30);
+            this.classCapacityTextBox.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(374, 18);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(133, 25);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Bölüm Bilgileri";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(171, 484);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 25);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Bölüm Ekle";
             // 
-            // button2
+            // label14
             // 
-            this.button2.Location = new System.Drawing.Point(179, 144);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 33);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Sınıfı Ekle";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(194, 236);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(96, 25);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Ders Ekle";
             // 
-            // button3
+            // classNameTextBox
             // 
-            this.button3.Location = new System.Drawing.Point(154, 591);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 33);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Bölümü Ekle";
-            this.button3.UseVisualStyleBackColor = true;
+            this.classNameTextBox.Location = new System.Drawing.Point(193, 72);
+            this.classNameTextBox.Name = "classNameTextBox";
+            this.classNameTextBox.Size = new System.Drawing.Size(210, 30);
+            this.classNameTextBox.TabIndex = 3;
             // 
-            // button4
+            // label10
             // 
-            this.button4.Location = new System.Drawing.Point(179, 381);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(111, 33);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "Dersi Ekle";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 111);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(152, 25);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Sınıf Kapasitesi:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(75, 75);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 25);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Sınıf İsmi:";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(188, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 25);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Sınıf Ekle";
             // 
             // label19
             // 
@@ -1078,6 +1068,17 @@
             this.label19.TabIndex = 14;
             this.label19.Text = "burada istenilen bölüm seçilecek, oradan dersler gözükecek. hangi sınıfsa o sınıf" +
     " altında gözükecek veya ona göre listelenecek";
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(374, 18);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(133, 25);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Bölüm Bilgileri";
             // 
             // informationEntry
             // 
@@ -1183,8 +1184,8 @@
         private System.Windows.Forms.CheckBox checkBox20;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox classCapacityTextBox;
+        private System.Windows.Forms.TextBox classNameTextBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
@@ -1202,7 +1203,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addClassBtn;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
     }

@@ -8,14 +8,24 @@ using System.Windows;
 internal class Database
 {
     public List<AcademianClass> AllAcademians;
+    public List<ClassClass> AllClasses;
+    
     private string folderPath;
-    private string jsonFilePath;
+    
+    private string jsonAcademianFilePath;
+    private string jsonClassFilePath;
+   
 
     public Database()
     {
-        folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SchedularApp");
-        jsonFilePath = Path.Combine(folderPath, "academiansData.json");
-        if (!File.Exists(jsonFilePath))
+        folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SchedularApp");    //klasör yolu
+
+        //data dosyalarını oluştur
+        jsonAcademianFilePath = Path.Combine(folderPath, "academiansData.json");
+        jsonClassFilePath = Path.Combine(folderPath, "classesData.json");
+
+        //dosya kontrolleri
+        if (!File.Exists(jsonAcademianFilePath))
         {
             if (!Directory.Exists(folderPath))
             {
@@ -23,17 +33,17 @@ internal class Database
             }
         }
 
-
-        AllAcademians = LoadDataFromJson(); // LoadDataFromJson'dan gelen değeri AllAcademians'a ata
+        AllClasses = LoadClassDataFromJson();
+        AllAcademians = LoadAcademianDataFromJson(); // LoadDataFromJson'dan gelen değeri AllAcademians'a ata
     }
 
-    public void SaveDataToJson(AcademianClass academian)
+    public void SaveAcademianDataToJson(AcademianClass academian)
     {
         try
         {
             AllAcademians.Add(academian);
             string jsonData = JsonConvert.SerializeObject(AllAcademians, Formatting.Indented);
-            File.WriteAllText(jsonFilePath, jsonData);
+            File.WriteAllText(jsonAcademianFilePath, jsonData);
 
             MessageBox.Show("Veritabanına kaydedildi");
         }
@@ -43,13 +53,13 @@ internal class Database
         }
     }
 
-    public List<AcademianClass> LoadDataFromJson()
+    public List<AcademianClass> LoadAcademianDataFromJson()
     {
         try
         {
-            if (File.Exists(jsonFilePath))
+            if (File.Exists(jsonAcademianFilePath))
             {
-                string jsonData = File.ReadAllText(jsonFilePath);
+                string jsonData = File.ReadAllText(jsonAcademianFilePath);
                 return JsonConvert.DeserializeObject<List<AcademianClass>>(jsonData) ?? new List<AcademianClass>();
          
             }
@@ -64,7 +74,46 @@ internal class Database
 
     public void SaveAcademian(AcademianClass academian)
     {
-        AllAcademians = LoadDataFromJson();
-        SaveDataToJson(academian);
+        AllAcademians = LoadAcademianDataFromJson();
+        SaveAcademianDataToJson(academian);
     }
+
+
+   //CLASS DATA
+    public List<ClassClass> LoadClassDataFromJson()
+    {
+        try
+        {
+            if (File.Exists(jsonClassFilePath))
+            {
+                string jsonData = File.ReadAllText(jsonClassFilePath);
+                return JsonConvert.DeserializeObject<List<ClassClass>>(jsonData) ?? new List<ClassClass>();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Hata: " + ex.Message);
+        }
+
+        return new List<ClassClass>(); // Hata durumunda boş bir liste döndür
+    }
+    public void saveClass(ClassClass class_)
+    {
+        AllClasses = LoadClassDataFromJson();
+
+        try
+        {
+            AllClasses.Add(class_);
+            string jsonData = JsonConvert.SerializeObject(AllClasses, Formatting.Indented);
+            File.WriteAllText(jsonClassFilePath, jsonData);
+
+            MessageBox.Show("Veritabanına kaydedildi");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Hata: " + ex.Message);
+        }
+    }
+
+    //-----
 }

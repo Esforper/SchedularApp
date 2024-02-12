@@ -8,12 +8,18 @@ namespace Faculty_Course_scheduler
 {
     internal class ClassClass
     {
-        private string className;
+        public string className;
+        public int classCapacity;
         public bool[,] classDates;
 
         public ClassClass()
         {
             classDates = new bool[10, 5];   //10 satır 5 sütun
+        }
+        public void setClass(string className_,int capacity_)
+        {
+            className = className_;
+            classCapacity = capacity_;
         }
     }
 }
