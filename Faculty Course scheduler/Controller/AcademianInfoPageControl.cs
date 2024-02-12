@@ -43,7 +43,8 @@ namespace Faculty_Course_scheduler.Controller
                     }
                     else
                     {
-                        label.BackColor = Color.Red;
+                        label.BackColor = Color.Gray;
+                        
                     }
                 }
             }
