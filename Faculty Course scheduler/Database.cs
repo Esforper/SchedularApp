@@ -9,12 +9,13 @@ internal class Database
 {
     public List<AcademianClass> AllAcademians;
     public List<ClassClass> AllClasses;
-    
+    public List<FacultyClass> AllFaculties;
+
     private string folderPath;
     
     private string jsonAcademianFilePath;
     private string jsonClassFilePath;
-   
+    private string jsonFacultyFilePath;
 
     public Database()
     {
@@ -23,6 +24,7 @@ internal class Database
         //data dosyalarını oluştur
         jsonAcademianFilePath = Path.Combine(folderPath, "academiansData.json");
         jsonClassFilePath = Path.Combine(folderPath, "classesData.json");
+        jsonFacultyFilePath = Path.Combine(folderPath, "facultiesData.json");
 
         //dosya kontrolleri
         if (!File.Exists(jsonAcademianFilePath))
@@ -33,6 +35,7 @@ internal class Database
             }
         }
 
+        AllFaculties = LoadFacultyDataFromJson();
         AllClasses = LoadClassDataFromJson();
         AllAcademians = LoadAcademianDataFromJson(); // LoadDataFromJson'dan gelen değeri AllAcademians'a ata
     }
@@ -115,5 +118,39 @@ internal class Database
         }
     }
 
-    //-----
+    //FACULTY DATA
+    public List<FacultyClass> LoadFacultyDataFromJson()
+    {
+        try
+        {
+            if (File.Exists(jsonFacultyFilePath))
+            {
+                string jsonData = File.ReadAllText(jsonFacultyFilePath);
+                return JsonConvert.DeserializeObject<List<FacultyClass>>(jsonData) ?? new List<FacultyClass>();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Hata: " + ex.Message);
+        }
+
+        return new List<FacultyClass>(); // Hata durumunda boş bir liste döndür
+    }
+    public void saveFaculty(FacultyClass faculty)
+    {
+        AllFaculties = LoadFacultyDataFromJson();
+
+        try
+        {
+            AllFaculties.Add(faculty);
+            string jsonData = JsonConvert.SerializeObject(AllFaculties, Formatting.Indented);
+            File.WriteAllText(jsonFacultyFilePath, jsonData);
+
+            MessageBox.Show("Veritabanına kaydedildi");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Hata: " + ex.Message);
+        }
+    }
 }

@@ -9,7 +9,8 @@ namespace Faculty_Course_scheduler
     internal class LessonClass
     {
         public string lessonName;
-        public string lessonfaculty;
+        public string lessonFaculty;
+        public int lessonFacultyPeriod;
 
     }
 }

@@ -62,5 +62,62 @@ namespace Faculty_Course_scheduler
             }
            
         }
+
+        
+
+        int facultyPeriodNumber;    //bir fakültenin kaç dönem olduğunu tutuyor.
+        int facultyStudentNumber;   //fakültedeki öğrenci sayısı
+        string facultyname;         //fakülte ismi
+        List<LessonClass> lessons;
+        private void facultyContinueBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                facultyPeriodNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
+                facultyStudentNumber = Convert.ToInt16(facultyStudentNumberTextBox.Text);
+                facultyname = facultyNameTextBox.Text;
+
+                labelFacultyName.Text = facultyNameTextBox.Text;
+                labelFacultyPeriod.Text = facultyStudentNumberTextBox.Text;
+
+                for(int i = 1;i< facultyPeriodNumber + 1; i++)
+                {
+                    lessonComboBox.Items.Add(i);
+                }
+                lessonComboBox.SelectedItem = 1;
+            }
+            catch
+            {
+                MessageBox.Show("int türünde değer girin");
+            }
+            
+        }
+
+        private void addLessonBtn_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                lessons = new List<LessonClass>();
+                lessonListBox.Items.Add(lessonComboBox.Text + " : " + lessonTextBox.Text);
+                LessonClass lesson = new LessonClass();
+                lesson.lessonName = lessonTextBox.Text;
+                lesson.lessonFacultyPeriod = Convert.ToInt16(lessonComboBox.Text);
+                lesson.lessonFaculty = facultyname;
+                lessons.Add(lesson);
+            }
+            catch
+            {
+                MessageBox.Show("bir hata oluştu");
+            }
+        }
+
+        private void addFacultyBtn_Click(object sender, EventArgs e)
+        {
+            List<LessonClass>[] facultyLessons= new List<LessonClass>[facultyPeriodNumber];
+            FacultyClass faculty = new FacultyClass();
+            faculty.setFaculty(facultyname, facultyPeriodNumber, facultyStudentNumber, facultyLessons);
+            database.saveFaculty(faculty);
+        }
     }
 }
