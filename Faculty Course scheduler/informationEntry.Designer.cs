@@ -981,6 +981,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.splitContainer2.Panel1.Controls.Add(this.facultyPeriodTextBox);
             this.splitContainer2.Panel1.Controls.Add(this.label26);
             this.splitContainer2.Panel1.Controls.Add(this.facultyContinueBtn);
@@ -992,6 +993,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.splitContainer2.Panel2.Controls.Add(this.lessonComboBox);
             this.splitContainer2.Panel2.Controls.Add(this.addFacultyBtn);
             this.splitContainer2.Panel2.Controls.Add(this.lessonListBox);
@@ -1005,6 +1007,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.label17);
             this.splitContainer2.Panel2.Controls.Add(this.label20);
             this.splitContainer2.Panel2.Controls.Add(this.lessonTextBox);
+            this.splitContainer2.Panel2.Enabled = false;
             this.splitContainer2.Size = new System.Drawing.Size(1383, 660);
             this.splitContainer2.SplitterDistance = 472;
             this.splitContainer2.TabIndex = 1;
@@ -1081,9 +1084,9 @@
             // lessonComboBox
             // 
             this.lessonComboBox.FormattingEnabled = true;
-            this.lessonComboBox.Location = new System.Drawing.Point(619, 212);
+            this.lessonComboBox.Location = new System.Drawing.Point(643, 229);
             this.lessonComboBox.Name = "lessonComboBox";
-            this.lessonComboBox.Size = new System.Drawing.Size(209, 33);
+            this.lessonComboBox.Size = new System.Drawing.Size(229, 33);
             this.lessonComboBox.TabIndex = 28;
             // 
             // addFacultyBtn
@@ -1102,7 +1105,7 @@
             this.lessonListBox.ItemHeight = 25;
             this.lessonListBox.Location = new System.Drawing.Point(33, 147);
             this.lessonListBox.Name = "lessonListBox";
-            this.lessonListBox.Size = new System.Drawing.Size(327, 279);
+            this.lessonListBox.Size = new System.Drawing.Size(414, 279);
             this.lessonListBox.TabIndex = 26;
             // 
             // label27
@@ -1139,9 +1142,10 @@
             this.labelFacultyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFacultyName.AutoSize = true;
-            this.labelFacultyName.Location = new System.Drawing.Point(443, 12);
+            this.labelFacultyName.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelFacultyName.Location = new System.Drawing.Point(432, 12);
             this.labelFacultyName.Name = "labelFacultyName";
-            this.labelFacultyName.Size = new System.Drawing.Size(107, 25);
+            this.labelFacultyName.Size = new System.Drawing.Size(129, 31);
             this.labelFacultyName.TabIndex = 22;
             this.labelFacultyName.Text = "Bölüm İsmi";
             // 
@@ -1150,15 +1154,16 @@
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(316, 12);
+            this.label22.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.Location = new System.Drawing.Point(290, 12);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(113, 25);
+            this.label22.Size = new System.Drawing.Size(136, 31);
             this.label22.TabIndex = 21;
             this.label22.Text = "Bölüm İsmi:";
             // 
             // addLessonBtn
             // 
-            this.addLessonBtn.Location = new System.Drawing.Point(618, 251);
+            this.addLessonBtn.Location = new System.Drawing.Point(642, 268);
             this.addLessonBtn.Name = "addLessonBtn";
             this.addLessonBtn.Size = new System.Drawing.Size(111, 33);
             this.addLessonBtn.TabIndex = 20;
@@ -1171,7 +1176,7 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(613, 134);
+            this.label21.Location = new System.Drawing.Point(637, 151);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(96, 25);
             this.label21.TabIndex = 11;
@@ -1180,7 +1185,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(467, 212);
+            this.label17.Location = new System.Drawing.Point(491, 229);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(146, 25);
             this.label17.TabIndex = 14;
@@ -1189,7 +1194,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(513, 176);
+            this.label20.Location = new System.Drawing.Point(537, 193);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(99, 25);
             this.label20.TabIndex = 12;
@@ -1197,9 +1202,9 @@
             // 
             // lessonTextBox
             // 
-            this.lessonTextBox.Location = new System.Drawing.Point(618, 173);
+            this.lessonTextBox.Location = new System.Drawing.Point(642, 190);
             this.lessonTextBox.Name = "lessonTextBox";
-            this.lessonTextBox.Size = new System.Drawing.Size(210, 30);
+            this.lessonTextBox.Size = new System.Drawing.Size(230, 30);
             this.lessonTextBox.TabIndex = 13;
             // 
             // informationEntry

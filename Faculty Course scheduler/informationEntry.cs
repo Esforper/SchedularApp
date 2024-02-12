@@ -75,6 +75,7 @@ namespace Faculty_Course_scheduler
         {
             try
             {
+                splitContainer2.Panel2.Enabled = true;
                 facultyPeriodNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
                 facultyStudentNumber = Convert.ToInt16(facultyStudentNumberTextBox.Text);
                 facultyname = facultyNameTextBox.Text;
@@ -107,7 +108,7 @@ namespace Faculty_Course_scheduler
         {
             try
             {
-                lessonListBox.Items.Add(lessonComboBox.Text + " : " + lessonTextBox.Text);
+                lessonListBox.Items.Add(lessonComboBox.Text + ". Dönem : " + lessonTextBox.Text);
                 LessonClass lesson = new LessonClass();
                 lesson.lessonName = lessonTextBox.Text;
                 lesson.lessonFacultyPeriod = Convert.ToInt16(lessonComboBox.Text);

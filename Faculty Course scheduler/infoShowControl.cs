@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faculty_Course_scheduler.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,6 +50,11 @@ namespace Faculty_Course_scheduler
                 // Oluşturulan TabPage'i TabControl'e ekleyin
                 tabControl1.TabPages.Add(tabPage);
                 tabControl1.SelectedTab = tabPage;
+
+                AcademianInfoPageControl academianInfo = new AcademianInfoPageControl(academian.AcademianWorkDates);
+                tabPage.Controls.Add(academianInfo);
+                academianInfo.Dock = DockStyle.Fill;
+
             }
             
         }

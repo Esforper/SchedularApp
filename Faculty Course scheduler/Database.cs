@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 using System.Windows;
+using System.Linq;
 
 internal class Database
 {
@@ -39,6 +40,8 @@ internal class Database
         AllClasses = LoadClassDataFromJson();
         AllAcademians = LoadAcademianDataFromJson(); // LoadDataFromJson'dan gelen değeri AllAcademians'a ata
     }
+
+
 
     public void SaveAcademianDataToJson(AcademianClass academian)
     {
@@ -80,6 +83,13 @@ internal class Database
         AllAcademians = LoadAcademianDataFromJson();
         SaveAcademianDataToJson(academian);
     }
+
+    public AcademianClass getOneAcademian(string academianName)
+    {
+        AllAcademians = LoadAcademianDataFromJson();
+        return AllAcademians.FirstOrDefault(academian => academian.AcademianName == academianName);
+    }
+
 
 
    //CLASS DATA
