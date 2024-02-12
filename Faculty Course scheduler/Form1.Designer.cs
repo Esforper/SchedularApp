@@ -33,8 +33,8 @@
             this.infoBtn = new FontAwesome.Sharp.IconButton();
             this.ıconButton2 = new FontAwesome.Sharp.IconButton();
             this.ıconButton3 = new FontAwesome.Sharp.IconButton();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.infoShowBtn = new FontAwesome.Sharp.IconButton();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(233, 716);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(233, 756);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -101,15 +101,6 @@
             this.ıconButton3.Text = "Sınav Programı Oluştur.";
             this.ıconButton3.UseVisualStyleBackColor = true;
             // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(233, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1284, 716);
-            this.mainPanel.TabIndex = 1;
-            // 
             // infoShowBtn
             // 
             this.infoShowBtn.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -124,11 +115,20 @@
             this.infoShowBtn.UseVisualStyleBackColor = true;
             this.infoShowBtn.Click += new System.EventHandler(this.infoShowBtn_Click);
             // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(233, 0);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1328, 756);
+            this.mainPanel.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1517, 716);
+            this.ClientSize = new System.Drawing.Size(1561, 756);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
