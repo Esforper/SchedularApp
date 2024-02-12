@@ -63,12 +63,14 @@ namespace Faculty_Course_scheduler
            
         }
 
-        
 
-        int facultyPeriodNumber;    //bir fakültenin kaç dönem olduğunu tutuyor.
-        int facultyStudentNumber;   //fakültedeki öğrenci sayısı
-        string facultyname;         //fakülte ismi
-        List<LessonClass> lessons;
+
+        private int facultyPeriodNumber;
+        private int facultyStudentNumber;
+        private string facultyname;
+        private List<LessonClass>[] facultyLessons;
+        private List<LessonClass> lessons;
+
         private void facultyContinueBtn_Click(object sender, EventArgs e)
         {
             try
@@ -80,7 +82,16 @@ namespace Faculty_Course_scheduler
                 labelFacultyName.Text = facultyNameTextBox.Text;
                 labelFacultyPeriod.Text = facultyStudentNumberTextBox.Text;
 
-                for(int i = 1;i< facultyPeriodNumber + 1; i++)
+                // Liste dizisini oluştur
+                facultyLessons = new List<LessonClass>[facultyPeriodNumber];
+
+                for (int i = 0; i < facultyPeriodNumber; i++)
+                {
+                    // Her bir dönem için bir liste oluştur
+                    facultyLessons[i] = new List<LessonClass>();
+                }
+
+                for (int i = 1; i < facultyPeriodNumber + 1; i++)
                 {
                     lessonComboBox.Items.Add(i);
                 }
@@ -90,20 +101,21 @@ namespace Faculty_Course_scheduler
             {
                 MessageBox.Show("int türünde değer girin");
             }
-            
         }
 
         private void addLessonBtn_Click(object sender, EventArgs e)
         {
-            
             try
             {
-                lessons = new List<LessonClass>();
                 lessonListBox.Items.Add(lessonComboBox.Text + " : " + lessonTextBox.Text);
                 LessonClass lesson = new LessonClass();
                 lesson.lessonName = lessonTextBox.Text;
                 lesson.lessonFacultyPeriod = Convert.ToInt16(lessonComboBox.Text);
                 lesson.lessonFaculty = facultyname;
+
+                // Dersi uygun dönemin listesine ekle
+                facultyLessons[lesson.lessonFacultyPeriod - 1].Add(lesson);
+
                 lessons.Add(lesson);
             }
             catch
@@ -114,10 +126,17 @@ namespace Faculty_Course_scheduler
 
         private void addFacultyBtn_Click(object sender, EventArgs e)
         {
-            List<LessonClass>[] facultyLessons= new List<LessonClass>[facultyPeriodNumber];
+            // facultyLessons dizisini FacultyClass nesnesine ekleyerek kaydet
             FacultyClass faculty = new FacultyClass();
             faculty.setFaculty(facultyname, facultyPeriodNumber, facultyStudentNumber, facultyLessons);
             database.saveFaculty(faculty);
+        }
+
+
+        private void informationEntry_Load(object sender, EventArgs e)
+        {
+            lessons = new List<LessonClass>();
+            facultyLessons = new List<LessonClass>[facultyPeriodNumber];
         }
     }
 }

@@ -108,27 +108,27 @@
             this.label18 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.addLessonBtn = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lessonTextBox = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.facultyPeriodTextBox = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.facultyContinueBtn = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.facultyStudentNumberTextBox = new System.Windows.Forms.TextBox();
             this.facultyNameTextBox = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.labelFacultyName = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.labelFacultyPeriod = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.lessonListBox = new System.Windows.Forms.ListBox();
-            this.addFacultyBtn = new System.Windows.Forms.Button();
+            this.facultyStudentNumberTextBox = new System.Windows.Forms.TextBox();
             this.lessonComboBox = new System.Windows.Forms.ComboBox();
+            this.addFacultyBtn = new System.Windows.Forms.Button();
+            this.lessonListBox = new System.Windows.Forms.ListBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.labelFacultyPeriod = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.labelFacultyName = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.addLessonBtn = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lessonTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1009,52 +1009,6 @@
             this.splitContainer2.SplitterDistance = 472;
             this.splitContainer2.TabIndex = 1;
             // 
-            // addLessonBtn
-            // 
-            this.addLessonBtn.Location = new System.Drawing.Point(618, 251);
-            this.addLessonBtn.Name = "addLessonBtn";
-            this.addLessonBtn.Size = new System.Drawing.Size(111, 33);
-            this.addLessonBtn.TabIndex = 20;
-            this.addLessonBtn.Text = "Dersi Ekle";
-            this.addLessonBtn.UseVisualStyleBackColor = true;
-            this.addLessonBtn.Click += new System.EventHandler(this.addLessonBtn_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(467, 212);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(146, 25);
-            this.label17.TabIndex = 14;
-            this.label17.Text = "Dersin Dönemi:";
-            // 
-            // lessonTextBox
-            // 
-            this.lessonTextBox.Location = new System.Drawing.Point(618, 173);
-            this.lessonTextBox.Name = "lessonTextBox";
-            this.lessonTextBox.Size = new System.Drawing.Size(210, 30);
-            this.lessonTextBox.TabIndex = 13;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(513, 176);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(99, 25);
-            this.label20.TabIndex = 12;
-            this.label20.Text = "Ders İsmi:";
-            // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(613, 134);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(96, 25);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Ders Ekle";
-            // 
             // facultyPeriodTextBox
             // 
             this.facultyPeriodTextBox.Location = new System.Drawing.Point(213, 147);
@@ -1110,13 +1064,6 @@
             this.label30.TabIndex = 6;
             this.label30.Text = "Bölüm Kişi Sayısı:";
             // 
-            // facultyStudentNumberTextBox
-            // 
-            this.facultyStudentNumberTextBox.Location = new System.Drawing.Point(213, 110);
-            this.facultyStudentNumberTextBox.Name = "facultyStudentNumberTextBox";
-            this.facultyStudentNumberTextBox.Size = new System.Drawing.Size(210, 30);
-            this.facultyStudentNumberTextBox.TabIndex = 8;
-            // 
             // facultyNameTextBox
             // 
             this.facultyNameTextBox.Location = new System.Drawing.Point(213, 74);
@@ -1124,45 +1071,39 @@
             this.facultyNameTextBox.Size = new System.Drawing.Size(210, 30);
             this.facultyNameTextBox.TabIndex = 7;
             // 
-            // label22
+            // facultyStudentNumberTextBox
             // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(316, 12);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(113, 25);
-            this.label22.TabIndex = 21;
-            this.label22.Text = "Bölüm İsmi:";
+            this.facultyStudentNumberTextBox.Location = new System.Drawing.Point(213, 110);
+            this.facultyStudentNumberTextBox.Name = "facultyStudentNumberTextBox";
+            this.facultyStudentNumberTextBox.Size = new System.Drawing.Size(210, 30);
+            this.facultyStudentNumberTextBox.TabIndex = 8;
             // 
-            // labelFacultyName
+            // lessonComboBox
             // 
-            this.labelFacultyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelFacultyName.AutoSize = true;
-            this.labelFacultyName.Location = new System.Drawing.Point(443, 12);
-            this.labelFacultyName.Name = "labelFacultyName";
-            this.labelFacultyName.Size = new System.Drawing.Size(107, 25);
-            this.labelFacultyName.TabIndex = 22;
-            this.labelFacultyName.Text = "Bölüm İsmi";
+            this.lessonComboBox.FormattingEnabled = true;
+            this.lessonComboBox.Location = new System.Drawing.Point(619, 212);
+            this.lessonComboBox.Name = "lessonComboBox";
+            this.lessonComboBox.Size = new System.Drawing.Size(209, 33);
+            this.lessonComboBox.TabIndex = 28;
             // 
-            // label24
+            // addFacultyBtn
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(28, 55);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(139, 25);
-            this.label24.TabIndex = 23;
-            this.label24.Text = "Dönem Sayısı:";
+            this.addFacultyBtn.Location = new System.Drawing.Point(321, 491);
+            this.addFacultyBtn.Name = "addFacultyBtn";
+            this.addFacultyBtn.Size = new System.Drawing.Size(275, 60);
+            this.addFacultyBtn.TabIndex = 27;
+            this.addFacultyBtn.Text = "Kaydet";
+            this.addFacultyBtn.UseVisualStyleBackColor = true;
+            this.addFacultyBtn.Click += new System.EventHandler(this.addFacultyBtn_Click);
             // 
-            // labelFacultyPeriod
+            // lessonListBox
             // 
-            this.labelFacultyPeriod.AutoSize = true;
-            this.labelFacultyPeriod.Location = new System.Drawing.Point(173, 55);
-            this.labelFacultyPeriod.Name = "labelFacultyPeriod";
-            this.labelFacultyPeriod.Size = new System.Drawing.Size(154, 25);
-            this.labelFacultyPeriod.TabIndex = 24;
-            this.labelFacultyPeriod.Text = "<dönem Sayısı>";
+            this.lessonListBox.FormattingEnabled = true;
+            this.lessonListBox.ItemHeight = 25;
+            this.lessonListBox.Location = new System.Drawing.Point(33, 147);
+            this.lessonListBox.Name = "lessonListBox";
+            this.lessonListBox.Size = new System.Drawing.Size(327, 279);
+            this.lessonListBox.TabIndex = 26;
             // 
             // label27
             // 
@@ -1175,32 +1116,91 @@
             this.label27.TabIndex = 25;
             this.label27.Text = "Dersler";
             // 
-            // lessonListBox
+            // labelFacultyPeriod
             // 
-            this.lessonListBox.FormattingEnabled = true;
-            this.lessonListBox.ItemHeight = 25;
-            this.lessonListBox.Location = new System.Drawing.Point(33, 147);
-            this.lessonListBox.Name = "lessonListBox";
-            this.lessonListBox.Size = new System.Drawing.Size(327, 279);
-            this.lessonListBox.TabIndex = 26;
+            this.labelFacultyPeriod.AutoSize = true;
+            this.labelFacultyPeriod.Location = new System.Drawing.Point(173, 55);
+            this.labelFacultyPeriod.Name = "labelFacultyPeriod";
+            this.labelFacultyPeriod.Size = new System.Drawing.Size(154, 25);
+            this.labelFacultyPeriod.TabIndex = 24;
+            this.labelFacultyPeriod.Text = "<dönem Sayısı>";
             // 
-            // addFacultyBtn
+            // label24
             // 
-            this.addFacultyBtn.Location = new System.Drawing.Point(321, 491);
-            this.addFacultyBtn.Name = "addFacultyBtn";
-            this.addFacultyBtn.Size = new System.Drawing.Size(275, 60);
-            this.addFacultyBtn.TabIndex = 27;
-            this.addFacultyBtn.Text = "Kaydet";
-            this.addFacultyBtn.UseVisualStyleBackColor = true;
-            this.addFacultyBtn.Click += new System.EventHandler(this.addFacultyBtn_Click);
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(28, 55);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(139, 25);
+            this.label24.TabIndex = 23;
+            this.label24.Text = "Dönem Sayısı:";
             // 
-            // lessonComboBox
+            // labelFacultyName
             // 
-            this.lessonComboBox.FormattingEnabled = true;
-            this.lessonComboBox.Location = new System.Drawing.Point(619, 212);
-            this.lessonComboBox.Name = "lessonComboBox";
-            this.lessonComboBox.Size = new System.Drawing.Size(209, 33);
-            this.lessonComboBox.TabIndex = 28;
+            this.labelFacultyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelFacultyName.AutoSize = true;
+            this.labelFacultyName.Location = new System.Drawing.Point(443, 12);
+            this.labelFacultyName.Name = "labelFacultyName";
+            this.labelFacultyName.Size = new System.Drawing.Size(107, 25);
+            this.labelFacultyName.TabIndex = 22;
+            this.labelFacultyName.Text = "Bölüm İsmi";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(316, 12);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(113, 25);
+            this.label22.TabIndex = 21;
+            this.label22.Text = "Bölüm İsmi:";
+            // 
+            // addLessonBtn
+            // 
+            this.addLessonBtn.Location = new System.Drawing.Point(618, 251);
+            this.addLessonBtn.Name = "addLessonBtn";
+            this.addLessonBtn.Size = new System.Drawing.Size(111, 33);
+            this.addLessonBtn.TabIndex = 20;
+            this.addLessonBtn.Text = "Dersi Ekle";
+            this.addLessonBtn.UseVisualStyleBackColor = true;
+            this.addLessonBtn.Click += new System.EventHandler(this.addLessonBtn_Click);
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(613, 134);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(96, 25);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Ders Ekle";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(467, 212);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(146, 25);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "Dersin Dönemi:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(513, 176);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(99, 25);
+            this.label20.TabIndex = 12;
+            this.label20.Text = "Ders İsmi:";
+            // 
+            // lessonTextBox
+            // 
+            this.lessonTextBox.Location = new System.Drawing.Point(618, 173);
+            this.lessonTextBox.Name = "lessonTextBox";
+            this.lessonTextBox.Size = new System.Drawing.Size(210, 30);
+            this.lessonTextBox.TabIndex = 13;
             // 
             // informationEntry
             // 
@@ -1212,6 +1212,7 @@
             this.Name = "informationEntry";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.Size = new System.Drawing.Size(1437, 744);
+            this.Load += new System.EventHandler(this.informationEntry_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
