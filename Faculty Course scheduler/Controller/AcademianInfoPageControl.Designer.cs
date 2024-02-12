@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.academianNameLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DateTable = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
@@ -45,19 +45,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Akademisyen Adı:";
             // 
-            // label2
+            // academianNameLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(666, 26);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 26);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "<Akademisyen Adı>";
+            this.academianNameLabel.AutoSize = true;
+            this.academianNameLabel.Location = new System.Drawing.Point(666, 26);
+            this.academianNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.academianNameLabel.Name = "academianNameLabel";
+            this.academianNameLabel.Size = new System.Drawing.Size(208, 26);
+            this.academianNameLabel.TabIndex = 1;
+            this.academianNameLabel.Text = "<Akademisyen Adı>";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.academianNameLabel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -110,7 +110,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label academianNameLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel DateTable;
     }

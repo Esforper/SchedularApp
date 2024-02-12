@@ -51,7 +51,7 @@ namespace Faculty_Course_scheduler
                 tabControl1.TabPages.Add(tabPage);
                 tabControl1.SelectedTab = tabPage;
 
-                AcademianInfoPageControl academianInfo = new AcademianInfoPageControl(academian.AcademianWorkDates);
+                AcademianInfoPageControl academianInfo = new AcademianInfoPageControl(academian.AcademianWorkDates, academian.AcademianName);
                 tabPage.Controls.Add(academianInfo);
                 academianInfo.Dock = DockStyle.Fill;
 
