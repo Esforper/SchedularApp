@@ -163,4 +163,19 @@ internal class Database
             MessageBox.Show("Hata: " + ex.Message);
         }
     }
+
+
+    public List<string> getfaculties()
+    {
+        AllFaculties = LoadFacultyDataFromJson();
+        List<string> allfacultyNames = new List<string>();
+        foreach(FacultyClass faculty in AllFaculties)
+        {
+            allfacultyNames.Add(faculty.facultyName);
+        }
+        return allfacultyNames;
+    }
+
+
+        
 }

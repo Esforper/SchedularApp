@@ -67,6 +67,7 @@
     <Compile Include="Controller\AcademianInfoPageControl.Designer.cs">
       <DependentUpon>AcademianInfoPageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleGenerator.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="FacultyClass.cs" />
     <Compile Include="Form1.cs">

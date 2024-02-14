@@ -8,6 +8,7 @@ namespace Faculty_Course_scheduler
     internal class AcademianClass
     {
         public string AcademianName { get; set; }
+        public string AcademianFaculty { get; set; }
         public bool[,] AcademianWorkDates { get; set; }
 
         public AcademianClass()

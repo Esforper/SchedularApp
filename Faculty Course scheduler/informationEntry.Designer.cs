@@ -129,6 +129,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.lessonTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.facultiesComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -176,6 +178,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.facultiesComboBox);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.infoConfirmBtn);
             this.panel1.Controls.Add(this.label1);
@@ -1207,6 +1211,24 @@
             this.lessonTextBox.Size = new System.Drawing.Size(230, 30);
             this.lessonTextBox.TabIndex = 13;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(933, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 29);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "Faculty:";
+            // 
+            // facultiesComboBox
+            // 
+            this.facultiesComboBox.FormattingEnabled = true;
+            this.facultiesComboBox.Location = new System.Drawing.Point(1041, 24);
+            this.facultiesComboBox.Name = "facultiesComboBox";
+            this.facultiesComboBox.Size = new System.Drawing.Size(172, 33);
+            this.facultiesComboBox.TabIndex = 44;
+            // 
             // informationEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1350,5 +1372,7 @@
         private System.Windows.Forms.Label labelFacultyName;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox lessonComboBox;
+        private System.Windows.Forms.ComboBox facultiesComboBox;
+        private System.Windows.Forms.Label label8;
     }
 }

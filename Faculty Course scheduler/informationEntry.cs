@@ -133,11 +133,15 @@ namespace Faculty_Course_scheduler
             database.saveFaculty(faculty);
         }
 
-
+        aca
         private void informationEntry_Load(object sender, EventArgs e)
         {
             lessons = new List<LessonClass>();
             facultyLessons = new List<LessonClass>[facultyPeriodNumber];
+            foreach (string facultName in database.getfaculties())
+            {
+                facultiesComboBox.Items.Add(facultName);
+            }
         }
     }
 }
