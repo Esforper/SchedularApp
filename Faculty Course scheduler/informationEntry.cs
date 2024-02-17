@@ -43,17 +43,38 @@ namespace Faculty_Course_scheduler
             }
 
             string academianName = textBox1.Text;
-            academian.SetAcademian(academianName, booldizisi);
+            string academianFaculty = facultiesComboBox.Text;
+            academian.SetAcademian(academianName, booldizisi,academianFaculty);
             database.SaveAcademian(academian);
         }
 
-        private void addClassBtn_Click(object sender, EventArgs e)
+        private void addClassBtn_Click_1(object sender, EventArgs e)
         {
             try
-            {   //kapasite değerini inte çevirmeye çalış sonra da yeni class nesnesi oluşturup database ye kaydet
+            {
+                CheckBox[,] checkBoxArray = new CheckBox[10, 5];
+                bool[,] booldizisi = new bool[10, 5];
+                for (int i = 0; i < 10; i++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        string checkBoxName = "checkbox_" + (i + j * 10 + 1);
+                        checkBoxArray[i, j] = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+                    }
+                }
+
+                for (int i = 0; i < checkBoxArray.GetLength(0); i++)
+                {
+                    for (int j = 0; j < checkBoxArray.GetLength(1); j++)
+                    {
+                        booldizisi[i, j] = checkBoxArray[i, j].Checked;
+                    }
+                }
+
+                //kapasite değerini inte çevirmeye çalış sonra da yeni class nesnesi oluşturup database ye kaydet
                 int capacity_ = Convert.ToInt32(classCapacityTextBox.Text);
                 ClassClass class_ = new ClassClass();
-                class_.setClass(classNameTextBox.Text, capacity_);
+                class_.setClass(classNameTextBox.Text, capacity_,booldizisi);
                 database.saveClass(class_);
             }
             catch
@@ -133,7 +154,7 @@ namespace Faculty_Course_scheduler
             database.saveFaculty(faculty);
         }
 
-        aca
+        
         private void informationEntry_Load(object sender, EventArgs e)
         {
             lessons = new List<LessonClass>();
@@ -141,6 +162,24 @@ namespace Faculty_Course_scheduler
             foreach (string facultName in database.getfaculties())
             {
                 facultiesComboBox.Items.Add(facultName);
+            }
+        }
+
+        private void SelectAllClass_Click(object sender, EventArgs e)
+        {
+            // CheckBox90'dan başlayarak diğer checkbox'ları seç
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    string checkBoxName = "checkbox_" + (i + j * 10 + 1);
+                    CheckBox checkBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                    if (checkBox != null)
+                    {
+                        checkBox.Checked = true;
+                    }
+                }
             }
         }
     }

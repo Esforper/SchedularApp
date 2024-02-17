@@ -16,7 +16,7 @@ namespace Faculty_Course_scheduler
             AcademianWorkDates = new bool[10, 5];
         }
 
-        public void SetAcademian(string academianName,bool[,] dates)
+        public void SetAcademian(string academianName,bool[,] dates,string academianfaculty)
         {
             if ((dates.GetLength(0) == AcademianWorkDates.GetLength(0)) && (dates.GetLength(1) == AcademianWorkDates.GetLength(1)))
             {
@@ -27,6 +27,7 @@ namespace Faculty_Course_scheduler
                 MessageBox.Show("Hata: Dizi uzunlukları arasında uyuşmazlık");
             }
             AcademianName = academianName;
+            AcademianFaculty = academianfaculty;
             SaveAcademian();
         }
 
