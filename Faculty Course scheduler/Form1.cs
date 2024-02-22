@@ -38,5 +38,13 @@ namespace Faculty_Course_scheduler
 			infoShowPage.Dock = DockStyle.Fill;
 			infoShowPage.BringToFront();
         }
+
+        private void makeScheduleBtn_Click(object sender, EventArgs e)
+        {
+            MakeSchedule schedulePage = new MakeSchedule();
+            mainPanel.Controls.Add(schedulePage);
+            schedulePage.Dock = DockStyle.Fill;
+            schedulePage.BringToFront();
+        }
     }
 }

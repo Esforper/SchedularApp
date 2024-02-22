@@ -31,7 +31,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.infoBtn = new FontAwesome.Sharp.IconButton();
-            this.ıconButton2 = new FontAwesome.Sharp.IconButton();
+            this.makeScheduleBtn = new FontAwesome.Sharp.IconButton();
             this.ıconButton3 = new FontAwesome.Sharp.IconButton();
             this.infoShowBtn = new FontAwesome.Sharp.IconButton();
             this.mainPanel = new System.Windows.Forms.Panel();
@@ -43,7 +43,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.infoBtn);
-            this.flowLayoutPanel1.Controls.Add(this.ıconButton2);
+            this.flowLayoutPanel1.Controls.Add(this.makeScheduleBtn);
             this.flowLayoutPanel1.Controls.Add(this.ıconButton3);
             this.flowLayoutPanel1.Controls.Add(this.infoShowBtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -75,18 +75,19 @@
             this.infoBtn.UseVisualStyleBackColor = true;
             this.infoBtn.Click += new System.EventHandler(this.ıconButton1_Click);
             // 
-            // ıconButton2
+            // makeScheduleBtn
             // 
-            this.ıconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ıconButton2.IconColor = System.Drawing.Color.Black;
-            this.ıconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton2.Location = new System.Drawing.Point(0, 197);
-            this.ıconButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.ıconButton2.Name = "ıconButton2";
-            this.ıconButton2.Size = new System.Drawing.Size(233, 82);
-            this.ıconButton2.TabIndex = 2;
-            this.ıconButton2.Text = "Ders Programı Oluştur.";
-            this.ıconButton2.UseVisualStyleBackColor = true;
+            this.makeScheduleBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.makeScheduleBtn.IconColor = System.Drawing.Color.Black;
+            this.makeScheduleBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.makeScheduleBtn.Location = new System.Drawing.Point(0, 197);
+            this.makeScheduleBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.makeScheduleBtn.Name = "makeScheduleBtn";
+            this.makeScheduleBtn.Size = new System.Drawing.Size(233, 82);
+            this.makeScheduleBtn.TabIndex = 2;
+            this.makeScheduleBtn.Text = "Ders Programı Oluştur.";
+            this.makeScheduleBtn.UseVisualStyleBackColor = true;
+            this.makeScheduleBtn.Click += new System.EventHandler(this.makeScheduleBtn_Click);
             // 
             // ıconButton3
             // 
@@ -145,7 +146,7 @@
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.Panel panel1;
 		private FontAwesome.Sharp.IconButton infoBtn;
-		private FontAwesome.Sharp.IconButton ıconButton2;
+		private FontAwesome.Sharp.IconButton makeScheduleBtn;
 		private FontAwesome.Sharp.IconButton ıconButton3;
 		private System.Windows.Forms.Panel mainPanel;
         private FontAwesome.Sharp.IconButton infoShowBtn;
