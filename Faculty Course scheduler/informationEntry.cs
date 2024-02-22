@@ -134,6 +134,7 @@ namespace Faculty_Course_scheduler
                 lesson.lessonName = lessonTextBox.Text;
                 lesson.lessonFacultyPeriod = Convert.ToInt16(lessonComboBox.Text);
                 lesson.lessonFaculty = facultyname;
+                lesson.LessonLong = Convert.ToInt16(lessonLongTextBox.Text);
 
                 // Dersi uygun dönemin listesine ekle
                 facultyLessons[lesson.lessonFacultyPeriod - 1].Add(lesson);
@@ -181,6 +182,11 @@ namespace Faculty_Course_scheduler
                     }
                 }
             }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

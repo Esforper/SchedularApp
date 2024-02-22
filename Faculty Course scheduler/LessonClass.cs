@@ -10,7 +10,10 @@ namespace Faculty_Course_scheduler
     {
         public string lessonName;
         public string lessonFaculty;
+        public int LessonLong;
         public int lessonFacultyPeriod;
 
     }
+
+   
 }

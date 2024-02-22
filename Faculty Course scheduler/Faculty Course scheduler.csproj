@@ -67,6 +67,12 @@
     <Compile Include="Controller\AcademianInfoPageControl.Designer.cs">
       <DependentUpon>AcademianInfoPageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MakeSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MakeSchedule.Designer.cs">
+      <DependentUpon>MakeSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScheduleGenerator.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="FacultyClass.cs" />
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="infoShowControl.resx">
       <DependentUpon>infoShowControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeSchedule.resx">
+      <DependentUpon>MakeSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
