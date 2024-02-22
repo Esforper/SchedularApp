@@ -15,5 +15,17 @@ namespace Faculty_Course_scheduler
 
     }
 
-   
+    class onePeriodFaculty
+    {
+        //Bilgisayar mühendisliği 1. sınıf, 2.sınıf gibi düşün
+        public string PeriodName;
+        public List<LessonClass> Lessons;
+        public bool[,] facultyLessonDates;
+
+        onePeriodFaculty()
+        {
+            facultyLessonDates = new bool[10, 5];
+        }
+    }
+
 }
