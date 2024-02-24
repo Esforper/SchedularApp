@@ -13,6 +13,7 @@ namespace Faculty_Course_scheduler
 		public int facultyStudents;
 		public bool[,] facultyLessonDates;
 		public List<LessonClass>[] facultyLessons;
+		public int facultyClassNumber;
 
 		public FacultyClass()
 		{
@@ -24,7 +25,7 @@ namespace Faculty_Course_scheduler
             facultyPeriod = facultyyear;
 			facultyStudents = facultystudents;
 			facultyLessons = facultylessons;
-
+			facultyClassNumber = facultyPeriod / 2;
         }
 	}
 }

@@ -160,7 +160,8 @@ namespace Faculty_Course_scheduler
         {
             lessons = new List<LessonClass>();
             facultyLessons = new List<LessonClass>[facultyPeriodNumber];
-            foreach (string facultName in database.getfaculties())
+
+            foreach (string facultName in database.getfaculties())  //Akademisyenin fakültesini seçerken gerekli
             {
                 facultiesComboBox.Items.Add(facultName);
             }

@@ -47,9 +47,9 @@ internal class Database
     {
         try
         {
-            AllAcademians.Add(academian);
-            string jsonData = JsonConvert.SerializeObject(AllAcademians, Formatting.Indented);
-            File.WriteAllText(jsonAcademianFilePath, jsonData);
+            AllAcademians.Add(academian);   //hali hazırda databasedeki akademisyenler listesine akademisyeni ekle
+            string jsonData = JsonConvert.SerializeObject(AllAcademians, Formatting.Indented);  //bilgileri json formatına getir
+            File.WriteAllText(jsonAcademianFilePath, jsonData); //bilgileri json dosyasına yaz
 
             MessageBox.Show("Veritabanına kaydedildi");
         }

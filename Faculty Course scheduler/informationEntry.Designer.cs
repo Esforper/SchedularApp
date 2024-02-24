@@ -178,6 +178,8 @@
             this.label30 = new System.Windows.Forms.Label();
             this.facultyNameTextBox = new System.Windows.Forms.TextBox();
             this.facultyStudentNumberTextBox = new System.Windows.Forms.TextBox();
+            this.lessonLongTextBox = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.lessonComboBox = new System.Windows.Forms.ComboBox();
             this.addFacultyBtn = new System.Windows.Forms.Button();
             this.lessonListBox = new System.Windows.Forms.ListBox();
@@ -198,8 +200,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.lessonLongTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1791,6 +1791,23 @@
             this.facultyStudentNumberTextBox.Size = new System.Drawing.Size(210, 30);
             this.facultyStudentNumberTextBox.TabIndex = 8;
             // 
+            // lessonLongTextBox
+            // 
+            this.lessonLongTextBox.Location = new System.Drawing.Point(642, 269);
+            this.lessonLongTextBox.Name = "lessonLongTextBox";
+            this.lessonLongTextBox.Size = new System.Drawing.Size(230, 30);
+            this.lessonLongTextBox.TabIndex = 30;
+            this.lessonLongTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(458, 274);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(178, 25);
+            this.label19.TabIndex = 29;
+            this.label19.Text = "Dersin Saat Sayısı:";
+            // 
             // lessonComboBox
             // 
             this.lessonComboBox.FormattingEnabled = true;
@@ -1984,23 +2001,6 @@
             this.label13.Size = new System.Drawing.Size(152, 25);
             this.label13.TabIndex = 21;
             this.label13.Text = "Sınıf Kapasitesi:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(458, 274);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(178, 25);
-            this.label19.TabIndex = 29;
-            this.label19.Text = "Dersin Saat Sayısı:";
-            // 
-            // lessonLongTextBox
-            // 
-            this.lessonLongTextBox.Location = new System.Drawing.Point(642, 269);
-            this.lessonLongTextBox.Name = "lessonLongTextBox";
-            this.lessonLongTextBox.Size = new System.Drawing.Size(230, 30);
-            this.lessonLongTextBox.TabIndex = 30;
-            this.lessonLongTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // informationEntry
             // 

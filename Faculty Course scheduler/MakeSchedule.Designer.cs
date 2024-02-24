@@ -31,15 +31,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.facultiesComboBox = new System.Windows.Forms.ComboBox();
+            this.FacultyClassNumberComboBox = new System.Windows.Forms.ComboBox();
+            this.springAutumnComboBox = new System.Windows.Forms.ComboBox();
+            this.labelFacultyClass = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lessonsListBox = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.findFacultyBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 101);
+            this.label1.Location = new System.Drawing.Point(133, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 0;
@@ -48,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(93, 143);
+            this.label2.Location = new System.Drawing.Point(153, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 20);
             this.label2.TabIndex = 1;
@@ -57,47 +62,108 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 187);
+            this.label3.Location = new System.Drawing.Point(133, 199);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Dönem Seçiniz:";
             // 
-            // textBox1
+            // facultiesComboBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(221, 98);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 26);
-            this.textBox1.TabIndex = 3;
+            this.facultiesComboBox.FormattingEnabled = true;
+            this.facultiesComboBox.Location = new System.Drawing.Point(281, 110);
+            this.facultiesComboBox.Name = "facultiesComboBox";
+            this.facultiesComboBox.Size = new System.Drawing.Size(172, 28);
+            this.facultiesComboBox.TabIndex = 45;
+            this.facultiesComboBox.SelectedIndexChanged += new System.EventHandler(this.facultiesComboBox_SelectedIndexChanged);
             // 
-            // textBox2
+            // FacultyClassNumberComboBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(221, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 26);
-            this.textBox2.TabIndex = 4;
+            this.FacultyClassNumberComboBox.FormattingEnabled = true;
+            this.FacultyClassNumberComboBox.Location = new System.Drawing.Point(281, 152);
+            this.FacultyClassNumberComboBox.Name = "FacultyClassNumberComboBox";
+            this.FacultyClassNumberComboBox.Size = new System.Drawing.Size(172, 28);
+            this.FacultyClassNumberComboBox.TabIndex = 46;
             // 
-            // textBox3
+            // springAutumnComboBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(221, 184);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 26);
-            this.textBox3.TabIndex = 5;
+            this.springAutumnComboBox.FormattingEnabled = true;
+            this.springAutumnComboBox.Items.AddRange(new object[] {
+            "güz dönemi",
+            "bahar dönemi"});
+            this.springAutumnComboBox.Location = new System.Drawing.Point(281, 196);
+            this.springAutumnComboBox.Name = "springAutumnComboBox";
+            this.springAutumnComboBox.Size = new System.Drawing.Size(172, 28);
+            this.springAutumnComboBox.TabIndex = 47;
+            this.springAutumnComboBox.SelectedIndexChanged += new System.EventHandler(this.springAutumnComboBox_SelectedIndexChanged);
+            // 
+            // labelFacultyClass
+            // 
+            this.labelFacultyClass.AutoSize = true;
+            this.labelFacultyClass.Location = new System.Drawing.Point(714, 68);
+            this.labelFacultyClass.Name = "labelFacultyClass";
+            this.labelFacultyClass.Size = new System.Drawing.Size(204, 20);
+            this.labelFacultyClass.TabIndex = 48;
+            this.labelFacultyClass.Text = "<Fakülte : Sınıfı : Dönem>";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(546, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 20);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Dersler";
+            // 
+            // lessonsListBox
+            // 
+            this.lessonsListBox.FormattingEnabled = true;
+            this.lessonsListBox.ItemHeight = 20;
+            this.lessonsListBox.Location = new System.Drawing.Point(550, 140);
+            this.lessonsListBox.Name = "lessonsListBox";
+            this.lessonsListBox.Size = new System.Drawing.Size(499, 204);
+            this.lessonsListBox.TabIndex = 50;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(452, 397);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(225, 49);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // findFacultyBtn
+            // 
+            this.findFacultyBtn.Enabled = false;
+            this.findFacultyBtn.Location = new System.Drawing.Point(206, 258);
+            this.findFacultyBtn.Name = "findFacultyBtn";
+            this.findFacultyBtn.Size = new System.Drawing.Size(162, 48);
+            this.findFacultyBtn.TabIndex = 52;
+            this.findFacultyBtn.Text = "Find Faculty";
+            this.findFacultyBtn.UseVisualStyleBackColor = true;
+            this.findFacultyBtn.Click += new System.EventHandler(this.findFacultyBtn_Click);
             // 
             // MakeSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.findFacultyBtn);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lessonsListBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelFacultyClass);
+            this.Controls.Add(this.springAutumnComboBox);
+            this.Controls.Add(this.FacultyClassNumberComboBox);
+            this.Controls.Add(this.facultiesComboBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MakeSchedule";
             this.Size = new System.Drawing.Size(1437, 744);
+            this.Load += new System.EventHandler(this.MakeSchedule_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,8 +174,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox facultiesComboBox;
+        private System.Windows.Forms.ComboBox springAutumnComboBox;
+        private System.Windows.Forms.Label labelFacultyClass;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox lessonsListBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button findFacultyBtn;
+        private System.Windows.Forms.ComboBox FacultyClassNumberComboBox;
     }
 }
