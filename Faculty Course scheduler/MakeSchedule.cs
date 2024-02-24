@@ -78,5 +78,10 @@ namespace Faculty_Course_scheduler
             }
             
         }
+
+        private void makeScheduleBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -37,7 +37,7 @@
             this.labelFacultyClass = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lessonsListBox = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.makeScheduleBtn = new System.Windows.Forms.Button();
             this.findFacultyBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -124,14 +124,15 @@
             this.lessonsListBox.Size = new System.Drawing.Size(499, 204);
             this.lessonsListBox.TabIndex = 50;
             // 
-            // button1
+            // makeScheduleBtn
             // 
-            this.button1.Location = new System.Drawing.Point(452, 397);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(225, 49);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.makeScheduleBtn.Location = new System.Drawing.Point(452, 397);
+            this.makeScheduleBtn.Name = "makeScheduleBtn";
+            this.makeScheduleBtn.Size = new System.Drawing.Size(225, 49);
+            this.makeScheduleBtn.TabIndex = 51;
+            this.makeScheduleBtn.Text = "button1";
+            this.makeScheduleBtn.UseVisualStyleBackColor = true;
+            this.makeScheduleBtn.Click += new System.EventHandler(this.makeScheduleBtn_Click);
             // 
             // findFacultyBtn
             // 
@@ -149,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.findFacultyBtn);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.makeScheduleBtn);
             this.Controls.Add(this.lessonsListBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labelFacultyClass);
@@ -179,7 +180,7 @@
         private System.Windows.Forms.Label labelFacultyClass;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox lessonsListBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button makeScheduleBtn;
         private System.Windows.Forms.Button findFacultyBtn;
         private System.Windows.Forms.ComboBox FacultyClassNumberComboBox;
     }
