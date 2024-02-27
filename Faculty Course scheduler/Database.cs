@@ -163,6 +163,41 @@ internal class Database
         }
     }
 
+    public void DeleteClass(string className)
+    {
+        // Akademisyen verilerini JSON'dan yükle
+        AllClasses = LoadClassDataFromJson();
+
+        // Silinecek akademisyeni bul
+        var classToDelete = AllClasses.FirstOrDefault(c => c.className == className);
+
+        if (classToDelete != null)
+        {
+            // Akademisyeni listeden çıkar
+            AllClasses.Remove(classToDelete);
+
+            // Güncellenmiş listeyi JSON'a kaydet
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(AllClasses, Formatting.Indented);
+                File.WriteAllText(jsonClassFilePath, jsonData);
+
+                MessageBox.Show($"{className} başarıyla veritabanından silindi.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+            }
+        }
+        else
+        {
+            MessageBox.Show($"{className} isimli akademisyen bulunamadı.");
+        }
+    }
+
+
+
+
     //FACULTY DATA
     public List<FacultyClass> LoadFacultyDataFromJson()
     {

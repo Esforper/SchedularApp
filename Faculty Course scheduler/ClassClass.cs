@@ -33,5 +33,12 @@ namespace Faculty_Course_scheduler
             classCapacity = capacity_;
         }
 
+        public void UpdateClassDates()
+        {
+
+        }
+
+
+
     }
 }
