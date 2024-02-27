@@ -100,9 +100,9 @@ namespace Faculty_Course_scheduler
             foreach(LessonClass lesoon in onePeriod.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye al.
             {
                 int allClassNumber = allClass.Count();  //tüm sınıfların sayısını al
-                var rand = new Random();
-                int randomClass = rand.Next(allClassNumber + 1);
-                var oneClass = allClass[randomClass];
+                var rand = new Random();    //random tanımla    
+                int randomClass = rand.Next(allClassNumber + 1);    //rastgele bir sınıf almak için rastgele index değeri al
+                var oneClass = allClass[randomClass];   //index değerindeki classı al
 
 
                 var minAcademian = new AcademianClass();    //en az müsait olan akademisyen için sonradan değiştirilmek üzere önce boş bir akademisyen oluştur
