@@ -92,18 +92,19 @@ namespace Faculty_Course_scheduler
 
         private void makeScheduleBtn_Click(object sender, EventArgs e)
         {
-            var allAcademians = database.LoadAcademianDataFromJson();
+            var allAcademians = database.LoadAcademianDataFromJson();   //önce tüm akademisyenleri çağır
             
-            foreach(LessonClass lesoon in onePeriod.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye aldım.
+            foreach(LessonClass lesoon in onePeriod.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye al.
             {
 
-                var minAcademian = new AcademianClass();
-                int minAvailable = 50;
-                foreach (AcademianClass academian in allAcademians)
+                var minAcademian = new AcademianClass();    //en az müsait olan akademisyen için sonradan değiştirilmek üzere önce boş bir akademisyen oluştur
+                int minAvailable = 50;  //önce max müsaitlik olan 50 den başla
+
+                foreach (AcademianClass academian in allAcademians)     //akademisyenleri döndür
                 {
-                    if (academian.academianAvailableTime() < minAvailable)
+                    if (academian.academianAvailableTime() < minAvailable)  //eğer bir akademisyen mevcut müsaitlikten daha az müsaitse 
                     {
-                        minAvailable = academian.academianAvailableTime();
+                        minAvailable = academian.academianAvailableTime();      //o akademisyeni seç ve müsaitlik parametresini güncelle
                         minAcademian = academian;
                     }
                 }
