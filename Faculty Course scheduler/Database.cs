@@ -11,12 +11,14 @@ internal class Database
     public List<AcademianClass> AllAcademians;
     public List<ClassClass> AllClasses;
     public List<FacultyClass> AllFaculties;
+    public List<onePeriodFacultyClass> AllPeriodLessons;
 
     private string folderPath;
     
     private string jsonAcademianFilePath;
     private string jsonClassFilePath;
     private string jsonFacultyFilePath;
+    private string jsonPeriodLessonFilePath;
 
     public Database()
     {
@@ -26,6 +28,7 @@ internal class Database
         jsonAcademianFilePath = Path.Combine(folderPath, "academiansData.json");
         jsonClassFilePath = Path.Combine(folderPath, "classesData.json");
         jsonFacultyFilePath = Path.Combine(folderPath, "facultiesData.json");
+        jsonPeriodLessonFilePath = Path.Combine(folderPath, "onePeriodLessonsData");
 
         //dosya kontrolleri
         if (!File.Exists(jsonAcademianFilePath))
@@ -39,6 +42,7 @@ internal class Database
         AllFaculties = LoadFacultyDataFromJson();
         AllClasses = LoadClassDataFromJson();
         AllAcademians = LoadAcademianDataFromJson(); // LoadDataFromJson'dan gelen değeri AllAcademians'a ata
+        AllPeriodLessons = LoadLessonPeriodDataFromJson();
     }
 
 
@@ -234,7 +238,6 @@ internal class Database
         }
     }
 
-
     public List<string> getfaculties()
     {
         AllFaculties = LoadFacultyDataFromJson();
@@ -247,5 +250,41 @@ internal class Database
     }
 
 
-        
+    //PeriodLesson Database 
+    public List<onePeriodFacultyClass> LoadLessonPeriodDataFromJson()
+    {
+        try
+        {
+            if (File.Exists(jsonPeriodLessonFilePath))
+            {
+                string jsonData = File.ReadAllText(jsonPeriodLessonFilePath);
+                return JsonConvert.DeserializeObject<List<onePeriodFacultyClass>>(jsonData) ?? new List<onePeriodFacultyClass>();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Hata: " + ex.Message);
+        }
+
+        return new List<onePeriodFacultyClass>(); // Hata durumunda boş bir liste döndür
+    }
+
+    public void SavePeriodLessonDataToJson(onePeriodFacultyClass onePeriod)   //akademisyeni databaseye kaydeder
+    {
+        //akademisyeni akademisyen listesine ekler, bilgilerini json formatına dönüştürür. json dosyasına bilgiyi yazar.
+        try
+        {
+            AllPeriodLessons.Add(onePeriod);   //hali hazırda databasedeki akademisyenler listesine akademisyeni ekle
+            string jsonData = JsonConvert.SerializeObject(AllPeriodLessons, Formatting.Indented);  //bilgileri json formatına getir
+            File.WriteAllText(jsonPeriodLessonFilePath, jsonData); //bilgileri json dosyasına yaz
+
+            MessageBox.Show("Veritabanına kaydedildi");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Hata: " + ex.Message);
+        }
+    }
+
+
 }
