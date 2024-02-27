@@ -27,6 +27,14 @@ namespace Faculty_Course_scheduler
         public onePeriodFacultyClass()
         {
             facultyLessonDates = new bool[10, 5];
+            
+            for(int j=0; j < 5; j++)
+            {
+                for(int i=0; i < 10; i++)
+                {
+                    facultyLessonDates[i,j] = true;
+                }
+            }
         }
     }
 

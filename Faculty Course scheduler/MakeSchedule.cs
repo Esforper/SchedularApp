@@ -101,7 +101,7 @@ namespace Faculty_Course_scheduler
             {
                 int allClassNumber = allClass.Count();  //tüm sınıfların sayısını al
                 var rand = new Random();    //random tanımla    
-                int randomClass = rand.Next(allClassNumber + 1);    //rastgele bir sınıf almak için rastgele index değeri al
+                int randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
                 var oneClass = allClass[randomClass];   //index değerindeki classı al
 
 
@@ -117,19 +117,20 @@ namespace Faculty_Course_scheduler
                     }
                 }
 
-                for(int i = 0; i < minAcademian.AcademianWorkDates.GetLength(0); i++)
+                for(int j = 0; j < minAcademian.AcademianWorkDates.GetLength(1); j++)
                 {
-                    for(int j=0;j<minAcademian.AcademianWorkDates.GetLength(1); j++)
+                    for(int i=0;i<minAcademian.AcademianWorkDates.GetLength(0) - 2; i++)
                     {
                         bool academianBool = minAcademian.AcademianWorkDates[i, j] == true && onePeriod.facultyLessonDates[i, j] == true &&
                             minAcademian.AcademianWorkDates[i + 1, j] == true && onePeriod.facultyLessonDates[i + 1, j] == true &&
                             minAcademian.AcademianWorkDates[i + 2, j] == true && onePeriod.facultyLessonDates[i + 2, j] == true;
 
-                        bool classbool;
+                        bool classbool = oneClass.classDates[i,j] == true && oneClass.classDates[i + 1,j] == true && oneClass.classDates[i+2,j]== true;
 
-                        if (academianBool == true)
+                        if (academianBool == true && classbool == true)
                         {
-
+                            MessageBox.Show("kontrol");
+                            break;
                         }
 
                     }
