@@ -30,4 +30,9 @@ namespace Faculty_Course_scheduler
         }
     }
 
+    class oneLessonDateClass
+    {
+       
+    }
+
 }

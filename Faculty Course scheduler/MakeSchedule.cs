@@ -109,6 +109,19 @@ namespace Faculty_Course_scheduler
                     }
                 }
 
+                for(int i = 0; i < minAcademian.AcademianWorkDates.GetLength(0); i++)
+                {
+                    for(int j=0;j<minAcademian.AcademianWorkDates.GetLength(1); j++)
+                    {
+                        if (minAcademian.AcademianWorkDates[i,j] == true && onePeriod.facultyLessonDates[i,j] == true &&
+                            minAcademian.AcademianWorkDates[i+1, j] == true && onePeriod.facultyLessonDates[i+1, j] == true &&
+                            minAcademian.AcademianWorkDates[i+2, j] == true && onePeriod.facultyLessonDates[i+2, j] == true)
+                        {
+
+                        }
+
+                    }
+                }
 
 
 

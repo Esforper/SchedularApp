@@ -55,5 +55,13 @@ namespace Faculty_Course_scheduler
             }
             return availableTime;
         }
+
+        public void saveWorkDates()
+        {
+            //kayıtlı akademisyen silinecek,
+            //work dates yeniden ayarlanacak
+            //akademisyen yeniden kaydedilecek.
+
+        }
     }
 }
