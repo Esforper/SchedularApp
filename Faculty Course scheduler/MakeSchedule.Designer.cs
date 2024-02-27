@@ -126,7 +126,7 @@
             // 
             // makeScheduleBtn
             // 
-            this.makeScheduleBtn.Location = new System.Drawing.Point(452, 397);
+            this.makeScheduleBtn.Location = new System.Drawing.Point(423, 394);
             this.makeScheduleBtn.Name = "makeScheduleBtn";
             this.makeScheduleBtn.Size = new System.Drawing.Size(225, 49);
             this.makeScheduleBtn.TabIndex = 51;

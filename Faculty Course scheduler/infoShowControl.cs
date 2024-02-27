@@ -32,7 +32,7 @@ namespace Faculty_Course_scheduler
                 academianPanel.Controls.Add(btn);
                 btn.Size = defaultBtn.Size;
                 btn.Margin = defaultBtn.Margin;
-                btn.Text = academian.AcademianName;
+                btn.Text = academian.AcademianName + " : " + academian.academianAvailableTime();
 
                 btn.Click += (s, ev) => {
                     OpenTabControlForAcademian(academian);

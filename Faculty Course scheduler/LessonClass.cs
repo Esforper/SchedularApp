@@ -15,14 +15,16 @@ namespace Faculty_Course_scheduler
 
     }
 
-    class onePeriodFaculty
+    class onePeriodFacultyClass
     {
         //Bilgisayar mühendisliği 1. sınıf, 2.sınıf gibi düşün
-        public string PeriodName;
-        public List<LessonClass> Lessons;
-        public bool[,] facultyLessonDates;
+        public string PeriodName;      //kod içerisinde otomatik oluşturulacak ve bilgisayar müh 1.sınıf, 2. sınıf gibi bir etkisi olucak.
+        public List<LessonClass> Lessons;   //ders listesi olucak
+        public bool[,] facultyLessonDates;  //ders tarihleri olucak.
+        public string periodFaculty;
+        public int periodStudentCapacity;
 
-        onePeriodFaculty()
+        public onePeriodFacultyClass()
         {
             facultyLessonDates = new bool[10, 5];
         }

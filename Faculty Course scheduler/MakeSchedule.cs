@@ -57,22 +57,33 @@ namespace Faculty_Course_scheduler
 
         }
 
+        onePeriodFacultyClass onePeriod = new onePeriodFacultyClass();    //bilgisayar müh 1. sınıf gibi 
+
         private void findFacultyBtn_Click(object sender, EventArgs e)
         {
             lessonsListBox.Items.Clear();
 
-            labelFacultyClass.Text = facultiesComboBox.Text + " - " + FacultyClassNumberComboBox.Text + ". Sınıf" + " - " + springAutumnComboBox.Text + " dönemi";
+            string facultyInfo = facultiesComboBox.Text;    //hangi fakülte, bilgisini al.
+
+            string facultyPeriodName = facultyInfo + " - " + FacultyClassNumberComboBox.Text + ". Sınıf" + " - " + springAutumnComboBox.Text + " dönemi";
+            labelFacultyClass.Text = facultyPeriodName; //fakülte - sınıf - dönem bilgisi
 
             int selectedPeriod = springAutumnComboBox.SelectedIndex;
             int selectedClass = Convert.ToInt16(FacultyClassNumberComboBox.Text);
 
             var allfaculties = database.LoadFacultyDataFromJson();
+
             var selectedFaculty = allfaculties.Find(a => a.facultyName.Equals(facultiesComboBox.Text));
-            int selectedPeriodInt = selectedPeriod + (selectedClass - 1) * 2;
+            int selectedPeriodInt = selectedPeriod + (selectedClass - 1) * 2;   
 
             var selectedPeriodLessons = selectedFaculty.facultyLessons[selectedPeriodInt];
             
-            foreach(var lesson in selectedPeriodLessons)
+            onePeriod.Lessons = selectedPeriodLessons;  //yeni oluşturulan period classına dersleri koy.
+            onePeriod.PeriodName = facultyPeriodName;   //fakülte - sınıf - dönem bilgisi
+            onePeriod.periodFaculty = facultyInfo;      //hangi fakültenin
+            onePeriod.periodStudentCapacity = selectedFaculty.facultyStudents;  //öğrenci kapasitesi
+
+            foreach (var lesson in selectedPeriodLessons)
             {
                 lessonsListBox.Items.Add(lesson.lessonName);
             }
@@ -81,7 +92,28 @@ namespace Faculty_Course_scheduler
 
         private void makeScheduleBtn_Click(object sender, EventArgs e)
         {
+            var allAcademians = database.LoadAcademianDataFromJson();
+            
+            foreach(LessonClass lesoon in onePeriod.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye aldım.
+            {
 
+                var minAcademian = new AcademianClass();
+                int minAvailable = 50;
+                foreach (AcademianClass academian in allAcademians)
+                {
+                    if (academian.academianAvailableTime() < minAvailable)
+                    {
+                        minAvailable = academian.academianAvailableTime();
+                        minAcademian = academian;
+                    }
+                }
+
+
+
+
+            }
+
+            
         }
     }
 }
