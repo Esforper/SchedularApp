@@ -121,6 +121,8 @@ namespace Faculty_Course_scheduler
                 {
                     for(int i=0;i<minAcademian.AcademianWorkDates.GetLength(0) - 2; i++)
                     {
+                        //şimdilik tüm dersler 3 saat kabul edildi.
+
                         bool academianBool = minAcademian.AcademianWorkDates[i, j] == true && onePeriod.facultyLessonDates[i, j] == true &&
                             minAcademian.AcademianWorkDates[i + 1, j] == true && onePeriod.facultyLessonDates[i + 1, j] == true &&
                             minAcademian.AcademianWorkDates[i + 2, j] == true && onePeriod.facultyLessonDates[i + 2, j] == true;
@@ -129,13 +131,26 @@ namespace Faculty_Course_scheduler
 
                         if (academianBool == true && classbool == true)
                         {
-                            MessageBox.Show("kontrol");
-                            break;
+                            minAcademian.AcademianWorkDates[i, j] = false;
+                            minAcademian.AcademianWorkDates[i + 1, j] = false;
+                            minAcademian.AcademianWorkDates[i + 2, j] = false;
+
+                            allAcademians.Remove(minAcademian);
+                            MessageBox.Show("diziden kaldırma başarılı");
+
+                            oneClass.classDates[i, j] = false;
+                            oneClass.classDates[i+1,j] = false;
+                            oneClass.classDates[i+2,j] = false;
+
+
                         }
+ 
+                        randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
+                        oneClass = allClass[randomClass];   //index değerindeki classı al
 
                     }
                 }
-
+                minAcademian.UpdateWorkDates();
 
 
             }

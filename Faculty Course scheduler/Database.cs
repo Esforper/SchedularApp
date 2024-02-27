@@ -43,8 +43,9 @@ internal class Database
 
 
 
-    public void SaveAcademianDataToJson(AcademianClass academian)
+    public void SaveAcademianDataToJson(AcademianClass academian)   //akademisyeni databaseye kaydeder
     {
+        //akademisyeni akademisyen listesine ekler, bilgilerini json formatına dönüştürür. json dosyasına bilgiyi yazar.
         try
         {
             AllAcademians.Add(academian);   //hali hazırda databasedeki akademisyenler listesine akademisyeni ekle
@@ -90,9 +91,43 @@ internal class Database
         return AllAcademians.FirstOrDefault(academian => academian.AcademianName == academianName);
     }
 
+    public void DeleteAcademian(string academianName)   //Akademisyen silme
+    {
+        // Akademisyen verilerini JSON'dan yükle
+        AllAcademians = LoadAcademianDataFromJson();
+
+        // Silinecek akademisyeni bul
+        var academianToDelete = AllAcademians.FirstOrDefault(academian => academian.AcademianName == academianName);
+
+        if (academianToDelete != null)
+        {
+            // Akademisyeni listeden çıkar
+            AllAcademians.Remove(academianToDelete);
+
+            // Güncellenmiş listeyi JSON'a kaydet
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(AllAcademians, Formatting.Indented);
+                File.WriteAllText(jsonAcademianFilePath, jsonData);
+
+                MessageBox.Show($"{academianName} başarıyla veritabanından silindi.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+            }
+        }
+        else
+        {
+            MessageBox.Show($"{academianName} isimli akademisyen bulunamadı.");
+        }
+    }
 
 
-   //CLASS DATA
+
+
+
+    //CLASS DATA
     public List<ClassClass> LoadClassDataFromJson()
     {
         try

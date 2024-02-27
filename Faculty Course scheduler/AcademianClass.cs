@@ -56,12 +56,29 @@ namespace Faculty_Course_scheduler
             return availableTime;
         }
 
-        public void saveWorkDates()
+        public void SaveWorkDates(bool[,] newDates)
         {
-            //kayıtlı akademisyen silinecek,
-            //work dates yeniden ayarlanacak
-            //akademisyen yeniden kaydedilecek.
+            // Yeni tarihlerin uygun boyutta olup olmadığını kontrol et
+            if (newDates.GetLength(0) != AcademianWorkDates.GetLength(0) || newDates.GetLength(1) != AcademianWorkDates.GetLength(1))
+            {
+                MessageBox.Show("Hata: Dizi uzunlukları arasında uyuşmazlık");
+                return;
+            }
 
+            // Akademisyenin çalışma tarihlerini güncelle
+            AcademianWorkDates = newDates;
+            Database db = new Database();
+            db.DeleteAcademian(this.AcademianName);
+            db.SaveAcademianDataToJson(this);
+
+        }
+
+        public void UpdateWorkDates()
+        {
+            Database db = new Database();
+            db.DeleteAcademian(this.AcademianName);
+            db.SaveAcademianDataToJson(this);
+            MessageBox.Show("güncelleme başarılı");
         }
     }
 }
