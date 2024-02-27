@@ -42,7 +42,22 @@ namespace Faculty_Course_scheduler
             MessageBox.Show("güncelleme başarılı");
         }
 
+        public int ClassAvailableTime()
+        {
+            int availableTime = 0;
+            for (int i = 0; i < classDates.GetLength(0); i++)
+            {
+                for (int j = 0; j < classDates.GetLength(1); j++)
+                {
+                    if (classDates[i, j] == true)
+                    {
 
+                        availableTime++;
+                    }
+                }
+            }
+            return availableTime;
+        }
 
     }
 }

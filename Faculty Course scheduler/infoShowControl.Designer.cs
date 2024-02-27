@@ -33,9 +33,13 @@
             this.academianPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.defaultBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.classPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.academianPanel.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.classPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -85,6 +89,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.classPanel);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(10);
@@ -92,6 +97,27 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sınıflar";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // classPanel
+            // 
+            this.classPanel.Controls.Add(this.button1);
+            this.classPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.classPanel.Location = new System.Drawing.Point(10, 10);
+            this.classPanel.Name = "classPanel";
+            this.classPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.classPanel.Size = new System.Drawing.Size(1389, 671);
+            this.classPanel.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(20, 20);
+            this.button1.Margin = new System.Windows.Forms.Padding(10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 47);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             // 
             // infoShowControl
             // 
@@ -105,6 +131,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.academianPanel.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.classPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -116,5 +144,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.FlowLayoutPanel academianPanel;
         private System.Windows.Forms.Button defaultBtn;
+        private System.Windows.Forms.FlowLayoutPanel classPanel;
+        private System.Windows.Forms.Button button1;
     }
 }

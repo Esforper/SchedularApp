@@ -23,6 +23,7 @@ namespace Faculty_Course_scheduler
             
         }
         Database database = new Database();
+
         private void infoShowControl_Load(object sender, EventArgs e)
         {
             
@@ -37,6 +38,19 @@ namespace Faculty_Course_scheduler
                 btn.Click += (s, ev) => {
                     OpenTabControlForAcademian(academian);
                 };
+            }
+
+            foreach(ClassClass classes in database.AllClasses)
+            {
+                Button btn = new Button();
+                classPanel.Controls.Add(btn);
+                btn.Size = defaultBtn.Size;
+                btn.Margin = defaultBtn.Margin;
+                btn.Text = classes.className + " : " + classes.ClassAvailableTime();
+                btn.Click += (s, ev) => {
+                    OpenTabControlForClass(classes);
+                };
+
             }
 
         }
@@ -58,6 +72,25 @@ namespace Faculty_Course_scheduler
             }
             
         }
+        private void OpenTabControlForClass(ClassClass class_)
+        {
+
+            TabPage tabPage = new TabPage(class_.className);
+            if (!IsTabPageAlreadyOpen(tabControl1, class_.className))
+            {
+                // Oluşturulan TabPage'i TabControl'e ekleyin
+                tabControl1.TabPages.Add(tabPage);
+                tabControl1.SelectedTab = tabPage;
+
+                AcademianInfoPageControl classInfo = new AcademianInfoPageControl(class_.classDates, class_.className);
+                tabPage.Controls.Add(classInfo);
+                classInfo.Dock = DockStyle.Fill;
+
+            }
+
+        }
+
+
         private bool IsTabPageAlreadyOpen(TabControl tabControl, string tabName)
         {
             foreach (TabPage tabPage in tabControl.TabPages)
