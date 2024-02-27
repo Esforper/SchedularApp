@@ -93,9 +93,17 @@ namespace Faculty_Course_scheduler
         private void makeScheduleBtn_Click(object sender, EventArgs e)
         {
             var allAcademians = database.LoadAcademianDataFromJson();   //önce tüm akademisyenleri çağır
-            
+            var allClass = database.LoadClassDataFromJson();
+
+            //tüm sınıflar çağırılabilir, her ders için rastgele bir sınıf denenebilir.
+
             foreach(LessonClass lesoon in onePeriod.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye al.
             {
+                int allClassNumber = allClass.Count();  //tüm sınıfların sayısını al
+                var rand = new Random();
+                int randomClass = rand.Next(allClassNumber + 1);
+                var oneClass = allClass[randomClass];
+
 
                 var minAcademian = new AcademianClass();    //en az müsait olan akademisyen için sonradan değiştirilmek üzere önce boş bir akademisyen oluştur
                 int minAvailable = 50;  //önce max müsaitlik olan 50 den başla
@@ -113,9 +121,13 @@ namespace Faculty_Course_scheduler
                 {
                     for(int j=0;j<minAcademian.AcademianWorkDates.GetLength(1); j++)
                     {
-                        if (minAcademian.AcademianWorkDates[i,j] == true && onePeriod.facultyLessonDates[i,j] == true &&
-                            minAcademian.AcademianWorkDates[i+1, j] == true && onePeriod.facultyLessonDates[i+1, j] == true &&
-                            minAcademian.AcademianWorkDates[i+2, j] == true && onePeriod.facultyLessonDates[i+2, j] == true)
+                        bool academianBool = minAcademian.AcademianWorkDates[i, j] == true && onePeriod.facultyLessonDates[i, j] == true &&
+                            minAcademian.AcademianWorkDates[i + 1, j] == true && onePeriod.facultyLessonDates[i + 1, j] == true &&
+                            minAcademian.AcademianWorkDates[i + 2, j] == true && onePeriod.facultyLessonDates[i + 2, j] == true;
+
+                        bool classbool;
+
+                        if (academianBool == true)
                         {
 
                         }

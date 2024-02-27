@@ -12,7 +12,9 @@ namespace Faculty_Course_scheduler
 		public int facultyPeriod;	//fakülte dönemi
 		public int facultyStudents;
 		public bool[,] facultyLessonDates;
+
 		public List<LessonClass>[] facultyLessons;
+
 		public int facultyClassNumber;
 
 		public FacultyClass()
