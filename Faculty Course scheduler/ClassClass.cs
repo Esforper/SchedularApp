@@ -35,7 +35,10 @@ namespace Faculty_Course_scheduler
 
         public void UpdateClassDates()
         {
-
+            Database db = new Database();
+            db.DeleteClass(this.className);
+            db.saveClass(this);
+            MessageBox.Show("güncelleme başarılı");
         }
 
 
