@@ -35,6 +35,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.classPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.PeriodPage = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.academianPanel.SuspendLayout();
@@ -46,6 +47,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.PeriodPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tabControl1.Location = new System.Drawing.Point(10, 10);
@@ -119,6 +121,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
             // 
+            // PeriodPage
+            // 
+            this.PeriodPage.Location = new System.Drawing.Point(4, 29);
+            this.PeriodPage.Name = "PeriodPage";
+            this.PeriodPage.Padding = new System.Windows.Forms.Padding(3);
+            this.PeriodPage.Size = new System.Drawing.Size(1409, 691);
+            this.PeriodPage.TabIndex = 2;
+            this.PeriodPage.Text = "Bölüm - Sınıflar";
+            this.PeriodPage.UseVisualStyleBackColor = true;
+            // 
             // infoShowControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -146,5 +158,6 @@
         private System.Windows.Forms.Button defaultBtn;
         private System.Windows.Forms.FlowLayoutPanel classPanel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage PeriodPage;
     }
 }
