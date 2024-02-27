@@ -93,7 +93,15 @@ namespace Faculty_Course_scheduler
         private void makeScheduleBtn_Click(object sender, EventArgs e)
         {
             var allAcademians = database.LoadAcademianDataFromJson();   //önce tüm akademisyenleri çağır
-            var allClass = database.LoadClassDataFromJson();
+            var allClass = database.LoadClassDataFromJson();    //tüm sınıfları çağır
+
+            /** Kurallar
+             * Her ders için bir hoca olmalı
+             * bir ders bir sınıfta olmalı
+             * bir bölüm (bilgisayar müh 1. sınıf (period denebilir)) bir sınıfı birden fazla kez kullanabilir.
+             * bir hoca derse girdikten sonra 2. derse giremez.
+             * 
+             */
 
             //tüm sınıflar çağırılabilir, her ders için rastgele bir sınıf denenebilir.
 
@@ -119,15 +127,15 @@ namespace Faculty_Course_scheduler
 
                 bool breakControl = false;
 
-                for(int j = 0; j < minAcademian.AcademianWorkDates.GetLength(1); j++)
+                for (int j = 0; j < minAcademian.AcademianWorkDates.GetLength(1); j++)
                 {
                     for(int i=0;i<minAcademian.AcademianWorkDates.GetLength(0) - 2; i++)
                     {
                         //şimdilik tüm dersler 3 saat kabul edildi.
 
-                        bool academianBool = minAcademian.AcademianWorkDates[i, j] == true && onePeriod.facultyLessonDates[i, j] == true &&
-                            minAcademian.AcademianWorkDates[i + 1, j] == true && onePeriod.facultyLessonDates[i + 1, j] == true &&
-                            minAcademian.AcademianWorkDates[i + 2, j] == true && onePeriod.facultyLessonDates[i + 2, j] == true;
+                        bool academianBool = minAcademian.AcademianWorkDates[i, j] == true && onePeriod.facultyLessonDates[i, j].dateavailability == true &&
+                            minAcademian.AcademianWorkDates[i + 1, j] == true && onePeriod.facultyLessonDates[i + 1, j].dateavailability == true &&
+                            minAcademian.AcademianWorkDates[i + 2, j] == true && onePeriod.facultyLessonDates[i + 2, j].dateavailability == true;
 
                         bool classbool = oneClass.classDates[i,j] == true && oneClass.classDates[i + 1,j] == true && oneClass.classDates[i+2,j]== true;
 
@@ -137,13 +145,26 @@ namespace Faculty_Course_scheduler
                             minAcademian.AcademianWorkDates[i + 1, j] = false;
                             minAcademian.AcademianWorkDates[i + 2, j] = false;
 
-                            allAcademians.Remove(minAcademian);
+                            allAcademians.Remove(minAcademian); //akademisyen bir daha seçilmesin diye kaldır.
                             MessageBox.Show("diziden kaldırma başarılı");
 
                             oneClass.classDates[i, j] = false;
                             oneClass.classDates[i+1,j] = false;
                             oneClass.classDates[i+2,j] = false;
 
+                            onePeriod.facultyLessonDates[i,j].dateavailability = false;
+                            onePeriod.facultyLessonDates[i+1, j].dateavailability = false;
+                            onePeriod.facultyLessonDates[i+1, j].dateavailability = false;
+
+                            onePeriod.facultyLessonDates[i, j].lessonAcademian = minAcademian.AcademianName;
+                            onePeriod.facultyLessonDates[i + 1, j].lessonAcademian = minAcademian.AcademianName;
+                            onePeriod.facultyLessonDates[i + 2, j].lessonAcademian = minAcademian.AcademianName;
+
+                            onePeriod.facultyLessonDates[i, j].lessonClass = oneClass.className;
+                            onePeriod.facultyLessonDates[i+1, j].lessonClass = oneClass.className;
+                            onePeriod.facultyLessonDates[i+2, j].lessonClass = oneClass.className;
+
+                            MessageBox.Show("galiba oluyor");
                             breakControl = true;
                             break;
                         }
@@ -152,11 +173,18 @@ namespace Faculty_Course_scheduler
                         randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
                         oneClass = allClass[randomClass];   //index değerindeki classı al
 
-                        if(breakControl = true)
+                        if(breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
                         {
+                            MessageBox.Show("galiba oluyor 2");
                             break;
                         }
                     }
+                    if (breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
+                    {
+                        MessageBox.Show("galiba oluyor 3");
+                        break;
+                    }
+
                 }
                 minAcademian.UpdateWorkDates();
                 oneClass.UpdateClassDates();

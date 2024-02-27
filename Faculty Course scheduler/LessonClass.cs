@@ -20,19 +20,21 @@ namespace Faculty_Course_scheduler
         //Bilgisayar mühendisliği 1. sınıf, 2.sınıf gibi düşün
         public string PeriodName;      //kod içerisinde otomatik oluşturulacak ve bilgisayar müh 1.sınıf, 2. sınıf gibi bir etkisi olucak.
         public List<LessonClass> Lessons;   //ders listesi olucak
-        public bool[,] facultyLessonDates;  //ders tarihleri olucak.
+        public oneLessonDateClass[,] facultyLessonDates;  //ders tarihleri olucak.
         public string periodFaculty;
         public int periodStudentCapacity;
 
         public onePeriodFacultyClass()
         {
-            facultyLessonDates = new bool[10, 5];
+            facultyLessonDates = new oneLessonDateClass[10, 5];
             
             for(int j=0; j < 5; j++)
             {
                 for(int i=0; i < 10; i++)
                 {
-                    facultyLessonDates[i,j] = true;
+                    oneLessonDateClass lessonDateInfo = new oneLessonDateClass();
+                    facultyLessonDates[i,j] = lessonDateInfo;
+                    facultyLessonDates[i,j].dateavailability = true;
                 }
             }
         }
@@ -40,7 +42,9 @@ namespace Faculty_Course_scheduler
 
     class oneLessonDateClass
     {
-       
+        public bool dateavailability;
+        public string lessonAcademian;
+        public string lessonClass;
     }
 
 }

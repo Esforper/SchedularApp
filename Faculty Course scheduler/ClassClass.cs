@@ -13,7 +13,7 @@ namespace Faculty_Course_scheduler
         public int classCapacity;
         public bool[,] classDates;
 
-        Database db = new Database();//database classı çağır.
+        
         public ClassClass()
         {
             classDates = new bool[10, 5];   //10 satır 5 sütun
@@ -36,6 +36,7 @@ namespace Faculty_Course_scheduler
 
         public void UpdateClassDates()  //database yi direkt güncelliyor aslında, dateyi güncellemiyor
         {
+            Database db = new Database();//database classı çağır.
             db.DeleteClass(this.className); //classı sil
             db.saveClass(this); //classı tekrar kaydet
             MessageBox.Show("güncelleme başarılı");
