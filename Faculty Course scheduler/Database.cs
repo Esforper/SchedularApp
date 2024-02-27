@@ -286,5 +286,10 @@ internal class Database
         }
     }
 
+    public onePeriodFacultyClass GetOneSection(string sectionName)
+    {
+        AllPeriodLessons = LoadLessonPeriodDataFromJson();
+        return AllPeriodLessons.First(sec => sec.PeriodName == sectionName);
+    }
 
 }

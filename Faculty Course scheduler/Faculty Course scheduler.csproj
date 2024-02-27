@@ -67,6 +67,12 @@
     <Compile Include="Controller\AcademianInfoPageControl.Designer.cs">
       <DependentUpon>AcademianInfoPageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\sectionInfoPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\sectionInfoPage.Designer.cs">
+      <DependentUpon>sectionInfoPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="MakeSchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controller\AcademianInfoPageControl.resx">
       <DependentUpon>AcademianInfoPageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\sectionInfoPage.resx">
+      <DependentUpon>sectionInfoPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

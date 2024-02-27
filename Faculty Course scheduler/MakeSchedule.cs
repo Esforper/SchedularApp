@@ -105,7 +105,7 @@ namespace Faculty_Course_scheduler
 
             //tüm sınıflar çağırılabilir, her ders için rastgele bir sınıf denenebilir.
 
-            foreach(LessonClass lesoon in onePeriod.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye al.
+            foreach(LessonClass lesson in onePeriod.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye al.
             {
                 int allClassNumber = allClass.Count();  //tüm sınıfların sayısını al
                 var rand = new Random();    //random tanımla    
@@ -164,12 +164,15 @@ namespace Faculty_Course_scheduler
                             onePeriod.facultyLessonDates[i+1, j].lessonClass = oneClass.className;
                             onePeriod.facultyLessonDates[i+2, j].lessonClass = oneClass.className;
 
+                            onePeriod.facultyLessonDates[i, j].lessonName = lesson.lessonName;
+                            onePeriod.facultyLessonDates[i + 1, j].lessonClass = lesson.lessonName;
+                            onePeriod.facultyLessonDates[i + 2, j].lessonClass = lesson.lessonName;
+
                             MessageBox.Show("galiba oluyor");
                             breakControl = true;
                             break;
                         }
  
-
                         randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
                         oneClass = allClass[randomClass];   //index değerindeki classı al
 
@@ -186,9 +189,10 @@ namespace Faculty_Course_scheduler
                     }
 
                 }
+
                 minAcademian.UpdateWorkDates();
                 oneClass.UpdateClassDates();
-
+                database.SavePeriodLessonDataToJson(onePeriod);
 
             }
 

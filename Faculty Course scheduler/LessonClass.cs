@@ -38,6 +38,17 @@ namespace Faculty_Course_scheduler
                 }
             }
         }
+
+        public void UpdateOneSection()
+        {
+            /*
+            Database db = new Database();
+            db.DeleteAcademian(this.AcademianName);
+            db.SaveAcademianDataToJson(this);
+            MessageBox.Show("güncelleme başarılı");
+            // şimdilik dursun ama değişecek
+             */
+        }
     }
 
     class oneLessonDateClass
@@ -45,6 +56,7 @@ namespace Faculty_Course_scheduler
         public bool dateavailability;
         public string lessonAcademian;
         public string lessonClass;
+        public string lessonName;
     }
 
 }
