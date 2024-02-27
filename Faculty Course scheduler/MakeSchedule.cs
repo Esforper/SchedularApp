@@ -117,6 +117,8 @@ namespace Faculty_Course_scheduler
                     }
                 }
 
+                bool breakControl = false;
+
                 for(int j = 0; j < minAcademian.AcademianWorkDates.GetLength(1); j++)
                 {
                     for(int i=0;i<minAcademian.AcademianWorkDates.GetLength(0) - 2; i++)
@@ -142,15 +144,22 @@ namespace Faculty_Course_scheduler
                             oneClass.classDates[i+1,j] = false;
                             oneClass.classDates[i+2,j] = false;
 
-
+                            breakControl = true;
+                            break;
                         }
  
+
                         randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
                         oneClass = allClass[randomClass];   //index değerindeki classı al
 
+                        if(breakControl = true)
+                        {
+                            break;
+                        }
                     }
                 }
                 minAcademian.UpdateWorkDates();
+                oneClass.UpdateClassDates();
 
 
             }
