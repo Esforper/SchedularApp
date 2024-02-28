@@ -271,6 +271,7 @@ internal class Database
 
     public void SavePeriodLessonDataToJson(onePeriodFacultyClass onePeriod)   //akademisyeni databaseye kaydeder
     {
+        AllPeriodLessons = LoadLessonPeriodDataFromJson();
         //akademisyeni akademisyen listesine ekler, bilgilerini json formatına dönüştürür. json dosyasına bilgiyi yazar.
         try
         {
@@ -278,7 +279,7 @@ internal class Database
             string jsonData = JsonConvert.SerializeObject(AllPeriodLessons, Formatting.Indented);  //bilgileri json formatına getir
             File.WriteAllText(jsonPeriodLessonFilePath, jsonData); //bilgileri json dosyasına yaz
 
-            MessageBox.Show("Veritabanına kaydedildi");
+            MessageBox.Show("Section Ders Programı Veritabanına kaydedildi");
         }
         catch (Exception ex)
         {

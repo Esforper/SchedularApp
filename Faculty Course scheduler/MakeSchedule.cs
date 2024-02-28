@@ -57,7 +57,7 @@ namespace Faculty_Course_scheduler
 
         }
 
-        onePeriodFacultyClass onePeriod = new onePeriodFacultyClass();    //bilgisayar müh 1. sınıf gibi 
+        onePeriodFacultyClass onePeriod;  //bilgisayar müh 1. sınıf gibi 
 
         private void findFacultyBtn_Click(object sender, EventArgs e)
         {
@@ -77,7 +77,8 @@ namespace Faculty_Course_scheduler
             int selectedPeriodInt = selectedPeriod + (selectedClass - 1) * 2;   
 
             var selectedPeriodLessons = selectedFaculty.facultyLessons[selectedPeriodInt];
-            
+
+            onePeriod = new onePeriodFacultyClass();
             onePeriod.Lessons = selectedPeriodLessons;  //yeni oluşturulan period classına dersleri koy.
             onePeriod.PeriodName = facultyPeriodName;   //fakülte - sınıf - dönem bilgisi
             onePeriod.periodFaculty = facultyInfo;      //hangi fakültenin
@@ -94,7 +95,7 @@ namespace Faculty_Course_scheduler
         {
             var allAcademians = database.LoadAcademianDataFromJson();   //önce tüm akademisyenleri çağır
             var allClass = database.LoadClassDataFromJson();    //tüm sınıfları çağır
-
+            var facultyAcademians = allAcademians.FindAll(a => a.AcademianFaculty == onePeriod.periodFaculty).ToList();
             /** Kurallar
              * Her ders için bir hoca olmalı
              * bir ders bir sınıfta olmalı
@@ -116,7 +117,7 @@ namespace Faculty_Course_scheduler
                 var minAcademian = new AcademianClass();    //en az müsait olan akademisyen için sonradan değiştirilmek üzere önce boş bir akademisyen oluştur
                 int minAvailable = 50;  //önce max müsaitlik olan 50 den başla
 
-                foreach (AcademianClass academian in allAcademians)     //akademisyenleri döndür
+                foreach (AcademianClass academian in facultyAcademians)     //akademisyenleri döndür
                 {
                     if (academian.academianAvailableTime() < minAvailable)  //eğer bir akademisyen mevcut müsaitlikten daha az müsaitse 
                     {
@@ -153,16 +154,16 @@ namespace Faculty_Course_scheduler
                             minAcademian.AcademianWorkDates[i + 1, j] = false;
                             minAcademian.AcademianWorkDates[i + 2, j] = false;
 
-                            allAcademians.Remove(minAcademian); //akademisyen bir daha seçilmesin diye kaldır.
+                            facultyAcademians.Remove(minAcademian); //akademisyen bir daha seçilmesin diye kaldır.
                             MessageBox.Show("diziden kaldırma başarılı");
 
                             oneClass.classDates[i, j] = false;
-                            oneClass.classDates[i+1,j] = false;
-                            oneClass.classDates[i+2,j] = false;
+                            oneClass.classDates[i + 1,j] = false;
+                            oneClass.classDates[i + 2,j] = false;
 
-                            onePeriod.facultyLessonDates[i,j].dateavailability = false;
-                            onePeriod.facultyLessonDates[i+1, j].dateavailability = false;
-                            onePeriod.facultyLessonDates[i+1, j].dateavailability = false;
+                            onePeriod.facultyLessonDates[i , j].dateavailability = false;
+                            onePeriod.facultyLessonDates[i + 1, j].dateavailability = false;
+                            onePeriod.facultyLessonDates[i + 2, j].dateavailability = false;
 
                             onePeriod.facultyLessonDates[i, j].lessonAcademian = minAcademian.AcademianName;
                             onePeriod.facultyLessonDates[i + 1, j].lessonAcademian = minAcademian.AcademianName;
@@ -197,14 +198,12 @@ namespace Faculty_Course_scheduler
                     }
 
                 }
-
                 minAcademian.UpdateWorkDates();
                 oneClass.UpdateClassDates();
-                database.SavePeriodLessonDataToJson(onePeriod);
-
             }
 
-            
+            database.SavePeriodLessonDataToJson(onePeriod); //tüm dersler işlendikten sonra kaydet.
+
         }
     }
 }
