@@ -133,6 +133,14 @@ namespace Faculty_Course_scheduler
                     {
                         //şimdilik tüm dersler 3 saat kabul edildi.
 
+                        /*YAPILACAKLAR
+                         *BİR KERE OLUŞTURMASI GEREKEN SECTİONU ÇOK KEZ YAPIYOR.
+                         *SADECE AVAİBLEDATE TRUE DÖNÜYOR, KALANLARI NULL DÖNÜYOR
+                         *INFO SHOWA SECTİON INFO GÖRÜNTÜLEME SAYFASI EKLENECEK
+                         *
+                         */
+
+
                         bool academianBool = minAcademian.AcademianWorkDates[i, j] == true && onePeriod.facultyLessonDates[i, j].dateavailability == true &&
                             minAcademian.AcademianWorkDates[i + 1, j] == true && onePeriod.facultyLessonDates[i + 1, j].dateavailability == true &&
                             minAcademian.AcademianWorkDates[i + 2, j] == true && onePeriod.facultyLessonDates[i + 2, j].dateavailability == true;

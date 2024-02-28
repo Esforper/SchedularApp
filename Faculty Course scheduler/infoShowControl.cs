@@ -53,6 +53,19 @@ namespace Faculty_Course_scheduler
 
             }
 
+            foreach (onePeriodFacultyClass section in database.AllPeriodLessons)
+            {
+                Button btn = new Button();
+                sectionPanel.Controls.Add(btn);
+                btn.Size = defaultBtn.Size;
+                btn.Margin = defaultBtn.Margin;
+                btn.Text = section.PeriodName;
+                btn.Click += (s, ev) => {
+                    OpenTabControlForSection(section);
+                };
+
+            }
+
         }
 
         private void OpenTabControlForAcademian(AcademianClass academian)
@@ -88,6 +101,23 @@ namespace Faculty_Course_scheduler
 
             }
 
+        }
+
+        private void OpenTabControlForSection(onePeriodFacultyClass section)
+        {
+
+            TabPage tabPage = new TabPage(section.PeriodName);
+            if (!IsTabPageAlreadyOpen(tabControl1, section.PeriodName))
+            {
+                // Oluşturulan TabPage'i TabControl'e ekleyin
+                tabControl1.TabPages.Add(tabPage);
+                tabControl1.SelectedTab = tabPage;
+
+                sectionInfoPage sectionInfo = new sectionInfoPage(section.PeriodName);
+                tabPage.Controls.Add(sectionInfo);
+                sectionInfo.Dock = DockStyle.Fill;
+
+            }
         }
 
 

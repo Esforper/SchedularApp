@@ -102,6 +102,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "sectionInfoPage";
             this.Size = new System.Drawing.Size(1389, 651);
+            this.Load += new System.EventHandler(this.sectionInfoPage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

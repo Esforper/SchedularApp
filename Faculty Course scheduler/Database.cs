@@ -28,7 +28,7 @@ internal class Database
         jsonAcademianFilePath = Path.Combine(folderPath, "academiansData.json");
         jsonClassFilePath = Path.Combine(folderPath, "classesData.json");
         jsonFacultyFilePath = Path.Combine(folderPath, "facultiesData.json");
-        jsonPeriodLessonFilePath = Path.Combine(folderPath, "onePeriodLessonsData");
+        jsonPeriodLessonFilePath = Path.Combine(folderPath, "onePeriodLessonsData.json");
 
         //dosya kontrolleri
         if (!File.Exists(jsonAcademianFilePath))

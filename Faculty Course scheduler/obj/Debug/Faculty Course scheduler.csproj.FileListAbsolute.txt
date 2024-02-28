@@ -18,3 +18,4 @@ C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\
 C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.infoShowControl.resources
 C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.Controller.AcademianInfoPageControl.resources
 C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.MakeSchedule.resources
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.Controller.sectionInfoPage.resources

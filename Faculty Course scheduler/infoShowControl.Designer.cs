@@ -36,11 +36,15 @@
             this.classPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.PeriodPage = new System.Windows.Forms.TabPage();
+            this.sectionPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.academianPanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.classPanel.SuspendLayout();
+            this.PeriodPage.SuspendLayout();
+            this.sectionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -123,6 +127,7 @@
             // 
             // PeriodPage
             // 
+            this.PeriodPage.Controls.Add(this.sectionPanel);
             this.PeriodPage.Location = new System.Drawing.Point(4, 29);
             this.PeriodPage.Name = "PeriodPage";
             this.PeriodPage.Padding = new System.Windows.Forms.Padding(3);
@@ -130,6 +135,27 @@
             this.PeriodPage.TabIndex = 2;
             this.PeriodPage.Text = "Bölüm - Sınıflar";
             this.PeriodPage.UseVisualStyleBackColor = true;
+            // 
+            // sectionPanel
+            // 
+            this.sectionPanel.Controls.Add(this.button2);
+            this.sectionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sectionPanel.Location = new System.Drawing.Point(3, 3);
+            this.sectionPanel.Name = "sectionPanel";
+            this.sectionPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.sectionPanel.Size = new System.Drawing.Size(1403, 685);
+            this.sectionPanel.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(20, 20);
+            this.button2.Margin = new System.Windows.Forms.Padding(10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(202, 47);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             // 
             // infoShowControl
             // 
@@ -145,6 +171,8 @@
             this.academianPanel.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.classPanel.ResumeLayout(false);
+            this.PeriodPage.ResumeLayout(false);
+            this.sectionPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -159,5 +187,7 @@
         private System.Windows.Forms.FlowLayoutPanel classPanel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage PeriodPage;
+        private System.Windows.Forms.FlowLayoutPanel sectionPanel;
+        private System.Windows.Forms.Button button2;
     }
 }
