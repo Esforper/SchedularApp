@@ -127,9 +127,9 @@ namespace Faculty_Course_scheduler
 
                 bool breakControl = false;
 
-                for (int j = 0; j < minAcademian.AcademianWorkDates.GetLength(1); j++)
+                for (int j = 0; j < minAcademian.AcademianWorkDates.GetLength(1); j++)  //pazartesi , salı gibi günleri döndür
                 {
-                    for(int i=0;i<minAcademian.AcademianWorkDates.GetLength(0) - 2; i++)
+                    for(int i=0;i<minAcademian.AcademianWorkDates.GetLength(0) - 2; i++)    //saatleri döndür.
                     {
                         //şimdilik tüm dersler 3 saat kabul edildi.
 

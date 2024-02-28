@@ -57,8 +57,8 @@ namespace Faculty_Course_scheduler
             {
                 Button btn = new Button();
                 sectionPanel.Controls.Add(btn);
-                btn.Size = defaultBtn.Size;
-                btn.Margin = defaultBtn.Margin;
+                btn.Size = sectionDefaultBtn.Size;
+                btn.Margin = sectionDefaultBtn.Margin;
                 btn.Text = section.PeriodName;
                 btn.Click += (s, ev) => {
                     OpenTabControlForSection(section);
