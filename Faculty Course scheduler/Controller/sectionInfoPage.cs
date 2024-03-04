@@ -26,7 +26,6 @@ namespace Faculty_Course_scheduler.Controller
                     cellColors[i, j] = section.facultyLessonDates[i, j].dateavailability;
                 }
             }
-
         }
         public bool[,] cellColors = new bool[10,5];
 
@@ -38,11 +37,15 @@ namespace Faculty_Course_scheduler.Controller
                 for (int j = 0; j < 5; j++)
                 {
                     Label label = new Label();
+
                     label.AutoSize = false;
+                    
                     label.Dock = DockStyle.Fill;
+
                     //label.Text = "Label " + (i * 5 + j + 1);
 
-                    label.Text = saatAyarla(saatControl);
+                    label.Text = saatAyarla(saatControl) + "\n" + section.facultyLessonDates[i, j].lessonAcademian + "\n" + 
+                        section.facultyLessonDates[i, j].lessonClass;
                     saatControl++;
 
                     label.TextAlign = ContentAlignment.MiddleCenter;
@@ -54,7 +57,6 @@ namespace Faculty_Course_scheduler.Controller
                     else
                     {
                         label.BackColor = Color.Gray;
-
                     }
                 }
             }
