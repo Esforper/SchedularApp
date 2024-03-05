@@ -193,13 +193,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.lessonTextBox = new System.Windows.Forms.TextBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -224,7 +219,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -232,7 +227,6 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(20, 20);
             this.tabControl1.Name = "tabControl1";
@@ -268,7 +262,7 @@
             // facultiesComboBox
             // 
             this.facultiesComboBox.FormattingEnabled = true;
-            this.facultiesComboBox.Location = new System.Drawing.Point(1028, 21);
+            this.facultiesComboBox.Location = new System.Drawing.Point(902, 21);
             this.facultiesComboBox.Name = "facultiesComboBox";
             this.facultiesComboBox.Size = new System.Drawing.Size(172, 33);
             this.facultiesComboBox.TabIndex = 44;
@@ -277,7 +271,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(920, 21);
+            this.label8.Location = new System.Drawing.Point(794, 21);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 29);
             this.label8.TabIndex = 43;
@@ -286,7 +280,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(543, 15);
+            this.textBox1.Location = new System.Drawing.Point(426, 16);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(268, 38);
             this.textBox1.TabIndex = 3;
@@ -305,7 +299,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(320, 20);
+            this.label1.Location = new System.Drawing.Point(197, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 29);
             this.label1.TabIndex = 2;
@@ -1690,14 +1684,9 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.splitContainer2.Panel1.Controls.Add(this.facultyPeriodTextBox);
-            this.splitContainer2.Panel1.Controls.Add(this.label26);
+            this.splitContainer2.Panel1.Controls.Add(this.panel3);
             this.splitContainer2.Panel1.Controls.Add(this.facultyContinueBtn);
             this.splitContainer2.Panel1.Controls.Add(this.label28);
-            this.splitContainer2.Panel1.Controls.Add(this.label29);
-            this.splitContainer2.Panel1.Controls.Add(this.label30);
-            this.splitContainer2.Panel1.Controls.Add(this.facultyNameTextBox);
-            this.splitContainer2.Panel1.Controls.Add(this.facultyStudentNumberTextBox);
             // 
             // splitContainer2.Panel2
             // 
@@ -1724,7 +1713,7 @@
             // 
             // facultyPeriodTextBox
             // 
-            this.facultyPeriodTextBox.Location = new System.Drawing.Point(213, 147);
+            this.facultyPeriodTextBox.Location = new System.Drawing.Point(212, 93);
             this.facultyPeriodTextBox.Name = "facultyPeriodTextBox";
             this.facultyPeriodTextBox.Size = new System.Drawing.Size(210, 30);
             this.facultyPeriodTextBox.TabIndex = 22;
@@ -1732,7 +1721,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(8, 150);
+            this.label26.Location = new System.Drawing.Point(7, 96);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(199, 25);
             this.label26.TabIndex = 21;
@@ -1740,9 +1729,9 @@
             // 
             // facultyContinueBtn
             // 
-            this.facultyContinueBtn.Location = new System.Drawing.Point(148, 204);
+            this.facultyContinueBtn.Location = new System.Drawing.Point(138, 180);
             this.facultyContinueBtn.Name = "facultyContinueBtn";
-            this.facultyContinueBtn.Size = new System.Drawing.Size(156, 33);
+            this.facultyContinueBtn.Size = new System.Drawing.Size(197, 40);
             this.facultyContinueBtn.TabIndex = 19;
             this.facultyContinueBtn.Text = "Devam Et";
             this.facultyContinueBtn.UseVisualStyleBackColor = true;
@@ -1750,19 +1739,18 @@
             // 
             // label28
             // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(194, 46);
+            this.label28.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label28.Location = new System.Drawing.Point(0, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(110, 25);
+            this.label28.Size = new System.Drawing.Size(472, 33);
             this.label28.TabIndex = 0;
             this.label28.Text = "Bölüm Ekle";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(94, 79);
+            this.label29.Location = new System.Drawing.Point(93, 25);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(113, 25);
             this.label29.TabIndex = 5;
@@ -1771,7 +1759,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(39, 115);
+            this.label30.Location = new System.Drawing.Point(38, 61);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(168, 25);
             this.label30.TabIndex = 6;
@@ -1779,21 +1767,21 @@
             // 
             // facultyNameTextBox
             // 
-            this.facultyNameTextBox.Location = new System.Drawing.Point(213, 74);
+            this.facultyNameTextBox.Location = new System.Drawing.Point(212, 20);
             this.facultyNameTextBox.Name = "facultyNameTextBox";
             this.facultyNameTextBox.Size = new System.Drawing.Size(210, 30);
             this.facultyNameTextBox.TabIndex = 7;
             // 
             // facultyStudentNumberTextBox
             // 
-            this.facultyStudentNumberTextBox.Location = new System.Drawing.Point(213, 110);
+            this.facultyStudentNumberTextBox.Location = new System.Drawing.Point(212, 56);
             this.facultyStudentNumberTextBox.Name = "facultyStudentNumberTextBox";
             this.facultyStudentNumberTextBox.Size = new System.Drawing.Size(210, 30);
             this.facultyStudentNumberTextBox.TabIndex = 8;
             // 
             // lessonLongTextBox
             // 
-            this.lessonLongTextBox.Location = new System.Drawing.Point(642, 269);
+            this.lessonLongTextBox.Location = new System.Drawing.Point(646, 255);
             this.lessonLongTextBox.Name = "lessonLongTextBox";
             this.lessonLongTextBox.Size = new System.Drawing.Size(230, 30);
             this.lessonLongTextBox.TabIndex = 30;
@@ -1802,7 +1790,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(458, 274);
+            this.label19.Location = new System.Drawing.Point(463, 258);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(178, 25);
             this.label19.TabIndex = 29;
@@ -1811,14 +1799,14 @@
             // lessonComboBox
             // 
             this.lessonComboBox.FormattingEnabled = true;
-            this.lessonComboBox.Location = new System.Drawing.Point(643, 229);
+            this.lessonComboBox.Location = new System.Drawing.Point(647, 215);
             this.lessonComboBox.Name = "lessonComboBox";
             this.lessonComboBox.Size = new System.Drawing.Size(229, 33);
             this.lessonComboBox.TabIndex = 28;
             // 
             // addFacultyBtn
             // 
-            this.addFacultyBtn.Location = new System.Drawing.Point(321, 491);
+            this.addFacultyBtn.Location = new System.Drawing.Point(320, 448);
             this.addFacultyBtn.Name = "addFacultyBtn";
             this.addFacultyBtn.Size = new System.Drawing.Size(275, 60);
             this.addFacultyBtn.TabIndex = 27;
@@ -1828,11 +1816,14 @@
             // 
             // lessonListBox
             // 
+            this.lessonListBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.lessonListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lessonListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lessonListBox.FormattingEnabled = true;
-            this.lessonListBox.ItemHeight = 25;
-            this.lessonListBox.Location = new System.Drawing.Point(33, 147);
+            this.lessonListBox.ItemHeight = 29;
+            this.lessonListBox.Location = new System.Drawing.Point(33, 138);
             this.lessonListBox.Name = "lessonListBox";
-            this.lessonListBox.Size = new System.Drawing.Size(414, 279);
+            this.lessonListBox.Size = new System.Drawing.Size(414, 261);
             this.lessonListBox.TabIndex = 26;
             // 
             // label27
@@ -1840,7 +1831,7 @@
             this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(146, 110);
+            this.label27.Location = new System.Drawing.Point(158, 110);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(74, 25);
             this.label27.TabIndex = 25;
@@ -1882,7 +1873,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label22.Location = new System.Drawing.Point(290, 12);
+            this.label22.Location = new System.Drawing.Point(290, 14);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(136, 31);
             this.label22.TabIndex = 21;
@@ -1890,7 +1881,7 @@
             // 
             // addLessonBtn
             // 
-            this.addLessonBtn.Location = new System.Drawing.Point(642, 305);
+            this.addLessonBtn.Location = new System.Drawing.Point(646, 291);
             this.addLessonBtn.Name = "addLessonBtn";
             this.addLessonBtn.Size = new System.Drawing.Size(111, 33);
             this.addLessonBtn.TabIndex = 20;
@@ -1903,7 +1894,7 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(637, 151);
+            this.label21.Location = new System.Drawing.Point(641, 137);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(96, 25);
             this.label21.TabIndex = 11;
@@ -1912,7 +1903,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(491, 229);
+            this.label17.Location = new System.Drawing.Point(495, 218);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(146, 25);
             this.label17.TabIndex = 14;
@@ -1921,7 +1912,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(537, 193);
+            this.label20.Location = new System.Drawing.Point(542, 179);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(99, 25);
             this.label20.TabIndex = 12;
@@ -1929,78 +1920,35 @@
             // 
             // lessonTextBox
             // 
-            this.lessonTextBox.Location = new System.Drawing.Point(642, 190);
+            this.lessonTextBox.Location = new System.Drawing.Point(646, 176);
             this.lessonTextBox.Name = "lessonTextBox";
             this.lessonTextBox.Size = new System.Drawing.Size(230, 30);
             this.lessonTextBox.TabIndex = 13;
             // 
-            // tabPage4
+            // panel3
             // 
-            this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.textBox2);
-            this.tabPage4.Controls.Add(this.label12);
-            this.tabPage4.Controls.Add(this.textBox3);
-            this.tabPage4.Controls.Add(this.label13);
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1389, 666);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(662, 367);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 33);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Sınıfı Ekle";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(671, 266);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 25);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Sınıf Ekle";
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.facultyNameTextBox);
+            this.panel3.Controls.Add(this.facultyPeriodTextBox);
+            this.panel3.Controls.Add(this.facultyStudentNumberTextBox);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Controls.Add(this.label30);
+            this.panel3.Controls.Add(this.label29);
+            this.panel3.Location = new System.Drawing.Point(28, 36);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(428, 133);
+            this.panel3.TabIndex = 23;
             // 
-            // textBox2
+            // panel4
             // 
-            this.textBox2.Location = new System.Drawing.Point(676, 331);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 30);
-            this.textBox2.TabIndex = 23;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(558, 298);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(96, 25);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Sınıf İsmi:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(676, 295);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(210, 30);
-            this.textBox3.TabIndex = 22;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(502, 334);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(152, 25);
-            this.label13.TabIndex = 21;
-            this.label13.Text = "Sınıf Kapasitesi:";
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(428, 3);
+            this.panel4.TabIndex = 24;
             // 
             // informationEntry
             // 
@@ -2037,13 +1985,12 @@
             this.flowLayoutPanel10.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -2211,16 +2158,11 @@
         private System.Windows.Forms.CheckBox checkBox_8;
         private System.Windows.Forms.CheckBox checkBox_9;
         private System.Windows.Forms.CheckBox checkBox_10;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox classCapacityTextBox;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox lessonLongTextBox;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

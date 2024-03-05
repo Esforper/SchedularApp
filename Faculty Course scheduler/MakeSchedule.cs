@@ -32,7 +32,6 @@ namespace Faculty_Course_scheduler
             {
                 FacultyClassNumberComboBox.Items.Add(i);
             }
-            
         }
 
         private void facultiesComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,6 +154,7 @@ namespace Faculty_Course_scheduler
                                 minAcademian.AcademianWorkDates[i + 2, j] = false;
                                 //seçili akademisyenin takvimini güncelle
 
+                                minAcademian.AcademianLessonCount++;
                                 facultyAcademians.Remove(minAcademian); //akademisyen bir daha seçilmesin diye kaldır.
                                 MessageBox.Show("Akademisyen listeden kaldırıldı");
 
