@@ -138,50 +138,50 @@ namespace Faculty_Course_scheduler
                     {
                         for (int i = 0; i < minAcademian.AcademianWorkDates.GetLength(0) - 2; i++)    //saatleri döndür.
                         {
-                            //şimdilik tüm dersler 3 saat kabul edildi.
-
-                            /*YAPILACAKLAR
-                             *BİR KERE OLUŞTURMASI GEREKEN SECTİONU ÇOK KEZ YAPIYOR.
-                             *SADECE AVAİBLEDATE TRUE DÖNÜYOR, KALANLARI NULL DÖNÜYOR
-                             *INFO SHOWA SECTİON INFO GÖRÜNTÜLEME SAYFASI EKLENECEK
-                             *
-                             */
-
 
                             bool academianBool = minAcademian.AcademianWorkDates[i, j] == true && onePeriod.facultyLessonDates[i, j].dateavailability == true &&
                                 minAcademian.AcademianWorkDates[i + 1, j] == true && onePeriod.facultyLessonDates[i + 1, j].dateavailability == true &&
                                 minAcademian.AcademianWorkDates[i + 2, j] == true && onePeriod.facultyLessonDates[i + 2, j].dateavailability == true;
+                            //akademisyen ve period müsaitliğini kontrol et.
 
                             bool classbool = oneClass.classDates[i, j] == true && oneClass.classDates[i + 1, j] == true && oneClass.classDates[i + 2, j] == true;
+                            //sınıf müsaitliğini kontrol et
 
                             if (academianBool == true && classbool == true)
                             {
                                 minAcademian.AcademianWorkDates[i, j] = false;
                                 minAcademian.AcademianWorkDates[i + 1, j] = false;
                                 minAcademian.AcademianWorkDates[i + 2, j] = false;
+                                //seçili akademisyenin takvimini güncelle
 
                                 facultyAcademians.Remove(minAcademian); //akademisyen bir daha seçilmesin diye kaldır.
-                                MessageBox.Show("diziden kaldırma başarılı");
+                                MessageBox.Show("Akademisyen listeden kaldırıldı");
+
 
                                 oneClass.classDates[i, j] = false;
                                 oneClass.classDates[i + 1, j] = false;
                                 oneClass.classDates[i + 2, j] = false;
+                                //sınıf takvimini güncelle
 
                                 onePeriod.facultyLessonDates[i, j].dateavailability = false;
                                 onePeriod.facultyLessonDates[i + 1, j].dateavailability = false;
                                 onePeriod.facultyLessonDates[i + 2, j].dateavailability = false;
+                                //section takvimini güncelle
 
                                 onePeriod.facultyLessonDates[i, j].lessonAcademian = minAcademian.AcademianName;
                                 onePeriod.facultyLessonDates[i + 1, j].lessonAcademian = minAcademian.AcademianName;
                                 onePeriod.facultyLessonDates[i + 2, j].lessonAcademian = minAcademian.AcademianName;
+                                //section ders akademisyenini ata
 
                                 onePeriod.facultyLessonDates[i, j].lessonClass = oneClass.className;
                                 onePeriod.facultyLessonDates[i + 1, j].lessonClass = oneClass.className;
                                 onePeriod.facultyLessonDates[i + 2, j].lessonClass = oneClass.className;
+                                //class değerini ata
 
-                                onePeriod.facultyLessonDates[i, j].lessonName = lesson.lessonName;
-                                onePeriod.facultyLessonDates[i + 1, j].lessonClass = lesson.lessonName;
+                                onePeriod.facultyLessonDates[i, j].lessonName = lesson.lessonName; //ders ismi ata
+                                onePeriod.facultyLessonDates[i + 1, j].lessonClass = lesson.lessonName; //yanlışlıkla class ismine ders ismi eklendi
                                 onePeriod.facultyLessonDates[i + 2, j].lessonClass = lesson.lessonName;
+                                
 
                                 MessageBox.Show("galiba oluyor");
                                 breakControl = true;
