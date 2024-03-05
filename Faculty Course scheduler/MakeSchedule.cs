@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace Faculty_Course_scheduler
@@ -183,37 +184,38 @@ namespace Faculty_Course_scheduler
                                 onePeriod.facultyLessonDates[i + 2, j].lessonClass = lesson.lessonName;
                                 
 
-                                MessageBox.Show("galiba oluyor");
+                                MessageBox.Show("bir ders için sınıf - akademisyen - section uyumluluğu başarılı");
                                 breakControl = true;
                                 break;
                             }
 
+                            //eğer sınıf uygun değilse yeni bir sınıf ata
                             randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
                             oneClass = allClass[randomClass];   //index değerindeki classı al
 
                             if (breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
                             {
-                                MessageBox.Show("galiba oluyor 2");
+                                //MessageBox.Show("2. Kontrol Noktası");
                                 break;
                             }
                         }
                         if (breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
                         {
-                            MessageBox.Show("galiba oluyor 3");
+                            MessageBox.Show("2- Kontrol Noktası");
                             break;
                         }
 
                     }
-                    minAcademian.UpdateWorkDates();
-                    oneClass.UpdateClassDates();
+                    minAcademian.UpdateWorkDates(); //akademisyen takvimini database de güncelle
+                    oneClass.UpdateClassDates();    //sınıf takvimini database de güncelle
                 }
 
                 database.SavePeriodLessonDataToJson(onePeriod); //tüm dersler işlendikten sonra kaydet.
-
+                MessageBox.Show("ders kaydedildi");
             }
             else
             {
-                MessageBox.Show("Bu isimde bir ders programı oluşturulmuştur");
+                MessageBox.Show($"{onePeriod.PeriodName} isimde bir ders programı oluşturulmuştur");
             }
 
         }

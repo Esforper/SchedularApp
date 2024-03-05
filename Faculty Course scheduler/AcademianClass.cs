@@ -10,10 +10,12 @@ namespace Faculty_Course_scheduler
         public string AcademianName { get; set; }
         public string AcademianFaculty { get; set; }
         public bool[,] AcademianWorkDates { get; set; }
+        public int AcademianLessonCount { get; set; }
 
         public AcademianClass()
         {
             AcademianWorkDates = new bool[10, 5];
+            AcademianLessonCount = 0;
         }
 
         public void SetAcademian(string academianName,bool[,] dates,string academianfaculty)
