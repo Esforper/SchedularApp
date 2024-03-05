@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.academianNameLabel = new System.Windows.Forms.Label();
+            this.sectionNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DateTable = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
@@ -37,7 +37,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.academianNameLabel);
+            this.panel1.Controls.Add(this.sectionNameLabel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -45,22 +45,22 @@
             this.panel1.Size = new System.Drawing.Size(1389, 85);
             this.panel1.TabIndex = 4;
             // 
-            // academianNameLabel
+            // sectionNameLabel
             // 
-            this.academianNameLabel.AutoSize = true;
-            this.academianNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.academianNameLabel.Location = new System.Drawing.Point(580, 26);
-            this.academianNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.academianNameLabel.Name = "academianNameLabel";
-            this.academianNameLabel.Size = new System.Drawing.Size(193, 29);
-            this.academianNameLabel.TabIndex = 1;
-            this.academianNameLabel.Text = "<Section Name>";
+            this.sectionNameLabel.AutoSize = true;
+            this.sectionNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sectionNameLabel.Location = new System.Drawing.Point(608, 28);
+            this.sectionNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.sectionNameLabel.Name = "sectionNameLabel";
+            this.sectionNameLabel.Size = new System.Drawing.Size(193, 29);
+            this.sectionNameLabel.TabIndex = 1;
+            this.sectionNameLabel.Text = "<Section Name>";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(401, 26);
+            this.label1.Location = new System.Drawing.Point(429, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 29);
@@ -99,7 +99,7 @@
             this.Controls.Add(this.DateTable);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "sectionInfoPage";
             this.Size = new System.Drawing.Size(1389, 651);
             this.Load += new System.EventHandler(this.sectionInfoPage_Load);
@@ -112,7 +112,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label academianNameLabel;
+        private System.Windows.Forms.Label sectionNameLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel DateTable;
     }

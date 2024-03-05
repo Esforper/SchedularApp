@@ -31,6 +31,7 @@ namespace Faculty_Course_scheduler.Controller
 
         private void sectionInfoPage_Load(object sender, EventArgs e)
         {
+            sectionNameLabel.Text = section.PeriodName;
             int saatControl = 0;
             for (int i = 0; i < 10; i++)
             {

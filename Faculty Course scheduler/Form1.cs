@@ -24,8 +24,10 @@ namespace Faculty_Course_scheduler
 
 		private void ıconButton1_Click(object sender, EventArgs e)
 		{
+			
 			informationEntry infoEntyPage = new informationEntry();
-			mainPanel.Controls.Add(infoEntyPage);
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(infoEntyPage);
 			infoEntyPage.Dock= DockStyle.Fill;
 			infoEntyPage.BringToFront();
 
@@ -34,7 +36,8 @@ namespace Faculty_Course_scheduler
         private void infoShowBtn_Click(object sender, EventArgs e)
         {
 			infoShowControl infoShowPage = new infoShowControl();
-			mainPanel.Controls.Add(infoShowPage);
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(infoShowPage);
 			infoShowPage.Dock = DockStyle.Fill;
 			infoShowPage.BringToFront();
         }
@@ -42,6 +45,7 @@ namespace Faculty_Course_scheduler
         private void makeScheduleBtn_Click(object sender, EventArgs e)
         {
             MakeSchedule schedulePage = new MakeSchedule();
+            mainPanel.Controls.Clear();
             mainPanel.Controls.Add(schedulePage);
             schedulePage.Dock = DockStyle.Fill;
             schedulePage.BringToFront();
