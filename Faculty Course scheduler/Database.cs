@@ -292,5 +292,15 @@ internal class Database
         AllPeriodLessons = LoadLessonPeriodDataFromJson();
         return AllPeriodLessons.First(sec => sec.PeriodName == sectionName);
     }
+    public List<string> GetSectionNames()
+    {
+        AllPeriodLessons = LoadLessonPeriodDataFromJson();
+        List<string> sectionsNames = new List<string>();
+        foreach(onePeriodFacultyClass section in  AllPeriodLessons)
+        {
+            sectionsNames.Add(section.PeriodName);
+        }
+        return sectionsNames;
+    }
 
 }

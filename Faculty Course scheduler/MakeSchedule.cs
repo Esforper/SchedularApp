@@ -51,9 +51,6 @@ namespace Faculty_Course_scheduler
         private void springAutumnComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             findFacultyBtn.Enabled = true;
-            
-
-
 
         }
 
@@ -103,106 +100,121 @@ namespace Faculty_Course_scheduler
              * bir hoca derse girdikten sonra 2. derse giremez.
              * 
              */
-
+            bool nameControl = true;
             //tüm sınıflar çağırılabilir, her ders için rastgele bir sınıf denenebilir.
-
-            foreach(LessonClass lesson in onePeriod.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye al.
+            foreach(string sectionName in database.GetSectionNames())
             {
-                int allClassNumber = allClass.Count();  //tüm sınıfların sayısını al
-                var rand = new Random();    //random tanımla    
-                int randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
-                var oneClass = allClass[randomClass];   //index değerindeki classı al
-
-
-                var minAcademian = new AcademianClass();    //en az müsait olan akademisyen için sonradan değiştirilmek üzere önce boş bir akademisyen oluştur
-                int minAvailable = 50;  //önce max müsaitlik olan 50 den başla
-
-                foreach (AcademianClass academian in facultyAcademians)     //akademisyenleri döndür
+                if(onePeriod.PeriodName == sectionName)
                 {
-                    if (academian.academianAvailableTime() < minAvailable)  //eğer bir akademisyen mevcut müsaitlikten daha az müsaitse 
-                    {
-                        minAvailable = academian.academianAvailableTime();      //o akademisyeni seç ve müsaitlik parametresini güncelle
-                        minAcademian = academian;
-                    }
+                    nameControl = false;
                 }
-
-                bool breakControl = false;
-
-                for (int j = 0; j < minAcademian.AcademianWorkDates.GetLength(1); j++)  //pazartesi , salı gibi günleri döndür
-                {
-                    for(int i=0;i<minAcademian.AcademianWorkDates.GetLength(0) - 2; i++)    //saatleri döndür.
-                    {
-                        //şimdilik tüm dersler 3 saat kabul edildi.
-
-                        /*YAPILACAKLAR
-                         *BİR KERE OLUŞTURMASI GEREKEN SECTİONU ÇOK KEZ YAPIYOR.
-                         *SADECE AVAİBLEDATE TRUE DÖNÜYOR, KALANLARI NULL DÖNÜYOR
-                         *INFO SHOWA SECTİON INFO GÖRÜNTÜLEME SAYFASI EKLENECEK
-                         *
-                         */
-
-
-                        bool academianBool = minAcademian.AcademianWorkDates[i, j] == true && onePeriod.facultyLessonDates[i, j].dateavailability == true &&
-                            minAcademian.AcademianWorkDates[i + 1, j] == true && onePeriod.facultyLessonDates[i + 1, j].dateavailability == true &&
-                            minAcademian.AcademianWorkDates[i + 2, j] == true && onePeriod.facultyLessonDates[i + 2, j].dateavailability == true;
-
-                        bool classbool = oneClass.classDates[i,j] == true && oneClass.classDates[i + 1,j] == true && oneClass.classDates[i+2,j]== true;
-
-                        if (academianBool == true && classbool == true)
-                        {
-                            minAcademian.AcademianWorkDates[i, j] = false;
-                            minAcademian.AcademianWorkDates[i + 1, j] = false;
-                            minAcademian.AcademianWorkDates[i + 2, j] = false;
-
-                            facultyAcademians.Remove(minAcademian); //akademisyen bir daha seçilmesin diye kaldır.
-                            MessageBox.Show("diziden kaldırma başarılı");
-
-                            oneClass.classDates[i, j] = false;
-                            oneClass.classDates[i + 1,j] = false;
-                            oneClass.classDates[i + 2,j] = false;
-
-                            onePeriod.facultyLessonDates[i , j].dateavailability = false;
-                            onePeriod.facultyLessonDates[i + 1, j].dateavailability = false;
-                            onePeriod.facultyLessonDates[i + 2, j].dateavailability = false;
-
-                            onePeriod.facultyLessonDates[i, j].lessonAcademian = minAcademian.AcademianName;
-                            onePeriod.facultyLessonDates[i + 1, j].lessonAcademian = minAcademian.AcademianName;
-                            onePeriod.facultyLessonDates[i + 2, j].lessonAcademian = minAcademian.AcademianName;
-
-                            onePeriod.facultyLessonDates[i, j].lessonClass = oneClass.className;
-                            onePeriod.facultyLessonDates[i+1, j].lessonClass = oneClass.className;
-                            onePeriod.facultyLessonDates[i+2, j].lessonClass = oneClass.className;
-
-                            onePeriod.facultyLessonDates[i, j].lessonName = lesson.lessonName;
-                            onePeriod.facultyLessonDates[i + 1, j].lessonClass = lesson.lessonName;
-                            onePeriod.facultyLessonDates[i + 2, j].lessonClass = lesson.lessonName;
-
-                            MessageBox.Show("galiba oluyor");
-                            breakControl = true;
-                            break;
-                        }
- 
-                        randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
-                        oneClass = allClass[randomClass];   //index değerindeki classı al
-
-                        if(breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
-                        {
-                            MessageBox.Show("galiba oluyor 2");
-                            break;
-                        }
-                    }
-                    if (breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
-                    {
-                        MessageBox.Show("galiba oluyor 3");
-                        break;
-                    }
-
-                }
-                minAcademian.UpdateWorkDates();
-                oneClass.UpdateClassDates();
             }
 
-            database.SavePeriodLessonDataToJson(onePeriod); //tüm dersler işlendikten sonra kaydet.
+            if(nameControl == true)
+            {
+                foreach (LessonClass lesson in onePeriod.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye al.
+                {
+                    int allClassNumber = allClass.Count();  //tüm sınıfların sayısını al
+                    var rand = new Random();    //random tanımla    
+                    int randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
+                    var oneClass = allClass[randomClass];   //index değerindeki classı al
+
+
+                    var minAcademian = new AcademianClass();    //en az müsait olan akademisyen için sonradan değiştirilmek üzere önce boş bir akademisyen oluştur
+                    int minAvailable = 50;  //önce max müsaitlik olan 50 den başla
+
+                    foreach (AcademianClass academian in facultyAcademians)     //akademisyenleri döndür
+                    {
+                        if (academian.academianAvailableTime() < minAvailable)  //eğer bir akademisyen mevcut müsaitlikten daha az müsaitse 
+                        {
+                            minAvailable = academian.academianAvailableTime();      //o akademisyeni seç ve müsaitlik parametresini güncelle
+                            minAcademian = academian;
+                        }
+                    }
+
+                    bool breakControl = false;
+
+                    for (int j = 0; j < minAcademian.AcademianWorkDates.GetLength(1); j++)  //pazartesi , salı gibi günleri döndür
+                    {
+                        for (int i = 0; i < minAcademian.AcademianWorkDates.GetLength(0) - 2; i++)    //saatleri döndür.
+                        {
+                            //şimdilik tüm dersler 3 saat kabul edildi.
+
+                            /*YAPILACAKLAR
+                             *BİR KERE OLUŞTURMASI GEREKEN SECTİONU ÇOK KEZ YAPIYOR.
+                             *SADECE AVAİBLEDATE TRUE DÖNÜYOR, KALANLARI NULL DÖNÜYOR
+                             *INFO SHOWA SECTİON INFO GÖRÜNTÜLEME SAYFASI EKLENECEK
+                             *
+                             */
+
+
+                            bool academianBool = minAcademian.AcademianWorkDates[i, j] == true && onePeriod.facultyLessonDates[i, j].dateavailability == true &&
+                                minAcademian.AcademianWorkDates[i + 1, j] == true && onePeriod.facultyLessonDates[i + 1, j].dateavailability == true &&
+                                minAcademian.AcademianWorkDates[i + 2, j] == true && onePeriod.facultyLessonDates[i + 2, j].dateavailability == true;
+
+                            bool classbool = oneClass.classDates[i, j] == true && oneClass.classDates[i + 1, j] == true && oneClass.classDates[i + 2, j] == true;
+
+                            if (academianBool == true && classbool == true)
+                            {
+                                minAcademian.AcademianWorkDates[i, j] = false;
+                                minAcademian.AcademianWorkDates[i + 1, j] = false;
+                                minAcademian.AcademianWorkDates[i + 2, j] = false;
+
+                                facultyAcademians.Remove(minAcademian); //akademisyen bir daha seçilmesin diye kaldır.
+                                MessageBox.Show("diziden kaldırma başarılı");
+
+                                oneClass.classDates[i, j] = false;
+                                oneClass.classDates[i + 1, j] = false;
+                                oneClass.classDates[i + 2, j] = false;
+
+                                onePeriod.facultyLessonDates[i, j].dateavailability = false;
+                                onePeriod.facultyLessonDates[i + 1, j].dateavailability = false;
+                                onePeriod.facultyLessonDates[i + 2, j].dateavailability = false;
+
+                                onePeriod.facultyLessonDates[i, j].lessonAcademian = minAcademian.AcademianName;
+                                onePeriod.facultyLessonDates[i + 1, j].lessonAcademian = minAcademian.AcademianName;
+                                onePeriod.facultyLessonDates[i + 2, j].lessonAcademian = minAcademian.AcademianName;
+
+                                onePeriod.facultyLessonDates[i, j].lessonClass = oneClass.className;
+                                onePeriod.facultyLessonDates[i + 1, j].lessonClass = oneClass.className;
+                                onePeriod.facultyLessonDates[i + 2, j].lessonClass = oneClass.className;
+
+                                onePeriod.facultyLessonDates[i, j].lessonName = lesson.lessonName;
+                                onePeriod.facultyLessonDates[i + 1, j].lessonClass = lesson.lessonName;
+                                onePeriod.facultyLessonDates[i + 2, j].lessonClass = lesson.lessonName;
+
+                                MessageBox.Show("galiba oluyor");
+                                breakControl = true;
+                                break;
+                            }
+
+                            randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
+                            oneClass = allClass[randomClass];   //index değerindeki classı al
+
+                            if (breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
+                            {
+                                MessageBox.Show("galiba oluyor 2");
+                                break;
+                            }
+                        }
+                        if (breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
+                        {
+                            MessageBox.Show("galiba oluyor 3");
+                            break;
+                        }
+
+                    }
+                    minAcademian.UpdateWorkDates();
+                    oneClass.UpdateClassDates();
+                }
+
+                database.SavePeriodLessonDataToJson(onePeriod); //tüm dersler işlendikten sonra kaydet.
+
+            }
+            else
+            {
+                MessageBox.Show("Bu isimde bir ders programı oluşturulmuştur");
+            }
 
         }
     }
