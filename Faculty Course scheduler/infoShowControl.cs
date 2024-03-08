@@ -26,7 +26,13 @@ namespace Faculty_Course_scheduler
 
         private void infoShowControl_Load(object sender, EventArgs e)
         {
-            
+            filterComboBox.Items.Add("All Faculties");
+            foreach(string facultyName in database.getfaculties())
+            {
+                filterComboBox.Items.Add(facultyName);
+            }
+            filterComboBox.SelectedIndex = 0;
+
             foreach (AcademianClass academian in database.AllAcademians)
             {
                 Button btn = new Button();

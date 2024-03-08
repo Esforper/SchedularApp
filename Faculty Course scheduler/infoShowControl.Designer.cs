@@ -38,6 +38,8 @@
             this.PeriodPage = new System.Windows.Forms.TabPage();
             this.sectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.sectionDefaultBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.filterComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.academianPanel.SuspendLayout();
@@ -45,6 +47,7 @@
             this.classPanel.SuspendLayout();
             this.PeriodPage.SuspendLayout();
             this.sectionPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -64,6 +67,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.academianPanel);
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(10);
@@ -76,10 +80,10 @@
             // 
             this.academianPanel.Controls.Add(this.defaultBtn);
             this.academianPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.academianPanel.Location = new System.Drawing.Point(10, 10);
+            this.academianPanel.Location = new System.Drawing.Point(10, 51);
             this.academianPanel.Name = "academianPanel";
             this.academianPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.academianPanel.Size = new System.Drawing.Size(1389, 671);
+            this.academianPanel.Size = new System.Drawing.Size(1389, 630);
             this.academianPanel.TabIndex = 0;
             // 
             // defaultBtn
@@ -157,6 +161,24 @@
             this.sectionDefaultBtn.UseVisualStyleBackColor = true;
             this.sectionDefaultBtn.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.filterComboBox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1389, 41);
+            this.panel1.TabIndex = 3;
+            // 
+            // filterComboBox
+            // 
+            this.filterComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.filterComboBox.FormattingEnabled = true;
+            this.filterComboBox.Location = new System.Drawing.Point(1157, 7);
+            this.filterComboBox.Name = "filterComboBox";
+            this.filterComboBox.Size = new System.Drawing.Size(220, 28);
+            this.filterComboBox.TabIndex = 0;
+            // 
             // infoShowControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,6 +195,7 @@
             this.classPanel.ResumeLayout(false);
             this.PeriodPage.ResumeLayout(false);
             this.sectionPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -189,5 +212,7 @@
         private System.Windows.Forms.TabPage PeriodPage;
         private System.Windows.Forms.FlowLayoutPanel sectionPanel;
         private System.Windows.Forms.Button sectionDefaultBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox filterComboBox;
     }
 }
