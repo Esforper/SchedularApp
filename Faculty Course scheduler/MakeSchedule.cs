@@ -30,6 +30,7 @@ namespace Faculty_Course_scheduler
 
             facultiesComboBox.Text = "Lütfen bir Bölüm Seçiniz";
             FacultyClassNumberComboBox.Text = "Bir sınıf seçiniz";
+            
             /*
             for (int i = 0; i < 4; i++)
             {
