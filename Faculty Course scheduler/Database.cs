@@ -199,6 +199,11 @@ internal class Database
         }
     }
 
+    public ClassClass getOneClass(string className_)
+    {
+        AllClasses = LoadClassDataFromJson();
+        return AllClasses.FirstOrDefault(class_ => class_.className == className_);
+    }
 
 
 
@@ -302,5 +307,69 @@ internal class Database
         }
         return sectionsNames;
     }
+
+    public void DeleteSection(onePeriodFacultyClass section)
+    {
+        // Akademisyen verilerini JSON'dan yükle
+        AllPeriodLessons = LoadLessonPeriodDataFromJson();
+        List<string> classNames = new List<string>();
+        List<string> academianNames = new List<string>();
+        for (int i = 0; i < section.facultyLessonDates.GetLength(0); i++)   //hücre renklerini ayarlamak için
+        {
+            for (int j = 0; j < section.facultyLessonDates.GetLength(1); j++)
+            {
+                if (section.facultyLessonDates[i,j].lessonClass != null)
+                {
+                    if(classNames.Contains(section.facultyLessonDates[i, j].lessonClass) != true)
+                    {
+                        classNames.Add(section.facultyLessonDates[i, j].lessonClass);   //buna gerek olmayabilir
+
+                        //eğer boş değilse, burada akademisyeni bulup oradan da müsaitlik durumu ayarlanabilir.
+                    }
+                }
+
+                if (section.facultyLessonDates[i,j].lessonAcademian != null)
+                {
+                    if (academianNames.Contains(section.facultyLessonDates[i, j].lessonAcademian) != true)
+                    {
+                        academianNames.Add(section.facultyLessonDates[i, j].lessonAcademian);
+                    }
+                }
+            }
+        }
+        foreach(string oneAcademianName in academianNames)
+        {
+            var oneAcademian = getOneAcademian(oneAcademianName);
+            //akademisyenin avaibility kısmında section ile aynı olan kısımların true olması lazım.
+        }
+
+
+        // Silinecek akademisyeni bul
+        var sectionToDelete = AllPeriodLessons.FirstOrDefault(s => s.PeriodName == section.PeriodName);
+
+        if (sectionToDelete != null)
+        {
+            // Akademisyeni listeden çıkar
+            AllPeriodLessons.Remove(sectionToDelete);
+
+            // Güncellenmiş listeyi JSON'a kaydet
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(AllPeriodLessons, Formatting.Indented);
+                File.WriteAllText(jsonPeriodLessonFilePath, jsonData);
+
+                MessageBox.Show($"{section.PeriodName} başarıyla veritabanından silindi.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+            }
+        }
+        else
+        {
+            MessageBox.Show($"{section.PeriodName} isimli section bulunamadı.");
+        }
+    }
+
 
 }
