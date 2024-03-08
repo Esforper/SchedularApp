@@ -310,7 +310,6 @@ internal class Database
 
     public void DeleteSection(onePeriodFacultyClass section)
     {
-        // Akademisyen verilerini JSON'dan yükle
         AllPeriodLessons = LoadLessonPeriodDataFromJson();
 
         List<string> classNames = new List<string>();       //bu kısımlar kaldırılabilir.
@@ -318,26 +317,41 @@ internal class Database
 
         ClassClass oneClass = new ClassClass();
         AcademianClass oneAcademian = new AcademianClass();
-        for (int i = 0; i < section.facultyLessonDates.GetLength(0); i++)   //hücre renklerini ayarlamak için
+
+        for (int j = 0; j < section.facultyLessonDates.GetLength(1); j++)   //hücre renklerini ayarlamak için
         {
-            for (int j = 0; j < section.facultyLessonDates.GetLength(1); j++)
+            
+            for (int i = 0; i < section.facultyLessonDates.GetLength(0); i++)
             {
+               
                 if (section.facultyLessonDates[i,j].lessonClass != null)
                 {
                     oneClass = getOneClass(section.facultyLessonDates[i, j].lessonClass);
-                    oneClass.classDates[i, j] = true;
+                    if(oneClass != null)
+                    {
+                        oneClass.classDates[i, j] = true;
+                        oneClass.UpdateClassDates();
+                    }
+                    
 
                     oneAcademian = getOneAcademian(section.facultyLessonDates[i, j].lessonAcademian);
-                    oneAcademian.AcademianWorkDates[i,j] = true;
+                    if(oneAcademian != null)
+                    {
+                        oneAcademian.AcademianWorkDates[i, j] = true;
+                        oneAcademian.UpdateWorkDates();
+                    }
+                    
                
                 }
 
             }
+            
+            
+            MessageBox.Show("classroom ve academian başarıyla güncellendi");
+
         }
         
-        oneClass.UpdateClassDates();
-        oneAcademian.UpdateWorkDates();
-
+       
 
         // Silinecek akademisyeni bul
         var sectionToDelete = AllPeriodLessons.FirstOrDefault(s => s.PeriodName == section.PeriodName);
