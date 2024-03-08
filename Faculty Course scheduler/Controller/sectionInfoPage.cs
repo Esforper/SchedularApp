@@ -45,8 +45,8 @@ namespace Faculty_Course_scheduler.Controller
 
                     //label.Text = "Label " + (i * 5 + j + 1);
 
-                    label.Text = saatAyarla(saatControl) + "\n" + section.facultyLessonDates[i, j].lessonAcademian + "\n" + 
-                        section.facultyLessonDates[i, j].lessonClass;
+                    label.Text = saatAyarla(saatControl) + "\n" + section.facultyLessonDates[i, j].lessonName + "\n" + 
+                        section.facultyLessonDates[i, j].lessonClass + " " +section.facultyLessonDates[i,j].lessonAcademian;
                     saatControl++;
 
                     label.TextAlign = ContentAlignment.MiddleCenter;

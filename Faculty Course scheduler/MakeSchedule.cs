@@ -180,8 +180,8 @@ namespace Faculty_Course_scheduler
                                 //class değerini ata
 
                                 onePeriod.facultyLessonDates[i, j].lessonName = lesson.lessonName; //ders ismi ata
-                                onePeriod.facultyLessonDates[i + 1, j].lessonClass = lesson.lessonName; //yanlışlıkla class ismine ders ismi eklendi
-                                onePeriod.facultyLessonDates[i + 2, j].lessonClass = lesson.lessonName;
+                                onePeriod.facultyLessonDates[i + 1, j].lessonName = lesson.lessonName; //yanlışlıkla class ismine ders ismi eklendi
+                                onePeriod.facultyLessonDates[i + 2, j].lessonName = lesson.lessonName;
                                 
 
                                 MessageBox.Show("bir ders için sınıf - akademisyen - section uyumluluğu başarılı");
