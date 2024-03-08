@@ -79,6 +79,7 @@
             this.facultiesComboBox.Size = new System.Drawing.Size(172, 28);
             this.facultiesComboBox.TabIndex = 45;
             this.facultiesComboBox.SelectedIndexChanged += new System.EventHandler(this.facultiesComboBox_SelectedIndexChanged);
+            this.facultiesComboBox.SelectedValueChanged += new System.EventHandler(this.facultiesComboBox_SelectedValueChanged);
             // 
             // FacultyClassNumberComboBox
             // 

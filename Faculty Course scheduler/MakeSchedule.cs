@@ -28,25 +28,33 @@ namespace Faculty_Course_scheduler
                 facultiesComboBox.Items.Add(facultName);
             }
 
-            for(int i = 1; i < 5; i++)
+            facultiesComboBox.Text = "Lütfen bir Bölüm Seçiniz";
+            FacultyClassNumberComboBox.Text = "Bir sınıf seçiniz";
+            /*
+            for (int i = 0; i < 4; i++)
             {
-                FacultyClassNumberComboBox.Items.Add(i);
+                FacultyClassNumberComboBox.Items.Add(i + 1);
             }
+            */
+
         }
 
         private void facultiesComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {        }
+        
+        private void facultiesComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            //FacultyClassNumberComboBox.Items.Clear();
+            FacultyClassNumberComboBox.Items.Clear();
 
             var faculties = database.LoadFacultyDataFromJson();
             var onefaculty = faculties.Where(a => a.facultyName == facultiesComboBox.Text).First();
 
-            for(int i=0;i<onefaculty.facultyClassNumber;i++)
+            for (int i = 0; i < onefaculty.facultyClassNumber; i++)
             {
                 FacultyClassNumberComboBox.Items.Add(i + 1);
             }
-
         }
+
 
         private void springAutumnComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -219,5 +227,7 @@ namespace Faculty_Course_scheduler
             }
 
         }
+
+        
     }
 }
