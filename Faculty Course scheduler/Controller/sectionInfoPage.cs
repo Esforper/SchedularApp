@@ -69,5 +69,10 @@ namespace Faculty_Course_scheduler.Controller
             string sonuc = string.Format("{0}.30", saat);
             return sonuc;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            database.DeleteSection(section);
+        }
     }
 }

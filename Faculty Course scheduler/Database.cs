@@ -312,36 +312,31 @@ internal class Database
     {
         // Akademisyen verilerini JSON'dan yükle
         AllPeriodLessons = LoadLessonPeriodDataFromJson();
-        List<string> classNames = new List<string>();
+
+        List<string> classNames = new List<string>();       //bu kısımlar kaldırılabilir.
         List<string> academianNames = new List<string>();
+
+        ClassClass oneClass = new ClassClass();
+        AcademianClass oneAcademian = new AcademianClass();
         for (int i = 0; i < section.facultyLessonDates.GetLength(0); i++)   //hücre renklerini ayarlamak için
         {
             for (int j = 0; j < section.facultyLessonDates.GetLength(1); j++)
             {
                 if (section.facultyLessonDates[i,j].lessonClass != null)
                 {
-                    if(classNames.Contains(section.facultyLessonDates[i, j].lessonClass) != true)
-                    {
-                        classNames.Add(section.facultyLessonDates[i, j].lessonClass);   //buna gerek olmayabilir
+                    oneClass = getOneClass(section.facultyLessonDates[i, j].lessonClass);
+                    oneClass.classDates[i, j] = true;
 
-                        //eğer boş değilse, burada akademisyeni bulup oradan da müsaitlik durumu ayarlanabilir.
-                    }
+                    oneAcademian = getOneAcademian(section.facultyLessonDates[i, j].lessonAcademian);
+                    oneAcademian.AcademianWorkDates[i,j] = true;
+               
                 }
 
-                if (section.facultyLessonDates[i,j].lessonAcademian != null)
-                {
-                    if (academianNames.Contains(section.facultyLessonDates[i, j].lessonAcademian) != true)
-                    {
-                        academianNames.Add(section.facultyLessonDates[i, j].lessonAcademian);
-                    }
-                }
             }
         }
-        foreach(string oneAcademianName in academianNames)
-        {
-            var oneAcademian = getOneAcademian(oneAcademianName);
-            //akademisyenin avaibility kısmında section ile aynı olan kısımların true olması lazım.
-        }
+        
+        oneClass.UpdateClassDates();
+        oneAcademian.UpdateWorkDates();
 
 
         // Silinecek akademisyeni bul
