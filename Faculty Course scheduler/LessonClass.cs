@@ -8,33 +8,33 @@ namespace Faculty_Course_scheduler
 {
     internal class LessonClass
     {
-        public string lessonName;
-        public string lessonFaculty;
-        public int LessonLong;
-        public int lessonFacultyPeriod;
+        public string Name;
+        public string Faculty;
+        public int LessonDuration;
+        public int LessonSemester;
 
     }
 
-    class onePeriodFacultyClass
+    class SemesterClass
     {
         //Bilgisayar mühendisliği 1. sınıf, 2.sınıf gibi düşün
-        public string PeriodName;      //kod içerisinde otomatik oluşturulacak ve bilgisayar müh 1.sınıf, 2. sınıf gibi bir etkisi olucak.
+        public string Name;      //kod içerisinde otomatik oluşturulacak ve bilgisayar müh 1.sınıf, 2. sınıf gibi bir etkisi olucak.
         public List<LessonClass> Lessons;   //ders listesi olucak
-        public oneLessonDateClass[,] facultyLessonDates;  //ders tarihleri olucak.
-        public string periodFaculty;
-        public int periodStudentCapacity;
+        public oneLessonDateClass[,] Dates;  //ders tarihleri olucak.
+        public string FacultyName;
+        public int StudentCapacity;
 
-        public onePeriodFacultyClass()
+        public SemesterClass()
         {
-            facultyLessonDates = new oneLessonDateClass[10, 5];
+            Dates = new oneLessonDateClass[10, 5];
             
             for(int j=0; j < 5; j++)
             {
                 for(int i=0; i < 10; i++)
                 {
                     oneLessonDateClass lessonDateInfo = new oneLessonDateClass();
-                    facultyLessonDates[i,j] = lessonDateInfo;
-                    facultyLessonDates[i,j].dateavailability = true;
+                    Dates[i,j] = lessonDateInfo;
+                    Dates[i,j].DateavAilability = true;
                 }
             }
         }
@@ -53,10 +53,10 @@ namespace Faculty_Course_scheduler
 
     class oneLessonDateClass
     {
-        public bool dateavailability;
-        public string lessonAcademian;
-        public string lessonClass;
-        public string lessonName;
+        public bool DateavAilability;
+        public string LessonAcademian;
+        public string LessonClass;
+        public string LessonName;
     }
 
 }

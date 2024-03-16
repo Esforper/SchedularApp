@@ -11,7 +11,7 @@ internal class Database
     public List<AcademianClass> AllAcademians;
     public List<ClassClass> AllClasses;
     public List<FacultyClass> AllFaculties;
-    public List<onePeriodFacultyClass> AllPeriodLessons;
+    public List<SemesterClass> AllPeriodLessons;
 
     private string folderPath;
     
@@ -149,7 +149,7 @@ internal class Database
 
         return new List<ClassClass>(); // Hata durumunda boş bir liste döndür
     }
-    public void saveClass(ClassClass class_)
+    public void SaveClass(ClassClass class_)
     {
         AllClasses = LoadClassDataFromJson();
 
@@ -173,7 +173,7 @@ internal class Database
         AllClasses = LoadClassDataFromJson();
 
         // Silinecek akademisyeni bul
-        var classToDelete = AllClasses.FirstOrDefault(c => c.className == className);
+        var classToDelete = AllClasses.FirstOrDefault(c => c.Name == className);
 
         if (classToDelete != null)
         {
@@ -202,7 +202,7 @@ internal class Database
     public ClassClass getOneClass(string className_)
     {
         AllClasses = LoadClassDataFromJson();
-        return AllClasses.FirstOrDefault(class_ => class_.className == className_);
+        return AllClasses.FirstOrDefault(class_ => class_.Name == className_);
     }
 
 
@@ -243,27 +243,27 @@ internal class Database
         }
     }
 
-    public List<string> getfaculties()
+    public List<string> Getfaculties()
     {
         AllFaculties = LoadFacultyDataFromJson();
         List<string> allfacultyNames = new List<string>();
         foreach(FacultyClass faculty in AllFaculties)
         {
-            allfacultyNames.Add(faculty.facultyName);
+            allfacultyNames.Add(faculty.FacultyName);
         }
         return allfacultyNames;
     }
 
 
     //PeriodLesson Database 
-    public List<onePeriodFacultyClass> LoadLessonPeriodDataFromJson()
+    public List<SemesterClass> LoadLessonPeriodDataFromJson()
     {
         try
         {
             if (File.Exists(jsonPeriodLessonFilePath))
             {
                 string jsonData = File.ReadAllText(jsonPeriodLessonFilePath);
-                return JsonConvert.DeserializeObject<List<onePeriodFacultyClass>>(jsonData) ?? new List<onePeriodFacultyClass>();
+                return JsonConvert.DeserializeObject<List<SemesterClass>>(jsonData) ?? new List<SemesterClass>();
             }
         }
         catch (Exception ex)
@@ -271,10 +271,10 @@ internal class Database
             MessageBox.Show("Hata: " + ex.Message);
         }
 
-        return new List<onePeriodFacultyClass>(); // Hata durumunda boş bir liste döndür
+        return new List<SemesterClass>(); // Hata durumunda boş bir liste döndür
     }
 
-    public void SavePeriodLessonDataToJson(onePeriodFacultyClass onePeriod)   //akademisyeni databaseye kaydeder
+    public void SavePeriodLessonDataToJson(SemesterClass onePeriod)   //akademisyeni databaseye kaydeder
     {
         AllPeriodLessons = LoadLessonPeriodDataFromJson();
         //akademisyeni akademisyen listesine ekler, bilgilerini json formatına dönüştürür. json dosyasına bilgiyi yazar.
@@ -292,23 +292,23 @@ internal class Database
         }
     }
 
-    public onePeriodFacultyClass GetOneSection(string sectionName)
+    public SemesterClass GetOneSection(string sectionName)
     {
         AllPeriodLessons = LoadLessonPeriodDataFromJson();
-        return AllPeriodLessons.First(sec => sec.PeriodName == sectionName);
+        return AllPeriodLessons.First(sec => sec.Name == sectionName);
     }
     public List<string> GetSectionNames()
     {
         AllPeriodLessons = LoadLessonPeriodDataFromJson();
         List<string> sectionsNames = new List<string>();
-        foreach(onePeriodFacultyClass section in  AllPeriodLessons)
+        foreach(SemesterClass section in  AllPeriodLessons)
         {
-            sectionsNames.Add(section.PeriodName);
+            sectionsNames.Add(section.Name);
         }
         return sectionsNames;
     }
 
-    public void DeleteSection(onePeriodFacultyClass section)
+    public void DeleteSection(SemesterClass section)
     {
         AllPeriodLessons = LoadLessonPeriodDataFromJson();
 
@@ -318,26 +318,26 @@ internal class Database
         ClassClass oneClass = new ClassClass();
         AcademianClass oneAcademian = new AcademianClass();
 
-        for (int j = 0; j < section.facultyLessonDates.GetLength(1); j++)   //hücre renklerini ayarlamak için
+        for (int j = 0; j < section.Dates.GetLength(1); j++)   //hücre renklerini ayarlamak için
         {
             
-            for (int i = 0; i < section.facultyLessonDates.GetLength(0); i++)
+            for (int i = 0; i < section.Dates.GetLength(0); i++)
             {
                
-                if (section.facultyLessonDates[i,j].lessonClass != null)
+                if (section.Dates[i,j].LessonClass != null)
                 {
-                    oneClass = getOneClass(section.facultyLessonDates[i, j].lessonClass);
+                    oneClass = getOneClass(section.Dates[i, j].LessonClass);
                     if(oneClass != null)
                     {
-                        oneClass.classDates[i, j] = true;
+                        oneClass.Dates[i, j] = true;
                         oneClass.UpdateClassDates();
                     }
                     
 
-                    oneAcademian = getOneAcademian(section.facultyLessonDates[i, j].lessonAcademian);
+                    oneAcademian = getOneAcademian(section.Dates[i, j].LessonAcademian);
                     if(oneAcademian != null)
                     {
-                        oneAcademian.AcademianWorkDates[i, j] = true;
+                        oneAcademian.AcademianDates[i, j] = true;
                         oneAcademian.UpdateWorkDates();
                     }
                     
@@ -354,7 +354,7 @@ internal class Database
        
 
         // Silinecek akademisyeni bul
-        var sectionToDelete = AllPeriodLessons.FirstOrDefault(s => s.PeriodName == section.PeriodName);
+        var sectionToDelete = AllPeriodLessons.FirstOrDefault(s => s.Name == section.Name);
 
         if (sectionToDelete != null)
         {
@@ -367,7 +367,7 @@ internal class Database
                 string jsonData = JsonConvert.SerializeObject(AllPeriodLessons, Formatting.Indented);
                 File.WriteAllText(jsonPeriodLessonFilePath, jsonData);
 
-                MessageBox.Show($"{section.PeriodName} başarıyla veritabanından silindi.");
+                MessageBox.Show($"{section.Name} başarıyla veritabanından silindi.");
             }
             catch (Exception ex)
             {
@@ -376,7 +376,7 @@ internal class Database
         }
         else
         {
-            MessageBox.Show($"{section.PeriodName} isimli section bulunamadı.");
+            MessageBox.Show($"{section.Name} isimli section bulunamadı.");
         }
     }
 

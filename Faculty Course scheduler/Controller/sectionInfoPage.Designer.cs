@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.sectionNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DateTable = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,11 +47,24 @@
             this.panel1.Size = new System.Drawing.Size(1389, 85);
             this.panel1.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(1264, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 46);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "delete";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // sectionNameLabel
             // 
             this.sectionNameLabel.AutoSize = true;
             this.sectionNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.sectionNameLabel.Location = new System.Drawing.Point(557, 29);
+            this.sectionNameLabel.Location = new System.Drawing.Point(210, 29);
             this.sectionNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sectionNameLabel.Name = "sectionNameLabel";
             this.sectionNameLabel.Size = new System.Drawing.Size(193, 29);
@@ -62,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(378, 29);
+            this.label1.Location = new System.Drawing.Point(31, 29);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 29);
@@ -93,18 +106,6 @@
             this.DateTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.DateTable.Size = new System.Drawing.Size(1389, 566);
             this.DateTable.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(1223, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 58);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "delete section schedule";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // sectionInfoPage
             // 

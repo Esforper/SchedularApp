@@ -9,47 +9,47 @@ namespace Faculty_Course_scheduler
 {
     internal class ClassClass
     {
-        public string className;
-        public int classCapacity;
-        public bool[,] classDates;
+        public string Name;
+        public int Capacity;
+        public bool[,] Dates;
 
         
         public ClassClass()
         {
-            classDates = new bool[10, 5];   //10 satır 5 sütun
+            Dates = new bool[10, 5];   //10 satır 5 sütun
         }
-        public void setClass(string className_,int capacity_, bool[,] dates)
+        public void SetClass(string className,int classCapacity, bool[,] dates)
         {
-            if ((dates.GetLength(0) == classDates.GetLength(0)) && (dates.GetLength(1) == classDates.GetLength(1)))
+            if ((dates.GetLength(0) == Dates.GetLength(0)) && (dates.GetLength(1) == Dates.GetLength(1)))
             {
-                classDates = dates;
-                className = className_;
-                classCapacity = capacity_;
+                Dates = dates;
+                Name = className;
+                Capacity = classCapacity;
             }
             else
             {
                 MessageBox.Show("Hata: Dizi uzunlukları arasında uyuşmazlık");
             }
-            className = className_;
-            classCapacity = capacity_;
+            Name = className;
+            Capacity = classCapacity;
         }
 
         public void UpdateClassDates()  //database yi direkt güncelliyor aslında, dateyi güncellemiyor
         {
             Database db = new Database();//database classı çağır.
-            db.DeleteClass(this.className); //classı sil
-            db.saveClass(this); //classı tekrar kaydet
+            db.DeleteClass(this.Name); //classı sil
+            db.SaveClass(this); //classı tekrar kaydet
             MessageBox.Show("güncelleme başarılı");
         }
 
         public int ClassAvailableTime()
         {
             int availableTime = 0;
-            for (int i = 0; i < classDates.GetLength(0); i++)
+            for (int i = 0; i < Dates.GetLength(0); i++)
             {
-                for (int j = 0; j < classDates.GetLength(1); j++)
+                for (int j = 0; j < Dates.GetLength(1); j++)
                 {
-                    if (classDates[i, j] == true)
+                    if (Dates[i, j] == true)
                     {
 
                         availableTime++;

@@ -13,17 +13,17 @@ namespace Faculty_Course_scheduler.Controller
     public partial class sectionInfoPage : UserControl
     {
         Database database = new Database();
-        onePeriodFacultyClass section = new onePeriodFacultyClass();
+        SemesterClass section = new SemesterClass();
         public sectionInfoPage(string sectionName)
         {
             InitializeComponent();
             section = database.GetOneSection(sectionName);
             
-            for (int i = 0; i < section.facultyLessonDates.GetLength(0); i++)   //hücre renklerini ayarlamak için
+            for (int i = 0; i < section.Dates.GetLength(0); i++)   //hücre renklerini ayarlamak için
             {
-                for(int j = 0; j < section.facultyLessonDates.GetLength(1); j++)
+                for(int j = 0; j < section.Dates.GetLength(1); j++)
                 {
-                    cellColors[i, j] = section.facultyLessonDates[i, j].dateavailability;
+                    cellColors[i, j] = section.Dates[i, j].DateavAilability;
                 }
             }
         }
@@ -31,7 +31,7 @@ namespace Faculty_Course_scheduler.Controller
 
         private void sectionInfoPage_Load(object sender, EventArgs e)
         {
-            sectionNameLabel.Text = section.PeriodName;
+            sectionNameLabel.Text = section.Name;
             int saatControl = 0;
             for (int i = 0; i < 10; i++)
             {
@@ -45,8 +45,8 @@ namespace Faculty_Course_scheduler.Controller
 
                     //label.Text = "Label " + (i * 5 + j + 1);
 
-                    label.Text = saatAyarla(saatControl) + "\n" + section.facultyLessonDates[i, j].lessonName + "\n" + 
-                        section.facultyLessonDates[i, j].lessonClass + " " +section.facultyLessonDates[i,j].lessonAcademian;
+                    label.Text = saatAyarla(saatControl) + "\n" + section.Dates[i, j].LessonName + "\n" + 
+                        section.Dates[i, j].LessonClass + " " +section.Dates[i,j].LessonAcademian;
                     saatControl++;
 
                     label.TextAlign = ContentAlignment.MiddleCenter;

@@ -74,8 +74,8 @@ namespace Faculty_Course_scheduler
                 //kapasite değerini inte çevirmeye çalış sonra da yeni class nesnesi oluşturup database ye kaydet
                 int capacity_ = Convert.ToInt32(classCapacityTextBox.Text);
                 ClassClass class_ = new ClassClass();
-                class_.setClass(classNameTextBox.Text, capacity_,booldizisi);
-                database.saveClass(class_);
+                class_.SetClass(classNameTextBox.Text, capacity_,booldizisi);
+                database.SaveClass(class_);
             }
             catch
             {
@@ -131,13 +131,13 @@ namespace Faculty_Course_scheduler
             {
                 lessonListBox.Items.Add(lessonComboBox.Text + ". Dönem : " + lessonTextBox.Text);
                 LessonClass lesson = new LessonClass();
-                lesson.lessonName = lessonTextBox.Text;
-                lesson.lessonFacultyPeriod = Convert.ToInt16(lessonComboBox.Text);
-                lesson.lessonFaculty = facultyname;
-                lesson.LessonLong = Convert.ToInt16(lessonLongTextBox.Text);
+                lesson.Name = lessonTextBox.Text;
+                lesson.LessonSemester = Convert.ToInt16(lessonComboBox.Text);
+                lesson.Faculty = facultyname;
+                lesson.LessonDuration = Convert.ToInt16(lessonLongTextBox.Text);
 
                 // Dersi uygun dönemin listesine ekle
-                facultyLessons[lesson.lessonFacultyPeriod - 1].Add(lesson);
+                facultyLessons[lesson.LessonSemester - 1].Add(lesson);
 
                 lessons.Add(lesson);
             }
@@ -151,7 +151,7 @@ namespace Faculty_Course_scheduler
         {
             // facultyLessons dizisini FacultyClass nesnesine ekleyerek kaydet
             FacultyClass faculty = new FacultyClass();
-            faculty.setFaculty(facultyname, facultyPeriodNumber, facultyStudentNumber, facultyLessons);
+            faculty.SetFaculty(facultyname, facultyPeriodNumber, facultyStudentNumber, facultyLessons);
             database.saveFaculty(faculty);
         }
 
@@ -161,7 +161,7 @@ namespace Faculty_Course_scheduler
             lessons = new List<LessonClass>();
             facultyLessons = new List<LessonClass>[facultyPeriodNumber];
 
-            foreach (string facultName in database.getfaculties())  //Akademisyenin fakültesini seçerken gerekli
+            foreach (string facultName in database.Getfaculties())  //Akademisyenin fakültesini seçerken gerekli
             {
                 facultiesComboBox.Items.Add(facultName);
             }

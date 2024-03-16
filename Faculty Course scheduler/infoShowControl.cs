@@ -27,12 +27,12 @@ namespace Faculty_Course_scheduler
         private void infoShowControl_Load(object sender, EventArgs e)
         {
             filterComboBox.Items.Add("All Faculties");
-            foreach(string facultyName in database.getfaculties())
+            foreach(string facultyName in database.Getfaculties())
             {
                 filterComboBox.Items.Add(facultyName);
             }
             filterComboBox.SelectedIndex = 0;
-
+            
             foreach (AcademianClass academian in database.AllAcademians)
             {
                 Button btn = new Button();
@@ -52,20 +52,20 @@ namespace Faculty_Course_scheduler
                 classPanel.Controls.Add(btn);
                 btn.Size = defaultBtn.Size;
                 btn.Margin = defaultBtn.Margin;
-                btn.Text = classes.className + " : " + classes.ClassAvailableTime();
+                btn.Text = classes.Name + " : " + classes.ClassAvailableTime();
                 btn.Click += (s, ev) => {
                     OpenTabControlForClass(classes);
                 };
 
             }
 
-            foreach (onePeriodFacultyClass section in database.AllPeriodLessons)
+            foreach (SemesterClass section in database.AllPeriodLessons)
             {
                 Button btn = new Button();
                 sectionPanel.Controls.Add(btn);
                 btn.Size = sectionDefaultBtn.Size;
                 btn.Margin = sectionDefaultBtn.Margin;
-                btn.Text = section.PeriodName;
+                btn.Text = section.Name;
                 btn.Click += (s, ev) => {
                     OpenTabControlForSection(section);
                 };
@@ -84,7 +84,7 @@ namespace Faculty_Course_scheduler
                 tabControl1.TabPages.Add(tabPage);
                 tabControl1.SelectedTab = tabPage;
 
-                AcademianInfoPageControl academianInfo = new AcademianInfoPageControl(academian.AcademianWorkDates, academian.AcademianName);
+                AcademianInfoPageControl academianInfo = new AcademianInfoPageControl(academian.AcademianDates, academian.AcademianName);
                 tabPage.Controls.Add(academianInfo);
                 academianInfo.Dock = DockStyle.Fill;
 
@@ -94,14 +94,14 @@ namespace Faculty_Course_scheduler
         private void OpenTabControlForClass(ClassClass class_)
         {
 
-            TabPage tabPage = new TabPage(class_.className);
-            if (!IsTabPageAlreadyOpen(tabControl1, class_.className))
+            TabPage tabPage = new TabPage(class_.Name);
+            if (!IsTabPageAlreadyOpen(tabControl1, class_.Name))
             {
                 // Oluşturulan TabPage'i TabControl'e ekleyin
                 tabControl1.TabPages.Add(tabPage);
                 tabControl1.SelectedTab = tabPage;
 
-                AcademianInfoPageControl classInfo = new AcademianInfoPageControl(class_.classDates, class_.className);
+                AcademianInfoPageControl classInfo = new AcademianInfoPageControl(class_.Dates, class_.Name);
                 tabPage.Controls.Add(classInfo);
                 classInfo.Dock = DockStyle.Fill;
 
@@ -109,17 +109,17 @@ namespace Faculty_Course_scheduler
 
         }
 
-        private void OpenTabControlForSection(onePeriodFacultyClass section)
+        private void OpenTabControlForSection(SemesterClass section)
         {
 
-            TabPage tabPage = new TabPage(section.PeriodName);
-            if (!IsTabPageAlreadyOpen(tabControl1, section.PeriodName))
+            TabPage tabPage = new TabPage(section.Name);
+            if (!IsTabPageAlreadyOpen(tabControl1, section.Name))
             {
                 // Oluşturulan TabPage'i TabControl'e ekleyin
                 tabControl1.TabPages.Add(tabPage);
                 tabControl1.SelectedTab = tabPage;
 
-                sectionInfoPage sectionInfo = new sectionInfoPage(section.PeriodName);
+                sectionInfoPage sectionInfo = new sectionInfoPage(section.Name);
                 tabPage.Controls.Add(sectionInfo);
                 sectionInfo.Dock = DockStyle.Fill;
 
@@ -141,5 +141,42 @@ namespace Faculty_Course_scheduler
             return false;
         }
 
+        private void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(filterComboBox.SelectedIndex == 0)
+            {
+                academianPanel.Controls.Clear();
+                foreach (AcademianClass academian in database.AllAcademians)
+                {
+                    Button btn = new Button();
+                    academianPanel.Controls.Add(btn);
+                    btn.Size = defaultBtn.Size;
+                    btn.Margin = defaultBtn.Margin;
+                    btn.Text = academian.AcademianName + " : " + academian.academianAvailableTime();
+
+                    btn.Click += (s, ev) => {
+                        OpenTabControlForAcademian(academian);
+                    };
+                }
+            }
+            else
+            {
+                var filtedAcademians = database.AllAcademians.FindAll(a => a.AcademianFaculty == filterComboBox.Text);
+                academianPanel.Controls.Clear();
+                foreach (AcademianClass academian in filtedAcademians)
+                {
+                    Button btn = new Button();
+                    academianPanel.Controls.Add(btn);
+                    btn.Size = defaultBtn.Size;
+                    btn.Margin = defaultBtn.Margin;
+                    btn.Text = academian.AcademianName + " : " + academian.academianAvailableTime();
+
+                    btn.Click += (s, ev) => {
+                        OpenTabControlForAcademian(academian);
+                    };
+                }
+            }
+            
+        }
     }
 }
