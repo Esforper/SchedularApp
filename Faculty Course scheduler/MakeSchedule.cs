@@ -166,6 +166,13 @@ namespace Faculty_Course_scheduler
                                     minAcademian.Dates[i + k, j].LessonClass = oneClass.Name;   //akademisyen takviminde sınıfı ayarla
                                     minAcademian.Dates[i + k, j].LessonAcademian = null;    //akademisyenin kendi ders programı olacağı için akademisyen değerini atama
 
+                                    //classroom info page için bilgileri ayarla
+                                    oneClass.Dates[i + k, j].DateavAilability = false;
+                                    oneClass.Dates[i + k, j].LessonName= lesson.Name;
+                                    oneClass.Dates[i + k, j].LessonClass = null;
+                                    oneClass.Dates[i + k, j].LessonAcademian = minAcademian.AcademianName;
+
+
                                 }
 
                                 minAcademian.AcademianLessonCount++;
@@ -173,10 +180,7 @@ namespace Faculty_Course_scheduler
                                 MessageBox.Show("Akademisyen listeden kaldırıldı");
 
 
-                                oneClass.Dates[i, j].DateavAilability = false;
-                                oneClass.Dates[i + 1, j].DateavAilability = false;
-                                oneClass.Dates[i + 2, j].DateavAilability = false;
-                                //sınıf takvimini güncelle
+                              
 
                                 onePeriod.Dates[i, j].DateavAilability = false;
                                 onePeriod.Dates[i + 1, j].DateavAilability = false;
