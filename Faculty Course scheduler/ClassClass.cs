@@ -11,18 +11,42 @@ namespace Faculty_Course_scheduler
     {
         public string Name;
         public int Capacity;
-        public bool[,] Dates;
+        public OneLessonDateClass[,] Dates;
 
         
         public ClassClass()
         {
-            Dates = new bool[10, 5];   //10 satır 5 sütun
+            //Dates = new bool[10, 5];   //10 satır 5 sütun
+
+            
+             Dates = new OneLessonDateClass[10, 5];
+            
+            for(int j=0; j < 5; j++)
+            {
+                for(int i=0; i < 10; i++)
+                {
+                    OneLessonDateClass lessonDateInfo = new OneLessonDateClass();
+                    Dates[i,j] = lessonDateInfo;
+                    Dates[i,j].DateavAilability = true;
+                }
+            }
+            
         }
         public void SetClass(string className,int classCapacity, bool[,] dates)
         {
             if ((dates.GetLength(0) == Dates.GetLength(0)) && (dates.GetLength(1) == Dates.GetLength(1)))
             {
-                Dates = dates;
+                for(int j = 0; j < Dates.GetLength(1); j++)
+                {
+                    
+                    for (int i = 0; i < Dates.GetLength(0); i++)
+                    {
+                        Dates[i,j].DateavAilability = dates[i,j];
+                    }
+                }
+
+
+                //Dates = dates;
                 Name = className;
                 Capacity = classCapacity;
             }
@@ -49,7 +73,7 @@ namespace Faculty_Course_scheduler
             {
                 for (int j = 0; j < Dates.GetLength(1); j++)
                 {
-                    if (Dates[i, j] == true)
+                    if (Dates[i, j].DateavAilability == true)
                     {
 
                         availableTime++;

@@ -152,7 +152,7 @@ namespace Faculty_Course_scheduler
             // facultyLessons dizisini FacultyClass nesnesine ekleyerek kaydet
             FacultyClass faculty = new FacultyClass();
             faculty.SetFaculty(facultyname, facultyPeriodNumber, facultyStudentNumber, facultyLessons);
-            database.saveFaculty(faculty);
+            database.SaveFaculty(faculty);
         }
 
         

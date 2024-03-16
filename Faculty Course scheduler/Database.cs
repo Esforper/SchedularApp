@@ -1,10 +1,10 @@
 ﻿using Faculty_Course_scheduler;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System;
-using System.Windows;
 using System.Linq;
+using System.Windows;
 
 internal class Database
 {
@@ -199,7 +199,7 @@ internal class Database
         }
     }
 
-    public ClassClass getOneClass(string className_)
+    public ClassClass GetOneClass(string className_)
     {
         AllClasses = LoadClassDataFromJson();
         return AllClasses.FirstOrDefault(class_ => class_.Name == className_);
@@ -225,7 +225,7 @@ internal class Database
 
         return new List<FacultyClass>(); // Hata durumunda boş bir liste döndür
     }
-    public void saveFaculty(FacultyClass faculty)
+    public void SaveFaculty(FacultyClass faculty)
     {
         AllFaculties = LoadFacultyDataFromJson();
 
@@ -326,7 +326,7 @@ internal class Database
                
                 if (section.Dates[i,j].LessonClass != null)
                 {
-                    oneClass = getOneClass(section.Dates[i, j].LessonClass);
+                    oneClass = GetOneClass(section.Dates[i, j].LessonClass);
                     if(oneClass != null)
                     {
                         oneClass.Dates[i, j] = true;
@@ -345,8 +345,7 @@ internal class Database
                 }
 
             }
-            
-            
+ 
             MessageBox.Show("classroom ve academian başarıyla güncellendi");
 
         }
