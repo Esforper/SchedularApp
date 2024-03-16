@@ -63,7 +63,7 @@ namespace Faculty_Course_scheduler
 
         }
 
-        SemesterClass onePeriod;  //bilgisayar müh 1. sınıf gibi 
+        SemesterClass oneSection;  //bilgisayar müh 1. sınıf gibi 
 
         private void findFacultyBtn_Click(object sender, EventArgs e)
         {
@@ -84,11 +84,11 @@ namespace Faculty_Course_scheduler
 
             var selectedPeriodLessons = selectedFaculty.FacultyLessons[selectedPeriodInt];
 
-            onePeriod = new SemesterClass();
-            onePeriod.Lessons = selectedPeriodLessons;  //yeni oluşturulan period classına dersleri koy.
-            onePeriod.Name = facultyPeriodName;   //fakülte - sınıf - dönem bilgisi
-            onePeriod.FacultyName = facultyInfo;      //hangi fakültenin
-            onePeriod.StudentCapacity = selectedFaculty.FacultyNumberOfStudents;  //öğrenci kapasitesi
+            oneSection = new SemesterClass();
+            oneSection.Lessons = selectedPeriodLessons;  //yeni oluşturulan period classına dersleri koy.
+            oneSection.Name = facultyPeriodName;   //fakülte - sınıf - dönem bilgisi
+            oneSection.FacultyName = facultyInfo;      //hangi fakültenin
+            oneSection.StudentCapacity = selectedFaculty.FacultyNumberOfStudents;  //öğrenci kapasitesi
 
             foreach (var lesson in selectedPeriodLessons)
             {
@@ -101,7 +101,7 @@ namespace Faculty_Course_scheduler
         {
             var allAcademians = database.LoadAcademianDataFromJson();   //önce tüm akademisyenleri çağır
             var allClass = database.LoadClassDataFromJson();    //tüm sınıfları çağır
-            var facultyAcademians = allAcademians.FindAll(a => a.AcademianFaculty == onePeriod.FacultyName).ToList();
+            var facultyAcademians = allAcademians.FindAll(a => a.AcademianFaculty == oneSection.FacultyName).ToList();
             /** Kurallar
              * Her ders için bir hoca olmalı
              * bir ders bir sınıfta olmalı
@@ -113,7 +113,7 @@ namespace Faculty_Course_scheduler
             //tüm sınıflar çağırılabilir, her ders için rastgele bir sınıf denenebilir.
             foreach(string sectionName in database.GetSectionNames())
             {
-                if(onePeriod.Name == sectionName)
+                if(oneSection.Name == sectionName)
                 {
                     nameControl = false;
                 }
@@ -121,7 +121,7 @@ namespace Faculty_Course_scheduler
 
             if(nameControl == true)
             {
-                foreach (LessonClass lesson in onePeriod.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye al.
+                foreach (LessonClass lesson in oneSection.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye al.
                 {
                     int allClassNumber = allClass.Count();  //tüm sınıfların sayısını al
                     var rand = new Random();    //random tanımla    
@@ -148,9 +148,9 @@ namespace Faculty_Course_scheduler
                         for (int i = 0; i < minAcademian.Dates.GetLength(0) - 2; i++)    //saatleri döndür.
                         {
 
-                            bool academianBool = minAcademian.Dates[i, j].DateavAilability == true && onePeriod.Dates[i, j].DateavAilability == true &&
-                                minAcademian.Dates[i + 1, j].DateavAilability == true && onePeriod.Dates[i + 1, j].DateavAilability == true &&
-                                minAcademian.Dates[i + 2, j].DateavAilability == true && onePeriod.Dates[i + 2, j].DateavAilability == true;
+                            bool academianBool = minAcademian.Dates[i, j].DateavAilability == true && oneSection.Dates[i, j].DateavAilability == true &&
+                                minAcademian.Dates[i + 1, j].DateavAilability == true && oneSection.Dates[i + 1, j].DateavAilability == true &&
+                                minAcademian.Dates[i + 2, j].DateavAilability == true && oneSection.Dates[i + 2, j].DateavAilability == true;
                             //akademisyen ve period müsaitliğini kontrol et.
 
                             bool classbool = oneClass.Dates[i, j].DateavAilability == true && oneClass.Dates[i + 1, j].DateavAilability == true && oneClass.Dates[i + 2, j].DateavAilability == true;
@@ -172,36 +172,16 @@ namespace Faculty_Course_scheduler
                                     oneClass.Dates[i + k, j].LessonClass = null;
                                     oneClass.Dates[i + k, j].LessonAcademian = minAcademian.AcademianName;
 
-
+                                    oneSection.Dates[i + k, j].DateavAilability = false;
+                                    oneSection.Dates[i + k, j].LessonName = lesson.Name;
+                                    oneSection.Dates[i + k, j].LessonClass = oneClass.Name;
+                                    oneSection.Dates[i + k, j].LessonAcademian = minAcademian.AcademianName;
                                 }
 
                                 minAcademian.AcademianLessonCount++;
                                 facultyAcademians.Remove(minAcademian); //akademisyen bir daha seçilmesin diye kaldır.
                                 MessageBox.Show("Akademisyen listeden kaldırıldı");
-
-
-                              
-
-                                onePeriod.Dates[i, j].DateavAilability = false;
-                                onePeriod.Dates[i + 1, j].DateavAilability = false;
-                                onePeriod.Dates[i + 2, j].DateavAilability = false;
-                                //section takvimini güncelle
-
-                                onePeriod.Dates[i, j].LessonAcademian = minAcademian.AcademianName;
-                                onePeriod.Dates[i + 1, j].LessonAcademian = minAcademian.AcademianName;
-                                onePeriod.Dates[i + 2, j].LessonAcademian = minAcademian.AcademianName;
-                                //section ders akademisyenini ata
-
-                                onePeriod.Dates[i, j].LessonClass = oneClass.Name;
-                                onePeriod.Dates[i + 1, j].LessonClass = oneClass.Name;
-                                onePeriod.Dates[i + 2, j].LessonClass = oneClass.Name;
-                                //class değerini ata
-
-                                onePeriod.Dates[i, j].LessonName = lesson.Name; //ders ismi ata
-                                onePeriod.Dates[i + 1, j].LessonName = lesson.Name; //yanlışlıkla class ismine ders ismi eklendi
-                                onePeriod.Dates[i + 2, j].LessonName = lesson.Name;
                                 
-
                                 MessageBox.Show("bir ders için sınıf - akademisyen - section uyumluluğu başarılı");
                                 breakControl = true;
                                 break;
@@ -228,28 +208,15 @@ namespace Faculty_Course_scheduler
                     oneClass.UpdateClassDates();    //sınıf takvimini database de güncelle
                 }
 
-                database.SavePeriodLessonDataToJson(onePeriod); //tüm dersler işlendikten sonra kaydet.
+                database.SavePeriodLessonDataToJson(oneSection); //tüm dersler işlendikten sonra kaydet.
                 MessageBox.Show("ders kaydedildi");
             }
             else
             {
-                MessageBox.Show($"{onePeriod.Name} isimde bir ders programı oluşturulmuştur");
+                MessageBox.Show($"{oneSection.Name} isimde bir ders programı oluşturulmuştur");
             }
 
         }
 
-        public OneLessonDateClass[,] SetLessonProp(int i, int j,OneLessonDateClass[,] dates,bool newAvaibility, string lessonName, string className , string academianName)
-        {
-            for(int k = 0;k<3;k++)
-            {
-                dates[i+k,j].DateavAilability = newAvaibility;
-                dates[i+k,j].LessonName=lessonName;
-                dates[i + k, j].LessonClass = className;
-                dates[i+k,j].LessonAcademian = academianName;
-            }
-            return dates;
-        }
-
-        
     }
 }
