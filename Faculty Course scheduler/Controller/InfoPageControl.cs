@@ -12,20 +12,20 @@ namespace Faculty_Course_scheduler.Controller
 {
     public partial class InfoPageControl : UserControl
     {
-        public InfoPageControl( OneLessonDateClass[,] array_,string academianName)
+        public InfoPageControl( OneLessonDateClass[,] dateTable,string name)
         {
             InitializeComponent();
-            bool[,] cellcolors = new bool[array_.GetLength(0),array_.GetLength(1)];
-            for(int j= 0; j < array_.GetLength(1); j++)
+            cellColors = new bool[dateTable.GetLength(0),dateTable.GetLength(1)];
+            for(int j= 0; j < dateTable.GetLength(1); j++)
             {
-                for(int i=0; i < array_.GetLength(0); i++)
+                for(int i=0; i < dateTable.GetLength(0); i++)
                 {
-                    cellColors[i, j] = array_[i, j].DateavAilability;
+                    cellColors[i, j] = dateTable[i, j].DateavAilability;
                 }
             }
 
             //cellColors = array_;
-            academianNameLabel.Text = academianName;
+            academianNameLabel.Text = name;
         }
         public bool[,] cellColors;
 

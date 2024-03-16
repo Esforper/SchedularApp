@@ -38,7 +38,6 @@ namespace Faculty_Course_scheduler
             {
                 for(int j = 0; j < Dates.GetLength(1); j++)
                 {
-                    
                     for (int i = 0; i < Dates.GetLength(0); i++)
                     {
                         Dates[i,j].DateavAilability = dates[i,j];

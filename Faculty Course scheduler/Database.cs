@@ -337,7 +337,7 @@ internal class Database
                     oneAcademian = getOneAcademian(section.Dates[i, j].LessonAcademian);
                     if(oneAcademian != null)
                     {
-                        oneAcademian.AcademianDates[i, j] = true;
+                        oneAcademian.Dates[i, j].DateavAilability = true;
                         oneAcademian.UpdateWorkDates();
                     }
                     

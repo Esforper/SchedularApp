@@ -84,24 +84,24 @@ namespace Faculty_Course_scheduler
                 tabControl1.TabPages.Add(tabPage);
                 tabControl1.SelectedTab = tabPage;
 
-                InfoPageControl academianInfo = new InfoPageControl(academian.AcademianDates, academian.AcademianName);   //academian için de aynı sistem yapılacak.
+                InfoPageControl academianInfo = new InfoPageControl(academian.Dates, academian.AcademianName);   //academian için de aynı sistem yapılacak.
                 tabPage.Controls.Add(academianInfo);
                 academianInfo.Dock = DockStyle.Fill;
 
             }
             
         }
-        private void OpenTabControlForClass(ClassClass class_)
+        private void OpenTabControlForClass(ClassClass classroom)
         {
 
-            TabPage tabPage = new TabPage(class_.Name);
-            if (!IsTabPageAlreadyOpen(tabControl1, class_.Name))
+            TabPage tabPage = new TabPage(classroom.Name);
+            if (!IsTabPageAlreadyOpen(tabControl1, classroom.Name))
             {
                 // Oluşturulan TabPage'i TabControl'e ekleyin
                 tabControl1.TabPages.Add(tabPage);
                 tabControl1.SelectedTab = tabPage;
 
-                InfoPageControl classInfo = new InfoPageControl(class_.Dates, class_.Name);
+                InfoPageControl classInfo = new InfoPageControl(classroom.Dates, classroom.Name);
                 tabPage.Controls.Add(classInfo);
                 classInfo.Dock = DockStyle.Fill;
 

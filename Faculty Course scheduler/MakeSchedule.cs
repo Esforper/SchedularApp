@@ -143,14 +143,14 @@ namespace Faculty_Course_scheduler
 
                     bool breakControl = false;
 
-                    for (int j = 0; j < minAcademian.AcademianDates.GetLength(1); j++)  //pazartesi , salı gibi günleri döndür
+                    for (int j = 0; j < minAcademian.Dates.GetLength(1); j++)  //pazartesi , salı gibi günleri döndür
                     {
-                        for (int i = 0; i < minAcademian.AcademianDates.GetLength(0) - 2; i++)    //saatleri döndür.
+                        for (int i = 0; i < minAcademian.Dates.GetLength(0) - 2; i++)    //saatleri döndür.
                         {
 
-                            bool academianBool = minAcademian.AcademianDates[i, j] == true && onePeriod.Dates[i, j].DateavAilability == true &&
-                                minAcademian.AcademianDates[i + 1, j] == true && onePeriod.Dates[i + 1, j].DateavAilability == true &&
-                                minAcademian.AcademianDates[i + 2, j] == true && onePeriod.Dates[i + 2, j].DateavAilability == true;
+                            bool academianBool = minAcademian.Dates[i, j].DateavAilability == true && onePeriod.Dates[i, j].DateavAilability == true &&
+                                minAcademian.Dates[i + 1, j].DateavAilability == true && onePeriod.Dates[i + 1, j].DateavAilability == true &&
+                                minAcademian.Dates[i + 2, j].DateavAilability == true && onePeriod.Dates[i + 2, j].DateavAilability == true;
                             //akademisyen ve period müsaitliğini kontrol et.
 
                             bool classbool = oneClass.Dates[i, j].DateavAilability == true && oneClass.Dates[i + 1, j].DateavAilability == true && oneClass.Dates[i + 2, j].DateavAilability == true;
@@ -158,9 +158,9 @@ namespace Faculty_Course_scheduler
 
                             if (academianBool == true && classbool == true)
                             {
-                                minAcademian.AcademianDates[i, j] = false;
-                                minAcademian.AcademianDates[i + 1, j] = false;
-                                minAcademian.AcademianDates[i + 2, j] = false;
+                                minAcademian.Dates[i, j].DateavAilability = false;
+                                minAcademian.Dates[i + 1, j].DateavAilability = false;
+                                minAcademian.Dates[i + 2, j].DateavAilability = false;
                                 //seçili akademisyenin takvimini güncelle
 
                                 minAcademian.AcademianLessonCount++;

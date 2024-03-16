@@ -9,20 +9,39 @@ namespace Faculty_Course_scheduler
     {
         public string AcademianName { get; set; }
         public string AcademianFaculty { get; set; }
-        public bool[,] AcademianDates { get; set; }
+        public OneLessonDateClass[,] Dates { get; set; }
         public int AcademianLessonCount { get; set; }
 
         public AcademianClass()
         {
-            AcademianDates = new bool[10, 5];
+            //Dates = new bool[10, 5];
             AcademianLessonCount = 0;
+
+            Dates = new OneLessonDateClass[10, 5];
+
+            for (int j = 0; j < 5; j++)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    OneLessonDateClass lessonDateInfo = new OneLessonDateClass();
+                    Dates[i, j] = lessonDateInfo;
+                    Dates[i, j].DateavAilability = true;
+                }
+            }
         }
 
         public void SetAcademian(string academianName,bool[,] dates,string academianfaculty)
         {
-            if ((dates.GetLength(0) == AcademianDates.GetLength(0)) && (dates.GetLength(1) == AcademianDates.GetLength(1)))
+            if ((dates.GetLength(0) == Dates.GetLength(0)) && (dates.GetLength(1) == Dates.GetLength(1)))
             {
-                AcademianDates = dates;
+                for (int j = 0; j < Dates.GetLength(1); j++)
+                {
+
+                    for (int i = 0; i < Dates.GetLength(0); i++)
+                    {
+                        Dates[i, j].DateavAilability = dates[i, j];
+                    }
+                }
             }
             else
             {
@@ -38,18 +57,18 @@ namespace Faculty_Course_scheduler
             AcademianClass academian = new AcademianClass
             {
                 AcademianName = this.AcademianName,
-                AcademianDates = this.AcademianDates
+                Dates = this.Dates
             };
         }
 
         public int academianAvailableTime()
         {
             int availableTime = 0;
-            for(int i = 0; i < AcademianDates.GetLength(0);i++)
+            for(int i = 0; i < Dates.GetLength(0);i++)
             {
-                for(int j= 0; j < AcademianDates.GetLength(1); j++)
+                for(int j= 0; j < Dates.GetLength(1); j++)
                 {
-                    if (AcademianDates[i,j] == true)
+                    if (Dates[i,j].DateavAilability == true)
                     {
                         availableTime++;
                     }
@@ -58,17 +77,17 @@ namespace Faculty_Course_scheduler
             return availableTime;
         }
 
-        public void SaveWorkDates(bool[,] newDates)
+        public void SaveWorkDates()
         {
             // Yeni tarihlerin uygun boyutta olup olmadığını kontrol et
-            if (newDates.GetLength(0) != AcademianDates.GetLength(0) || newDates.GetLength(1) != AcademianDates.GetLength(1))
+            if (Dates.GetLength(0) != Dates.GetLength(0) || Dates.GetLength(1) != Dates.GetLength(1))
             {
                 MessageBox.Show("Hata: Dizi uzunlukları arasında uyuşmazlık");
                 return;
             }
 
             // Akademisyenin çalışma tarihlerini güncelle
-            AcademianDates = newDates;
+            //Dates = newDates;
             Database db = new Database();
             db.DeleteAcademian(this.AcademianName);
             db.SaveAcademianDataToJson(this);
