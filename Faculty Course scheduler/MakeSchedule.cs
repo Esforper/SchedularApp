@@ -153,7 +153,7 @@ namespace Faculty_Course_scheduler
                                 minAcademian.AcademianDates[i + 2, j] == true && onePeriod.Dates[i + 2, j].DateavAilability == true;
                             //akademisyen ve period müsaitliğini kontrol et.
 
-                            bool classbool = oneClass.Dates[i, j] == true && oneClass.Dates[i + 1, j] == true && oneClass.Dates[i + 2, j] == true;
+                            bool classbool = oneClass.Dates[i, j].DateavAilability == true && oneClass.Dates[i + 1, j].DateavAilability == true && oneClass.Dates[i + 2, j].DateavAilability == true;
                             //sınıf müsaitliğini kontrol et
 
                             if (academianBool == true && classbool == true)
@@ -168,9 +168,9 @@ namespace Faculty_Course_scheduler
                                 MessageBox.Show("Akademisyen listeden kaldırıldı");
 
 
-                                oneClass.Dates[i, j] = false;
-                                oneClass.Dates[i + 1, j] = false;
-                                oneClass.Dates[i + 2, j] = false;
+                                oneClass.Dates[i, j].DateavAilability = false;
+                                oneClass.Dates[i + 1, j].DateavAilability = false;
+                                oneClass.Dates[i + 2, j].DateavAilability = false;
                                 //sınıf takvimini güncelle
 
                                 onePeriod.Dates[i, j].DateavAilability = false;

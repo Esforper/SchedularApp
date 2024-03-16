@@ -1,6 +1,6 @@
 ﻿namespace Faculty_Course_scheduler.Controller
 {
-    partial class AcademianInfoPageControl
+    partial class InfoPageControl
     {
         /// <summary> 
         ///Gerekli tasarımcı değişkeni.

@@ -329,7 +329,7 @@ internal class Database
                     oneClass = GetOneClass(section.Dates[i, j].LessonClass);
                     if(oneClass != null)
                     {
-                        oneClass.Dates[i, j] = true;
+                        oneClass.Dates[i, j].DateavAilability = true;
                         oneClass.UpdateClassDates();
                     }
                     

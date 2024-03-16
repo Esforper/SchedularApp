@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Faculty_Course_scheduler
 {
-    internal class AcademianClass
+    public class AcademianClass
     {
         public string AcademianName { get; set; }
         public string AcademianFaculty { get; set; }

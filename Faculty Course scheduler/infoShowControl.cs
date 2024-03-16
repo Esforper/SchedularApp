@@ -84,7 +84,7 @@ namespace Faculty_Course_scheduler
                 tabControl1.TabPages.Add(tabPage);
                 tabControl1.SelectedTab = tabPage;
 
-                AcademianInfoPageControl academianInfo = new AcademianInfoPageControl(academian.AcademianDates, academian.AcademianName);
+                InfoPageControl academianInfo = new InfoPageControl(academian.AcademianDates, academian.AcademianName);   //academian için de aynı sistem yapılacak.
                 tabPage.Controls.Add(academianInfo);
                 academianInfo.Dock = DockStyle.Fill;
 
@@ -101,7 +101,7 @@ namespace Faculty_Course_scheduler
                 tabControl1.TabPages.Add(tabPage);
                 tabControl1.SelectedTab = tabPage;
 
-                AcademianInfoPageControl classInfo = new AcademianInfoPageControl(class_.Dates, class_.Name);
+                InfoPageControl classInfo = new InfoPageControl(class_.Dates, class_.Name);
                 tabPage.Controls.Add(classInfo);
                 classInfo.Dock = DockStyle.Fill;
 

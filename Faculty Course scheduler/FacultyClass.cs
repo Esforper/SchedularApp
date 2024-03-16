@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Faculty_Course_scheduler
 {
-	internal class FacultyClass
+	public class FacultyClass
 	{
 		public string FacultyName;
 		public int FacultySemester;	//fakülte dönemi

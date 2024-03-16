@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Faculty_Course_scheduler
 {
-    internal class ClassClass
+    public class ClassClass
     {
         public string Name;
         public int Capacity;

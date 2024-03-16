@@ -61,11 +61,11 @@
   <ItemGroup>
     <Compile Include="AcademianClass.cs" />
     <Compile Include="ClassClass.cs" />
-    <Compile Include="Controller\AcademianInfoPageControl.cs">
+    <Compile Include="Controller\InfoPageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controller\AcademianInfoPageControl.Designer.cs">
-      <DependentUpon>AcademianInfoPageControl.cs</DependentUpon>
+    <Compile Include="Controller\InfoPageControl.Designer.cs">
+      <DependentUpon>InfoPageControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\sectionInfoPage.cs">
       <SubType>UserControl</SubType>
@@ -103,8 +103,8 @@
     <Compile Include="LessonClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controller\AcademianInfoPageControl.resx">
-      <DependentUpon>AcademianInfoPageControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controller\InfoPageControl.resx">
+      <DependentUpon>InfoPageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\sectionInfoPage.resx">
       <DependentUpon>sectionInfoPage.cs</DependentUpon>

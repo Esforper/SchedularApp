@@ -10,12 +10,21 @@ using System.Windows.Forms;
 
 namespace Faculty_Course_scheduler.Controller
 {
-    public partial class AcademianInfoPageControl : UserControl
+    public partial class InfoPageControl : UserControl
     {
-        public AcademianInfoPageControl(bool[,] array_,string academianName)
+        public InfoPageControl( OneLessonDateClass[,] array_,string academianName)
         {
             InitializeComponent();
-            cellColors = array_;
+            bool[,] cellcolors = new bool[array_.GetLength(0),array_.GetLength(1)];
+            for(int j= 0; j < array_.GetLength(1); j++)
+            {
+                for(int i=0; i < array_.GetLength(0); i++)
+                {
+                    cellColors[i, j] = array_[i, j].DateavAilability;
+                }
+            }
+
+            //cellColors = array_;
             academianNameLabel.Text = academianName;
         }
         public bool[,] cellColors;
