@@ -13,7 +13,6 @@ namespace Faculty_Course_scheduler
         public int Capacity;
         public OneLessonDateClass[,] Dates;
 
-        
         public ClassClass()
         {
             //Dates = new bool[10, 5];   //10 satır 5 sütun

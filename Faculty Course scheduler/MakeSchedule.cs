@@ -158,10 +158,15 @@ namespace Faculty_Course_scheduler
 
                             if (academianBool == true && classbool == true)
                             {
-                                minAcademian.Dates[i, j].DateavAilability = false;
-                                minAcademian.Dates[i + 1, j].DateavAilability = false;
-                                minAcademian.Dates[i + 2, j].DateavAilability = false;
-                                //seçili akademisyenin takvimini güncelle
+                                for(int k = 0; k < 3; k++)
+                                {
+                                    //akademisyen takvimini ayarla
+                                    minAcademian.Dates[i+k, j].DateavAilability = false;    //akademisyenin müsaitlik durumunu güncelle
+                                    minAcademian.Dates[i + k, j].LessonName = lesson.Name;  //akademisyenin dersini ayarla
+                                    minAcademian.Dates[i + k, j].LessonClass = oneClass.Name;   //akademisyen takviminde sınıfı ayarla
+                                    minAcademian.Dates[i + k, j].LessonAcademian = null;    //akademisyenin kendi ders programı olacağı için akademisyen değerini atama
+
+                                }
 
                                 minAcademian.AcademianLessonCount++;
                                 facultyAcademians.Remove(minAcademian); //akademisyen bir daha seçilmesin diye kaldır.
@@ -227,6 +232,18 @@ namespace Faculty_Course_scheduler
                 MessageBox.Show($"{onePeriod.Name} isimde bir ders programı oluşturulmuştur");
             }
 
+        }
+
+        public OneLessonDateClass[,] SetLessonProp(int i, int j,OneLessonDateClass[,] dates,bool newAvaibility, string lessonName, string className , string academianName)
+        {
+            for(int k = 0;k<3;k++)
+            {
+                dates[i+k,j].DateavAilability = newAvaibility;
+                dates[i+k,j].LessonName=lessonName;
+                dates[i + k, j].LessonClass = className;
+                dates[i+k,j].LessonAcademian = academianName;
+            }
+            return dates;
         }
 
         
