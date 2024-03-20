@@ -112,7 +112,8 @@ namespace Faculty_Course_scheduler
             bool nameControl = true;
             //tüm sınıflar çağırılabilir, her ders için rastgele bir sınıf denenebilir.
 
-            foreach(string sectionName in database.GetSectionNames())
+            //section isim kontrolü
+            foreach(string sectionName in database.GetSectionNames())   
             {
                 if(oneSection.Name == sectionName)
                 {
@@ -122,6 +123,10 @@ namespace Faculty_Course_scheduler
 
             if(nameControl == true)
             {
+                progressBar.Minimum = 1;
+                progressBar.Maximum = oneSection.Lessons.Count();   //progressbar max uzunluğu
+                progressBar.Value = 1;
+                progressBar.Step = 1;
                 foreach (LessonClass lesson in oneSection.Lessons)    //her bir ders için ayrı atama yapılacağından bir döngüye al.
                 {
                     int allClassNumber = allClass.Count();  //tüm sınıfların sayısını al
@@ -135,7 +140,7 @@ namespace Faculty_Course_scheduler
 
                     foreach (AcademianClass academian in facultyAcademians)     //akademisyenleri döndür
                     {
-                        if (academian.academianAvailableTime() < minAvailable)  //eğer bir akademisyen mevcut müsaitlikten daha az müsaitse 
+                        if (academian.academianAvailableTime() <= minAvailable)  //eğer bir akademisyen mevcut müsaitlikten daha az müsaitse 
                         {
                             minAvailable = academian.academianAvailableTime();      //o akademisyeni seç ve müsaitlik parametresini güncelle
                             minAcademian = academian;
@@ -159,6 +164,7 @@ namespace Faculty_Course_scheduler
 
                             if (academianBool == true && classbool == true)
                             {
+                                progressBar.PerformStep();  //progressbar ilerlemesini sağla
                                 for(int k = 0; k < 3; k++)
                                 {
                                     //akademisyen takvimini ayarla
@@ -182,9 +188,9 @@ namespace Faculty_Course_scheduler
 
                                 minAcademian.AcademianLessonCount++;
                                 facultyAcademians.Remove(minAcademian); //akademisyen bir daha seçilmesin diye kaldır.
-                                MessageBox.Show("Akademisyen listeden kaldırıldı");
+                               // MessageBox.Show("Akademisyen listeden kaldırıldı");
                                 
-                                MessageBox.Show("bir ders için sınıf - akademisyen - section uyumluluğu başarılı");
+                               // MessageBox.Show("bir ders için sınıf - akademisyen - section uyumluluğu başarılı");
                                 breakControl = true;
                                 break;
                             }
@@ -201,7 +207,7 @@ namespace Faculty_Course_scheduler
                         }
                         if (breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
                         {
-                            MessageBox.Show("2- Kontrol Noktası");
+                           // MessageBox.Show("2- Kontrol Noktası");
                             break;
                         }
 
@@ -211,11 +217,11 @@ namespace Faculty_Course_scheduler
                 }
 
                 database.SavePeriodLessonDataToJson(oneSection); //tüm dersler işlendikten sonra kaydet.
-                MessageBox.Show("ders kaydedildi");
+                MessageBox.Show("ders programı başarıyla oluşturulmuştur. kaydedildi");
             }
             else
             {
-                MessageBox.Show($"{oneSection.Name} isimde bir ders programı oluşturulmuştur");
+                MessageBox.Show($"{oneSection.Name} isimde bir ders programı daha önce oluşturulmuştur");
             }
 
         }

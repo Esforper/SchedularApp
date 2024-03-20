@@ -318,7 +318,7 @@ internal class Database
         ClassClass oneClass = new ClassClass();
         AcademianClass oneAcademian = new AcademianClass();
 
-        for (int j = 0; j < section.Dates.GetLength(1); j++)   //hücre renklerini ayarlamak için
+        for (int j = 0; j < section.Dates.GetLength(1); j++)
         {
             
             for (int i = 0; i < section.Dates.GetLength(0); i++)
