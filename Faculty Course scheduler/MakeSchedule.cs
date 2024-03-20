@@ -147,27 +147,35 @@ namespace Faculty_Course_scheduler
                     }
 
                     bool breakControl = false;
-
+                    bool academian_section_lastBool;
                     for (int j = 0; j < minAcademian.Dates.GetLength(1); j++)  //pazartesi , salı gibi günleri döndür
                     {
+                        academian_section_lastBool = true;
                         for (int i = 0; i < minAcademian.Dates.GetLength(0) - 2; i++)    //saatleri döndür.
                         {
-
+                            //akademisyen ve period müsaitliğini kontrol et.
                             bool academianBool =
                                 minAcademian.Dates[i    , j].DateavAilability == true && oneSection.Dates[i    , j].DateavAilability == true &&
                                 minAcademian.Dates[i + 1, j].DateavAilability == true && oneSection.Dates[i + 1, j].DateavAilability == true &&
-                                minAcademian.Dates[i + 2, j].DateavAilability == true && oneSection.Dates[i + 2, j].DateavAilability == true &&
-                                minAcademian.Dates[i + 3, j].DateavAilability == true && oneSection.Dates[i + 3, j].DateavAilability == true;
-                            //akademisyen ve period müsaitliğini kontrol et.
+                                minAcademian.Dates[i + 2, j].DateavAilability == true && oneSection.Dates[i + 2, j].DateavAilability == true;
+
+                            if(i != minAcademian.Dates.GetLength(0) - 3)
+                            {
+                                academian_section_lastBool = 
+                                    minAcademian.Dates[i + 3, j].DateavAilability == true &&
+                                    oneSection.Dates[i + 3, j].DateavAilability == true &&
+                                    oneClass.Dates[i + 3, j].DateavAilability == true;
+                            }
+                            
+       
 
                             bool classbool =
                                 oneClass.Dates[i, j].DateavAilability == true &&
                                 oneClass.Dates[i + 1, j].DateavAilability == true &&
-                                oneClass.Dates[i + 2, j].DateavAilability == true &&
-                                oneClass.Dates[i + 3, j].DateavAilability == true;
+                                oneClass.Dates[i + 2, j].DateavAilability == true;
                             //sınıf müsaitliğini kontrol et
 
-                            if (academianBool == true && classbool == true)
+                            if (academianBool == true && classbool == true && academian_section_lastBool == true)
                             {
                                 progressBar.PerformStep();  //progressbar ilerlemesini sağla
                                 for(int k = 0; k < 3; k++)
