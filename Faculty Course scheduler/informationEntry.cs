@@ -46,6 +46,7 @@ namespace Faculty_Course_scheduler
             string academianFaculty = facultiesComboBox.Text;
             academian.SetAcademian(academianName, booldizisi,academianFaculty);
             database.SaveAcademian(academian);
+            MessageBox.Show("Akademisyen Kaydedildi");
         }
 
         private void addClassBtn_Click_1(object sender, EventArgs e)
@@ -135,6 +136,7 @@ namespace Faculty_Course_scheduler
                 lesson.LessonSemester = Convert.ToInt16(lessonComboBox.Text);
                 lesson.Faculty = facultyname;
                 lesson.LessonDuration = Convert.ToInt16(lessonLongTextBox.Text);
+                lesson.LessonCode = LessonCodeInput.Text;
 
                 // Dersi uygun dönemin listesine ekle
                 facultyLessons[lesson.LessonSemester - 1].Add(lesson);

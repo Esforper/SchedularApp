@@ -12,6 +12,7 @@ namespace Faculty_Course_scheduler.Controller
 {
     public partial class InfoPageControl : UserControl
     {
+        OneLessonDateClass[,] dateInfoTable;
         public InfoPageControl( OneLessonDateClass[,] dateTable,string name)
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace Faculty_Course_scheduler.Controller
                     cellColors[i, j] = dateTable[i, j].DateavAilability;
                 }
             }
-
+            dateInfoTable = dateTable;
             //cellColors = array_;
             academianNameLabel.Text = name;
         }
@@ -42,7 +43,8 @@ namespace Faculty_Course_scheduler.Controller
                     label.Dock = DockStyle.Fill;
                     label.Text = "Label " + (i*5 +j + 1);
 
-                    label.Text = saatAyarla(saatControl);
+                    label.Text = saatAyarla(saatControl) + "\n" + dateInfoTable[i, j].LessonName + "\n" +
+                        dateInfoTable[i, j].LessonClass + " " + dateInfoTable[i, j].LessonAcademian; ;
                     saatControl++;
 
                     label.TextAlign = ContentAlignment.MiddleCenter;

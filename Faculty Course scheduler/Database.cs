@@ -56,7 +56,7 @@ internal class Database
             string jsonData = JsonConvert.SerializeObject(AllAcademians, Formatting.Indented);  //bilgileri json formatına getir
             File.WriteAllText(jsonAcademianFilePath, jsonData); //bilgileri json dosyasına yaz
 
-            MessageBox.Show("Veritabanına kaydedildi");
+            //MessageBox.Show("Veritabanına kaydedildi");
         }
         catch (Exception ex)
         {
@@ -114,7 +114,7 @@ internal class Database
                 string jsonData = JsonConvert.SerializeObject(AllAcademians, Formatting.Indented);
                 File.WriteAllText(jsonAcademianFilePath, jsonData);
 
-                MessageBox.Show($"{academianName} başarıyla veritabanından silindi.");
+                //MessageBox.Show($"{academianName} başarıyla veritabanından silindi.");
             }
             catch (Exception ex)
             {
@@ -186,7 +186,7 @@ internal class Database
                 string jsonData = JsonConvert.SerializeObject(AllClasses, Formatting.Indented);
                 File.WriteAllText(jsonClassFilePath, jsonData);
 
-                MessageBox.Show($"{className} başarıyla veritabanından silindi.");
+                //MessageBox.Show($"{className} başarıyla veritabanından silindi.");
             }
             catch (Exception ex)
             {
@@ -235,7 +235,7 @@ internal class Database
             string jsonData = JsonConvert.SerializeObject(AllFaculties, Formatting.Indented);
             File.WriteAllText(jsonFacultyFilePath, jsonData);
 
-            MessageBox.Show("Veritabanına kaydedildi");
+            //MessageBox.Show("Veritabanına kaydedildi");
         }
         catch (Exception ex)
         {

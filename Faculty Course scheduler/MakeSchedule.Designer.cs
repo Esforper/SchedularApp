@@ -41,6 +41,7 @@
             this.findFacultyBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,7 +132,7 @@
             this.lessonsListBox.ItemHeight = 25;
             this.lessonsListBox.Location = new System.Drawing.Point(0, 3);
             this.lessonsListBox.Name = "lessonsListBox";
-            this.lessonsListBox.Size = new System.Drawing.Size(750, 209);
+            this.lessonsListBox.Size = new System.Drawing.Size(888, 209);
             this.lessonsListBox.TabIndex = 50;
             // 
             // makeScheduleBtn
@@ -161,7 +162,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(80, 172);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(750, 212);
+            this.panel1.Size = new System.Drawing.Size(888, 212);
             this.panel1.TabIndex = 53;
             // 
             // panel2
@@ -170,13 +171,21 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(750, 3);
+            this.panel2.Size = new System.Drawing.Size(888, 3);
             this.panel2.TabIndex = 54;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(80, 468);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(888, 30);
+            this.progressBar.TabIndex = 54;
             // 
             // MakeSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.findFacultyBtn);
             this.Controls.Add(this.makeScheduleBtn);
@@ -214,5 +223,6 @@
         private System.Windows.Forms.ComboBox FacultyClassNumberComboBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }

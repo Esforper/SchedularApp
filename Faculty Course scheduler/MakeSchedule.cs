@@ -45,7 +45,7 @@ namespace Faculty_Course_scheduler
         
         private void facultiesComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            FacultyClassNumberComboBox.Items.Clear();
+            FacultyClassNumberComboBox.Items.Clear();   
 
             var faculties = database.LoadFacultyDataFromJson();
             var onefaculty = faculties.Where(a => a.FacultyName == facultiesComboBox.Text).First();
@@ -92,7 +92,7 @@ namespace Faculty_Course_scheduler
 
             foreach (var lesson in selectedPeriodLessons)
             {
-                lessonsListBox.Items.Add(lesson.Name);
+                lessonsListBox.Items.Add( lesson.LessonCode + " - " + lesson.Name);
             }
             
         }
@@ -111,6 +111,7 @@ namespace Faculty_Course_scheduler
              */
             bool nameControl = true;
             //tüm sınıflar çağırılabilir, her ders için rastgele bir sınıf denenebilir.
+
             foreach(string sectionName in database.GetSectionNames())
             {
                 if(oneSection.Name == sectionName)
@@ -172,6 +173,7 @@ namespace Faculty_Course_scheduler
                                     oneClass.Dates[i + k, j].LessonClass = null;
                                     oneClass.Dates[i + k, j].LessonAcademian = minAcademian.AcademianName;
 
+                                    //section bilgilerini ayarla
                                     oneSection.Dates[i + k, j].DateavAilability = false;
                                     oneSection.Dates[i + k, j].LessonName = lesson.Name;
                                     oneSection.Dates[i + k, j].LessonClass = oneClass.Name;

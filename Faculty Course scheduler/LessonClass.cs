@@ -12,6 +12,7 @@ namespace Faculty_Course_scheduler
         public string Faculty;
         public int LessonDuration;
         public int LessonSemester;
+        public string LessonCode;
 
     }
 

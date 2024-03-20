@@ -38,17 +38,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(470, 26);
+            this.label1.Location = new System.Drawing.Point(216, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 26);
+            this.label1.Size = new System.Drawing.Size(65, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Akademisyen Adı:";
+            this.label1.Text = "İsim: ";
             // 
             // academianNameLabel
             // 
             this.academianNameLabel.AutoSize = true;
-            this.academianNameLabel.Location = new System.Drawing.Point(666, 26);
+            this.academianNameLabel.Location = new System.Drawing.Point(289, 30);
             this.academianNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.academianNameLabel.Name = "academianNameLabel";
             this.academianNameLabel.Size = new System.Drawing.Size(208, 26);
@@ -90,7 +90,7 @@
             this.DateTable.Size = new System.Drawing.Size(1389, 566);
             this.DateTable.TabIndex = 4;
             // 
-            // AcademianInfoPageControl
+            // InfoPageControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +98,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "AcademianInfoPageControl";
+            this.Name = "InfoPageControl";
             this.Size = new System.Drawing.Size(1389, 651);
             this.Load += new System.EventHandler(this.AcademianInfoPageControl_Load);
             this.panel1.ResumeLayout(false);

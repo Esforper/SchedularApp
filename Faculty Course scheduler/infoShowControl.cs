@@ -32,20 +32,20 @@ namespace Faculty_Course_scheduler
                 filterComboBox.Items.Add(facultyName);
             }
             filterComboBox.SelectedIndex = 0;
-            
+            /*
             foreach (AcademianClass academian in database.AllAcademians)
             {
                 Button btn = new Button();
                 academianPanel.Controls.Add(btn);
                 btn.Size = defaultBtn.Size;
                 btn.Margin = defaultBtn.Margin;
-                btn.Text = academian.AcademianName + " : " + academian.academianAvailableTime();
-
+                //btn.Text = academian.AcademianName + " : " + academian.academianAvailableTime();
+                btn.Text = academian.AcademianName;
                 btn.Click += (s, ev) => {
                     OpenTabControlForAcademian(academian);
                 };
             }
-
+            */
             foreach(ClassClass classes in database.AllClasses)
             {
                 Button btn = new Button();
@@ -152,8 +152,8 @@ namespace Faculty_Course_scheduler
                     academianPanel.Controls.Add(btn);
                     btn.Size = defaultBtn.Size;
                     btn.Margin = defaultBtn.Margin;
-                    btn.Text = academian.AcademianName + " : " + academian.academianAvailableTime();
-
+                    //btn.Text = academian.AcademianName + " : " + academian.academianAvailableTime();
+                    btn.Text = academian.AcademianName;
                     btn.Click += (s, ev) => {
                         OpenTabControlForAcademian(academian);
                     };
