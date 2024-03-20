@@ -73,6 +73,7 @@ namespace Faculty_Course_scheduler.Controller
         private void button1_Click(object sender, EventArgs e)
         {
             database.DeleteSection(section);
+            //MessageBox.Show("Section Başarıyla silindi");
         }
     }
 }

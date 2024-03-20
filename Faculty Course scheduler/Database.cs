@@ -55,8 +55,6 @@ internal class Database
             AllAcademians.Add(academian);   //hali hazırda databasedeki akademisyenler listesine akademisyeni ekle
             string jsonData = JsonConvert.SerializeObject(AllAcademians, Formatting.Indented);  //bilgileri json formatına getir
             File.WriteAllText(jsonAcademianFilePath, jsonData); //bilgileri json dosyasına yaz
-
-            //MessageBox.Show("Veritabanına kaydedildi");
         }
         catch (Exception ex)
         {
@@ -72,14 +70,12 @@ internal class Database
             {
                 string jsonData = File.ReadAllText(jsonAcademianFilePath);
                 return JsonConvert.DeserializeObject<List<AcademianClass>>(jsonData) ?? new List<AcademianClass>();
-         
             }
         }
         catch (Exception ex)
         {
             MessageBox.Show("Hata: " + ex.Message);
         }
-
         return new List<AcademianClass>(); // Hata durumunda boş bir liste döndür
     }
 
@@ -113,8 +109,6 @@ internal class Database
             {
                 string jsonData = JsonConvert.SerializeObject(AllAcademians, Formatting.Indented);
                 File.WriteAllText(jsonAcademianFilePath, jsonData);
-
-                //MessageBox.Show($"{academianName} başarıyla veritabanından silindi.");
             }
             catch (Exception ex)
             {
@@ -149,6 +143,7 @@ internal class Database
 
         return new List<ClassClass>(); // Hata durumunda boş bir liste döndür
     }
+
     public void SaveClass(ClassClass class_)
     {
         AllClasses = LoadClassDataFromJson();
@@ -159,7 +154,7 @@ internal class Database
             string jsonData = JsonConvert.SerializeObject(AllClasses, Formatting.Indented);
             File.WriteAllText(jsonClassFilePath, jsonData);
 
-            MessageBox.Show("Veritabanına kaydedildi");
+            //MessageBox.Show("Veritabanına kaydedildi");
         }
         catch (Exception ex)
         {
@@ -185,8 +180,6 @@ internal class Database
             {
                 string jsonData = JsonConvert.SerializeObject(AllClasses, Formatting.Indented);
                 File.WriteAllText(jsonClassFilePath, jsonData);
-
-                //MessageBox.Show($"{className} başarıyla veritabanından silindi.");
             }
             catch (Exception ex)
             {
@@ -234,8 +227,6 @@ internal class Database
             AllFaculties.Add(faculty);
             string jsonData = JsonConvert.SerializeObject(AllFaculties, Formatting.Indented);
             File.WriteAllText(jsonFacultyFilePath, jsonData);
-
-            //MessageBox.Show("Veritabanına kaydedildi");
         }
         catch (Exception ex)
         {
@@ -320,16 +311,18 @@ internal class Database
 
         for (int j = 0; j < section.Dates.GetLength(1); j++)
         {
-            
             for (int i = 0; i < section.Dates.GetLength(0); i++)
             {
                
-                if (section.Dates[i,j].LessonClass != null)
+                if (section.Dates[i,j].LessonClass != null) //sınıf değeri mevcut olan tarih hücresi
                 {
-                    oneClass = GetOneClass(section.Dates[i, j].LessonClass);
-                    if(oneClass != null)
+                    oneClass = GetOneClass(section.Dates[i, j].LessonClass);    //sınıf bilgilerini getir.
+                    if(oneClass != null)    //sınıf bilgileri mevcut ise
                     {
-                        oneClass.Dates[i, j].DateavAilability = true;
+                        oneClass.Dates[i, j].DateavAilability = true;   //class date hücresi bilgilerini, ders olmayacak şekilde ayarla
+                        oneClass.Dates[i, j].LessonAcademian = null;
+                        oneClass.Dates[i, j].LessonClass = null;
+                        oneClass.Dates[i, j].LessonName = null;
                         oneClass.UpdateClassDates();
                     }
                     
@@ -338,6 +331,9 @@ internal class Database
                     if(oneAcademian != null)
                     {
                         oneAcademian.Dates[i, j].DateavAilability = true;
+                        oneAcademian.Dates[i, j].LessonAcademian = null;
+                        oneAcademian.Dates[i, j].LessonClass = null;
+                        oneAcademian.Dates[i, j].LessonName = null;
                         oneAcademian.UpdateWorkDates();
                     }
                     
@@ -345,9 +341,6 @@ internal class Database
                 }
 
             }
- 
-            MessageBox.Show("classroom ve academian başarıyla güncellendi");
-
         }
         
        

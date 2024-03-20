@@ -134,9 +134,8 @@ namespace Faculty_Course_scheduler
                     int randomClass = rand.Next(allClassNumber);    //rastgele bir sınıf almak için rastgele index değeri al
                     var oneClass = allClass[randomClass];   //index değerindeki classı al
 
-
-                    var minAcademian = new AcademianClass();    //en az müsait olan akademisyen için sonradan değiştirilmek üzere önce boş bir akademisyen oluştur
-                    int minAvailable = 50;  //önce max müsaitlik olan 50 den başla
+                    var minAcademian = facultyAcademians.First();   //en az müsait olan akademisyen için sonradan değiştirilmek üzere önce boş bir akademisyen oluştur
+                    int minAvailable = minAcademian.academianAvailableTime();  //önce max müsaitlik olan 50 den başla
 
                     foreach (AcademianClass academian in facultyAcademians)     //akademisyenleri döndür
                     {
@@ -154,12 +153,18 @@ namespace Faculty_Course_scheduler
                         for (int i = 0; i < minAcademian.Dates.GetLength(0) - 2; i++)    //saatleri döndür.
                         {
 
-                            bool academianBool = minAcademian.Dates[i, j].DateavAilability == true && oneSection.Dates[i, j].DateavAilability == true &&
+                            bool academianBool =
+                                minAcademian.Dates[i    , j].DateavAilability == true && oneSection.Dates[i    , j].DateavAilability == true &&
                                 minAcademian.Dates[i + 1, j].DateavAilability == true && oneSection.Dates[i + 1, j].DateavAilability == true &&
-                                minAcademian.Dates[i + 2, j].DateavAilability == true && oneSection.Dates[i + 2, j].DateavAilability == true;
+                                minAcademian.Dates[i + 2, j].DateavAilability == true && oneSection.Dates[i + 2, j].DateavAilability == true &&
+                                minAcademian.Dates[i + 3, j].DateavAilability == true && oneSection.Dates[i + 3, j].DateavAilability == true;
                             //akademisyen ve period müsaitliğini kontrol et.
 
-                            bool classbool = oneClass.Dates[i, j].DateavAilability == true && oneClass.Dates[i + 1, j].DateavAilability == true && oneClass.Dates[i + 2, j].DateavAilability == true;
+                            bool classbool =
+                                oneClass.Dates[i, j].DateavAilability == true &&
+                                oneClass.Dates[i + 1, j].DateavAilability == true &&
+                                oneClass.Dates[i + 2, j].DateavAilability == true &&
+                                oneClass.Dates[i + 3, j].DateavAilability == true;
                             //sınıf müsaitliğini kontrol et
 
                             if (academianBool == true && classbool == true)
@@ -168,7 +173,7 @@ namespace Faculty_Course_scheduler
                                 for(int k = 0; k < 3; k++)
                                 {
                                     //akademisyen takvimini ayarla
-                                    minAcademian.Dates[i+k, j].DateavAilability = false;    //akademisyenin müsaitlik durumunu güncelle
+                                    minAcademian.Dates[i + k, j].DateavAilability = false;    //akademisyenin müsaitlik durumunu güncelle
                                     minAcademian.Dates[i + k, j].LessonName = lesson.Name;  //akademisyenin dersini ayarla
                                     minAcademian.Dates[i + k, j].LessonClass = oneClass.Name;   //akademisyen takviminde sınıfı ayarla
                                     minAcademian.Dates[i + k, j].LessonAcademian = null;    //akademisyenin kendi ders programı olacağı için akademisyen değerini atama

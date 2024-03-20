@@ -77,6 +77,7 @@ namespace Faculty_Course_scheduler
                 ClassClass class_ = new ClassClass();
                 class_.SetClass(classNameTextBox.Text, capacity_,booldizisi);
                 database.SaveClass(class_);
+                MessageBox.Show("Derslik veritabanına kaydedildi");
             }
             catch
             {

@@ -61,7 +61,7 @@ namespace Faculty_Course_scheduler
             Database db = new Database();//database classı çağır.
             db.DeleteClass(this.Name); //classı sil
             db.SaveClass(this); //classı tekrar kaydet
-            MessageBox.Show("güncelleme başarılı");
+            //MessageBox.Show("güncelleme başarılı");
         }
 
         public int ClassAvailableTime()
@@ -73,7 +73,6 @@ namespace Faculty_Course_scheduler
                 {
                     if (Dates[i, j].DateavAilability == true)
                     {
-
                         availableTime++;
                     }
                 }

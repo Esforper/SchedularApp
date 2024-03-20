@@ -99,7 +99,7 @@ namespace Faculty_Course_scheduler
             Database db = new Database();
             db.DeleteAcademian(this.AcademianName);
             db.SaveAcademianDataToJson(this);
-            MessageBox.Show("güncelleme başarılı");
+            //MessageBox.Show("güncelleme başarılı");
         }
     }
 }
