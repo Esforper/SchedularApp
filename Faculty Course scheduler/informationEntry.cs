@@ -111,11 +111,12 @@ namespace Faculty_Course_scheduler
             
             try
             {
-                gradeStudentNumberPnl.Visible = true;   // genel panel visibilty
-                
                 facultyPeriodNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
                 facultyStudentNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
 
+                gradeStudentNumberPnl.Visible = true;   // genel panel visibilty
+
+                gradeStudentNumberPanel.Controls.Clear();
                 for (int i = 1;i<facultyPeriodNumber/2 + 1;i++)
                 {
                     SectionStudentNumber studentNumberPanel = new SectionStudentNumber(i);
@@ -150,6 +151,14 @@ namespace Faculty_Course_scheduler
             }
             
             
+        }
+
+        private void gradeStudentNumberBtn_Click(object sender, EventArgs e)
+        {
+            for (int i = 1; i < facultyPeriodNumber+1; i++)
+            {
+                semesterSelect.Items.Add(i);
+            }
         }
 
         private void addLessonBtn_Click(object sender, EventArgs e)
@@ -462,5 +471,7 @@ namespace Faculty_Course_scheduler
                 isClass_FrdyLblClick = false;
             }
         }
+
+        
     }
 }
