@@ -104,11 +104,6 @@
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.classCapacityTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -1012,11 +1007,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Lavender;
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.classCapacityTextBox);
             this.panel2.Controls.Add(this.label7);
@@ -1029,51 +1019,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1652, 719);
             this.panel2.TabIndex = 2;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(1125, 602);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(129, 30);
-            this.button6.TabIndex = 50;
-            this.button6.Text = "---";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(866, 602);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 30);
-            this.button5.TabIndex = 49;
-            this.button5.Text = "---";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(615, 602);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 30);
-            this.button4.TabIndex = 48;
-            this.button4.Text = "---";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(361, 602);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 30);
-            this.button3.TabIndex = 47;
-            this.button3.Text = "---";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(98, 602);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 30);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "---";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -2294,11 +2239,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox LessonCodeInput;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ListBox listBox1;
