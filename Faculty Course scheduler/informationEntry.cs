@@ -198,6 +198,7 @@ namespace Faculty_Course_scheduler
 
         }
 
+        // --- SELECT ALL DAY LABEL CLİCK METHODS --- 
         private void mndyLabel_Click(object sender, EventArgs e)
         {
             if(isMndyLblClick == false)
@@ -208,6 +209,7 @@ namespace Faculty_Course_scheduler
                     CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
                     chkbx.Checked = true;
                 }
+                isMndyLblClick = true;
             }
             else
             {
@@ -217,13 +219,15 @@ namespace Faculty_Course_scheduler
                     CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
                     chkbx.Checked = false;
                 }
+                isMndyLblClick = false;
             }
+
         }
 
         private void tsdyLabel_Click(object sender, EventArgs e)
         {
             
-            if (isMndyLblClick == false)
+            if (isTsdyLblClick == false)
             {
                 for (int i = 0; i < 10; i++)
                 {
@@ -231,6 +235,7 @@ namespace Faculty_Course_scheduler
                     CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
                     chkbx.Checked = true;
                 }
+                isTsdyLblClick = true;
             }
             else
             {
@@ -240,6 +245,79 @@ namespace Faculty_Course_scheduler
                     CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
                     chkbx.Checked = false;
                 }
+                isTsdyLblClick = false;
+            }
+        }
+
+        private void wdnsdyLabel_Click(object sender, EventArgs e)
+        {
+            if (isWdnsdyLblCLick == false)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    string checkBoxName = "checkbox" + (20 + i + 1);
+                    CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+                    chkbx.Checked = true;
+                }
+                isWdnsdyLblCLick = true;
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    string checkBoxName = "checkbox" + (20 + i + 1);
+                    CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+                    chkbx.Checked = false;
+                }
+                isWdnsdyLblCLick = false;
+            }
+        }
+
+        private void thrsdyLabel_Click(object sender, EventArgs e)
+        {
+            if (isThrdyLblClick == false)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    string checkBoxName = "checkbox" + (30 + i + 1);
+                    CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+                    chkbx.Checked = true;
+                }
+                isThrdyLblClick = true;
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    string checkBoxName = "checkbox" + (30 + i + 1);
+                    CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+                    chkbx.Checked = false;
+                }
+                isThrdyLblClick = false;
+            }
+        }
+
+        private void frdyLabel_Click(object sender, EventArgs e)
+        {
+            if (isFrdyLblClick == false)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    string checkBoxName = "checkbox" + (40 + i + 1);
+                    CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+                    chkbx.Checked = true;
+                }
+                isFrdyLblClick = true;
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    string checkBoxName = "checkbox" + (40 + i + 1);
+                    CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+                    chkbx.Checked = false;
+                }
+                isFrdyLblClick = false;
             }
         }
     }

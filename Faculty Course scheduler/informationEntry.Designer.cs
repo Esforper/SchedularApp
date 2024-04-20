@@ -839,6 +839,7 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Friday";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.Click += new System.EventHandler(this.frdyLabel_Click);
             // 
             // label5
             // 
@@ -850,6 +851,7 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Thursday";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.thrsdyLabel_Click);
             // 
             // label4
             // 
@@ -861,6 +863,7 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Wednesday";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.wdnsdyLabel_Click);
             // 
             // label3
             // 
