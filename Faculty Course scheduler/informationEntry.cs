@@ -15,12 +15,18 @@ namespace Faculty_Course_scheduler
 		public informationEntry()
 		{
 			InitializeComponent();
+
+            bool isMndyLblClick = false;
+            bool isTsdyLblClick = false;
+            bool isWdnsdyLblCLick = false;
+            bool isThrdyLblClick = false;
+            bool isFrdyLblClick = false;
+
      
 		}
         Database database = new Database();
         private void button4_Click(object sender, EventArgs e)
         {
-          
             AcademianClass academian = new AcademianClass();
             CheckBox[,] checkBoxArray = new CheckBox[10, 5];
             bool[,] booldizisi = new bool[10, 5];
@@ -44,7 +50,7 @@ namespace Faculty_Course_scheduler
 
             string academianName = textBox1.Text;
             string academianFaculty = facultiesComboBox.Text;
-            academian.SetAcademian(academianName, booldizisi,academianFaculty);
+            academian.SetAcademian(academianName, booldizisi, academianFaculty);
             database.SaveAcademian(academian);
             MessageBox.Show("Akademisyen Kaydedildi");
         }
@@ -191,6 +197,26 @@ namespace Faculty_Course_scheduler
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void mndyLabel_Click(object sender, EventArgs e)
+        {
+            for(int i=0;i<10;i++)
+            {
+                string checkBoxName = "checkbox" + (i+1);
+                CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+                chkbx.Checked = true;
+            }
+        }
+
+        private void tsdyLabel_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                string checkBoxName = "checkbox" + (10 + i + 1);
+                CheckBox chkbx = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+                chkbx.Checked = true;
+            }
         }
     }
 }

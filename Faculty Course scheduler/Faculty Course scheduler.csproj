@@ -60,6 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademianClass.cs" />
+    <Compile Include="Alert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alert.Designer.cs">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClassClass.cs" />
     <Compile Include="Controller\InfoPageControl.cs">
       <SubType>UserControl</SubType>
@@ -103,6 +109,9 @@
     <Compile Include="LessonClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Alert.resx">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controller\InfoPageControl.resx">
       <DependentUpon>InfoPageControl.cs</DependentUpon>
     </EmbeddedResource>

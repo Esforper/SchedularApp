@@ -167,8 +167,6 @@ namespace Faculty_Course_scheduler
                                     oneClass.Dates[i + 3, j].DateavAilability == true;
                             }
                             
-       
-
                             bool classbool =
                                 oneClass.Dates[i, j].DateavAilability == true &&
                                 oneClass.Dates[i + 1, j].DateavAilability == true &&
