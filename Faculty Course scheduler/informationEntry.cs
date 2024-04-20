@@ -472,6 +472,11 @@ namespace Faculty_Course_scheduler
             }
         }
 
-        
+        //----
+
+        private void goToSemesterBtn_Click(object sender, EventArgs e)
+        {
+            splitContainer2.Panel2.Enabled = true;
+        }
     }
 }
