@@ -1615,6 +1615,7 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "Friday";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Click += new System.EventHandler(this.clssFrdyLbl_Click);
             // 
             // label14
             // 
@@ -1626,6 +1627,7 @@
             this.label14.TabIndex = 3;
             this.label14.Text = "Thursday";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label14.Click += new System.EventHandler(this.clssThrsdyLbl_Click);
             // 
             // label15
             // 
@@ -1637,6 +1639,7 @@
             this.label15.TabIndex = 2;
             this.label15.Text = "Wednesday";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label15.Click += new System.EventHandler(this.clssWdnsdyLbl_Click);
             // 
             // label16
             // 
@@ -1648,6 +1651,7 @@
             this.label16.TabIndex = 1;
             this.label16.Text = "Tuesday";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label16.Click += new System.EventHandler(this.clssTsdyLbl_Click);
             // 
             // label18
             // 
@@ -1659,6 +1663,7 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Monday";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label18.Click += new System.EventHandler(this.clssMndyLbl_Click);
             // 
             // flowLayoutPanel10
             // 
