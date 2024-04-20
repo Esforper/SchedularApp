@@ -46,6 +46,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -78,6 +79,12 @@
     </Compile>
     <Compile Include="Controller\sectionInfoPage.Designer.cs">
       <DependentUpon>sectionInfoPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\SectionStudentNumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\SectionStudentNumber.Designer.cs">
+      <DependentUpon>SectionStudentNumber.cs</DependentUpon>
     </Compile>
     <Compile Include="MakeSchedule.cs">
       <SubType>UserControl</SubType>
@@ -117,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\sectionInfoPage.resx">
       <DependentUpon>sectionInfoPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\SectionStudentNumber.resx">
+      <DependentUpon>SectionStudentNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

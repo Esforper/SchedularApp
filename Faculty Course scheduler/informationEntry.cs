@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faculty_Course_scheduler.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -107,13 +108,23 @@ namespace Faculty_Course_scheduler
 
         private void facultyContinueBtn_Click(object sender, EventArgs e)
         {
+            
             try
             {
-                splitContainer2.Panel2.Enabled = true;
+                gradeStudentNumberPnl.Visible = true;   // genel panel visibilty
+                
                 facultyPeriodNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
-                facultyStudentNumber = Convert.ToInt16(facultyStudentNumberTextBox.Text);
-                facultyname = facultyNameTextBox.Text;
+                facultyStudentNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
 
+                for (int i = 1;i<facultyPeriodNumber/2 + 1;i++)
+                {
+                    SectionStudentNumber studentNumberPanel = new SectionStudentNumber(i);
+                    gradeStudentNumberPanel.Controls.Add(studentNumberPanel);
+                }
+              
+                /*
+                facultyname = facultyNameTextBox.Text;
+                splitContainer2.Panel2.Enabled = true;
                 labelFacultyName.Text = facultyNameTextBox.Text;
                 labelFacultyPeriod.Text = facultyStudentNumberTextBox.Text;
 
@@ -131,11 +142,14 @@ namespace Faculty_Course_scheduler
                     lessonComboBox.Items.Add(i);
                 }
                 lessonComboBox.SelectedItem = 1;
+                */
             }
             catch
             {
                 MessageBox.Show("int türünde değer girin");
             }
+            
+            
         }
 
         private void addLessonBtn_Click(object sender, EventArgs e)

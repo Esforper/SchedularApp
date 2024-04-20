@@ -178,9 +178,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.facultyNameTextBox = new System.Windows.Forms.TextBox();
             this.facultyPeriodTextBox = new System.Windows.Forms.TextBox();
-            this.facultyStudentNumberTextBox = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.facultyContinueBtn = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
@@ -201,6 +199,13 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.lessonTextBox = new System.Windows.Forms.TextBox();
+            this.gradeStudentNumberBtn = new System.Windows.Forms.Button();
+            this.gradeStudentNumberPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.gradeStudentNumberPnl = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.semesterSelect = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -226,6 +231,8 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.gradeStudentNumberPnl.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1739,8 +1746,9 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.splitContainer2.Panel1.Controls.Add(this.gradeStudentNumberPnl);
+            this.splitContainer2.Panel1.Controls.Add(this.panel10);
             this.splitContainer2.Panel1.Controls.Add(this.panel3);
-            this.splitContainer2.Panel1.Controls.Add(this.facultyContinueBtn);
             this.splitContainer2.Panel1.Controls.Add(this.label28);
             // 
             // splitContainer2.Panel2
@@ -1765,23 +1773,21 @@
             this.splitContainer2.Panel2.Controls.Add(this.lessonTextBox);
             this.splitContainer2.Panel2.Enabled = false;
             this.splitContainer2.Size = new System.Drawing.Size(1652, 737);
-            this.splitContainer2.SplitterDistance = 563;
+            this.splitContainer2.SplitterDistance = 550;
             this.splitContainer2.TabIndex = 1;
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.facultyContinueBtn);
             this.panel3.Controls.Add(this.facultyNameTextBox);
             this.panel3.Controls.Add(this.facultyPeriodTextBox);
-            this.panel3.Controls.Add(this.facultyStudentNumberTextBox);
             this.panel3.Controls.Add(this.label26);
-            this.panel3.Controls.Add(this.label30);
             this.panel3.Controls.Add(this.label29);
-            this.panel3.Location = new System.Drawing.Point(28, 36);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 33);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(519, 133);
+            this.panel3.Size = new System.Drawing.Size(550, 139);
             this.panel3.TabIndex = 23;
             // 
             // panel4
@@ -1790,7 +1796,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(519, 3);
+            this.panel4.Size = new System.Drawing.Size(550, 3);
             this.panel4.TabIndex = 24;
             // 
             // facultyNameTextBox
@@ -1802,35 +1808,19 @@
             // 
             // facultyPeriodTextBox
             // 
-            this.facultyPeriodTextBox.Location = new System.Drawing.Point(212, 93);
+            this.facultyPeriodTextBox.Location = new System.Drawing.Point(212, 56);
             this.facultyPeriodTextBox.Name = "facultyPeriodTextBox";
             this.facultyPeriodTextBox.Size = new System.Drawing.Size(210, 30);
             this.facultyPeriodTextBox.TabIndex = 22;
             // 
-            // facultyStudentNumberTextBox
-            // 
-            this.facultyStudentNumberTextBox.Location = new System.Drawing.Point(212, 56);
-            this.facultyStudentNumberTextBox.Name = "facultyStudentNumberTextBox";
-            this.facultyStudentNumberTextBox.Size = new System.Drawing.Size(210, 30);
-            this.facultyStudentNumberTextBox.TabIndex = 8;
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(7, 96);
+            this.label26.Location = new System.Drawing.Point(7, 59);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(199, 25);
             this.label26.TabIndex = 21;
             this.label26.Text = "Bölüm Dönem Sayısı:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(38, 61);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(168, 25);
-            this.label30.TabIndex = 6;
-            this.label30.Text = "Bölüm Kişi Sayısı:";
             // 
             // label29
             // 
@@ -1843,9 +1833,10 @@
             // 
             // facultyContinueBtn
             // 
-            this.facultyContinueBtn.Location = new System.Drawing.Point(138, 180);
+            this.facultyContinueBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.facultyContinueBtn.Location = new System.Drawing.Point(0, 99);
             this.facultyContinueBtn.Name = "facultyContinueBtn";
-            this.facultyContinueBtn.Size = new System.Drawing.Size(197, 40);
+            this.facultyContinueBtn.Size = new System.Drawing.Size(550, 40);
             this.facultyContinueBtn.TabIndex = 19;
             this.facultyContinueBtn.Text = "Devam Et";
             this.facultyContinueBtn.UseVisualStyleBackColor = true;
@@ -1856,7 +1847,7 @@
             this.label28.Dock = System.Windows.Forms.DockStyle.Top;
             this.label28.Location = new System.Drawing.Point(0, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(563, 33);
+            this.label28.Size = new System.Drawing.Size(550, 33);
             this.label28.TabIndex = 0;
             this.label28.Text = "Bölüm Ekle";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2023,10 +2014,79 @@
             this.lessonTextBox.Size = new System.Drawing.Size(230, 30);
             this.lessonTextBox.TabIndex = 13;
             // 
+            // gradeStudentNumberBtn
+            // 
+            this.gradeStudentNumberBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gradeStudentNumberBtn.Location = new System.Drawing.Point(0, 373);
+            this.gradeStudentNumberBtn.Name = "gradeStudentNumberBtn";
+            this.gradeStudentNumberBtn.Size = new System.Drawing.Size(550, 51);
+            this.gradeStudentNumberBtn.TabIndex = 31;
+            this.gradeStudentNumberBtn.Text = "Devam Et";
+            this.gradeStudentNumberBtn.UseVisualStyleBackColor = true;
+            // 
+            // gradeStudentNumberPanel
+            // 
+            this.gradeStudentNumberPanel.AutoScroll = true;
+            this.gradeStudentNumberPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradeStudentNumberPanel.Location = new System.Drawing.Point(0, 0);
+            this.gradeStudentNumberPanel.Name = "gradeStudentNumberPanel";
+            this.gradeStudentNumberPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.gradeStudentNumberPanel.Size = new System.Drawing.Size(550, 373);
+            this.gradeStudentNumberPanel.TabIndex = 33;
+            // 
+            // gradeStudentNumberPnl
+            // 
+            this.gradeStudentNumberPnl.Controls.Add(this.gradeStudentNumberPanel);
+            this.gradeStudentNumberPnl.Controls.Add(this.gradeStudentNumberBtn);
+            this.gradeStudentNumberPnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradeStudentNumberPnl.Location = new System.Drawing.Point(0, 172);
+            this.gradeStudentNumberPnl.Name = "gradeStudentNumberPnl";
+            this.gradeStudentNumberPnl.Size = new System.Drawing.Size(550, 424);
+            this.gradeStudentNumberPnl.TabIndex = 34;
+            this.gradeStudentNumberPnl.Visible = false;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label30);
+            this.panel10.Controls.Add(this.button3);
+            this.panel10.Controls.Add(this.semesterSelect);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.Location = new System.Drawing.Point(0, 596);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(550, 141);
+            this.panel10.TabIndex = 35;
+            // 
+            // semesterSelect
+            // 
+            this.semesterSelect.FormattingEnabled = true;
+            this.semesterSelect.Location = new System.Drawing.Point(230, 27);
+            this.semesterSelect.Name = "semesterSelect";
+            this.semesterSelect.Size = new System.Drawing.Size(172, 33);
+            this.semesterSelect.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button3.Location = new System.Drawing.Point(0, 84);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(550, 57);
+            this.button3.TabIndex = 32;
+            this.button3.Text = "Döneme Git";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(56, 30);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(168, 25);
+            this.label30.TabIndex = 33;
+            this.label30.Text = "Dönem Dersi Ekle";
+            // 
             // informationEntry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -2064,6 +2124,9 @@
             this.splitContainer2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.gradeStudentNumberPnl.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -2151,8 +2214,6 @@
         private System.Windows.Forms.Button facultyContinueBtn;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox facultyStudentNumberTextBox;
         private System.Windows.Forms.TextBox facultyNameTextBox;
         private System.Windows.Forms.Button addFacultyBtn;
         private System.Windows.Forms.ListBox lessonListBox;
@@ -2243,5 +2304,12 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button gradeStudentNumberBtn;
+        private System.Windows.Forms.FlowLayoutPanel gradeStudentNumberPanel;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel gradeStudentNumberPnl;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox semesterSelect;
     }
 }

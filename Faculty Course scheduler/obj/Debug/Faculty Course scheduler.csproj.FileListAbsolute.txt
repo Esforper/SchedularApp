@@ -20,3 +20,4 @@ C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\
 C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.Controller.sectionInfoPage.resources
 C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.Controller.InfoPageControl.resources
 C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.Alert.resources
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.Controller.SectionStudentNumber.resources
