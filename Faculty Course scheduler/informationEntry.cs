@@ -159,6 +159,7 @@ namespace Faculty_Course_scheduler
             {
                 semesterSelect.Items.Add(i);
             }
+            goToSemesterPnl.Visible = true;
         }
 
         private void addLessonBtn_Click(object sender, EventArgs e)
