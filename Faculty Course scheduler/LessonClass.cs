@@ -9,10 +9,11 @@ namespace Faculty_Course_scheduler
     public class LessonClass
     {
         public string Name;
-        public string Faculty;
-        public int LessonDuration;
-        public int LessonSemester;
         public string LessonCode;
+        public string Faculty;
+        public int LessonSemester;
+        public int[] LessonDuration;
+        // Teorik , uygulama , Lab
 
     }
 

@@ -186,7 +186,7 @@ namespace Faculty_Course_scheduler
                 lesson.Name = lessonTextBox.Text;
                 lesson.LessonSemester = Convert.ToInt16(lessonComboBox.Text);
                 lesson.Faculty = facultyname;
-                lesson.LessonDuration = Convert.ToInt16(lessonLongTextBox.Text);
+                lesson.LessonDuration = Convert.ToInt16(lessonLongTextBox.Text); //burada verileri teorik uygulama ve lab olarak al
                 lesson.LessonCode = LessonCodeInput.Text;
 
                 // Dersi uygun dönemin listesine ekle
