@@ -2041,6 +2041,7 @@
             this.tempPanel.Name = "tempPanel";
             this.tempPanel.Size = new System.Drawing.Size(460, 178);
             this.tempPanel.TabIndex = 33;
+            this.tempPanel.Visible = false;
             // 
             // label31
             // 
@@ -2103,9 +2104,9 @@
             // 
             // addFacultyBtn
             // 
-            this.addFacultyBtn.Location = new System.Drawing.Point(307, 425);
+            this.addFacultyBtn.Location = new System.Drawing.Point(297, 449);
             this.addFacultyBtn.Name = "addFacultyBtn";
-            this.addFacultyBtn.Size = new System.Drawing.Size(275, 60);
+            this.addFacultyBtn.Size = new System.Drawing.Size(406, 60);
             this.addFacultyBtn.TabIndex = 27;
             this.addFacultyBtn.Text = "Kaydet";
             this.addFacultyBtn.UseVisualStyleBackColor = true;

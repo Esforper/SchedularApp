@@ -105,6 +105,8 @@ namespace Faculty_Course_scheduler
         private string facultyname;
         private List<LessonClass>[] facultyLessons;
         private List<LessonClass> lessons;
+        private List<SectionStudentNumber> studentNumberList;
+        private int[] gradeStudentCount;
 
         private void facultyContinueBtn_Click(object sender, EventArgs e)
         {
@@ -120,9 +122,10 @@ namespace Faculty_Course_scheduler
                 for (int i = 1;i<facultyPeriodNumber/2 + 1;i++)
                 {
                     SectionStudentNumber studentNumberPanel = new SectionStudentNumber(i);
+                    studentNumberList.Add(studentNumberPanel);
                     gradeStudentNumberPanel.Controls.Add(studentNumberPanel);
                 }
-              
+                
                 /*
                 facultyname = facultyNameTextBox.Text;
                 splitContainer2.Panel2.Enabled = true;
@@ -160,6 +163,18 @@ namespace Faculty_Course_scheduler
                 semesterSelect.Items.Add(i);
             }
             goToSemesterPnl.Visible = true;
+            gradeStudentCount = new int[facultyPeriodNumber / 2];
+            for(int i = 0; i < studentNumberList.Count(); i++)
+            {
+                gradeStudentCount[i] = studentNumberList[i].GetStudentNumber();
+            }
+            
+        }
+
+        private void goToSemesterBtn_Click(object sender, EventArgs e)
+        {
+            splitContainer2.Panel2.Enabled = true;
+
         }
 
         private void addLessonBtn_Click(object sender, EventArgs e)
@@ -189,7 +204,7 @@ namespace Faculty_Course_scheduler
         {
             // facultyLessons dizisini FacultyClass nesnesine ekleyerek kaydet
             FacultyClass faculty = new FacultyClass();
-            faculty.SetFaculty(facultyname, facultyPeriodNumber, facultyStudentNumber, facultyLessons);
+            faculty.SetFaculty(facultyname, facultyPeriodNumber, gradeStudentCount, facultyLessons);
             database.SaveFaculty(faculty);
         }
 
@@ -475,9 +490,6 @@ namespace Faculty_Course_scheduler
 
         //----
 
-        private void goToSemesterBtn_Click(object sender, EventArgs e)
-        {
-            splitContainer2.Panel2.Enabled = true;
-        }
+       
     }
 }
