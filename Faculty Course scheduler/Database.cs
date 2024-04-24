@@ -11,8 +11,8 @@ internal class Database
 {
     public List<AcademianClass> AllAcademians;
     public List<ClassClass> AllClasses;
-    public List<DepartmentClass> AllFaculties;
-    public List<SemesterClass> AllPeriodLessons;
+    public List<DepartmentClass> AllDepartments;
+    public List<SemesterClass> AllSemesterLessons;
 
     private string folderPath;
     
@@ -40,10 +40,10 @@ internal class Database
             }
         }
 
-        AllFaculties = LoadFacultyDataFromJson();
+        AllDepartments = LoadFacultyDataFromJson();
         AllClasses = LoadClassDataFromJson();
         AllAcademians = LoadAcademianDataFromJson(); // LoadDataFromJson'dan gelen değeri AllAcademians'a ata
-        AllPeriodLessons = LoadLessonPeriodDataFromJson();
+        AllSemesterLessons = LoadSemesterDataFromJson();
     }
 
 
@@ -221,12 +221,12 @@ internal class Database
     }
     public void SaveFaculty(DepartmentClass faculty)
     {
-        AllFaculties = LoadFacultyDataFromJson();
+        AllDepartments = LoadFacultyDataFromJson();
 
         try
         {
-            AllFaculties.Add(faculty);
-            string jsonData = JsonConvert.SerializeObject(AllFaculties, Formatting.Indented);
+            AllDepartments.Add(faculty);
+            string jsonData = JsonConvert.SerializeObject(AllDepartments, Formatting.Indented);
             File.WriteAllText(jsonFacultyFilePath, jsonData);
         }
         catch (Exception ex)
@@ -237,9 +237,9 @@ internal class Database
 
     public List<string> Getfaculties()
     {
-        AllFaculties = LoadFacultyDataFromJson();
+        AllDepartments = LoadFacultyDataFromJson();
         List<string> allfacultyNames = new List<string>();
-        foreach(DepartmentClass faculty in AllFaculties)
+        foreach(DepartmentClass faculty in AllDepartments)
         {
             allfacultyNames.Add(faculty.Name);
         }
@@ -248,7 +248,7 @@ internal class Database
 
 
     //PeriodLesson Database 
-    public List<SemesterClass> LoadLessonPeriodDataFromJson()
+    public List<SemesterClass> LoadSemesterDataFromJson()
     {
         try
         {
@@ -268,12 +268,12 @@ internal class Database
 
     public void SavePeriodLessonDataToJson(SemesterClass onePeriod)   //akademisyeni databaseye kaydeder
     {
-        AllPeriodLessons = LoadLessonPeriodDataFromJson();
+        AllSemesterLessons = LoadSemesterDataFromJson();
         //akademisyeni akademisyen listesine ekler, bilgilerini json formatına dönüştürür. json dosyasına bilgiyi yazar.
         try
         {
-            AllPeriodLessons.Add(onePeriod);   //hali hazırda databasedeki akademisyenler listesine akademisyeni ekle
-            string jsonData = JsonConvert.SerializeObject(AllPeriodLessons, Formatting.Indented);  //bilgileri json formatına getir
+            AllSemesterLessons.Add(onePeriod);   //hali hazırda databasedeki akademisyenler listesine akademisyeni ekle
+            string jsonData = JsonConvert.SerializeObject(AllSemesterLessons, Formatting.Indented);  //bilgileri json formatına getir
             File.WriteAllText(jsonPeriodLessonFilePath, jsonData); //bilgileri json dosyasına yaz
 
             MessageBox.Show("Section Ders Programı Veritabanına kaydedildi");
@@ -286,14 +286,14 @@ internal class Database
 
     public SemesterClass GetOneSection(string sectionName)
     {
-        AllPeriodLessons = LoadLessonPeriodDataFromJson();
-        return AllPeriodLessons.First(sec => sec.Name == sectionName);
+        AllSemesterLessons = LoadSemesterDataFromJson();
+        return AllSemesterLessons.First(sec => sec.Name == sectionName);
     }
     public List<string> GetSectionNames()
     {
-        AllPeriodLessons = LoadLessonPeriodDataFromJson();
+        AllSemesterLessons = LoadSemesterDataFromJson();
         List<string> sectionsNames = new List<string>();
-        foreach(SemesterClass section in  AllPeriodLessons)
+        foreach(SemesterClass section in  AllSemesterLessons)
         {
             sectionsNames.Add(section.Name);
         }
@@ -302,7 +302,7 @@ internal class Database
 
     public void DeleteSection(SemesterClass section)
     {
-        AllPeriodLessons = LoadLessonPeriodDataFromJson();
+        AllSemesterLessons = LoadSemesterDataFromJson();
 
         List<string> classNames = new List<string>();       //bu kısımlar kaldırılabilir.
         List<string> academianNames = new List<string>();
@@ -347,17 +347,17 @@ internal class Database
        
 
         // Silinecek akademisyeni bul
-        var sectionToDelete = AllPeriodLessons.FirstOrDefault(s => s.Name == section.Name);
+        var sectionToDelete = AllSemesterLessons.FirstOrDefault(s => s.Name == section.Name);
 
         if (sectionToDelete != null)
         {
             // Akademisyeni listeden çıkar
-            AllPeriodLessons.Remove(sectionToDelete);
+            AllSemesterLessons.Remove(sectionToDelete);
 
             // Güncellenmiş listeyi JSON'a kaydet
             try
             {
-                string jsonData = JsonConvert.SerializeObject(AllPeriodLessons, Formatting.Indented);
+                string jsonData = JsonConvert.SerializeObject(AllSemesterLessons, Formatting.Indented);
                 File.WriteAllText(jsonPeriodLessonFilePath, jsonData);
 
                 MessageBox.Show($"{section.Name} başarıyla veritabanından silindi.");

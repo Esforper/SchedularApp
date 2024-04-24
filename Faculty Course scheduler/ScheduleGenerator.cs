@@ -11,7 +11,7 @@ namespace Faculty_Course_scheduler.Controller
         public static void GenerateSchedule(Database database)
         {
             List<AcademianClass> academians = database.AllAcademians;
-            List<DepartmentClass> faculties = database.AllFaculties;
+            List<DepartmentClass> faculties = database.AllDepartments;
             List<ClassClass> classes = database.AllClasses;
 
             foreach(AcademianClass academian in academians)

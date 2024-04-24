@@ -10,7 +10,7 @@ namespace Faculty_Course_scheduler
     {
         public string Name;
         public string LessonCode;
-        public string Faculty;
+        public string Department;
         public int LessonSemester;
         public int[] LessonDuration;
         // Teorik , uygulama , Lab

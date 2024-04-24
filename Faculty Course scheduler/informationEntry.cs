@@ -187,7 +187,7 @@ namespace Faculty_Course_scheduler
                 LessonClass lesson = new LessonClass();
                 lesson.Name = lessonTextBox.Text;
                 lesson.LessonSemester = Convert.ToInt16(lessonComboBox.Text);
-                lesson.Faculty = facultyname;
+                lesson.Department = facultyname;
                 //lesson.LessonDuration = Convert.ToInt16(lessonLongTextBox.Text); //burada verileri teorik uygulama ve lab olarak al
                 lesson.LessonCode = LessonCodeInput.Text;
 
@@ -216,10 +216,18 @@ namespace Faculty_Course_scheduler
             lessons = new List<LessonClass>();
             facultyLessons = new List<LessonClass>[facultyPeriodNumber];
 
-            foreach (string facultName in database.Getfaculties())  //Akademisyenin fakültesini seçerken gerekli
+            if(database.Getfaculties() != null)
             {
-                facultiesComboBox.Items.Add(facultName);
+                foreach (string facultName in database.Getfaculties())  //Akademisyenin fakültesini seçerken gerekli
+                {
+                    facultiesComboBox.Items.Add(facultName);
+                }
             }
+            else
+            {
+                MessageBox.Show("Fakülte Tanımlanmamış");
+            }
+           
         }
 
         private void SelectAllClass_Click(object sender, EventArgs e)

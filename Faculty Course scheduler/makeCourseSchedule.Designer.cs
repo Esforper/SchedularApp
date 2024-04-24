@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.startBtn = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.fallRdBtn = new System.Windows.Forms.RadioButton();
+            this.springRdBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -46,17 +47,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Dönem Seçin:";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Bahar",
-            "Güz"});
-            this.comboBox1.Location = new System.Drawing.Point(248, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 33);
-            this.comboBox1.TabIndex = 1;
-            // 
             // startBtn
             // 
             this.startBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -66,6 +56,7 @@
             this.startBtn.TabIndex = 2;
             this.startBtn.Text = "Başla";
             this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // progressBar1
             // 
@@ -108,15 +99,38 @@
             this.listBox1.Size = new System.Drawing.Size(1212, 164);
             this.listBox1.TabIndex = 6;
             // 
+            // fallRdBtn
+            // 
+            this.fallRdBtn.AutoSize = true;
+            this.fallRdBtn.Location = new System.Drawing.Point(248, 47);
+            this.fallRdBtn.Name = "fallRdBtn";
+            this.fallRdBtn.Size = new System.Drawing.Size(69, 29);
+            this.fallRdBtn.TabIndex = 7;
+            this.fallRdBtn.TabStop = true;
+            this.fallRdBtn.Text = "Güz";
+            this.fallRdBtn.UseVisualStyleBackColor = true;
+            // 
+            // springRdBtn
+            // 
+            this.springRdBtn.AutoSize = true;
+            this.springRdBtn.Location = new System.Drawing.Point(348, 45);
+            this.springRdBtn.Name = "springRdBtn";
+            this.springRdBtn.Size = new System.Drawing.Size(85, 29);
+            this.springRdBtn.TabIndex = 8;
+            this.springRdBtn.TabStop = true;
+            this.springRdBtn.Text = "Bahar";
+            this.springRdBtn.UseVisualStyleBackColor = true;
+            // 
             // makeCourseSchedule
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.springRdBtn);
+            this.Controls.Add(this.fallRdBtn);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.startBtn);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Name = "makeCourseSchedule";
@@ -129,11 +143,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.RadioButton fallRdBtn;
+        private System.Windows.Forms.RadioButton springRdBtn;
     }
 }
