@@ -16,7 +16,9 @@ namespace Faculty_Course_scheduler
 		public informationEntry()
 		{
 			InitializeComponent();
-		}
+            splitContainer2.FixedPanel = FixedPanel.Panel1;
+
+        }
 
         bool isAcademian_MndyLblClick = false;
         bool isAcademian_TsdyLblClick = false;

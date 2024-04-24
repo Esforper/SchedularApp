@@ -1016,10 +1016,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1658, 743);
+            this.tabPage2.Size = new System.Drawing.Size(1658, 752);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Derslik Ekle";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1794,7 +1794,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.lessonTextBox);
             this.splitContainer2.Panel2.Enabled = false;
             this.splitContainer2.Size = new System.Drawing.Size(1652, 737);
-            this.splitContainer2.SplitterDistance = 550;
+            this.splitContainer2.SplitterDistance = 345;
             this.splitContainer2.TabIndex = 1;
             // 
             // gradeStudentNumberPnl
@@ -1804,7 +1804,7 @@
             this.gradeStudentNumberPnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradeStudentNumberPnl.Location = new System.Drawing.Point(0, 172);
             this.gradeStudentNumberPnl.Name = "gradeStudentNumberPnl";
-            this.gradeStudentNumberPnl.Size = new System.Drawing.Size(550, 424);
+            this.gradeStudentNumberPnl.Size = new System.Drawing.Size(345, 424);
             this.gradeStudentNumberPnl.TabIndex = 34;
             this.gradeStudentNumberPnl.Visible = false;
             // 
@@ -1815,7 +1815,7 @@
             this.gradeStudentNumberPanel.Location = new System.Drawing.Point(0, 0);
             this.gradeStudentNumberPanel.Name = "gradeStudentNumberPanel";
             this.gradeStudentNumberPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.gradeStudentNumberPanel.Size = new System.Drawing.Size(550, 373);
+            this.gradeStudentNumberPanel.Size = new System.Drawing.Size(345, 373);
             this.gradeStudentNumberPanel.TabIndex = 33;
             // 
             // gradeStudentNumberBtn
@@ -1823,7 +1823,7 @@
             this.gradeStudentNumberBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gradeStudentNumberBtn.Location = new System.Drawing.Point(0, 373);
             this.gradeStudentNumberBtn.Name = "gradeStudentNumberBtn";
-            this.gradeStudentNumberBtn.Size = new System.Drawing.Size(550, 51);
+            this.gradeStudentNumberBtn.Size = new System.Drawing.Size(345, 51);
             this.gradeStudentNumberBtn.TabIndex = 31;
             this.gradeStudentNumberBtn.Text = "Devam Et";
             this.gradeStudentNumberBtn.UseVisualStyleBackColor = true;
@@ -1838,14 +1838,14 @@
             this.goToSemesterPnl.Location = new System.Drawing.Point(0, 596);
             this.goToSemesterPnl.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.goToSemesterPnl.Name = "goToSemesterPnl";
-            this.goToSemesterPnl.Size = new System.Drawing.Size(550, 141);
+            this.goToSemesterPnl.Size = new System.Drawing.Size(345, 141);
             this.goToSemesterPnl.TabIndex = 35;
             this.goToSemesterPnl.Visible = false;
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(56, 30);
+            this.label30.Location = new System.Drawing.Point(7, 30);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(168, 25);
             this.label30.TabIndex = 33;
@@ -1856,7 +1856,7 @@
             this.goToSemesterBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.goToSemesterBtn.Location = new System.Drawing.Point(0, 84);
             this.goToSemesterBtn.Name = "goToSemesterBtn";
-            this.goToSemesterBtn.Size = new System.Drawing.Size(550, 57);
+            this.goToSemesterBtn.Size = new System.Drawing.Size(345, 57);
             this.goToSemesterBtn.TabIndex = 32;
             this.goToSemesterBtn.Text = "Döneme Git";
             this.goToSemesterBtn.UseVisualStyleBackColor = true;
@@ -1865,9 +1865,9 @@
             // semesterSelect
             // 
             this.semesterSelect.FormattingEnabled = true;
-            this.semesterSelect.Location = new System.Drawing.Point(230, 27);
+            this.semesterSelect.Location = new System.Drawing.Point(181, 27);
             this.semesterSelect.Name = "semesterSelect";
-            this.semesterSelect.Size = new System.Drawing.Size(172, 33);
+            this.semesterSelect.Size = new System.Drawing.Size(152, 33);
             this.semesterSelect.TabIndex = 0;
             // 
             // panel3
@@ -1881,7 +1881,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 33);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(550, 139);
+            this.panel3.Size = new System.Drawing.Size(345, 139);
             this.panel3.TabIndex = 23;
             // 
             // panel4
@@ -1890,7 +1890,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(550, 3);
+            this.panel4.Size = new System.Drawing.Size(345, 3);
             this.panel4.TabIndex = 24;
             // 
             // facultyContinueBtn
@@ -1898,7 +1898,7 @@
             this.facultyContinueBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.facultyContinueBtn.Location = new System.Drawing.Point(0, 99);
             this.facultyContinueBtn.Name = "facultyContinueBtn";
-            this.facultyContinueBtn.Size = new System.Drawing.Size(550, 40);
+            this.facultyContinueBtn.Size = new System.Drawing.Size(345, 40);
             this.facultyContinueBtn.TabIndex = 19;
             this.facultyContinueBtn.Text = "Devam Et";
             this.facultyContinueBtn.UseVisualStyleBackColor = true;
@@ -1906,22 +1906,22 @@
             // 
             // facultyNameTextBox
             // 
-            this.facultyNameTextBox.Location = new System.Drawing.Point(212, 20);
+            this.facultyNameTextBox.Location = new System.Drawing.Point(126, 20);
             this.facultyNameTextBox.Name = "facultyNameTextBox";
-            this.facultyNameTextBox.Size = new System.Drawing.Size(210, 30);
+            this.facultyNameTextBox.Size = new System.Drawing.Size(207, 30);
             this.facultyNameTextBox.TabIndex = 7;
             // 
             // facultyPeriodTextBox
             // 
             this.facultyPeriodTextBox.Location = new System.Drawing.Point(212, 56);
             this.facultyPeriodTextBox.Name = "facultyPeriodTextBox";
-            this.facultyPeriodTextBox.Size = new System.Drawing.Size(210, 30);
+            this.facultyPeriodTextBox.Size = new System.Drawing.Size(121, 30);
             this.facultyPeriodTextBox.TabIndex = 22;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(7, 59);
+            this.label26.Location = new System.Drawing.Point(0, 61);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(199, 25);
             this.label26.TabIndex = 21;
@@ -1930,7 +1930,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(93, 25);
+            this.label29.Location = new System.Drawing.Point(7, 22);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(113, 25);
             this.label29.TabIndex = 5;
@@ -1941,7 +1941,7 @@
             this.label28.Dock = System.Windows.Forms.DockStyle.Top;
             this.label28.Location = new System.Drawing.Point(0, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(550, 33);
+            this.label28.Size = new System.Drawing.Size(345, 33);
             this.label28.TabIndex = 0;
             this.label28.Text = "Bölüm Ekle";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

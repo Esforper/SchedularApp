@@ -51,6 +51,8 @@ namespace Faculty_Course_scheduler
             schedulePage.BringToFront();
         }
 
+       
+
         private void newMakeScheduleBtn_Click(object sender, EventArgs e)
         {
             makeCourseSchedule newSchedulePage = new makeCourseSchedule();
