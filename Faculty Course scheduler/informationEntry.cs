@@ -205,7 +205,7 @@ namespace Faculty_Course_scheduler
         private void addFacultyBtn_Click(object sender, EventArgs e)
         {
             // facultyLessons dizisini FacultyClass nesnesine ekleyerek kaydet
-            FacultyClass faculty = new FacultyClass();
+            DepartmentClass faculty = new DepartmentClass();
             faculty.SetFaculty(facultyname, facultyPeriodNumber, gradeStudentCount, facultyLessons);
             database.SaveFaculty(faculty);
         }

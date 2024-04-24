@@ -100,7 +100,7 @@
     </Compile>
     <Compile Include="ScheduleGenerator.cs" />
     <Compile Include="Database.cs" />
-    <Compile Include="FacultyClass.cs" />
+    <Compile Include="DepartmentClass.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

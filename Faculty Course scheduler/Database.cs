@@ -11,7 +11,7 @@ internal class Database
 {
     public List<AcademianClass> AllAcademians;
     public List<ClassClass> AllClasses;
-    public List<FacultyClass> AllFaculties;
+    public List<DepartmentClass> AllFaculties;
     public List<SemesterClass> AllPeriodLessons;
 
     private string folderPath;
@@ -202,14 +202,14 @@ internal class Database
 
 
     //FACULTY DATA
-    public List<FacultyClass> LoadFacultyDataFromJson()
+    public List<DepartmentClass> LoadFacultyDataFromJson()
     {
         try
         {
             if (File.Exists(jsonFacultyFilePath))
             {
                 string jsonData = File.ReadAllText(jsonFacultyFilePath);
-                return JsonConvert.DeserializeObject<List<FacultyClass>>(jsonData) ?? new List<FacultyClass>();
+                return JsonConvert.DeserializeObject<List<DepartmentClass>>(jsonData) ?? new List<DepartmentClass>();
             }
         }
         catch (Exception ex)
@@ -217,9 +217,9 @@ internal class Database
             MessageBox.Show("Hata: " + ex.Message);
         }
 
-        return new List<FacultyClass>(); // Hata durumunda boş bir liste döndür
+        return new List<DepartmentClass>(); // Hata durumunda boş bir liste döndür
     }
-    public void SaveFaculty(FacultyClass faculty)
+    public void SaveFaculty(DepartmentClass faculty)
     {
         AllFaculties = LoadFacultyDataFromJson();
 
@@ -239,9 +239,9 @@ internal class Database
     {
         AllFaculties = LoadFacultyDataFromJson();
         List<string> allfacultyNames = new List<string>();
-        foreach(FacultyClass faculty in AllFaculties)
+        foreach(DepartmentClass faculty in AllFaculties)
         {
-            allfacultyNames.Add(faculty.FacultyName);
+            allfacultyNames.Add(faculty.Name);
         }
         return allfacultyNames;
     }

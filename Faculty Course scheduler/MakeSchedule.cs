@@ -48,9 +48,9 @@ namespace Faculty_Course_scheduler
             FacultyClassNumberComboBox.Items.Clear();   
 
             var faculties = database.LoadFacultyDataFromJson();
-            var onefaculty = faculties.Where(a => a.FacultyName == facultiesComboBox.Text).First();
+            var onefaculty = faculties.Where(a => a.Name == facultiesComboBox.Text).First();
 
-            for (int i = 0; i < onefaculty.facultyClassNumber; i++)
+            for (int i = 0; i < onefaculty.numGrades; i++)
             {
                 FacultyClassNumberComboBox.Items.Add(i + 1);
             }
@@ -79,10 +79,10 @@ namespace Faculty_Course_scheduler
 
             var allfaculties = database.LoadFacultyDataFromJson();
 
-            var selectedFaculty = allfaculties.Find(a => a.FacultyName.Equals(facultiesComboBox.Text));
+            var selectedFaculty = allfaculties.Find(a => a.Name.Equals(facultiesComboBox.Text));
             int selectedPeriodInt = selectedPeriod + (selectedClass - 1) * 2;   
 
-            var selectedPeriodLessons = selectedFaculty.FacultyLessons[selectedPeriodInt];
+            var selectedPeriodLessons = selectedFaculty.courses[selectedPeriodInt];
 
             oneSection = new SemesterClass();
             oneSection.Lessons = selectedPeriodLessons;  //yeni oluşturulan period classına dersleri koy.
