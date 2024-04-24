@@ -38,6 +38,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.newMakeScheduleBtn = new FontAwesome.Sharp.IconButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -51,6 +52,7 @@
             this.flowLayoutPanel1.Controls.Add(this.makeScheduleBtn);
             this.flowLayoutPanel1.Controls.Add(this.ıconButton3);
             this.flowLayoutPanel1.Controls.Add(this.infoShowBtn);
+            this.flowLayoutPanel1.Controls.Add(this.newMakeScheduleBtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -186,6 +188,25 @@
             this.label2.Text = "Uygulamasına Hoş Geldiniz";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // newMakeScheduleBtn
+            // 
+            this.newMakeScheduleBtn.FlatAppearance.BorderSize = 0;
+            this.newMakeScheduleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newMakeScheduleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.newMakeScheduleBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.newMakeScheduleBtn.IconChar = FontAwesome.Sharp.IconChar.ProjectDiagram;
+            this.newMakeScheduleBtn.IconColor = System.Drawing.Color.White;
+            this.newMakeScheduleBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.newMakeScheduleBtn.Location = new System.Drawing.Point(0, 443);
+            this.newMakeScheduleBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.newMakeScheduleBtn.Name = "newMakeScheduleBtn";
+            this.newMakeScheduleBtn.Size = new System.Drawing.Size(233, 82);
+            this.newMakeScheduleBtn.TabIndex = 5;
+            this.newMakeScheduleBtn.Text = "Test make Course Schedule";
+            this.newMakeScheduleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.newMakeScheduleBtn.UseVisualStyleBackColor = true;
+            this.newMakeScheduleBtn.Click += new System.EventHandler(this.newMakeScheduleBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -216,6 +237,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton newMakeScheduleBtn;
     }
 }
 

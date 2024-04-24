@@ -86,6 +86,12 @@
     <Compile Include="Controller\SectionStudentNumber.Designer.cs">
       <DependentUpon>SectionStudentNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="makeCourseSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="makeCourseSchedule.Designer.cs">
+      <DependentUpon>makeCourseSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="MakeSchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="infoShowControl.resx">
       <DependentUpon>infoShowControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="makeCourseSchedule.resx">
+      <DependentUpon>makeCourseSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MakeSchedule.resx">
       <DependentUpon>MakeSchedule.cs</DependentUpon>

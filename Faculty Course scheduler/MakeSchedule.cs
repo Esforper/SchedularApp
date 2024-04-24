@@ -88,7 +88,7 @@ namespace Faculty_Course_scheduler
             oneSection.Lessons = selectedPeriodLessons;  //yeni oluşturulan period classına dersleri koy.
             oneSection.Name = facultyPeriodName;   //fakülte - sınıf - dönem bilgisi
             oneSection.FacultyName = facultyInfo;      //hangi fakültenin
-            oneSection.StudentCapacity = selectedFaculty.FacultyNumberOfStudents;  //öğrenci kapasitesi
+            //oneSection.StudentCapacity = selectedFaculty.FacultyNumberOfStudents;  //öğrenci kapasitesi
 
             foreach (var lesson in selectedPeriodLessons)
             {
@@ -236,6 +236,7 @@ namespace Faculty_Course_scheduler
             }
 
         }
+
 
     }
 }
