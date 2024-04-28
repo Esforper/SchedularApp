@@ -43,19 +43,32 @@ namespace Faculty_Course_scheduler
             //departmentlar bilgisayar , yazılım gibi, semester olarak tanımlamam lazım
 
             List<SemesterClass> AllSemesters = new List<SemesterClass>();
-            foreach(DepartmentClass department in AllDepartments)
+            foreach(DepartmentClass department in AllDepartments)   //department dönme
             {
                 for(int i = 0;i< department.numGrades;i++)  //sınıf sayısı kadar dön
                 {
-                    SemesterClass oneSemester = new SemesterClass();
+                    SemesterClass oneSemester = new SemesterClass();    //semester oluşturma
                     oneSemester.Name = department.Name + "_" + i + "_" + semester;
                     //bölüm + sınıf numarası + dönemi
                     //semester student capacity kaldırılacak
                     oneSemester.FacultyName = department.Name;
-                    oneSemester.Lessons = department.courses[department.numGrades];
+                    oneSemester.Lessons = department.courses[department.numGrades+semesterNum];
+                    //bu değerlerin kontrolleri sağlanacak
+                    AllSemesters.Add(oneSemester);
                 }
             }
-            SemesterClass test = new SemesterClass();
+           //Bu kısım ön tanımlama, ortak ders saatleri olduğunda olası çakışmaları engellemesi için.
+
+
+            for(int i = 0; i < 4; i++)  //bölümler 4 senelik olduğu var sayılarak dönülüyor
+            //sınıfları dön
+            {
+                foreach(DepartmentClass department in AllDepartments)
+                {
+
+
+                }
+            }
             
 
         }

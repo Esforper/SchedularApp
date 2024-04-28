@@ -107,33 +107,36 @@ namespace Faculty_Course_scheduler
         private string facultyname;
         private List<LessonClass>[] facultyLessons;
         private List<LessonClass> lessons;
-        private List<SectionStudentNumber> studentNumberList;
+        private List<SectionStudentNumber> studentNumberListPanel;
+        List<int> studentNumbersList = new List<int>();
         private int[] gradeStudentCount;
 
         private void facultyContinueBtn_Click(object sender, EventArgs e)
         {
-            
             try
             {
+                //Burası bozuk muhtemelen çalışmıyorlar
                 facultyPeriodNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
                 facultyStudentNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
 
                 gradeStudentNumberPnl.Visible = true;   // genel panel visibilty
-
+                
                 gradeStudentNumberPanel.Controls.Clear();
                 for (int i = 1;i<facultyPeriodNumber/2 + 1;i++)
                 {
                     SectionStudentNumber studentNumberPanel = new SectionStudentNumber(i);
-                    studentNumberList.Add(studentNumberPanel);
+                    studentNumberListPanel.Add(studentNumberPanel);
                     gradeStudentNumberPanel.Controls.Add(studentNumberPanel);
                 }
                 
-                /*
-                facultyname = facultyNameTextBox.Text;
-                splitContainer2.Panel2.Enabled = true;
+                
+                facultyname = facultyNameTextBox.Text;  //fakülte ismini çek
                 labelFacultyName.Text = facultyNameTextBox.Text;
-                labelFacultyPeriod.Text = facultyStudentNumberTextBox.Text;
 
+
+                //splitContainer2.Panel2.Enabled = true;
+                //labelFacultyPeriod.Text = facultyStudentNumberTextBox.Text;
+                /*
                 // Liste dizisini oluştur
                 facultyLessons = new List<LessonClass>[facultyPeriodNumber];
 
@@ -160,15 +163,22 @@ namespace Faculty_Course_scheduler
 
         private void gradeStudentNumberBtn_Click(object sender, EventArgs e)
         {
+            foreach(SectionStudentNumber obj in studentNumberListPanel)
+            {
+                studentNumbersList.Add(obj.GetStudentNumber());
+            }
+            //studentNumberListPanel -> bilgi girişinin sağlandığı user control paneller
+            //studentNumbersList -> int türünde sınıfların öğrenci sayısı değerlerini tutuyor
+
             for (int i = 1; i < facultyPeriodNumber+1; i++)
             {
                 semesterSelect.Items.Add(i);
             }
             goToSemesterPnl.Visible = true;
             gradeStudentCount = new int[facultyPeriodNumber / 2];
-            for(int i = 0; i < studentNumberList.Count(); i++)
+            for(int i = 0; i < studentNumberListPanel.Count(); i++)
             {
-                gradeStudentCount[i] = studentNumberList[i].GetStudentNumber();
+                gradeStudentCount[i] = studentNumberListPanel[i].GetStudentNumber();
             }
             
         }
@@ -176,6 +186,7 @@ namespace Faculty_Course_scheduler
         private void goToSemesterBtn_Click(object sender, EventArgs e)
         {
             splitContainer2.Panel2.Enabled = true;
+
 
         }
 
