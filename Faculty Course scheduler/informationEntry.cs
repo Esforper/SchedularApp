@@ -107,12 +107,13 @@ namespace Faculty_Course_scheduler
         private string facultyname;
         private List<LessonClass>[] facultyLessons;
         private List<LessonClass> lessons;
-        private List<SectionStudentNumber> studentNumberListPanel;
+        private List<SectionStudentNumber> studentNumberPanelList;
         List<int> studentNumbersList = new List<int>();
         private int[] gradeStudentCount;
 
         private void facultyContinueBtn_Click(object sender, EventArgs e)
         {
+            studentNumberPanelList = new List<SectionStudentNumber>();
             try
             {
                 //Burası bozuk muhtemelen çalışmıyorlar
@@ -120,13 +121,16 @@ namespace Faculty_Course_scheduler
                 facultyStudentNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
 
                 gradeStudentNumberPnl.Visible = true;   // genel panel visibilty
-                
+                //her gradenin öğrenci sayısının girildiği ana panel görünümünü ayarla
+
                 gradeStudentNumberPanel.Controls.Clear();
-                for (int i = 1;i<facultyPeriodNumber/2 + 1;i++)
+                //tekrar tekrar eklemeye karşın, input girişi user controllerin bulunacağı list paneli üzerindeki ögeleri temizle
+
+                for (int i = 1; i < facultyPeriodNumber / 2 + 1 ; i++)
                 {
-                    SectionStudentNumber studentNumberPanel = new SectionStudentNumber(i);
-                    studentNumberListPanel.Add(studentNumberPanel);
-                    gradeStudentNumberPanel.Controls.Add(studentNumberPanel);
+                    SectionStudentNumber studentNumberPanel = new SectionStudentNumber(i);  //grade öğrenci sayısı input paneli
+                    studentNumberPanelList.Add(studentNumberPanel); //panellere erişmek için listeye kaydet
+                    gradeStudentNumberPanel.Controls.Add(studentNumberPanel);   
                 }
                 
                 
@@ -163,7 +167,11 @@ namespace Faculty_Course_scheduler
 
         private void gradeStudentNumberBtn_Click(object sender, EventArgs e)
         {
-            foreach(SectionStudentNumber obj in studentNumberListPanel)
+            
+            goToSemesterPnl.Dock = DockStyle.Bottom;
+            gradeStudentNumberPnl.Dock = DockStyle.Fill;
+
+            foreach (SectionStudentNumber obj in studentNumberPanelList)
             {
                 studentNumbersList.Add(obj.GetStudentNumber());
             }
@@ -174,11 +182,17 @@ namespace Faculty_Course_scheduler
             {
                 semesterSelect.Items.Add(i);
             }
+            //SemesterSelect -> hangi sınıfın bilgilerini eklediğimizi seçtiğimiz input
+            //facultyPeriodNumber -> departmentin (bölümün) dönem sayısı
+            //bölümün dönem sayısı kadar comboboxa öge ekliyor
+
             goToSemesterPnl.Visible = true;
+            //erişilmek istenen dönemin bilgilerinin girildiği panelin görünürlüğü
+
             gradeStudentCount = new int[facultyPeriodNumber / 2];
-            for(int i = 0; i < studentNumberListPanel.Count(); i++)
+            for(int i = 0; i < studentNumberPanelList.Count(); i++)
             {
-                gradeStudentCount[i] = studentNumberListPanel[i].GetStudentNumber();
+                gradeStudentCount[i] = studentNumberPanelList[i].GetStudentNumber();
             }
             
         }
@@ -231,7 +245,11 @@ namespace Faculty_Course_scheduler
             {
                 foreach (string facultName in database.Getfaculties())  //Akademisyenin fakültesini seçerken gerekli
                 {
-                    facultiesComboBox.Items.Add(facultName);
+                    if(facultName != null)
+                    {
+                        facultiesComboBox.Items.Add(facultName);
+                    }
+                    
                 }
             }
             else

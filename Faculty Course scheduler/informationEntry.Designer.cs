@@ -1759,8 +1759,8 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.splitContainer2.Panel1.Controls.Add(this.gradeStudentNumberPnl);
             this.splitContainer2.Panel1.Controls.Add(this.goToSemesterPnl);
+            this.splitContainer2.Panel1.Controls.Add(this.gradeStudentNumberPnl);
             this.splitContainer2.Panel1.Controls.Add(this.panel3);
             this.splitContainer2.Panel1.Controls.Add(this.label28);
             // 
@@ -1801,7 +1801,7 @@
             // 
             this.gradeStudentNumberPnl.Controls.Add(this.gradeStudentNumberPanel);
             this.gradeStudentNumberPnl.Controls.Add(this.gradeStudentNumberBtn);
-            this.gradeStudentNumberPnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradeStudentNumberPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.gradeStudentNumberPnl.Location = new System.Drawing.Point(0, 172);
             this.gradeStudentNumberPnl.Name = "gradeStudentNumberPnl";
             this.gradeStudentNumberPnl.Size = new System.Drawing.Size(345, 424);
@@ -1834,7 +1834,7 @@
             this.goToSemesterPnl.Controls.Add(this.label30);
             this.goToSemesterPnl.Controls.Add(this.goToSemesterBtn);
             this.goToSemesterPnl.Controls.Add(this.semesterSelect);
-            this.goToSemesterPnl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.goToSemesterPnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.goToSemesterPnl.Location = new System.Drawing.Point(0, 596);
             this.goToSemesterPnl.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.goToSemesterPnl.Name = "goToSemesterPnl";
