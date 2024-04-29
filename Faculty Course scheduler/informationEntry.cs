@@ -35,6 +35,7 @@ namespace Faculty_Course_scheduler
         Database database = new Database();
         private void button4_Click(object sender, EventArgs e)
         {
+
             AcademianClass academian = new AcademianClass();
             CheckBox[,] checkBoxArray = new CheckBox[10, 5];
             bool[,] booldizisi = new bool[10, 5];
@@ -56,12 +57,28 @@ namespace Faculty_Course_scheduler
                 }
             }
 
+            List<string> lessonCodes = new List<string>();
+            foreach(var lessonCode in academianLessonsLstBx.Items)
+            {
+                lessonCodes.Add(lessonCode.ToString());
+            }
+
+            academian.lessonCodes = lessonCodes;    //bunu direkt public olduğu için atama yaptım ama normalde atama yapamamam lazım.
             string academianName = textBox1.Text;
             string academianFaculty = facultiesComboBox.Text;
             academian.SetAcademian(academianName, booldizisi, academianFaculty);
             database.SaveAcademian(academian);
             MessageBox.Show("Akademisyen Kaydedildi");
         }
+
+        private void addLessonToAcademianBtn_Click(object sender, EventArgs e)
+        {
+            if (!academianLessonsLstBx.Items.Contains(lessonCodesComboBox.Text))
+            {
+                academianLessonsLstBx.Items.Add(lessonCodesComboBox.Text);
+            }
+        }
+
 
         private void addClassBtn_Click_1(object sender, EventArgs e)
         {
@@ -101,32 +118,30 @@ namespace Faculty_Course_scheduler
         }
 
 
-
-        private int facultyPeriodNumber;
-        //private int facultyStudentNumber; öğrenci sayılarını studentNumberList ile tuttuğumuzdan anlık işlevi yok
+        // ---------- DEPARTMENT ADD SYSTEM -----------
+        private int departmentPeriodNumber; //departmanda kaç dönem var (bil müh için 8 dönem gibi)
         private string facultyname; //seçili fakülte (department de denebilir) bilgilerini kaydet.
-        private List<LessonClass>[] facultyLessons;
-        //private List<LessonClass> lessons;
-        private List<SectionStudentNumber> studentNumberPanelList;
-        List<int> studentNumbersList = new List<int>();
+        private List<LessonClass>[] facultyLessons; //fakülte derslerinin kaydedileceği "Listelerin dizisi"
+
+        private List<SectionStudentNumberControl> studentNumberPanelList;   //Bilgilerin alınabilmesi için panel listesi
+        //List<int> studentNumbersList = new List<int>();
+
         private int[] gradeStudentCount;
 
         private void facultyContinueBtn_Click(object sender, EventArgs e)
         {
             
-            studentNumberPanelList = new List<SectionStudentNumber>();
+            studentNumberPanelList = new List<SectionStudentNumberControl>();
             try
             {
-                facultyPeriodNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
-                facultyLessons = new List<LessonClass>[facultyPeriodNumber];    //fakülte derslerini tanımladık
-                //tanımlamışken tüm listleri tanımlayalım
-                for(int i=0; i < facultyPeriodNumber; i++)
+                departmentPeriodNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
+                facultyLessons = new List<LessonClass>[departmentPeriodNumber];    //fakülte derslerini tanımladık
+
+                //dizi için ayrı ayrı listeleri tanımlıyoruz.
+                for(int i=0; i < departmentPeriodNumber; i++)
                 {
                     facultyLessons[i] = new List<LessonClass>();
                 }
-
-
-                //facultyStudentNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
 
                 gradeStudentNumberPnl.Visible = true;   // genel panel visibilty
                 //her gradenin öğrenci sayısının girildiği ana panel görünümünü ayarla
@@ -134,9 +149,9 @@ namespace Faculty_Course_scheduler
                 gradeStudentNumberPanel.Controls.Clear();
                 //tekrar tekrar eklemeye karşın, input girişi user controllerin bulunacağı list paneli üzerindeki ögeleri temizle
 
-                for (int i = 1; i < facultyPeriodNumber / 2 + 1 ; i++)
+                for (int i = 1; i < departmentPeriodNumber / 2 + 1 ; i++)
                 {
-                    SectionStudentNumber studentNumberPanel = new SectionStudentNumber(i);  //grade öğrenci sayısı input paneli
+                    SectionStudentNumberControl studentNumberPanel = new SectionStudentNumberControl(i);  //grade öğrenci sayısı input paneli
                     studentNumberPanelList.Add(studentNumberPanel); //panellere erişmek için listeye kaydet
                     gradeStudentNumberPanel.Controls.Add(studentNumberPanel);   
                 }
@@ -144,26 +159,6 @@ namespace Faculty_Course_scheduler
                 
                 facultyname = facultyNameTextBox.Text;  //fakülte ismini çek
                 labelFacultyName.Text = facultyname;
-
-
-                //splitContainer2.Panel2.Enabled = true;
-                //labelFacultyPeriod.Text = facultyStudentNumberTextBox.Text;
-                /*
-                // Liste dizisini oluştur
-                facultyLessons = new List<LessonClass>[facultyPeriodNumber];
-
-                for (int i = 0; i < facultyPeriodNumber; i++)
-                {
-                    // Her bir dönem için bir liste oluştur
-                    facultyLessons[i] = new List<LessonClass>();
-                }
-
-                for (int i = 1; i < facultyPeriodNumber + 1; i++)
-                {
-                    lessonComboBox.Items.Add(i);
-                }
-                lessonComboBox.SelectedItem = 1;
-                */
             }
             catch
             {
@@ -178,15 +173,16 @@ namespace Faculty_Course_scheduler
             
             goToSemesterPnl.Dock = DockStyle.Bottom;
             gradeStudentNumberPnl.Dock = DockStyle.Fill;
-
-            foreach (SectionStudentNumber obj in studentNumberPanelList)
+            /*
+            foreach (SectionStudentNumberControl obj in studentNumberPanelList)
             {
                 studentNumbersList.Add(obj.GetStudentNumber());
             }
+            */
             //studentNumberListPanel -> bilgi girişinin sağlandığı user control paneller
             //studentNumbersList -> int türünde sınıfların öğrenci sayısı değerlerini tutuyor
 
-            for (int i = 1; i < facultyPeriodNumber+1; i++)
+            for (int i = 1; i < departmentPeriodNumber+1; i++)
             {
                 semesterSelectInput.Items.Add(i);
             }
@@ -197,7 +193,7 @@ namespace Faculty_Course_scheduler
             goToSemesterPnl.Visible = true;
             //erişilmek istenen dönemin bilgilerinin girildiği panelin görünürlüğü
 
-            gradeStudentCount = new int[facultyPeriodNumber / 2];
+            gradeStudentCount = new int[departmentPeriodNumber / 2];
             for(int i = 0; i < studentNumberPanelList.Count(); i++)
             {
                 gradeStudentCount[i] = studentNumberPanelList[i].GetStudentNumber();
@@ -213,10 +209,6 @@ namespace Faculty_Course_scheduler
             splitContainer2.Panel2.Enabled = true;
             lblSelectedSemester.Text = selectedSemester.ToString();
             //seçilen dönemi göster (1. dönem, 3. dönem vb)
-
-            /*
-           
-            */
         }
 
         List<LessonClass> AllLessons = new List<LessonClass>();
@@ -230,7 +222,7 @@ namespace Faculty_Course_scheduler
                     Name = lessonTextBox.Text,
                     LessonSemester = Convert.ToInt16(selectedSemester),
                     Department = facultyname,
-                    LessonCode = LessonCodeInput.Text,
+                    LessonCode = LessonCodeInput.Text.ToUpper(),
                     AKTS = Convert.ToInt16(AKTSInput.Text),
                     Credit = Convert.ToInt16(CreditInput.Text)
                 };
@@ -261,15 +253,35 @@ namespace Faculty_Course_scheduler
         {
             // facultyLessons dizisini FacultyClass nesnesine ekleyerek kaydet
             DepartmentClass department = new DepartmentClass();
-            department.SetFaculty(facultyname, facultyPeriodNumber, gradeStudentCount, facultyLessons);
+            department.SetFaculty(facultyname, departmentPeriodNumber, gradeStudentCount, facultyLessons);
             database.SaveDepartment(department);
         }
-
+        //--------------- END OF ADD DEPARTMENT SYSTEM ----------------
         
         private void informationEntry_Load(object sender, EventArgs e)
         {
             if(database.Getfaculties() != null)
             {
+                List<DepartmentClass> AllDepartments = database.AllDepartments;
+                List<string> AllLessonCodes = new List<string>();
+                foreach(DepartmentClass department in AllDepartments)
+                {
+                    foreach(var listOfLessons in department.courses)
+                    {
+                        foreach(var oneLesson in listOfLessons)
+                        {
+                            if (!AllLessonCodes.Contains(oneLesson.LessonCode))
+                            {
+                                AllLessonCodes.Add(oneLesson.LessonCode);
+                                lessonCodesComboBox.Items.Add(oneLesson.LessonCode);
+                            }
+                            
+                        }
+                    }
+                }
+                
+
+
                 foreach (string facultName in database.Getfaculties())  //Akademisyenin fakültesini seçerken gerekli
                 {
                     if(facultName != null)
@@ -555,6 +567,8 @@ namespace Faculty_Course_scheduler
         }
 
        
+
+
 
         //----
 

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Faculty_Course_scheduler.Controller
 {
-    public partial class SectionStudentNumber : UserControl
+    public partial class SectionStudentNumberControl : UserControl
     {
         int grade;
-        public SectionStudentNumber(int grade)
+        public SectionStudentNumberControl(int grade)
         {
             InitializeComponent();
             label.Text = $"{grade}.Grade Öğrenci Sayısı:";

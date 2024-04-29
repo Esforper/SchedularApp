@@ -1,6 +1,6 @@
 ﻿namespace Faculty_Course_scheduler.Controller
 {
-    partial class SectionStudentNumber
+    partial class SectionStudentNumberControl
     {
         /// <summary> 
         ///Gerekli tasarımcı değişkeni.

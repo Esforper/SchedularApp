@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -11,6 +12,7 @@ namespace Faculty_Course_scheduler
         public string AcademianFaculty { get; set; }
         public OneLessonDateClass[,] Dates { get; set; }
         public int AcademianLessonCount { get; set; }
+        public List<string> lessonCodes { get; set; }
 
         public AcademianClass()
         {
@@ -28,6 +30,8 @@ namespace Faculty_Course_scheduler
                     Dates[i, j].DateavAilability = true;
                 }
             }
+
+            lessonCodes = new List<string>();
         }
 
         public void SetAcademian(string academianName,bool[,] dates,string academianfaculty)

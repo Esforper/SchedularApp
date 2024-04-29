@@ -31,10 +31,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lessonCodesComboBox = new System.Windows.Forms.ComboBox();
+            this.academianLessonsLstBx = new System.Windows.Forms.ListBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.addLessonToAcademianBtn = new System.Windows.Forms.Button();
             this.facultiesComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -190,6 +190,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.nextSemesterPeriod = new System.Windows.Forms.Button();
+            this.addFacultyBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.addLessonBtn = new System.Windows.Forms.Button();
             this.lessonTextBox = new System.Windows.Forms.TextBox();
@@ -214,7 +215,6 @@
             this.lessonComboBox = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.lessonLongTextBox = new System.Windows.Forms.TextBox();
-            this.addFacultyBtn = new System.Windows.Forms.Button();
             this.lessonListBox = new System.Windows.Forms.ListBox();
             this.label27 = new System.Windows.Forms.Label();
             this.lblSelectedSemester = new System.Windows.Forms.Label();
@@ -278,10 +278,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.lessonCodesComboBox);
+            this.panel1.Controls.Add(this.academianLessonsLstBx);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.addLessonToAcademianBtn);
             this.panel1.Controls.Add(this.facultiesComboBox);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.textBox1);
@@ -294,22 +294,22 @@
             this.panel1.Size = new System.Drawing.Size(1618, 643);
             this.panel1.TabIndex = 1;
             // 
-            // comboBox1
+            // lessonCodesComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1338, 88);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 33);
-            this.comboBox1.TabIndex = 49;
+            this.lessonCodesComboBox.FormattingEnabled = true;
+            this.lessonCodesComboBox.Location = new System.Drawing.Point(1338, 88);
+            this.lessonCodesComboBox.Name = "lessonCodesComboBox";
+            this.lessonCodesComboBox.Size = new System.Drawing.Size(158, 33);
+            this.lessonCodesComboBox.TabIndex = 49;
             // 
-            // listBox1
+            // academianLessonsLstBx
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(1338, 140);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(257, 179);
-            this.listBox1.TabIndex = 48;
+            this.academianLessonsLstBx.FormattingEnabled = true;
+            this.academianLessonsLstBx.ItemHeight = 25;
+            this.academianLessonsLstBx.Location = new System.Drawing.Point(1338, 140);
+            this.academianLessonsLstBx.Name = "academianLessonsLstBx";
+            this.academianLessonsLstBx.Size = new System.Drawing.Size(257, 179);
+            this.academianLessonsLstBx.TabIndex = 48;
             // 
             // label12
             // 
@@ -320,14 +320,15 @@
             this.label12.TabIndex = 47;
             this.label12.Text = "Ders Kodları";
             // 
-            // button7
+            // addLessonToAcademianBtn
             // 
-            this.button7.Location = new System.Drawing.Point(1512, 87);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(83, 33);
-            this.button7.TabIndex = 46;
-            this.button7.Text = "Ekle";
-            this.button7.UseVisualStyleBackColor = true;
+            this.addLessonToAcademianBtn.Location = new System.Drawing.Point(1512, 87);
+            this.addLessonToAcademianBtn.Name = "addLessonToAcademianBtn";
+            this.addLessonToAcademianBtn.Size = new System.Drawing.Size(83, 33);
+            this.addLessonToAcademianBtn.TabIndex = 46;
+            this.addLessonToAcademianBtn.Text = "Ekle";
+            this.addLessonToAcademianBtn.UseVisualStyleBackColor = true;
+            this.addLessonToAcademianBtn.Click += new System.EventHandler(this.addLessonToAcademianBtn_Click);
             // 
             // facultiesComboBox
             // 
@@ -1021,10 +1022,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1658, 752);
+            this.tabPage2.Size = new System.Drawing.Size(1658, 743);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Derslik Ekle";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1042,7 +1043,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1652, 719);
+            this.panel2.Size = new System.Drawing.Size(1652, 652);
             this.panel2.TabIndex = 2;
             // 
             // button2
@@ -1083,7 +1084,7 @@
             // 
             // addClassBtn
             // 
-            this.addClassBtn.Location = new System.Drawing.Point(543, 669);
+            this.addClassBtn.Location = new System.Drawing.Point(543, 605);
             this.addClassBtn.Name = "addClassBtn";
             this.addClassBtn.Size = new System.Drawing.Size(238, 35);
             this.addClassBtn.TabIndex = 42;
@@ -1948,6 +1949,17 @@
             this.nextSemesterPeriod.UseVisualStyleBackColor = true;
             this.nextSemesterPeriod.Click += new System.EventHandler(this.nextSemesterPeriod_Click);
             // 
+            // addFacultyBtn
+            // 
+            this.addFacultyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addFacultyBtn.Location = new System.Drawing.Point(312, 413);
+            this.addFacultyBtn.Name = "addFacultyBtn";
+            this.addFacultyBtn.Size = new System.Drawing.Size(252, 60);
+            this.addFacultyBtn.TabIndex = 27;
+            this.addFacultyBtn.Text = "Kaydet";
+            this.addFacultyBtn.UseVisualStyleBackColor = true;
+            this.addFacultyBtn.Click += new System.EventHandler(this.addFacultyBtn_Click);
+            // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2178,17 +2190,6 @@
             this.lessonLongTextBox.Size = new System.Drawing.Size(230, 30);
             this.lessonLongTextBox.TabIndex = 30;
             this.lessonLongTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // addFacultyBtn
-            // 
-            this.addFacultyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addFacultyBtn.Location = new System.Drawing.Point(312, 413);
-            this.addFacultyBtn.Name = "addFacultyBtn";
-            this.addFacultyBtn.Size = new System.Drawing.Size(252, 60);
-            this.addFacultyBtn.TabIndex = 27;
-            this.addFacultyBtn.Text = "Kaydet";
-            this.addFacultyBtn.UseVisualStyleBackColor = true;
-            this.addFacultyBtn.Click += new System.EventHandler(this.addFacultyBtn_Click);
             // 
             // lessonListBox
             // 
@@ -2477,9 +2478,9 @@
         private System.Windows.Forms.TextBox LessonCodeInput;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button addLessonToAcademianBtn;
+        private System.Windows.Forms.ListBox academianLessonsLstBx;
+        private System.Windows.Forms.ComboBox lessonCodesComboBox;
         private System.Windows.Forms.Button gradeStudentNumberBtn;
         private System.Windows.Forms.FlowLayoutPanel gradeStudentNumberPanel;
         private System.Windows.Forms.Panel goToSemesterPnl;
