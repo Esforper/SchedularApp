@@ -1773,10 +1773,10 @@
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.splitContainer2.Panel2.Controls.Add(this.nextSemesterPeriod);
+            this.splitContainer2.Panel2.Controls.Add(this.addFacultyBtn);
             this.splitContainer2.Panel2.Controls.Add(this.panel5);
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView);
             this.splitContainer2.Panel2.Controls.Add(this.tempPanel);
-            this.splitContainer2.Panel2.Controls.Add(this.addFacultyBtn);
             this.splitContainer2.Panel2.Controls.Add(this.lessonListBox);
             this.splitContainer2.Panel2.Controls.Add(this.label27);
             this.splitContainer2.Panel2.Controls.Add(this.lblSelectedSemester);
@@ -1939,6 +1939,7 @@
             // 
             // nextSemesterPeriod
             // 
+            this.nextSemesterPeriod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.nextSemesterPeriod.Location = new System.Drawing.Point(33, 413);
             this.nextSemesterPeriod.Name = "nextSemesterPeriod";
             this.nextSemesterPeriod.Size = new System.Drawing.Size(252, 60);
@@ -2122,13 +2123,14 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView.Location = new System.Drawing.Point(0, 545);
+            this.dataGridView.Location = new System.Drawing.Point(0, 501);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1303, 192);
+            this.dataGridView.Size = new System.Drawing.Size(1303, 236);
             this.dataGridView.TabIndex = 45;
             // 
             // tempPanel
@@ -2179,6 +2181,7 @@
             // 
             // addFacultyBtn
             // 
+            this.addFacultyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addFacultyBtn.Location = new System.Drawing.Point(312, 413);
             this.addFacultyBtn.Name = "addFacultyBtn";
             this.addFacultyBtn.Size = new System.Drawing.Size(252, 60);
@@ -2194,9 +2197,9 @@
             this.lessonListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lessonListBox.FormattingEnabled = true;
             this.lessonListBox.ItemHeight = 29;
-            this.lessonListBox.Location = new System.Drawing.Point(33, 146);
+            this.lessonListBox.Location = new System.Drawing.Point(2, 146);
             this.lessonListBox.Name = "lessonListBox";
-            this.lessonListBox.Size = new System.Drawing.Size(531, 261);
+            this.lessonListBox.Size = new System.Drawing.Size(696, 232);
             this.lessonListBox.TabIndex = 26;
             // 
             // label27

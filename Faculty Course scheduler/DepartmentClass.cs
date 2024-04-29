@@ -18,12 +18,12 @@ namespace Faculty_Course_scheduler
 		{
 			
 		}
-		public void SetFaculty(string facultyname, int facultyyear, int[] facultystudents, List<LessonClass>[] facultylessons)
+		public void SetFaculty(string facultyname, int facultyyear, int[] facultystudents, List<LessonClass>[] courses)
 		{
 			Name = facultyname;
             NumSemesters = facultyyear;
             enrollment = facultystudents;
-			courses = facultylessons;
+			this.courses = courses;
 			numGrades = NumSemesters / 2;
         }
 	}

@@ -219,7 +219,7 @@ internal class Database
 
         return new List<DepartmentClass>(); // Hata durumunda boş bir liste döndür
     }
-    public void SaveFaculty(DepartmentClass faculty)
+    public void SaveDepartment(DepartmentClass faculty)
     {
         AllDepartments = LoadFacultyDataFromJson();
 

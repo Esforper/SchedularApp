@@ -113,11 +113,19 @@ namespace Faculty_Course_scheduler
 
         private void facultyContinueBtn_Click(object sender, EventArgs e)
         {
+            
             studentNumberPanelList = new List<SectionStudentNumber>();
             try
             {
-                //Burası bozuk muhtemelen çalışmıyorlar
                 facultyPeriodNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
+                facultyLessons = new List<LessonClass>[facultyPeriodNumber];    //fakülte derslerini tanımladık
+                //tanımlamışken tüm listleri tanımlayalım
+                for(int i=0; i < facultyPeriodNumber; i++)
+                {
+                    facultyLessons[i] = new List<LessonClass>();
+                }
+
+
                 //facultyStudentNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
 
                 gradeStudentNumberPnl.Visible = true;   // genel panel visibilty
@@ -217,46 +225,28 @@ namespace Faculty_Course_scheduler
             try
             {
 
-                LessonClass lesson = new LessonClass();
-                lesson.Name = lessonTextBox.Text;
-                lesson.LessonSemester = Convert.ToInt16(selectedSemester);
-                lesson.Department = facultyname;
-                lesson.LessonCode = LessonCodeInput.Text;
+                LessonClass lesson = new LessonClass
+                {
+                    Name = lessonTextBox.Text,
+                    LessonSemester = Convert.ToInt16(selectedSemester),
+                    Department = facultyname,
+                    LessonCode = LessonCodeInput.Text,
+                    AKTS = Convert.ToInt16(AKTSInput.Text),
+                    Credit = Convert.ToInt16(CreditInput.Text)
+                };
 
                 //ders sürelerini ekle
                 lesson.LessonDuration[0] = Convert.ToInt16(teorikInput.Text);
                 lesson.LessonDuration[1] = Convert.ToInt16(uygulamaInput.Text);
                 lesson.LessonDuration[2] = Convert.ToInt16(labInput.Text);
 
-                lesson.AKTS = Convert.ToInt16(AKTSInput.Text);
-                lesson.Credit = Convert.ToInt16(CreditInput.Text);
-
+                AllLessons.Add(lesson);
                 lessonListBox.Items.Add(selectedSemester + ". Dönem : " + lesson.LessonCode + " : " + lesson.Name);
-
-                // Dersi uygun dönemin listesine ekle
                 facultyLessons[lesson.LessonSemester - 1].Add(lesson);
-                
-                //AllLessons.Add(lesson); data grid için lazım olabilir
-
-                /*
-                // DataGridView'e veri kaynağı olarak List<LessonClass> belirle
-                dataGridView.DataSource = AllLessons;
-
-                // DataGridView sütunlarını tanımla ve özelliklere bağla
-                dataGridView.Columns["Name"].HeaderText = "Ders Adı";
-                dataGridView.Columns["LessonSemester"].HeaderText = "Dönem";
-                dataGridView.Columns["Department"].HeaderText = "Fakülte Adı";
-                dataGridView.Columns["LessonCode"].HeaderText = "Ders Kodu";
-                dataGridView.Columns["LessonDuration"].HeaderText = "Süre";
-                dataGridView.Columns["AKTS"].HeaderText = "AKTS";
-                dataGridView.Columns["Credit"].HeaderText = "Kredi";
-                */
-
-                //lessons.Add(lesson);  lessons tanımlanmasını yorum satırına aldım
             }
             catch
             {
-                MessageBox.Show("bir hata oluştu");
+                //MessageBox.Show("bir hata oluştu"); bu yorum satırı daha sonra geri çekilecek
             }
         }
 
@@ -266,20 +256,18 @@ namespace Faculty_Course_scheduler
             lblSelectedSemester.Text = selectedSemester.ToString();
         }
 
+
         private void addFacultyBtn_Click(object sender, EventArgs e)
         {
             // facultyLessons dizisini FacultyClass nesnesine ekleyerek kaydet
-            DepartmentClass faculty = new DepartmentClass();
-            faculty.SetFaculty(facultyname, facultyPeriodNumber, gradeStudentCount, facultyLessons);
-            database.SaveFaculty(faculty);
+            DepartmentClass department = new DepartmentClass();
+            department.SetFaculty(facultyname, facultyPeriodNumber, gradeStudentCount, facultyLessons);
+            database.SaveDepartment(department);
         }
 
         
         private void informationEntry_Load(object sender, EventArgs e)
         {
-            //lessons = new List<LessonClass>();
-            facultyLessons = new List<LessonClass>[facultyPeriodNumber];
-
             if(database.Getfaculties() != null)
             {
                 foreach (string facultName in database.Getfaculties())  //Akademisyenin fakültesini seçerken gerekli
