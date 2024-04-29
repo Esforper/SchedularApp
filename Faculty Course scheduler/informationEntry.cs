@@ -207,17 +207,7 @@ namespace Faculty_Course_scheduler
             //seçilen dönemi göster (1. dönem, 3. dönem vb)
 
             /*
-            // DataGridView'e veri kaynağı olarak List<LessonClass> belirle
-            dataGridView.DataSource = facultyLessons[selectedSemester - 1];
-
-            // DataGridView sütunlarını tanımla ve özelliklere bağla
-            dataGridView.Columns["Name"].HeaderText = "Ders Adı";
-            dataGridView.Columns["LessonSemester"].HeaderText = "Dönem";
-            dataGridView.Columns["Department"].HeaderText = "Fakülte Adı";
-            dataGridView.Columns["LessonCode"].HeaderText = "Ders Kodu";
-            dataGridView.Columns["LessonDuration"].HeaderText = "Süre";
-            dataGridView.Columns["AKTS"].HeaderText = "AKTS";
-            dataGridView.Columns["Credit"].HeaderText = "Kredi";
+           
             */
         }
 
@@ -245,8 +235,22 @@ namespace Faculty_Course_scheduler
 
                 // Dersi uygun dönemin listesine ekle
                 facultyLessons[lesson.LessonSemester - 1].Add(lesson);
-                AllLessons.Add(lesson);
                 
+                //AllLessons.Add(lesson); data grid için lazım olabilir
+
+                /*
+                // DataGridView'e veri kaynağı olarak List<LessonClass> belirle
+                dataGridView.DataSource = AllLessons;
+
+                // DataGridView sütunlarını tanımla ve özelliklere bağla
+                dataGridView.Columns["Name"].HeaderText = "Ders Adı";
+                dataGridView.Columns["LessonSemester"].HeaderText = "Dönem";
+                dataGridView.Columns["Department"].HeaderText = "Fakülte Adı";
+                dataGridView.Columns["LessonCode"].HeaderText = "Ders Kodu";
+                dataGridView.Columns["LessonDuration"].HeaderText = "Süre";
+                dataGridView.Columns["AKTS"].HeaderText = "AKTS";
+                dataGridView.Columns["Credit"].HeaderText = "Kredi";
+                */
 
                 //lessons.Add(lesson);  lessons tanımlanmasını yorum satırına aldım
             }
@@ -254,6 +258,12 @@ namespace Faculty_Course_scheduler
             {
                 MessageBox.Show("bir hata oluştu");
             }
+        }
+
+        private void nextSemesterPeriod_Click(object sender, EventArgs e)
+        {
+            selectedSemester++;
+            lblSelectedSemester.Text = selectedSemester.ToString();
         }
 
         private void addFacultyBtn_Click(object sender, EventArgs e)
@@ -555,6 +565,8 @@ namespace Faculty_Course_scheduler
                 isClass_FrdyLblClick = false;
             }
         }
+
+       
 
         //----
 

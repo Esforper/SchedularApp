@@ -189,7 +189,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nextSemesterPeriod = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.addLessonBtn = new System.Windows.Forms.Button();
             this.lessonTextBox = new System.Windows.Forms.TextBox();
@@ -1772,7 +1772,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.splitContainer2.Panel2.Controls.Add(this.button1);
+            this.splitContainer2.Panel2.Controls.Add(this.nextSemesterPeriod);
             this.splitContainer2.Panel2.Controls.Add(this.panel5);
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView);
             this.splitContainer2.Panel2.Controls.Add(this.tempPanel);
@@ -1937,18 +1937,20 @@
             this.label28.Text = "Bölüm Ekle";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // nextSemesterPeriod
             // 
-            this.button1.Location = new System.Drawing.Point(33, 413);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(252, 60);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Sonraki Dönem";
-            this.button1.UseVisualStyleBackColor = true;
+            this.nextSemesterPeriod.Location = new System.Drawing.Point(33, 413);
+            this.nextSemesterPeriod.Name = "nextSemesterPeriod";
+            this.nextSemesterPeriod.Size = new System.Drawing.Size(252, 60);
+            this.nextSemesterPeriod.TabIndex = 47;
+            this.nextSemesterPeriod.Text = "Sonraki Dönem";
+            this.nextSemesterPeriod.UseVisualStyleBackColor = true;
+            this.nextSemesterPeriod.Click += new System.EventHandler(this.nextSemesterPeriod_Click);
             // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.addLessonBtn);
             this.panel5.Controls.Add(this.lessonTextBox);
             this.panel5.Controls.Add(this.CreditInput);
@@ -2496,6 +2498,6 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button nextSemesterPeriod;
     }
 }
