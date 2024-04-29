@@ -174,13 +174,13 @@
             this.checkBox_10 = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.gradeStudentNumberPnl = new System.Windows.Forms.Panel();
-            this.gradeStudentNumberPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.gradeStudentNumberBtn = new System.Windows.Forms.Button();
             this.goToSemesterPnl = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
             this.goToSemesterBtn = new System.Windows.Forms.Button();
-            this.semesterSelect = new System.Windows.Forms.ComboBox();
+            this.semesterSelectInput = new System.Windows.Forms.ComboBox();
+            this.gradeStudentNumberPnl = new System.Windows.Forms.Panel();
+            this.gradeStudentNumberPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.gradeStudentNumberBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.facultyContinueBtn = new System.Windows.Forms.Button();
@@ -189,35 +189,38 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.addLessonBtn = new System.Windows.Forms.Button();
+            this.lessonTextBox = new System.Windows.Forms.TextBox();
+            this.CreditInput = new System.Windows.Forms.MaskedTextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.AKTSInput = new System.Windows.Forms.MaskedTextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labInput = new System.Windows.Forms.MaskedTextBox();
+            this.LessonCodeInput = new System.Windows.Forms.TextBox();
+            this.uygulamaInput = new System.Windows.Forms.MaskedTextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.teorikInput = new System.Windows.Forms.MaskedTextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tempPanel = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
             this.lessonComboBox = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.lessonLongTextBox = new System.Windows.Forms.TextBox();
-            this.LessonCodeInput = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.addFacultyBtn = new System.Windows.Forms.Button();
             this.lessonListBox = new System.Windows.Forms.ListBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.labelFacultyPeriod = new System.Windows.Forms.Label();
+            this.lblSelectedSemester = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.labelFacultyName = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.addLessonBtn = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lessonTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -242,9 +245,11 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.gradeStudentNumberPnl.SuspendLayout();
             this.goToSemesterPnl.SuspendLayout();
+            this.gradeStudentNumberPnl.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tempPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1767,35 +1772,62 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.splitContainer2.Panel2.Controls.Add(this.maskedTextBox5);
-            this.splitContainer2.Panel2.Controls.Add(this.maskedTextBox2);
-            this.splitContainer2.Panel2.Controls.Add(this.label33);
-            this.splitContainer2.Panel2.Controls.Add(this.label32);
-            this.splitContainer2.Panel2.Controls.Add(this.maskedTextBox4);
-            this.splitContainer2.Panel2.Controls.Add(this.maskedTextBox3);
-            this.splitContainer2.Panel2.Controls.Add(this.maskedTextBox1);
-            this.splitContainer2.Panel2.Controls.Add(this.label25);
-            this.splitContainer2.Panel2.Controls.Add(this.label23);
-            this.splitContainer2.Panel2.Controls.Add(this.label13);
+            this.splitContainer2.Panel2.Controls.Add(this.button1);
+            this.splitContainer2.Panel2.Controls.Add(this.panel5);
+            this.splitContainer2.Panel2.Controls.Add(this.dataGridView);
             this.splitContainer2.Panel2.Controls.Add(this.tempPanel);
-            this.splitContainer2.Panel2.Controls.Add(this.LessonCodeInput);
-            this.splitContainer2.Panel2.Controls.Add(this.label11);
-            this.splitContainer2.Panel2.Controls.Add(this.label19);
             this.splitContainer2.Panel2.Controls.Add(this.addFacultyBtn);
             this.splitContainer2.Panel2.Controls.Add(this.lessonListBox);
             this.splitContainer2.Panel2.Controls.Add(this.label27);
-            this.splitContainer2.Panel2.Controls.Add(this.labelFacultyPeriod);
+            this.splitContainer2.Panel2.Controls.Add(this.lblSelectedSemester);
             this.splitContainer2.Panel2.Controls.Add(this.label24);
             this.splitContainer2.Panel2.Controls.Add(this.labelFacultyName);
             this.splitContainer2.Panel2.Controls.Add(this.label22);
-            this.splitContainer2.Panel2.Controls.Add(this.addLessonBtn);
-            this.splitContainer2.Panel2.Controls.Add(this.label21);
-            this.splitContainer2.Panel2.Controls.Add(this.label20);
-            this.splitContainer2.Panel2.Controls.Add(this.lessonTextBox);
             this.splitContainer2.Panel2.Enabled = false;
             this.splitContainer2.Size = new System.Drawing.Size(1652, 737);
             this.splitContainer2.SplitterDistance = 345;
             this.splitContainer2.TabIndex = 1;
+            // 
+            // goToSemesterPnl
+            // 
+            this.goToSemesterPnl.Controls.Add(this.label30);
+            this.goToSemesterPnl.Controls.Add(this.goToSemesterBtn);
+            this.goToSemesterPnl.Controls.Add(this.semesterSelectInput);
+            this.goToSemesterPnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.goToSemesterPnl.Location = new System.Drawing.Point(0, 596);
+            this.goToSemesterPnl.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.goToSemesterPnl.Name = "goToSemesterPnl";
+            this.goToSemesterPnl.Size = new System.Drawing.Size(345, 141);
+            this.goToSemesterPnl.TabIndex = 35;
+            this.goToSemesterPnl.Visible = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(7, 30);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(168, 25);
+            this.label30.TabIndex = 33;
+            this.label30.Text = "Dönem Dersi Ekle";
+            // 
+            // goToSemesterBtn
+            // 
+            this.goToSemesterBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.goToSemesterBtn.Location = new System.Drawing.Point(0, 84);
+            this.goToSemesterBtn.Name = "goToSemesterBtn";
+            this.goToSemesterBtn.Size = new System.Drawing.Size(345, 57);
+            this.goToSemesterBtn.TabIndex = 32;
+            this.goToSemesterBtn.Text = "Döneme Git";
+            this.goToSemesterBtn.UseVisualStyleBackColor = true;
+            this.goToSemesterBtn.Click += new System.EventHandler(this.goToSemesterBtn_Click);
+            // 
+            // semesterSelectInput
+            // 
+            this.semesterSelectInput.FormattingEnabled = true;
+            this.semesterSelectInput.Location = new System.Drawing.Point(181, 27);
+            this.semesterSelectInput.Name = "semesterSelectInput";
+            this.semesterSelectInput.Size = new System.Drawing.Size(152, 33);
+            this.semesterSelectInput.TabIndex = 0;
             // 
             // gradeStudentNumberPnl
             // 
@@ -1828,47 +1860,6 @@
             this.gradeStudentNumberBtn.Text = "Devam Et";
             this.gradeStudentNumberBtn.UseVisualStyleBackColor = true;
             this.gradeStudentNumberBtn.Click += new System.EventHandler(this.gradeStudentNumberBtn_Click);
-            // 
-            // goToSemesterPnl
-            // 
-            this.goToSemesterPnl.Controls.Add(this.label30);
-            this.goToSemesterPnl.Controls.Add(this.goToSemesterBtn);
-            this.goToSemesterPnl.Controls.Add(this.semesterSelect);
-            this.goToSemesterPnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.goToSemesterPnl.Location = new System.Drawing.Point(0, 596);
-            this.goToSemesterPnl.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.goToSemesterPnl.Name = "goToSemesterPnl";
-            this.goToSemesterPnl.Size = new System.Drawing.Size(345, 141);
-            this.goToSemesterPnl.TabIndex = 35;
-            this.goToSemesterPnl.Visible = false;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(7, 30);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(168, 25);
-            this.label30.TabIndex = 33;
-            this.label30.Text = "Dönem Dersi Ekle";
-            // 
-            // goToSemesterBtn
-            // 
-            this.goToSemesterBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.goToSemesterBtn.Location = new System.Drawing.Point(0, 84);
-            this.goToSemesterBtn.Name = "goToSemesterBtn";
-            this.goToSemesterBtn.Size = new System.Drawing.Size(345, 57);
-            this.goToSemesterBtn.TabIndex = 32;
-            this.goToSemesterBtn.Text = "Döneme Git";
-            this.goToSemesterBtn.UseVisualStyleBackColor = true;
-            this.goToSemesterBtn.Click += new System.EventHandler(this.goToSemesterBtn_Click);
-            // 
-            // semesterSelect
-            // 
-            this.semesterSelect.FormattingEnabled = true;
-            this.semesterSelect.Location = new System.Drawing.Point(181, 27);
-            this.semesterSelect.Name = "semesterSelect";
-            this.semesterSelect.Size = new System.Drawing.Size(152, 33);
-            this.semesterSelect.TabIndex = 0;
             // 
             // panel3
             // 
@@ -1946,90 +1937,197 @@
             this.label28.Text = "Bölüm Ekle";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // maskedTextBox5
+            // button1
             // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(859, 334);
-            this.maskedTextBox5.Mask = "00";
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(44, 30);
-            this.maskedTextBox5.TabIndex = 44;
+            this.button1.Location = new System.Drawing.Point(33, 413);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(252, 60);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Sonraki Dönem";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox2
+            // panel5
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(709, 334);
-            this.maskedTextBox2.Mask = "00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(44, 30);
-            this.maskedTextBox2.TabIndex = 43;
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Controls.Add(this.addLessonBtn);
+            this.panel5.Controls.Add(this.lessonTextBox);
+            this.panel5.Controls.Add(this.CreditInput);
+            this.panel5.Controls.Add(this.label20);
+            this.panel5.Controls.Add(this.AKTSInput);
+            this.panel5.Controls.Add(this.label21);
+            this.panel5.Controls.Add(this.label33);
+            this.panel5.Controls.Add(this.label19);
+            this.panel5.Controls.Add(this.label32);
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.labInput);
+            this.panel5.Controls.Add(this.LessonCodeInput);
+            this.panel5.Controls.Add(this.uygulamaInput);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.teorikInput);
+            this.panel5.Controls.Add(this.label23);
+            this.panel5.Controls.Add(this.label25);
+            this.panel5.Location = new System.Drawing.Point(928, 73);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(372, 349);
+            this.panel5.TabIndex = 46;
+            // 
+            // addLessonBtn
+            // 
+            this.addLessonBtn.Location = new System.Drawing.Point(131, 313);
+            this.addLessonBtn.Name = "addLessonBtn";
+            this.addLessonBtn.Size = new System.Drawing.Size(230, 33);
+            this.addLessonBtn.TabIndex = 20;
+            this.addLessonBtn.Text = "Dersi Ekle";
+            this.addLessonBtn.UseVisualStyleBackColor = true;
+            this.addLessonBtn.Click += new System.EventHandler(this.addLessonBtn_Click);
+            // 
+            // lessonTextBox
+            // 
+            this.lessonTextBox.Location = new System.Drawing.Point(131, 47);
+            this.lessonTextBox.Name = "lessonTextBox";
+            this.lessonTextBox.Size = new System.Drawing.Size(230, 30);
+            this.lessonTextBox.TabIndex = 13;
+            // 
+            // CreditInput
+            // 
+            this.CreditInput.Location = new System.Drawing.Point(307, 268);
+            this.CreditInput.Mask = "00";
+            this.CreditInput.Name = "CreditInput";
+            this.CreditInput.Size = new System.Drawing.Size(44, 30);
+            this.CreditInput.TabIndex = 44;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(27, 50);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(99, 25);
+            this.label20.TabIndex = 12;
+            this.label20.Text = "Ders İsmi:";
+            // 
+            // AKTSInput
+            // 
+            this.AKTSInput.Location = new System.Drawing.Point(167, 268);
+            this.AKTSInput.Mask = "00";
+            this.AKTSInput.Name = "AKTSInput";
+            this.AKTSInput.Size = new System.Drawing.Size(44, 30);
+            this.AKTSInput.TabIndex = 43;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(173, 7);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(96, 25);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Ders Ekle";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(791, 339);
+            this.label33.Location = new System.Drawing.Point(249, 273);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(64, 25);
             this.label33.TabIndex = 42;
             this.label33.Text = "Kredi:";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(144, 129);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(178, 25);
+            this.label19.TabIndex = 29;
+            this.label19.Text = "Dersin Saat Sayısı:";
+            // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(630, 339);
+            this.label32.Location = new System.Drawing.Point(88, 273);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(73, 25);
             this.label32.TabIndex = 41;
             this.label32.Text = "AKTS:";
             // 
-            // maskedTextBox4
+            // label11
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(859, 269);
-            this.maskedTextBox4.Mask = "00";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(44, 30);
-            this.maskedTextBox4.TabIndex = 40;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(10, 86);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(116, 25);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Ders Kodu: ";
             // 
-            // maskedTextBox3
+            // labInput
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(767, 269);
-            this.maskedTextBox3.Mask = "00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(44, 30);
-            this.maskedTextBox3.TabIndex = 39;
+            this.labInput.Location = new System.Drawing.Point(307, 203);
+            this.labInput.Mask = "00";
+            this.labInput.Name = "labInput";
+            this.labInput.Size = new System.Drawing.Size(44, 30);
+            this.labInput.TabIndex = 40;
             // 
-            // maskedTextBox1
+            // LessonCodeInput
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(673, 269);
-            this.maskedTextBox1.Mask = "00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(44, 30);
-            this.maskedTextBox1.TabIndex = 37;
+            this.LessonCodeInput.Location = new System.Drawing.Point(131, 83);
+            this.LessonCodeInput.Name = "LessonCodeInput";
+            this.LessonCodeInput.Size = new System.Drawing.Size(230, 30);
+            this.LessonCodeInput.TabIndex = 32;
             // 
-            // label25
+            // uygulamaInput
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(858, 228);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(45, 25);
-            this.label25.TabIndex = 36;
-            this.label25.Text = "Lab";
+            this.uygulamaInput.Location = new System.Drawing.Point(225, 203);
+            this.uygulamaInput.Mask = "00";
+            this.uygulamaInput.Name = "uygulamaInput";
+            this.uygulamaInput.Size = new System.Drawing.Size(44, 30);
+            this.uygulamaInput.TabIndex = 39;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(126, 162);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 25);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Teorik";
+            // 
+            // teorikInput
+            // 
+            this.teorikInput.Location = new System.Drawing.Point(131, 203);
+            this.teorikInput.Mask = "00";
+            this.teorikInput.Name = "teorikInput";
+            this.teorikInput.Size = new System.Drawing.Size(44, 30);
+            this.teorikInput.TabIndex = 37;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(741, 228);
+            this.label23.Location = new System.Drawing.Point(199, 162);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(100, 25);
             this.label23.TabIndex = 35;
             this.label23.Text = "Uygulama";
             // 
-            // label13
+            // label25
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(668, 228);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 25);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "Teorik";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(306, 162);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(45, 25);
+            this.label25.TabIndex = 36;
+            this.label25.Text = "Lab";
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView.Location = new System.Drawing.Point(0, 545);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(1303, 192);
+            this.dataGridView.TabIndex = 45;
             // 
             // tempPanel
             // 
@@ -2037,9 +2135,9 @@
             this.tempPanel.Controls.Add(this.lessonComboBox);
             this.tempPanel.Controls.Add(this.label17);
             this.tempPanel.Controls.Add(this.lessonLongTextBox);
-            this.tempPanel.Location = new System.Drawing.Point(635, 556);
+            this.tempPanel.Location = new System.Drawing.Point(1272, 563);
             this.tempPanel.Name = "tempPanel";
-            this.tempPanel.Size = new System.Drawing.Size(460, 178);
+            this.tempPanel.Size = new System.Drawing.Size(28, 178);
             this.tempPanel.TabIndex = 33;
             this.tempPanel.Visible = false;
             // 
@@ -2077,36 +2175,11 @@
             this.lessonLongTextBox.TabIndex = 30;
             this.lessonLongTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // LessonCodeInput
-            // 
-            this.LessonCodeInput.Location = new System.Drawing.Point(673, 149);
-            this.LessonCodeInput.Name = "LessonCodeInput";
-            this.LessonCodeInput.Size = new System.Drawing.Size(230, 30);
-            this.LessonCodeInput.TabIndex = 32;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(552, 152);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(116, 25);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Ders Kodu: ";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(686, 195);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(178, 25);
-            this.label19.TabIndex = 29;
-            this.label19.Text = "Dersin Saat Sayısı:";
-            // 
             // addFacultyBtn
             // 
-            this.addFacultyBtn.Location = new System.Drawing.Point(297, 449);
+            this.addFacultyBtn.Location = new System.Drawing.Point(312, 413);
             this.addFacultyBtn.Name = "addFacultyBtn";
-            this.addFacultyBtn.Size = new System.Drawing.Size(406, 60);
+            this.addFacultyBtn.Size = new System.Drawing.Size(252, 60);
             this.addFacultyBtn.TabIndex = 27;
             this.addFacultyBtn.Text = "Kaydet";
             this.addFacultyBtn.UseVisualStyleBackColor = true;
@@ -2119,9 +2192,9 @@
             this.lessonListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lessonListBox.FormattingEnabled = true;
             this.lessonListBox.ItemHeight = 29;
-            this.lessonListBox.Location = new System.Drawing.Point(33, 138);
+            this.lessonListBox.Location = new System.Drawing.Point(33, 146);
             this.lessonListBox.Name = "lessonListBox";
-            this.lessonListBox.Size = new System.Drawing.Size(414, 261);
+            this.lessonListBox.Size = new System.Drawing.Size(531, 261);
             this.lessonListBox.TabIndex = 26;
             // 
             // label27
@@ -2129,25 +2202,25 @@
             this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(158, 110);
+            this.label27.Location = new System.Drawing.Point(173, 118);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(74, 25);
             this.label27.TabIndex = 25;
             this.label27.Text = "Dersler";
             // 
-            // labelFacultyPeriod
+            // lblSelectedSemester
             // 
-            this.labelFacultyPeriod.AutoSize = true;
-            this.labelFacultyPeriod.Location = new System.Drawing.Point(173, 55);
-            this.labelFacultyPeriod.Name = "labelFacultyPeriod";
-            this.labelFacultyPeriod.Size = new System.Drawing.Size(154, 25);
-            this.labelFacultyPeriod.TabIndex = 24;
-            this.labelFacultyPeriod.Text = "<dönem Sayısı>";
+            this.lblSelectedSemester.AutoSize = true;
+            this.lblSelectedSemester.Location = new System.Drawing.Point(173, 73);
+            this.lblSelectedSemester.Name = "lblSelectedSemester";
+            this.lblSelectedSemester.Size = new System.Drawing.Size(154, 25);
+            this.lblSelectedSemester.TabIndex = 24;
+            this.lblSelectedSemester.Text = "<dönem Sayısı>";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(28, 55);
+            this.label24.Location = new System.Drawing.Point(28, 73);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(139, 25);
             this.label24.TabIndex = 23;
@@ -2159,7 +2232,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFacultyName.AutoSize = true;
             this.labelFacultyName.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelFacultyName.Location = new System.Drawing.Point(518, 12);
+            this.labelFacultyName.Location = new System.Drawing.Point(518, 14);
             this.labelFacultyName.Name = "labelFacultyName";
             this.labelFacultyName.Size = new System.Drawing.Size(129, 31);
             this.labelFacultyName.TabIndex = 22;
@@ -2176,43 +2249,6 @@
             this.label22.Size = new System.Drawing.Size(136, 31);
             this.label22.TabIndex = 21;
             this.label22.Text = "Bölüm İsmi:";
-            // 
-            // addLessonBtn
-            // 
-            this.addLessonBtn.Location = new System.Drawing.Point(673, 379);
-            this.addLessonBtn.Name = "addLessonBtn";
-            this.addLessonBtn.Size = new System.Drawing.Size(230, 33);
-            this.addLessonBtn.TabIndex = 20;
-            this.addLessonBtn.Text = "Dersi Ekle";
-            this.addLessonBtn.UseVisualStyleBackColor = true;
-            this.addLessonBtn.Click += new System.EventHandler(this.addLessonBtn_Click);
-            // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(715, 73);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(96, 25);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Ders Ekle";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(569, 116);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(99, 25);
-            this.label20.TabIndex = 12;
-            this.label20.Text = "Ders İsmi:";
-            // 
-            // lessonTextBox
-            // 
-            this.lessonTextBox.Location = new System.Drawing.Point(673, 113);
-            this.lessonTextBox.Name = "lessonTextBox";
-            this.lessonTextBox.Size = new System.Drawing.Size(230, 30);
-            this.lessonTextBox.TabIndex = 13;
             // 
             // informationEntry
             // 
@@ -2252,11 +2288,14 @@
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.gradeStudentNumberPnl.ResumeLayout(false);
             this.goToSemesterPnl.ResumeLayout(false);
             this.goToSemesterPnl.PerformLayout();
+            this.gradeStudentNumberPnl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.tempPanel.ResumeLayout(false);
             this.tempPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -2350,7 +2389,7 @@
         private System.Windows.Forms.Button addFacultyBtn;
         private System.Windows.Forms.ListBox lessonListBox;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label labelFacultyPeriod;
+        private System.Windows.Forms.Label lblSelectedSemester;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label labelFacultyName;
         private System.Windows.Forms.Label label22;
@@ -2442,18 +2481,21 @@
         private System.Windows.Forms.Panel gradeStudentNumberPnl;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button goToSemesterBtn;
-        private System.Windows.Forms.ComboBox semesterSelect;
+        private System.Windows.Forms.ComboBox semesterSelectInput;
         private System.Windows.Forms.Panel tempPanel;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox labInput;
+        private System.Windows.Forms.MaskedTextBox uygulamaInput;
+        private System.Windows.Forms.MaskedTextBox teorikInput;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox CreditInput;
+        private System.Windows.Forms.MaskedTextBox AKTSInput;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -13,7 +13,13 @@ namespace Faculty_Course_scheduler
         public string Department;
         public int LessonSemester;
         public int[] LessonDuration;
+        public int AKTS;
+        public int Credit;
         // Teorik , uygulama , Lab
+            public LessonClass() {
+                LessonDuration = new int[3]; 
+            }
+
 
     }
 

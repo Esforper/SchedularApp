@@ -103,10 +103,10 @@ namespace Faculty_Course_scheduler
 
 
         private int facultyPeriodNumber;
-        private int facultyStudentNumber;
-        private string facultyname;
+        //private int facultyStudentNumber; öğrenci sayılarını studentNumberList ile tuttuğumuzdan anlık işlevi yok
+        private string facultyname; //seçili fakülte (department de denebilir) bilgilerini kaydet.
         private List<LessonClass>[] facultyLessons;
-        private List<LessonClass> lessons;
+        //private List<LessonClass> lessons;
         private List<SectionStudentNumber> studentNumberPanelList;
         List<int> studentNumbersList = new List<int>();
         private int[] gradeStudentCount;
@@ -118,7 +118,7 @@ namespace Faculty_Course_scheduler
             {
                 //Burası bozuk muhtemelen çalışmıyorlar
                 facultyPeriodNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
-                facultyStudentNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
+                //facultyStudentNumber = Convert.ToInt16(facultyPeriodTextBox.Text);
 
                 gradeStudentNumberPnl.Visible = true;   // genel panel visibilty
                 //her gradenin öğrenci sayısının girildiği ana panel görünümünü ayarla
@@ -135,7 +135,7 @@ namespace Faculty_Course_scheduler
                 
                 
                 facultyname = facultyNameTextBox.Text;  //fakülte ismini çek
-                labelFacultyName.Text = facultyNameTextBox.Text;
+                labelFacultyName.Text = facultyname;
 
 
                 //splitContainer2.Panel2.Enabled = true;
@@ -180,7 +180,7 @@ namespace Faculty_Course_scheduler
 
             for (int i = 1; i < facultyPeriodNumber+1; i++)
             {
-                semesterSelect.Items.Add(i);
+                semesterSelectInput.Items.Add(i);
             }
             //SemesterSelect -> hangi sınıfın bilgilerini eklediğimizi seçtiğimiz input
             //facultyPeriodNumber -> departmentin (bölümün) dönem sayısı
@@ -197,29 +197,58 @@ namespace Faculty_Course_scheduler
             
         }
 
+        int selectedSemester = 0;
         private void goToSemesterBtn_Click(object sender, EventArgs e)
         {
+            selectedSemester = Convert.ToInt16(semesterSelectInput.Text);
+
             splitContainer2.Panel2.Enabled = true;
+            lblSelectedSemester.Text = selectedSemester.ToString();
+            //seçilen dönemi göster (1. dönem, 3. dönem vb)
 
+            /*
+            // DataGridView'e veri kaynağı olarak List<LessonClass> belirle
+            dataGridView.DataSource = facultyLessons[selectedSemester - 1];
 
+            // DataGridView sütunlarını tanımla ve özelliklere bağla
+            dataGridView.Columns["Name"].HeaderText = "Ders Adı";
+            dataGridView.Columns["LessonSemester"].HeaderText = "Dönem";
+            dataGridView.Columns["Department"].HeaderText = "Fakülte Adı";
+            dataGridView.Columns["LessonCode"].HeaderText = "Ders Kodu";
+            dataGridView.Columns["LessonDuration"].HeaderText = "Süre";
+            dataGridView.Columns["AKTS"].HeaderText = "AKTS";
+            dataGridView.Columns["Credit"].HeaderText = "Kredi";
+            */
         }
 
+        List<LessonClass> AllLessons = new List<LessonClass>();
         private void addLessonBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                lessonListBox.Items.Add(lessonComboBox.Text + ". Dönem : " + lessonTextBox.Text);
+
                 LessonClass lesson = new LessonClass();
                 lesson.Name = lessonTextBox.Text;
-                lesson.LessonSemester = Convert.ToInt16(lessonComboBox.Text);
+                lesson.LessonSemester = Convert.ToInt16(selectedSemester);
                 lesson.Department = facultyname;
-                //lesson.LessonDuration = Convert.ToInt16(lessonLongTextBox.Text); //burada verileri teorik uygulama ve lab olarak al
                 lesson.LessonCode = LessonCodeInput.Text;
+
+                //ders sürelerini ekle
+                lesson.LessonDuration[0] = Convert.ToInt16(teorikInput.Text);
+                lesson.LessonDuration[1] = Convert.ToInt16(uygulamaInput.Text);
+                lesson.LessonDuration[2] = Convert.ToInt16(labInput.Text);
+
+                lesson.AKTS = Convert.ToInt16(AKTSInput.Text);
+                lesson.Credit = Convert.ToInt16(CreditInput.Text);
+
+                lessonListBox.Items.Add(selectedSemester + ". Dönem : " + lesson.LessonCode + " : " + lesson.Name);
 
                 // Dersi uygun dönemin listesine ekle
                 facultyLessons[lesson.LessonSemester - 1].Add(lesson);
+                AllLessons.Add(lesson);
+                
 
-                lessons.Add(lesson);
+                //lessons.Add(lesson);  lessons tanımlanmasını yorum satırına aldım
             }
             catch
             {
@@ -238,7 +267,7 @@ namespace Faculty_Course_scheduler
         
         private void informationEntry_Load(object sender, EventArgs e)
         {
-            lessons = new List<LessonClass>();
+            //lessons = new List<LessonClass>();
             facultyLessons = new List<LessonClass>[facultyPeriodNumber];
 
             if(database.Getfaculties() != null)
@@ -529,6 +558,6 @@ namespace Faculty_Course_scheduler
 
         //----
 
-       
+
     }
 }
