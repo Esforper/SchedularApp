@@ -38,9 +38,12 @@ namespace Faculty_Course_scheduler
 
             //Önce tüm sınıf ve gradeleri tanımlamamız lazım
             //liste şeklinde semesterclass yapabiliriz (listenin listesi ya da listenin dizisi olabilir)
+
             List<DepartmentClass>AllDepartments = db.AllDepartments;
             //bilgisayar müh, yazılım müh, gibi tüm bölümlerin listesi
-            
+
+            List<AcademianClass> AllAcademians = db.AllAcademians;
+
             AllDepartments = AllDepartments.OrderBy(department => department.Name).ToList();
             //Alfabetik olarak sıralanacak (bu kısım sıralanması daha sonra ayarlanacak
 
@@ -60,7 +63,7 @@ namespace Faculty_Course_scheduler
                 for(int i = 0;i< department.numGrades;i++)  //sınıf sayısı kadar dön
                 {
                     SemesterClass oneSemester = new SemesterClass();    //semester oluşturma
-                    oneSemester.Name = department.Name + "_" + i + "_" + semester;
+                    oneSemester.Name = department.Name + "_" + i+1 + "_" + semester;
                     //bölüm + sınıf numarası + dönemi
                     //semester student capacity kaldırılacak
                     oneSemester.FacultyName = department.Name;
@@ -81,8 +84,50 @@ namespace Faculty_Course_scheduler
             //Ders programı oluşturmaya geçmeden önce ortak dersleri belirlemek lazım
             //lab saatleri bazen ortak olmayabiliyor. o nedenle T , U düzeyinde bir eşitlik daha doğru olacaktır
 
+            //Akademisyen atamaları için akademisyenin ders kodlarından bulunacak.
+
+            // --- EŞLEŞTİRME AŞAMASI ---
+            
+            Dictionary<string, List<ScheduleMapClass>> lessonDetails = new Dictionary<string, List<ScheduleMapClass>>();
+            
+            foreach (DepartmentClass department in AllDepartments) 
+            {
+                foreach (List<LessonClass> courses in department.courses)
+                {
+                    foreach (LessonClass lesson in courses)
+                    {
+                        string lessonCode = lesson.LessonCode;
+
+                        ScheduleMapClass details = new ScheduleMapClass
+                        {
+                            DepartmentName = department.Name,
+                            Grade = courses.IndexOf(lesson) + 1,
+                            Fall_True_Spring_False = semesterNum // Burada semester'i nasıl alıyorsanız ona göre ayarlayın
+                        };
+
+                        foreach (AcademianClass academian in AllAcademians) //Tüm akademisyenleri döndür
+                        {
+                            if (academian.lessonCodes.Contains(lessonCode)) //Eğer akademisyen o ders kodunda ders alıyorsa
+                            {
+                                details.Academian = academian.AcademianName;    //akademisyeni Map yapısına kaydet.
+                            }
+                        }
+
+                        if (!lessonDetails.ContainsKey(lessonCode)) //eğer içermiyorsa ekle
+                        {
+                            lessonDetails[lessonCode] = new List<ScheduleMapClass>();
+                        }
+
+                        lessonDetails[lessonCode].Add(details); //en son dictionarye Code yi ve ayrıntı bilgileri kaydet
+                    }
+                }
+            }
+
+
+
+
             //Ana Atamalar bu kısım
-            for(int i = 0; i < 6; i++)  //bir bölüm max 6 dönem olabildiğinden 6 var sayılıyor.
+            for (int i = 0; i < 6; i++)  //bir bölüm max 6 dönem olabildiğinden 6 var sayılıyor.
             //sınıfları dön
             {
                 /*

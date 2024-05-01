@@ -33,7 +33,7 @@ namespace Faculty_Course_scheduler
         public List<LessonClass> Lessons;   //ders listesi olucak
         public OneLessonDateClass[,] Dates;  //ders tarihleri olucak.
         public string FacultyName;
-        public int StudentCapacity;
+        public int StudentCapacity;     //fakülte tanımlarkenki öğrenci sayısını buraya kopyalanabilir ama kopyalanmaya da bilir duruma göre
 
         public SemesterClass()
         {
