@@ -46,6 +46,7 @@ namespace Faculty_Course_scheduler
                 {
                     string checkBoxName = "checkbox" + (i + j * 10 + 1);
                     checkBoxArray[i, j] = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+                    //academian date tanımlaması için checkbox listesi oluştur.
                 }
             }
 
@@ -57,6 +58,7 @@ namespace Faculty_Course_scheduler
                 }
             }
 
+            //Akademisyenin gireceği derslerin kodlarının bir listesini oluştur
             List<string> lessonCodes = new List<string>();
             foreach(var lessonCode in academianLessonsLstBx.Items)
             {
@@ -73,6 +75,7 @@ namespace Faculty_Course_scheduler
 
         private void addLessonToAcademianBtn_Click(object sender, EventArgs e)
         {
+            //Akademisyenin gireceği derslerin codelarını kaydet
             if (!academianLessonsLstBx.Items.Contains(lessonCodesComboBox.Text))
             {
                 academianLessonsLstBx.Items.Add(lessonCodesComboBox.Text);

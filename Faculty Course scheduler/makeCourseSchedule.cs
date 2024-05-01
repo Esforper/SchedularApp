@@ -42,7 +42,14 @@ namespace Faculty_Course_scheduler
             //tüm bölümleri tanımlamam lazım
             //departmentlar bilgisayar , yazılım gibi, semester olarak tanımlamam lazım
 
-            List<SemesterClass> AllSemesters = new List<SemesterClass>();
+            List<SemesterClass>[] AllSemesters = new List<SemesterClass>[6];
+            for(int i = 0; i < 6; i++)  //All semester Liste dizisinin Liste sayısı kadar döndür
+            {
+                List<SemesterClass> listOfSemesters = new List<SemesterClass> ();
+                AllSemesters[i] = listOfSemesters;
+            }
+
+
             foreach(DepartmentClass department in AllDepartments)   //department dönme
             {
                 for(int i = 0;i< department.numGrades;i++)  //sınıf sayısı kadar dön
@@ -54,20 +61,40 @@ namespace Faculty_Course_scheduler
                     oneSemester.FacultyName = department.Name;
                     oneSemester.Lessons = department.courses[department.numGrades+semesterNum];
                     //bu değerlerin kontrolleri sağlanacak
-                    AllSemesters.Add(oneSemester);
+                    AllSemesters[i].Add(oneSemester);
+                    
+                    //Her departman ve o departmandaki sınıf sayısını döndürdük (yani bil 1.grade , bil 2.grade gibi döndür)
+                    //Semester classa (bil 1.sınıf gibi) isim ataması, fakülte ismini, ders listesini ata.
+                    // !!! Tüm semesterların listesinin dizisinde , kendi sınıf listesine kaydet
+                    //sonuç olarak bil 1. sınıflar 1.sınıfların listesinde, bil 2.sınıf 2.sınıfların listesinde kayıtlı olacak.
+
                 }
             }
            //Bu kısım ön tanımlama, ortak ders saatleri olduğunda olası çakışmaları engellemesi için.
 
 
-            for(int i = 0; i < 4; i++)  //bölümler 4 senelik olduğu var sayılarak dönülüyor
+            for(int i = 0; i < 6; i++)  //bir bölüm max 6 dönem olabildiğinden 6 var sayılıyor.
             //sınıfları dön
             {
-                foreach(DepartmentClass department in AllDepartments)
+                /*
+                foreach(DepartmentClass department in AllDepartments) {  }
+                */
+                foreach(SemesterClass oneSemester in AllSemesters[i])
                 {
+                    foreach(LessonClass lesson in oneSemester.Lessons)
+                    {
+                        for(int k = 0; k < 2; k++)  //teorik ve uygulama
+                        {
 
+                        }
 
+                        for(int j=1;j<2; j++)   //sırf lab için tek sefer dönecek (verimsel olarak sıkıntılı ama kodun düzeni için şimdilik dursun)
+                        {
+
+                        }
+                    }
                 }
+
             }
             
 
