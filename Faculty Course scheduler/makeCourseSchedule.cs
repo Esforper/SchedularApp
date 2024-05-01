@@ -24,6 +24,11 @@ namespace Faculty_Course_scheduler
         /// sınıf kapasitesi ders koduna göre ayarlanacağı için sınıf sayısını tutma
         /// her bir takvim hücresi için ders kodunu tutsun sadece, ders kodu varsa doldu, yoksa değil şeklinde
         ///     verim açısından da işlevli olur
+        /// 
+        ///  !!! Alttan alan üstten alan muhabbetinden dolayı, o an o dersi kaç kişi alıyor vs de bakmak gerekebilir yani dersi tanımlarken aslında
+        ///  kaç kişinin o dersi aldığını vs girmek gerekebilir
+        ///  
+        /// (bu kısımlar için belirli bir format olursa otomatik kayıt yaptırmak tabiri caizse şart yoksa sağlam amelelik)
         /// </summary>
 
         void makeScheduleFunc(string semester)
@@ -46,7 +51,7 @@ namespace Faculty_Course_scheduler
             for(int i = 0; i < 6; i++)  //All semester Liste dizisinin Liste sayısı kadar döndür
             {
                 List<SemesterClass> listOfSemesters = new List<SemesterClass> ();
-                AllSemesters[i] = listOfSemesters;
+                AllSemesters[i] = listOfSemesters;  //ilk tanımlamalar
             }
 
 
@@ -68,11 +73,15 @@ namespace Faculty_Course_scheduler
                     // !!! Tüm semesterların listesinin dizisinde , kendi sınıf listesine kaydet
                     //sonuç olarak bil 1. sınıflar 1.sınıfların listesinde, bil 2.sınıf 2.sınıfların listesinde kayıtlı olacak.
 
+
                 }
             }
-           //Bu kısım ön tanımlama, ortak ders saatleri olduğunda olası çakışmaları engellemesi için.
+            //Bu kısım ön tanımlama, ortak ders saatleri olduğunda olası çakışmaları engellemesi için.
 
+            //Ders programı oluşturmaya geçmeden önce ortak dersleri belirlemek lazım
+            //lab saatleri bazen ortak olmayabiliyor. o nedenle T , U düzeyinde bir eşitlik daha doğru olacaktır
 
+            //Ana Atamalar bu kısım
             for(int i = 0; i < 6; i++)  //bir bölüm max 6 dönem olabildiğinden 6 var sayılıyor.
             //sınıfları dön
             {
@@ -83,6 +92,13 @@ namespace Faculty_Course_scheduler
                 {
                     foreach(LessonClass lesson in oneSemester.Lessons)
                     {
+                        //Ders kodları ile akademisyenleri eşleştirmek lazım
+                        //akademisyen tanımlamasını burada yapmak lazım
+                        //eğer ortak bir derslikten ders verilecekse burada derslik tanımlaması yapmak lazım.
+                        //eğer teorik ile uygulama dersinin derslikleri farklı oluyorsa derslik ve uygulama kısımları dönerken tanımlama yapmak lazım.
+                        
+                        // !!! sınıf kapasitelerini de hesaba katarak bu işlemi yapmak gerekebilir
+
                         for(int k = 0; k < 2; k++)  //teorik ve uygulama
                         {
 

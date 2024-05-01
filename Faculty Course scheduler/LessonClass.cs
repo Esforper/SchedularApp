@@ -15,10 +15,13 @@ namespace Faculty_Course_scheduler
         public int[] LessonDuration;
         public int AKTS;
         public int Credit;
+        public bool isOK;
         // Teorik , uygulama , Lab
-            public LessonClass() {
-                LessonDuration = new int[3]; 
-            }
+        
+        public LessonClass() {
+            LessonDuration = new int[3];
+            isOK = false;
+        }
 
 
     }
@@ -59,7 +62,7 @@ namespace Faculty_Course_scheduler
         }
     }
 
-    public class OneLessonDateClass
+    public class OneLessonDateClass //tek bir ders hücresi için
     {
         public bool DateavAilability;
         public string LessonAcademian;
