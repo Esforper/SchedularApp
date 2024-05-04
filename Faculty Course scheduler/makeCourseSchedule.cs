@@ -20,7 +20,6 @@ namespace Faculty_Course_scheduler
         
         /// <summary>
         /// Yapılacaklar
-        /// Department sıralanması sağlanacak (anlık olarak pc müh. den başlayarak alfabetik sıralanması gerekiyor
         /// sınıf kapasitesi ders koduna göre ayarlanacağı için sınıf sayısını tutma
         /// her bir takvim hücresi için ders kodunu tutsun sadece, ders kodu varsa doldu, yoksa değil şeklinde
         ///     verim açısından da işlevli olur
@@ -46,6 +45,9 @@ namespace Faculty_Course_scheduler
 
             AllDepartments = AllDepartments.OrderBy(department => department.Name).ToList();
             //Alfabetik olarak sıralanacak (bu kısım sıralanması daha sonra ayarlanacak
+
+            List<ClassClass> AllClasses = new List<ClassClass>(); //bu şekilde tanımlama diğer kısımlara da uygulanabilir.
+            AllClasses = db.AllClasses;
 
             //tüm bölümleri tanımlamam lazım
             //departmentlar bilgisayar , yazılım gibi, semester olarak tanımlamam lazım
@@ -137,15 +139,64 @@ namespace Faculty_Course_scheduler
                 {
                     foreach(LessonClass lesson in oneSemester.Lessons)
                     {
-                        //Ders kodları ile akademisyenleri eşleştirmek lazım
-                        //akademisyen tanımlamasını burada yapmak lazım
+                        //Ders kodları ile akademisyenleri eşleştirmek lazım (tamamlandı)
+                        //akademisyen tanımlamasını burada yapmak lazım (map yapısından akademisyen ismi alınarak yapılacak)
                         //eğer ortak bir derslikten ders verilecekse burada derslik tanımlaması yapmak lazım.
                         //eğer teorik ile uygulama dersinin derslikleri farklı oluyorsa derslik ve uygulama kısımları dönerken tanımlama yapmak lazım.
                         
                         // !!! sınıf kapasitelerini de hesaba katarak bu işlemi yapmak gerekebilir
 
+                        // !!! bir ders koduna birkaç semester, bir akademisyen tanımlanırken derslikler tamamen müsaitliğe ve kapasitesine bağlı olarak atama gerçekleştirecek.
+                        ClassClass selectedClassroom = new ClassClass();
+                        //Dersliklerin kapasiteleri de kaydedildiği hesaba katılarak class algoritması
+                        foreach(ClassClass oneClassRoom in AllClasses)
+                        {
+                            if(oneClassRoom.Capacity >= oneSemester.StudentCapacity)
+                            {
+                                selectedClassroom = oneClassRoom;
+                            }
+                        }
+
+
                         for(int k = 0; k < 2; k++)  //teorik ve uygulama
                         {
+                            //teorik dersi ile uygulama dersi aynı gün olamaz. (verim için de olmamalı.) bu sebeple teorik dersi bir gün seçilirse uygulama dersi başka bir gün seçilmeli.
+                            //iki defa haftalık takvim dönülebilir.
+
+                            //ders koduna göre dictionaryi döndürmem gerekecek
+                            int lessonDuration = lesson.LessonDuration[k];
+
+                            //map yapısından gerekli bilgileri al.
+                            List<ScheduleMapClass> infos = lessonDetails[lesson.LessonCode];
+                            //tüm akademisyenlerden akademisyen ismi ile sadece mevcut akademisyeni al.
+                            AcademianClass lessonAcademian = AllAcademians.Find(a => a.AcademianName == infos[0].Academian);
+
+                            for (int x = 0; x < lessonAcademian.Dates.GetLength(1); x++)
+                            {
+                                for (int y = 0; y < lessonAcademian.Dates.GetLength(0) - (lessonDuration-1); y++)
+                                //son ders için kontrol amaçlı (lessonDuration-1) ifadesine yer verildi.
+                                {
+                                    //Academian takvimi ve semester takvim kontrolü
+                                    bool academianAndSemesterBool = true;
+                                    for (int z = 0; z < lessonDuration; z++)
+                                    {
+                                        bool _academian_SemesterBool = lessonAcademian.Dates[i, j].DateavAilability == true && oneSemester.Dates[i, j].DateavAilability == true;
+                                        if(_academian_SemesterBool == false)
+                                        {
+                                            academianAndSemesterBool = false;
+                                        }
+                                    }
+
+
+                                    bool academianBool =
+                                        lessonAcademian.Dates[i, j].DateavAilability == true && oneSemester.Dates[i, j].DateavAilability == true &&
+                                        lessonAcademian.Dates[i + 1, j].DateavAilability == true && oneSemester.Dates[i + 1, j].DateavAilability == true &&
+                                        lessonAcademian.Dates[i + 2, j].DateavAilability == true && oneSemester.Dates[i + 2, j].DateavAilability == true;
+
+
+
+                                }
+                            }
 
                         }
 
