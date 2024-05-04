@@ -191,10 +191,27 @@ namespace Faculty_Course_scheduler
 
                             //bir ders koduna yalnız 1 akademisyen atanabildiğinden iki akademisyen değeri de aynı olacaktır. o sebeple infos[0]ı alıyoruz sadece
                             AcademianClass lessonAcademian = AllAcademians.Find(a => a.AcademianName == infos[0].Academian);
+
+                            //infos a göre bilgi atamaları
+                            // academian tamam
+                            // semester tamam
                             
+                            //semester isminden semester seçmeye yarıyor
+                            //semester seçme işlemini isim yerine değerlerden de yapabilirdim ama depolama tasarufu olması için bu şekilde yaptım.
+                            SemesterClass selectedSemesterClass = new SemesterClass();
                             foreach (ScheduleMapClass info in infos) //
                             {
-
+                                foreach(List<SemesterClass> listOfSemesters in AllSemesters)
+                                {
+                                    foreach(SemesterClass selectedOneSemester in listOfSemesters)
+                                    {
+                                        if(selectedOneSemester.Name == info.DepartmentName + "_" + (info.Grade + 1) + "_" + IntToSemester(info.Fall_True_Spring_False))
+                                        {
+                                            selectedSemesterClass = selectedOneSemester;
+                                        }
+                                    }
+                                }
+                                
 
                                 for (int x = 0; x < lessonAcademian.Dates.GetLength(1); x++)
                                 {
@@ -231,22 +248,22 @@ namespace Faculty_Course_scheduler
                                             for (int a = 0; a < lessonDuration; a++)
                                             {
                                                 //akademisyen takvimini ayarla
-                                                lessonAcademian.Dates[i + k, j].DateavAilability = false;    //akademisyenin müsaitlik durumunu güncelle
-                                                lessonAcademian.Dates[i + k, j].LessonName = lesson.Name;  //akademisyenin dersini ayarla
-                                                lessonAcademian.Dates[i + k, j].LessonClass = selectedClassroom.Name;   //akademisyen takviminde sınıfı ayarla
-                                                lessonAcademian.Dates[i + k, j].LessonAcademian = null;    //akademisyenin kendi ders programı olacağı için akademisyen değerini atama
+                                                lessonAcademian.Dates[y + a, x].DateavAilability = false;    //akademisyenin müsaitlik durumunu güncelle
+                                                lessonAcademian.Dates[y + a, x].LessonName = lesson.Name;  //akademisyenin dersini ayarla
+                                                lessonAcademian.Dates[y + a, x].LessonClass = selectedClassroom.Name;   //akademisyen takviminde sınıfı ayarla
+                                                lessonAcademian.Dates[y + a, x].LessonAcademian = null;    //akademisyenin kendi ders programı olacağı için akademisyen değerini atama
 
                                                 //classroom info page için bilgileri ayarla
-                                                selectedClassroom.Dates[i + k, j].DateavAilability = false;
-                                                selectedClassroom.Dates[i + k, j].LessonName = lesson.Name;
-                                                selectedClassroom.Dates[i + k, j].LessonClass = null;
-                                                selectedClassroom.Dates[i + k, j].LessonAcademian = lessonAcademian.AcademianName;
+                                                selectedClassroom.Dates[y + a, x].DateavAilability = false;
+                                                selectedClassroom.Dates[y + a, x].LessonName = lesson.Name;
+                                                selectedClassroom.Dates[y + a, x].LessonClass = null;
+                                                selectedClassroom.Dates[y + a, x].LessonAcademian = lessonAcademian.AcademianName;
 
                                                 //section bilgilerini ayarla
-                                                oneSemester.Dates[i + k, j].DateavAilability = false;
-                                                oneSemester.Dates[i + k, j].LessonName = lesson.Name;
-                                                oneSemester.Dates[i + k, j].LessonClass = selectedClassroom.Name;
-                                                oneSemester.Dates[i + k, j].LessonAcademian = lessonAcademian.AcademianName;
+                                                oneSemester.Dates[y + a, x].DateavAilability = false;
+                                                oneSemester.Dates[y + a, x].LessonName = lesson.Name;
+                                                oneSemester.Dates[y + a, x].LessonClass = selectedClassroom.Name;
+                                                oneSemester.Dates[y + a, x].LessonAcademian = lessonAcademian.AcademianName;
 
                                             }
 
@@ -289,6 +306,22 @@ namespace Faculty_Course_scheduler
             else
             {
                 return -1;
+            }
+        }
+        string IntToSemester(int semester)
+        {
+            if(semester == 0)
+            {
+                return fallRdBtn.Text;
+            }else if(semester == 1)
+            {
+                return springRdBtn.Text;
+            }
+            else
+            {
+                MessageBox.Show("IntToSemester çevirme Hatası");
+                return "HATA";
+                
             }
         }
 
