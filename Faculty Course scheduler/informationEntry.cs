@@ -227,7 +227,9 @@ namespace Faculty_Course_scheduler
                     Department = facultyname,
                     LessonCode = LessonCodeInput.Text.ToUpper(),
                     AKTS = Convert.ToInt16(AKTSInput.Text),
-                    Credit = Convert.ToInt16(CreditInput.Text)
+                    Credit = Convert.ToInt16(CreditInput.Text),
+                    isOnline = isOnlineButton.Checked
+                    
                 };
 
                 //ders sürelerini ekle

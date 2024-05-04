@@ -195,11 +195,18 @@ namespace Faculty_Course_scheduler
                             //infos a göre bilgi atamaları
                             // academian tamam
                             // semester tamam
-                            
+
+
+                            List<SemesterClass> selectedSemesterList = new List<SemesterClass>();
+                            //ORTAK DERS KONTROL PARAMETRELERİ
+                            //TEK BİR SINIF
+                            //TEK AKADEMİSYEN
+                            //BİRDEN FAZLA SEMESTER TAKVİMİNDE AYNI UYGUN ZAMAN
+
                             //semester isminden semester seçmeye yarıyor
                             //semester seçme işlemini isim yerine değerlerden de yapabilirdim ama depolama tasarufu olması için bu şekilde yaptım.
-                            SemesterClass selectedSemesterClass = new SemesterClass();
-                            foreach (ScheduleMapClass info in infos) //
+                            //SemesterClass selectedSemesterClass = new SemesterClass();
+                            foreach (ScheduleMapClass info in infos)
                             {
                                 foreach(List<SemesterClass> listOfSemesters in AllSemesters)
                                 {
@@ -207,12 +214,14 @@ namespace Faculty_Course_scheduler
                                     {
                                         if(selectedOneSemester.Name == info.DepartmentName + "_" + (info.Grade + 1) + "_" + IntToSemester(info.Fall_True_Spring_False))
                                         {
-                                            selectedSemesterClass = selectedOneSemester;
+                                            //selectedSemesterClass = selectedOneSemester;  //tek bir semester ile her ortak ders yeri yerine, listeye kaydedip
+                                            //daha sonra listeden atamaları gerçekleştirilebilir
+                                            selectedSemesterList.Add(selectedOneSemester);
                                         }
                                     }
                                 }
                                 
-
+                            }
                                 for (int x = 0; x < lessonAcademian.Dates.GetLength(1); x++)
                                 {
                                     for (int y = 0; y < lessonAcademian.Dates.GetLength(0) - (lessonDuration - 1); y++)
@@ -276,8 +285,12 @@ namespace Faculty_Course_scheduler
 
                                     }
                                 }
-                            }
+                            
 
+                            //Atamalardan önce kontroller sağlanmalı, sonrasında atamalar olmalı,
+                            //infos döngüsünü belki kısaltabilirim, kontrolleri genel olarak bir doğruluk olmalı, her saat dönerken bir doğruluk olmalı.
+
+                            // !!! lessonların semesterda lessonların isOK değişkenini true yapmayı unutma
                             
 
                         }

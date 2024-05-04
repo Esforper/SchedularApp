@@ -16,6 +16,7 @@ namespace Faculty_Course_scheduler
         public int AKTS;
         public int Credit;
         public bool isOK;
+        public bool isOnline;
         // Teorik , uygulama , Lab
         
         public LessonClass() {

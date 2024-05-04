@@ -221,6 +221,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.labelFacultyName = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.isOnlineButton = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1022,10 +1023,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1658, 743);
+            this.tabPage2.Size = new System.Drawing.Size(1658, 752);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Derslik Ekle";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1964,6 +1965,7 @@
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.isOnlineButton);
             this.panel5.Controls.Add(this.addLessonBtn);
             this.panel5.Controls.Add(this.lessonTextBox);
             this.panel5.Controls.Add(this.CreditInput);
@@ -1983,12 +1985,12 @@
             this.panel5.Controls.Add(this.label25);
             this.panel5.Location = new System.Drawing.Point(928, 73);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(372, 349);
+            this.panel5.Size = new System.Drawing.Size(372, 400);
             this.panel5.TabIndex = 46;
             // 
             // addLessonBtn
             // 
-            this.addLessonBtn.Location = new System.Drawing.Point(131, 313);
+            this.addLessonBtn.Location = new System.Drawing.Point(131, 340);
             this.addLessonBtn.Name = "addLessonBtn";
             this.addLessonBtn.Size = new System.Drawing.Size(230, 33);
             this.addLessonBtn.TabIndex = 20;
@@ -2005,7 +2007,7 @@
             // 
             // CreditInput
             // 
-            this.CreditInput.Location = new System.Drawing.Point(307, 268);
+            this.CreditInput.Location = new System.Drawing.Point(307, 241);
             this.CreditInput.Mask = "00";
             this.CreditInput.Name = "CreditInput";
             this.CreditInput.Size = new System.Drawing.Size(44, 30);
@@ -2022,7 +2024,7 @@
             // 
             // AKTSInput
             // 
-            this.AKTSInput.Location = new System.Drawing.Point(167, 268);
+            this.AKTSInput.Location = new System.Drawing.Point(167, 241);
             this.AKTSInput.Mask = "00";
             this.AKTSInput.Name = "AKTSInput";
             this.AKTSInput.Size = new System.Drawing.Size(44, 30);
@@ -2042,7 +2044,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(249, 273);
+            this.label33.Location = new System.Drawing.Point(249, 246);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(64, 25);
             this.label33.TabIndex = 42;
@@ -2060,7 +2062,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(88, 273);
+            this.label32.Location = new System.Drawing.Point(88, 246);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(73, 25);
             this.label32.TabIndex = 41;
@@ -2077,7 +2079,7 @@
             // 
             // labInput
             // 
-            this.labInput.Location = new System.Drawing.Point(307, 203);
+            this.labInput.Location = new System.Drawing.Point(307, 190);
             this.labInput.Mask = "00";
             this.labInput.Name = "labInput";
             this.labInput.Size = new System.Drawing.Size(44, 30);
@@ -2092,7 +2094,7 @@
             // 
             // uygulamaInput
             // 
-            this.uygulamaInput.Location = new System.Drawing.Point(225, 203);
+            this.uygulamaInput.Location = new System.Drawing.Point(225, 190);
             this.uygulamaInput.Mask = "00";
             this.uygulamaInput.Name = "uygulamaInput";
             this.uygulamaInput.Size = new System.Drawing.Size(44, 30);
@@ -2109,7 +2111,7 @@
             // 
             // teorikInput
             // 
-            this.teorikInput.Location = new System.Drawing.Point(131, 203);
+            this.teorikInput.Location = new System.Drawing.Point(131, 190);
             this.teorikInput.Mask = "00";
             this.teorikInput.Name = "teorikInput";
             this.teorikInput.Size = new System.Drawing.Size(44, 30);
@@ -2255,6 +2257,17 @@
             this.label22.Size = new System.Drawing.Size(136, 31);
             this.label22.TabIndex = 21;
             this.label22.Text = "Bölüm İsmi:";
+            // 
+            // isOnlineButton
+            // 
+            this.isOnlineButton.AutoSize = true;
+            this.isOnlineButton.Location = new System.Drawing.Point(170, 293);
+            this.isOnlineButton.Name = "isOnlineButton";
+            this.isOnlineButton.Size = new System.Drawing.Size(136, 29);
+            this.isOnlineButton.TabIndex = 45;
+            this.isOnlineButton.TabStop = true;
+            this.isOnlineButton.Text = "Online Ders";
+            this.isOnlineButton.UseVisualStyleBackColor = true;
             // 
             // informationEntry
             // 
@@ -2503,5 +2516,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button nextSemesterPeriod;
+        private System.Windows.Forms.RadioButton isOnlineButton;
     }
 }
