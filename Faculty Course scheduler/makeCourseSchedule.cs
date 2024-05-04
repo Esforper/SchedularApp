@@ -177,22 +177,37 @@ namespace Faculty_Course_scheduler
                                 //son ders için kontrol amaçlı (lessonDuration-1) ifadesine yer verildi.
                                 {
                                     //Academian takvimi ve semester takvim kontrolü
-                                    bool academianAndSemesterBool = true;
+                                    bool academianSemesterClassBool = true;
                                     for (int z = 0; z < lessonDuration; z++)
                                     {
-                                        bool _academian_SemesterBool = lessonAcademian.Dates[i, j].DateavAilability == true && oneSemester.Dates[i, j].DateavAilability == true;
-                                        if(_academian_SemesterBool == false)
+                                        bool _academian_Semester_ClassBool = lessonAcademian.Dates[y, x].DateavAilability == true &&
+                                            oneSemester.Dates[y, x].DateavAilability == true &&
+                                            selectedClassroom.Dates[y, x].DateavAilability == true;
+                                        if(_academian_Semester_ClassBool == false)
                                         {
-                                            academianAndSemesterBool = false;
+                                            academianSemesterClassBool = false;
                                         }
                                     }
 
+                                    //bu kısımda saat süresi olarak + - 1 oynama olabilir !!!
+                                    bool academianSectionClassLastControl = true;
+                                    //akademisyen, semester ve classların son bool değerlerini kontrol et
+                                    if (y != lessonAcademian.Dates.GetLength(0) - lessonDuration)
+                                    {
+                                        // y == saatler , x == günler
+                                        //ders süresi 3 saatse, son 2 saat y döngüsünde dönmüyor, sondan 3. saat haricinde kontrol yapıyor.
+                                        academianSectionClassLastControl = lessonAcademian.Dates[y+lessonDuration,x].DateavAilability == true &&
+                                            oneSemester.Dates[y + lessonDuration, x].DateavAilability == true &&
+                                            selectedClassroom.Dates[y + lessonDuration, x].DateavAilability == true;
+                                    }
 
-                                    bool academianBool =
-                                        lessonAcademian.Dates[i, j].DateavAilability == true && oneSemester.Dates[i, j].DateavAilability == true &&
-                                        lessonAcademian.Dates[i + 1, j].DateavAilability == true && oneSemester.Dates[i + 1, j].DateavAilability == true &&
-                                        lessonAcademian.Dates[i + 2, j].DateavAilability == true && oneSemester.Dates[i + 2, j].DateavAilability == true;
+                                    if(academianSemesterClassBool == true && academianSectionClassLastControl == true)
+                                    {
 
+
+
+
+                                    }
 
 
                                 }
