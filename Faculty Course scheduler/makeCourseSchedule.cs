@@ -203,10 +203,27 @@ namespace Faculty_Course_scheduler
 
                                     if(academianSemesterClassBool == true && academianSectionClassLastControl == true)
                                     {
+                                        for(int a = 0; a < lessonDuration; a++)
+                                        {
+                                            //akademisyen takvimini ayarla
+                                            lessonAcademian.Dates[i + k, j].DateavAilability = false;    //akademisyenin müsaitlik durumunu güncelle
+                                            lessonAcademian.Dates[i + k, j].LessonName = lesson.Name;  //akademisyenin dersini ayarla
+                                            lessonAcademian.Dates[i + k, j].LessonClass = selectedClassroom.Name;   //akademisyen takviminde sınıfı ayarla
+                                            lessonAcademian.Dates[i + k, j].LessonAcademian = null;    //akademisyenin kendi ders programı olacağı için akademisyen değerini atama
 
+                                            //classroom info page için bilgileri ayarla
+                                            selectedClassroom.Dates[i + k, j].DateavAilability = false;
+                                            selectedClassroom.Dates[i + k, j].LessonName = lesson.Name;
+                                            selectedClassroom.Dates[i + k, j].LessonClass = null;
+                                            selectedClassroom.Dates[i + k, j].LessonAcademian = lessonAcademian.AcademianName;
 
+                                            //section bilgilerini ayarla
+                                            oneSemester.Dates[i + k, j].DateavAilability = false;
+                                            oneSemester.Dates[i + k, j].LessonName = lesson.Name;
+                                            oneSemester.Dates[i + k, j].LessonClass = selectedClassroom.Name;
+                                            oneSemester.Dates[i + k, j].LessonAcademian = lessonAcademian.AcademianName;
 
-
+                                        }
                                     }
 
 
