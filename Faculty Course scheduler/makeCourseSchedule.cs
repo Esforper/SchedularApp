@@ -224,6 +224,11 @@ namespace Faculty_Course_scheduler
                                             oneSemester.Dates[i + k, j].LessonAcademian = lessonAcademian.AcademianName;
 
                                         }
+
+                                        lessonAcademian.AcademianLessonCount++;
+                                        //facultyAcademians.Remove(minAcademian); kısmını kullanmaya gerek yok çünkü map ile seçiliyor zaten
+
+                                        // !!! SemesterMapClasstan diğer semesterlarda da atamaları yapılacak
                                     }
 
 
