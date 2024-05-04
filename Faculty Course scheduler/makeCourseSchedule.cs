@@ -281,18 +281,32 @@ namespace Faculty_Course_scheduler
                                              selectedClassroom.Dates[y + a, x].LessonClass = null;
                                              selectedClassroom.Dates[y + a, x].LessonAcademian = lessonAcademian.AcademianName;
 
-                                             //section bilgilerini ayarla
-                                             oneSemester.Dates[y + a, x].DateavAilability = false;
-                                             oneSemester.Dates[y + a, x].LessonName = lesson.Name;
-                                             oneSemester.Dates[y + a, x].LessonClass = selectedClassroom.Name;
-                                             oneSemester.Dates[y + a, x].LessonAcademian = lessonAcademian.AcademianName;
+                                            //tüm semesterlar için zaman müsaitliği ayarlıyor.
+                                             foreach (SemesterClass selectedOneSemester in selectedSemesterList)
+                                             {
+                                                selectedOneSemester.Dates[y + a, x].DateavAilability = false;
+                                                selectedOneSemester.Dates[y + a, x].LessonName = lesson.Name;
+                                                selectedOneSemester.Dates[y + a, x].LessonClass = selectedClassroom.Name;
+                                                selectedOneSemester.Dates[y + a, x].LessonAcademian = lessonAcademian.AcademianName;
+                                             }
+
 
                                          }
 
                                          lessonAcademian.AcademianLessonCount++;
+                                        
+                                         //isOK ataması ayarlandı
+                                         foreach (SemesterClass selectedOneSemester in selectedSemesterList)
+                                         {
+                                             foreach(LessonClass lessons in selectedOneSemester.Lessons)
+                                             {
+                                                lesson.isOK = true;
+                                             }
+                                         }
+
                                          //facultyAcademians.Remove(minAcademian); kısmını kullanmaya gerek yok çünkü map ile seçiliyor zaten
 
-                                         // !!! SemesterMapClasstan diğer semesterlarda da atamaları yapılacak
+                                            // !!! SemesterMapClasstan diğer semesterlarda da atamaları yapılacak
                                      }
 
 
