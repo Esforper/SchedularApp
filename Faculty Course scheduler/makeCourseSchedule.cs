@@ -17,9 +17,9 @@ namespace Faculty_Course_scheduler
         {
             InitializeComponent();
         }
-        
+
         /// <summary>
-        /// Yapılacaklar
+        /// Yapılacaklar / Notlar
         /// sınıf kapasitesi ders koduna göre ayarlanacağı için sınıf sayısını tutma
         /// her bir takvim hücresi için ders kodunu tutsun sadece, ders kodu varsa doldu, yoksa değil şeklinde
         ///     verim açısından da işlevli olur
@@ -28,6 +28,11 @@ namespace Faculty_Course_scheduler
         ///  kaç kişinin o dersi aldığını vs girmek gerekebilir
         ///  
         /// (bu kısımlar için belirli bir format olursa otomatik kayıt yaptırmak tabiri caizse şart yoksa sağlam amelelik)
+        /// akademisyen, departman, derslikler başta tanımlanarak verim sağlanabilir.
+        /// 
+        /// All semesterların listeleri önceden tanımlanarak tanımsızlık sorununun önüne geçiliyor çünkü sonuçta liste tanımlı ama boş sadece
+        /// 
+        /// enrollment 4 gradelik bir bölüm için 4 değer tutacak sadece.
         /// </summary>
 
         void makeScheduleFunc(string semester)
@@ -35,30 +40,24 @@ namespace Faculty_Course_scheduler
             int semesterNum =  SemesterToInt(semester);
             //Fall = 0 , Spring = 1 , else = -1
 
-            //Önce tüm sınıf ve gradeleri tanımlamamız lazım
-            //liste şeklinde semesterclass yapabiliriz (listenin listesi ya da listenin dizisi olabilir)
-
             List<DepartmentClass>AllDepartments = db.AllDepartments;
             //bilgisayar müh, yazılım müh, gibi tüm bölümlerin listesi
 
             List<AcademianClass> AllAcademians = db.AllAcademians;
 
             AllDepartments = AllDepartments.OrderBy(department => department.Name).ToList();
-            //Alfabetik olarak sıralanacak (bu kısım sıralanması daha sonra ayarlanacak
+            //Alfabetik olarak sıralanacak (bu kısım sıralanması daha sonra ayarlanacak)
 
             List<ClassClass> AllClasses = new List<ClassClass>(); //bu şekilde tanımlama diğer kısımlara da uygulanabilir.
             AllClasses = db.AllClasses;
 
-            //tüm bölümleri tanımlamam lazım
-            //departmentlar bilgisayar , yazılım gibi, semester olarak tanımlamam lazım
-
+            //Tüm semesterClasslar, Grade listeleri şeklinde saklanıyor
             List<SemesterClass>[] AllSemesters = new List<SemesterClass>[6];
             for(int i = 0; i < 6; i++)  //All semester Liste dizisinin Liste sayısı kadar döndür
             {
                 List<SemesterClass> listOfSemesters = new List<SemesterClass> ();
-                AllSemesters[i] = listOfSemesters;  //ilk tanımlamalar
+                AllSemesters[i] = listOfSemesters;  //Dizi içerisinde Liste tanımlandı
             }
-
 
             foreach(DepartmentClass department in AllDepartments)   //department dönme
             {
@@ -67,7 +66,12 @@ namespace Faculty_Course_scheduler
                     SemesterClass oneSemester = new SemesterClass();    //semester oluşturma
                     oneSemester.Name = department.Name + "_" + i+1 + "_" + semester;
                     //bölüm + sınıf numarası + dönemi
+
                     //semester student capacity kaldırılacak
+                    //Bu neden böyle demişim bilmiyorum o nedenle ekliyorum
+                    oneSemester.StudentCapacity = department.enrollment[i];
+                    //enrollment 4 gradelik bir bölüm için 4 değer tutacak sadece.
+
                     oneSemester.FacultyName = department.Name;
                     oneSemester.Lessons = department.courses[department.numGrades+semesterNum];
                     //bu değerlerin kontrolleri sağlanacak
