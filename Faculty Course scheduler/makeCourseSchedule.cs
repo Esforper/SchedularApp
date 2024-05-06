@@ -64,11 +64,13 @@ namespace Faculty_Course_scheduler
                 for(int i = 0;i< department.numGrades;i++)  //sınıf sayısı kadar dön
                 {
                     SemesterClass oneSemester = new SemesterClass();    //semester oluşturma
-                    oneSemester.Name = department.Name + "_" + i+1 + "_" + semester;
+                    oneSemester.Name = department.Name + "_" + i + "_" + semester;
                     //bölüm + sınıf numarası + dönemi
 
                     //semester student capacity kaldırılacak
                     //Bu neden böyle demişim bilmiyorum o nedenle ekliyorum
+                    //Sum of Student olarak altta, department classlardan 
+
                     oneSemester.StudentCapacity = department.enrollment[i];
                     //enrollment 4 gradelik bir bölüm için 4 değer tutacak sadece.
 
@@ -78,11 +80,9 @@ namespace Faculty_Course_scheduler
                     AllSemesters[i].Add(oneSemester);
                     
                     //Her departman ve o departmandaki sınıf sayısını döndürdük (yani bil 1.grade , bil 2.grade gibi döndür)
-                    //Semester classa (bil 1.sınıf gibi) isim ataması, fakülte ismini, ders listesini ata.
+                    //Semester classa (bil 1.sınıf gibi) isim ataması, öğrenci sayısı, fakülte ismini, ders listesini ata.
                     // !!! Tüm semesterların listesinin dizisinde , kendi sınıf listesine kaydet
                     //sonuç olarak bil 1. sınıflar 1.sınıfların listesinde, bil 2.sınıf 2.sınıfların listesinde kayıtlı olacak.
-
-
                 }
             }
             //Bu kısım ön tanımlama, ortak ders saatleri olduğunda olası çakışmaları engellemesi için.
@@ -129,9 +129,6 @@ namespace Faculty_Course_scheduler
                 }
             }
 
-
-
-
             //Ana Atamalar bu kısım
             for (int i = 0; i < 6; i++)  //bir bölüm max 6 dönem olabildiğinden 6 var sayılıyor.
             //sınıfları dön
@@ -139,14 +136,13 @@ namespace Faculty_Course_scheduler
                 /*
                 foreach(DepartmentClass department in AllDepartments) {  }
                 */
-                foreach(SemesterClass oneSemester in AllSemesters[i])
+                foreach(SemesterClass oneSemester in AllSemesters[i])   //i.grade semesterları dön
                 {
                     foreach(LessonClass lesson in oneSemester.Lessons)
                     {
-                        if(lesson.isOK == false)
+                        if(lesson.isOK == false)    //ders tanımlanmamışsa dön
                         {
                             //Ders kodları ile akademisyenleri eşleştirmek lazım (tamamlandı)
-                            //akademisyen tanımlamasını burada yapmak lazım (map yapısından akademisyen ismi alınarak yapılacak)
                             //eğer ortak bir derslikten ders verilecekse burada derslik tanımlaması yapmak lazım.
                             //eğer teorik ile uygulama dersinin derslikleri farklı oluyorsa derslik ve uygulama kısımları dönerken tanımlama yapmak lazım.
 
@@ -202,7 +198,6 @@ namespace Faculty_Course_scheduler
                                 // academian tamam
                                 // semester tamam
 
-
                                 List<SemesterClass> selectedSemesterList = new List<SemesterClass>();
                                 //ORTAK DERS KONTROL PARAMETRELERİ
                                 //TEK BİR SINIF
@@ -218,7 +213,7 @@ namespace Faculty_Course_scheduler
                                     {
                                         foreach (SemesterClass selectedOneSemester in listOfSemesters)
                                         {
-                                            if (selectedOneSemester.Name == info.DepartmentName + "_" + (info.Grade + 1) + "_" + IntToSemester(info.Fall_True_Spring_False))
+                                            if (selectedOneSemester.Name == info.DepartmentName + "_" + info.Grade + "_" + IntToSemester(info.Fall_True_Spring_False))
                                             {
                                                 //selectedSemesterClass = selectedOneSemester;  //tek bir semester ile her ortak ders yeri yerine, listeye kaydedip
                                                 //daha sonra listeden atamaları gerçekleştirilebilir
@@ -324,9 +319,15 @@ namespace Faculty_Course_scheduler
                                 //infos döngüsünü belki kısaltabilirim, kontrolleri genel olarak bir doğruluk olmalı, her saat dönerken bir doğruluk olmalı.
 
                                 // !!! lessonların semesterda lessonların isOK değişkenini true yapmayı unutma
-
+                                lessonAcademian.UpdateWorkDates();
+                                LogMessage(lessonAcademian.AcademianName + " takvimi başarıyla güncellendi");
+                                //Log mesajı = "akademisyen dersleri güncellendi"
+                                selectedClassroom.UpdateClassDates();
+                                LogMessage(selectedClassroom.Name + " takvimi başarılı şekilde güncellendi");
+                                //log mesajı = "sınıf takvimi güncellendi"
 
                             }
+                            
 
                             for (int j = 1; j < 2; j++)   //sırf lab için tek sefer dönecek (verimsel olarak sıkıntılı ama kodun düzeni için şimdilik dursun)
                             {
@@ -334,7 +335,12 @@ namespace Faculty_Course_scheduler
                             }
                         }
                         
+
+                        
                     }
+                    db.SavePeriodLessonDataToJson(oneSemester);
+                    LogMessage(oneSemester.Name + " section dersleri kaydedildi");
+                    //Log mesajı = "oneSemester dersleri ataması başarılı şekilde tamamlandı"
                 }
 
             }
@@ -393,6 +399,10 @@ namespace Faculty_Course_scheduler
             {
                 makeScheduleFunc(selectedSemester);
             }
+        }
+        private void LogMessage(string msg)
+        {
+            LogListBox.Items.Add(msg);
         }
     }
 }

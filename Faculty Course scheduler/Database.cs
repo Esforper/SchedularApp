@@ -276,7 +276,7 @@ internal class Database
             string jsonData = JsonConvert.SerializeObject(AllSemesterLessons, Formatting.Indented);  //bilgileri json formatına getir
             File.WriteAllText(jsonPeriodLessonFilePath, jsonData); //bilgileri json dosyasına yaz
 
-            MessageBox.Show("Section Ders Programı Veritabanına kaydedildi");
+            //MessageBox.Show("Section Ders Programı Veritabanına kaydedildi");
         }
         catch (Exception ex)
         {

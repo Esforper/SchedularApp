@@ -33,7 +33,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.LogListBox = new System.Windows.Forms.ListBox();
             this.fallRdBtn = new System.Windows.Forms.RadioButton();
             this.springRdBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
@@ -87,17 +87,17 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "<durum>";
             // 
-            // listBox1
+            // LogListBox
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.LogListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(111, 214);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1212, 164);
-            this.listBox1.TabIndex = 6;
+            this.LogListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LogListBox.FormattingEnabled = true;
+            this.LogListBox.ItemHeight = 20;
+            this.LogListBox.Location = new System.Drawing.Point(111, 214);
+            this.LogListBox.Name = "LogListBox";
+            this.LogListBox.Size = new System.Drawing.Size(1212, 164);
+            this.LogListBox.TabIndex = 6;
             // 
             // fallRdBtn
             // 
@@ -126,7 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.springRdBtn);
             this.Controls.Add(this.fallRdBtn);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.LogListBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar1);
@@ -147,7 +147,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox LogListBox;
         private System.Windows.Forms.RadioButton fallRdBtn;
         private System.Windows.Forms.RadioButton springRdBtn;
     }

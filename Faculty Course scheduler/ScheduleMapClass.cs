@@ -11,6 +11,7 @@ namespace Faculty_Course_scheduler
         public string DepartmentName { get; set; }
         public int Grade { get; set; }
         public int Fall_True_Spring_False { get; set; }
+        public int numOfStudent { get; set; }
         public string Academian { get; set; }
     }
 }
