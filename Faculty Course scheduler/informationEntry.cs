@@ -167,8 +167,6 @@ namespace Faculty_Course_scheduler
             {
                 MessageBox.Show("int türünde değer girin");
             }
-            
-            
         }
 
         private void gradeStudentNumberBtn_Click(object sender, EventArgs e)
@@ -269,13 +267,23 @@ namespace Faculty_Course_scheduler
             {
                 List<DepartmentClass> AllDepartments = database.AllDepartments;
                 List<string> AllLessonCodes = new List<string>();
+                List<AcademianClass> AllAcademians = database.AllAcademians;
                 foreach(DepartmentClass department in AllDepartments)
                 {
                     foreach(var listOfLessons in department.courses)
                     {
                         foreach(var oneLesson in listOfLessons)
                         {
-                            if (!AllLessonCodes.Contains(oneLesson.LessonCode))
+                            bool lessonCodeControl = true;
+                            foreach(var academian in AllAcademians)
+                            {
+                                if (academian.lessonCodes.Contains(oneLesson.LessonCode))
+                                {
+                                    lessonCodeControl = false;
+                                }
+                            }
+
+                            if (!AllLessonCodes.Contains(oneLesson.LessonCode) && lessonCodeControl != false)
                             {
                                 AllLessonCodes.Add(oneLesson.LessonCode);
                                 lessonCodesComboBox.Items.Add(oneLesson.LessonCode);

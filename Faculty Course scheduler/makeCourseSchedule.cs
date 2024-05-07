@@ -75,7 +75,7 @@ namespace Faculty_Course_scheduler
                     //enrollment 4 gradelik bir bölüm için 4 değer tutacak sadece.
 
                     oneSemester.FacultyName = department.Name;
-                    oneSemester.Lessons = department.courses[department.numGrades+semesterNum];
+                    oneSemester.Lessons = department.courses[i+semesterNum];
                     //bu değerlerin kontrolleri sağlanacak
                     AllSemesters[i].Add(oneSemester);
                     
@@ -140,7 +140,7 @@ namespace Faculty_Course_scheduler
                 {
                     foreach(LessonClass lesson in oneSemester.Lessons)
                     {
-                        if(lesson.isOK == false)    //ders tanımlanmamışsa dön
+                        if(lesson.isOK == false || lesson.isOK == null)    //ders tanımlanmamışsa dön
                         {
                             //Ders kodları ile akademisyenleri eşleştirmek lazım (tamamlandı)
                             //eğer ortak bir derslikten ders verilecekse burada derslik tanımlaması yapmak lazım.
@@ -155,28 +155,7 @@ namespace Faculty_Course_scheduler
                             //eğer her ders kodunu girerken öğrenci sayısını girme gibi bir durum olursa girilen öğrenci sayısı sadece 1 semesterın o dersi için
                             //öğrenci sayısına tekabül edecek
 
-                            int sumStudentNumber = 0;
-                            foreach (ScheduleMapClass info in infos)
-                            {
-                                DepartmentClass selectedDepartment = AllDepartments.Find(d => d.Name == info.DepartmentName);
-                                int studentNumberInMap = selectedDepartment.enrollment[info.Grade];
-                                //fall ve spring aynı öğrenci sayısına sahip var sayıldığı için enrollment[info.Grade] yaptım. diğer türlü
-                                //enrollment[info.Grade + Fall_Or_Spring] gibi bir şey yapmam gerekebilirdi
-                                sumStudentNumber += studentNumberInMap;
-                            }
-
-
-                            ClassClass selectedClassroom = new ClassClass();
-                            //Dersliklerin kapasiteleri de kaydedildiği hesaba katılarak class algoritması
-                            foreach (ClassClass oneClassRoom in AllClasses)
-                            {
-                                //if(oneClassRoom.Capacity >= oneSemester.StudentCapacity)  //bunu engelleme sebebim tanımlanan semesterin student capacityi
-
-                                if (oneClassRoom.Capacity >= sumStudentNumber)
-                                {
-                                    selectedClassroom = oneClassRoom;
-                                }
-                            }
+                            ClassClass selectedClassroom = selectNewClass(infos);
 
 
                             for (int k = 0; k < 2; k++)  //teorik ve uygulama
@@ -310,6 +289,7 @@ namespace Faculty_Course_scheduler
                                             // !!! SemesterMapClasstan diğer semesterlarda da atamaları yapılacak
                                         }
 
+                                        selectNewClass(infos);
 
                                     }
                                 }
@@ -317,6 +297,8 @@ namespace Faculty_Course_scheduler
 
                                 //Atamalardan önce kontroller sağlanmalı, sonrasında atamalar olmalı,
                                 //infos döngüsünü belki kısaltabilirim, kontrolleri genel olarak bir doğruluk olmalı, her saat dönerken bir doğruluk olmalı.
+
+                                //Buradaki dataları şimdi kaydetmesin, daha sonra sonuca göre kaydetsin.
 
                                 // !!! lessonların semesterda lessonların isOK değişkenini true yapmayı unutma
                                 lessonAcademian.UpdateWorkDates();
@@ -346,6 +328,31 @@ namespace Faculty_Course_scheduler
             }
             
 
+        }
+        ClassClass selectNewClass(List<ScheduleMapClass> infos)
+        {
+            int sumStudentNumber = 0;
+            foreach (ScheduleMapClass info in infos)
+            {
+                DepartmentClass selectedDepartment = db.AllDepartments.Find(d => d.Name == info.DepartmentName);
+                int studentNumberInMap = selectedDepartment.enrollment[info.Grade - 1];
+                //fall ve spring aynı öğrenci sayısına sahip var sayıldığı için enrollment[info.Grade] yaptım. diğer türlü
+                //enrollment[info.Grade + Fall_Or_Spring] gibi bir şey yapmam gerekebilirdi
+                sumStudentNumber += studentNumberInMap;
+            }
+
+            ClassClass selectedClassroom = new ClassClass();
+            //Dersliklerin kapasiteleri de kaydedildiği hesaba katılarak class algoritması
+            foreach (ClassClass oneClassRoom in db.AllClasses)
+            {
+                //if(oneClassRoom.Capacity >= oneSemester.StudentCapacity)  //bunu engelleme sebebim tanımlanan semesterin student capacityi
+
+                if (oneClassRoom.Capacity >= sumStudentNumber)
+                {
+                    selectedClassroom = oneClassRoom;
+                }
+            }
+            return selectedClassroom;
         }
 
         int SemesterToInt(string semesterName) {
