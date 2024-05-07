@@ -107,7 +107,7 @@ namespace Faculty_Course_scheduler
                         ScheduleMapClass details = new ScheduleMapClass
                         {
                             DepartmentName = department.Name,
-                            Grade = courses.IndexOf(lesson) + 1,
+                            Grade = courses.IndexOf(lesson),
                             Fall_True_Spring_False = semesterNum // Burada semester'i nasıl alıyorsanız ona göre ayarlayın
                         };
 
@@ -326,22 +326,41 @@ namespace Faculty_Course_scheduler
                 }
 
             }
-            
+
+            foreach (List<SemesterClass> ListofSemesters in AllSemesters)
+            {
+                foreach(SemesterClass semesterToBeSaved in ListofSemesters)
+                {
+                    db.SavePeriodLessonDataToJson(semesterToBeSaved);
+                }
+            }
+            foreach (AcademianClass academianToBeSaved in AllAcademians)
+            {
+                academianToBeSaved.UpdateWorkDates();
+            }
+            foreach(ClassClass classToBeSaved in AllClasses)
+            {
+                classToBeSaved.UpdateClassDates();
+            }
+
 
         }
         ClassClass selectNewClass(List<ScheduleMapClass> infos)
         {
+            ClassClass selectedClassroom = null;
+            int minLessonCount = int.MaxValue;
+            int currentLessonCount = 0;
+
             int sumStudentNumber = 0;
             foreach (ScheduleMapClass info in infos)
             {
                 DepartmentClass selectedDepartment = db.AllDepartments.Find(d => d.Name == info.DepartmentName);
-                int studentNumberInMap = selectedDepartment.enrollment[info.Grade - 1];
+                int studentNumberInMap = selectedDepartment.enrollment[info.Grade];
                 //fall ve spring aynı öğrenci sayısına sahip var sayıldığı için enrollment[info.Grade] yaptım. diğer türlü
                 //enrollment[info.Grade + Fall_Or_Spring] gibi bir şey yapmam gerekebilirdi
                 sumStudentNumber += studentNumberInMap;
             }
 
-            ClassClass selectedClassroom = new ClassClass();
             //Dersliklerin kapasiteleri de kaydedildiği hesaba katılarak class algoritması
             foreach (ClassClass oneClassRoom in db.AllClasses)
             {
