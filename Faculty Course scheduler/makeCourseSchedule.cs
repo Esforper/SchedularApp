@@ -98,8 +98,10 @@ namespace Faculty_Course_scheduler
             
             foreach (DepartmentClass department in AllDepartments) 
             {
+                int gradeNum = 0;
                 foreach (List<LessonClass> courses in department.courses)
                 {
+                    gradeNum++;
                     foreach (LessonClass lesson in courses)
                     {
                         string lessonCode = lesson.LessonCode;
@@ -107,7 +109,7 @@ namespace Faculty_Course_scheduler
                         ScheduleMapClass details = new ScheduleMapClass
                         {
                             DepartmentName = department.Name,
-                            Grade = courses.IndexOf(lesson),
+                            Grade = gradeNum,
                             Fall_True_Spring_False = semesterNum // Burada semester'i nasıl alıyorsanız ona göre ayarlayın
                         };
 
