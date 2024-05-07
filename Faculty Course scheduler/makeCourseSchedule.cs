@@ -348,31 +348,32 @@ namespace Faculty_Course_scheduler
         ClassClass selectNewClass(List<ScheduleMapClass> infos)
         {
             ClassClass selectedClassroom = null;
-            int minLessonCount = int.MaxValue;
-            int currentLessonCount = 0;
+            int minAvailableTime = int.MaxValue;
 
-            int sumStudentNumber = 0;
-            foreach (ScheduleMapClass info in infos)
-            {
-                DepartmentClass selectedDepartment = db.AllDepartments.Find(d => d.Name == info.DepartmentName);
-                int studentNumberInMap = selectedDepartment.enrollment[info.Grade];
-                //fall ve spring aynı öğrenci sayısına sahip var sayıldığı için enrollment[info.Grade] yaptım. diğer türlü
-                //enrollment[info.Grade + Fall_Or_Spring] gibi bir şey yapmam gerekebilirdi
-                sumStudentNumber += studentNumberInMap;
-            }
-
-            //Dersliklerin kapasiteleri de kaydedildiği hesaba katılarak class algoritması
             foreach (ClassClass oneClassRoom in db.AllClasses)
             {
-                //if(oneClassRoom.Capacity >= oneSemester.StudentCapacity)  //bunu engelleme sebebim tanımlanan semesterin student capacityi
+                // Sınıfın mevcut müsaitlik süresini alın
+                int availableTime = oneClassRoom.ClassAvailableTime();
 
-                if (oneClassRoom.Capacity >= sumStudentNumber)
+                // Verilen derslerin öğrenci sayısını topla
+                int sumStudentNumber = 0;
+                foreach (ScheduleMapClass info in infos)
                 {
+                    DepartmentClass selectedDepartment = db.AllDepartments.Find(d => d.Name == info.DepartmentName);
+                    int studentNumberInMap = selectedDepartment.enrollment[info.Grade];
+                    sumStudentNumber += studentNumberInMap;
+                }
+
+                // Eğer sınıfın kapasitesi toplam öğrenci sayısını karşılıyorsa ve müsaitlik süresi minimum ise seç
+                if (oneClassRoom.Capacity >= sumStudentNumber && availableTime < minAvailableTime)
+                {
+                    minAvailableTime = availableTime;
                     selectedClassroom = oneClassRoom;
                 }
             }
             return selectedClassroom;
         }
+
 
         int SemesterToInt(string semesterName) {
             if(semesterName == fallRdBtn.Text)
