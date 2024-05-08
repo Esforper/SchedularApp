@@ -98,10 +98,9 @@ namespace Faculty_Course_scheduler
             
             foreach (DepartmentClass department in AllDepartments) 
             {
-                int gradeNum = 0;
-                foreach (List<LessonClass> courses in department.courses)
+                for (int gradeIndex = 0; gradeIndex < department.courses.Count(); gradeIndex++)
                 {
-                    gradeNum++;
+                    List<LessonClass> courses = department.courses[gradeIndex];
                     foreach (LessonClass lesson in courses)
                     {
                         string lessonCode = lesson.LessonCode;
@@ -109,7 +108,7 @@ namespace Faculty_Course_scheduler
                         ScheduleMapClass details = new ScheduleMapClass
                         {
                             DepartmentName = department.Name,
-                            Grade = gradeNum,
+                            Grade = gradeIndex,
                             Fall_True_Spring_False = semesterNum // Burada semester'i nasıl alıyorsanız ona göre ayarlayın
                         };
 
@@ -169,7 +168,6 @@ namespace Faculty_Course_scheduler
                                 int lessonDuration = lesson.LessonDuration[k];
 
                                 //map yapısından gerekli bilgileri al.
-
                                 //belki ileride infos kısmında bilgiler alınarak atama işlemi kontrol edilebilir.
 
                                 //bir ders koduna yalnız 1 akademisyen atanabildiğinden iki akademisyen değeri de aynı olacaktır. o sebeple infos[0]ı alıyoruz sadece
@@ -188,114 +186,134 @@ namespace Faculty_Course_scheduler
                                 //semester isminden semester seçmeye yarıyor
                                 //semester seçme işlemini isim yerine değerlerden de yapabilirdim ama depolama tasarufu olması için bu şekilde yaptım.
                                 //SemesterClass selectedSemesterClass = new SemesterClass();
-                                foreach (ScheduleMapClass info in infos)
+                                
+
+                                //Ana Atama ve Kontrol Döngüsü
+                                if(lessonDuration != 0)
                                 {
-                                    foreach (List<SemesterClass> listOfSemesters in AllSemesters)
+                                    foreach (ScheduleMapClass info in infos)
                                     {
-                                        foreach (SemesterClass selectedOneSemester in listOfSemesters)
+                                        foreach (List<SemesterClass> listOfSemesters in AllSemesters)
                                         {
-                                            if (selectedOneSemester.Name == info.DepartmentName + "_" + info.Grade + "_" + IntToSemester(info.Fall_True_Spring_False))
+                                            foreach (SemesterClass selectedOneSemester in listOfSemesters)
                                             {
-                                                //selectedSemesterClass = selectedOneSemester;  //tek bir semester ile her ortak ders yeri yerine, listeye kaydedip
-                                                //daha sonra listeden atamaları gerçekleştirilebilir
-                                                selectedSemesterList.Add(selectedOneSemester);
+                                                if (selectedOneSemester.Name == info.DepartmentName + "_" + info.Grade + "_" + IntToSemester(info.Fall_True_Spring_False))
+                                                {
+                                                    //selectedSemesterClass = selectedOneSemester;  //tek bir semester ile her ortak ders yeri yerine, listeye kaydedip
+                                                    //daha sonra listeden atamaları gerçekleştirilebilir
+                                                    selectedSemesterList.Add(selectedOneSemester);
+                                                }
                                             }
                                         }
                                     }
-                                }
-
-                                for (int x = 0; x < lessonAcademian.Dates.GetLength(1); x++)
-                                {
-                                    for (int y = 0; y < lessonAcademian.Dates.GetLength(0) - (lessonDuration - 1); y++)
-                                    //son ders için kontrol amaçlı (lessonDuration-1) ifadesine yer verildi.
+                                    bool breakControl = false;
+                                    for (int x = 0; x < lessonAcademian.Dates.GetLength(1); x++)
                                     {
-                                        // !!! Algoritma patlarsa buraya bak burası biraz sakat
-                                        //Academian takvimi ve semester takvim kontrolü
-                                        bool academianSemesterClassBool = true;
-                                        for (int z = 0; z < lessonDuration; z++)
+                                        //lessonDuration - 1 , lessonDuration 0 iken -1 oluyor. eğer lesson duration != 0 ise döngüyü çalıştır şeklinde kontrol eklenmeli.
+
+                                        for (int y = 0; y < lessonAcademian.Dates.GetLength(0) - (lessonDuration - 1); y++)
+                                        //son ders için kontrol amaçlı (lessonDuration-1) ifadesine yer verildi.
                                         {
-                                            //Akademisyen ve derslik için zaman kontrolü
-                                            bool _academian_ClassBool = lessonAcademian.Dates[y + z, x].DateavAilability == true &&
-                                                selectedClassroom.Dates[y + z, x].DateavAilability == true;
-
-                                            //Bölümlerin takvimi için uygunluk takcimi
-                                            bool boolForInfosSemesters = true;
-                                            foreach (SemesterClass selectedOneSemester in selectedSemesterList)
+                                            // !!! Algoritma patlarsa buraya bak burası biraz sakat
+                                            //Academian takvimi ve semester takvim kontrolü
+                                            bool academianSemesterClassBool = true;
+                                            for (int z = 0; z < lessonDuration; z++)
                                             {
-                                                if (selectedOneSemester.Dates[y + z, x].DateavAilability == false)
-                                                {
-                                                    boolForInfosSemesters = false;
-                                                }
-                                            }
+                                                //Akademisyen ve derslik için zaman kontrolü
+                                                bool _academian_ClassBool = lessonAcademian.Dates[y + z, x].DateavAilability == true &&
+                                                    selectedClassroom.Dates[y + z, x].DateavAilability == true;
 
-                                            //buradaki elde edilmeye çalışılan 
-                                            if (_academian_ClassBool == false || boolForInfosSemesters == false)
-                                            {
-                                                academianSemesterClassBool = false;
-                                            }
-                                        }
-
-                                        //bu kısımda saat süresi olarak + - 1 oynama olabilir !!!
-                                        bool academianSectionClassLastControl = true;
-                                        //akademisyen, semester ve classların son bool değerlerini kontrol et
-                                        if (y != lessonAcademian.Dates.GetLength(0) - lessonDuration)
-                                        {
-                                            // y == saatler , x == günler
-                                            //ders süresi 3 saatse, son 2 saat y döngüsünde dönmüyor, sondan 3. saat haricinde kontrol yapıyor.
-                                            academianSectionClassLastControl = lessonAcademian.Dates[y + lessonDuration, x].DateavAilability == true &&
-                                                oneSemester.Dates[y + lessonDuration, x].DateavAilability == true &&
-                                                selectedClassroom.Dates[y + lessonDuration, x].DateavAilability == true;
-                                        }
-
-                                        if (academianSemesterClassBool == true && academianSectionClassLastControl == true)
-                                        {
-                                            for (int a = 0; a < lessonDuration; a++)
-                                            {
-                                                //akademisyen takvimini ayarla
-                                                lessonAcademian.Dates[y + a, x].DateavAilability = false;    //akademisyenin müsaitlik durumunu güncelle
-                                                lessonAcademian.Dates[y + a, x].LessonName = lesson.Name;  //akademisyenin dersini ayarla
-                                                lessonAcademian.Dates[y + a, x].LessonClass = selectedClassroom.Name;   //akademisyen takviminde sınıfı ayarla
-                                                lessonAcademian.Dates[y + a, x].LessonAcademian = null;    //akademisyenin kendi ders programı olacağı için akademisyen değerini atama
-
-                                                //classroom info page için bilgileri ayarla
-                                                selectedClassroom.Dates[y + a, x].DateavAilability = false;
-                                                selectedClassroom.Dates[y + a, x].LessonName = lesson.Name;
-                                                selectedClassroom.Dates[y + a, x].LessonClass = null;
-                                                selectedClassroom.Dates[y + a, x].LessonAcademian = lessonAcademian.AcademianName;
-
-                                                //tüm semesterlar için zaman müsaitliği ayarlıyor.
+                                                //Bölümlerin takvimi için uygunluk takcimi
+                                                bool boolForInfosSemesters = true;
                                                 foreach (SemesterClass selectedOneSemester in selectedSemesterList)
                                                 {
-                                                    selectedOneSemester.Dates[y + a, x].DateavAilability = false;
-                                                    selectedOneSemester.Dates[y + a, x].LessonName = lesson.Name;
-                                                    selectedOneSemester.Dates[y + a, x].LessonClass = selectedClassroom.Name;
-                                                    selectedOneSemester.Dates[y + a, x].LessonAcademian = lessonAcademian.AcademianName;
+                                                    if (selectedOneSemester.Dates[y + z, x].DateavAilability == false)
+                                                    {
+                                                        boolForInfosSemesters = false;
+                                                    }
                                                 }
 
-
-                                            }
-
-                                            lessonAcademian.AcademianLessonCount++;
-
-                                            //isOK ataması ayarlandı
-                                            foreach (SemesterClass selectedOneSemester in selectedSemesterList)
-                                            {
-                                                foreach (LessonClass lessons in selectedOneSemester.Lessons)
+                                                //buradaki elde edilmeye çalışılan 
+                                                if (_academian_ClassBool == false || boolForInfosSemesters == false)
                                                 {
-                                                    lesson.isOK = true;
+                                                    academianSemesterClassBool = false;
                                                 }
                                             }
 
-                                            //facultyAcademians.Remove(minAcademian); kısmını kullanmaya gerek yok çünkü map ile seçiliyor zaten
+                                            //bu kısımda saat süresi olarak + - 1 oynama olabilir !!!
+                                            bool academianSectionClassLastControl = true;
+                                            //akademisyen, semester ve classların son bool değerlerini kontrol et
+                                            if (y != lessonAcademian.Dates.GetLength(0) - lessonDuration)
+                                            {
+                                                // y == saatler , x == günler
+                                                //ders süresi 3 saatse, son 2 saat y döngüsünde dönmüyor, sondan 3. saat haricinde kontrol yapıyor.
+                                                academianSectionClassLastControl = lessonAcademian.Dates[y + lessonDuration, x].DateavAilability == true &&
+                                                    oneSemester.Dates[y + lessonDuration, x].DateavAilability == true &&
+                                                    selectedClassroom.Dates[y + lessonDuration, x].DateavAilability == true;
+                                            }
 
-                                            // !!! SemesterMapClasstan diğer semesterlarda da atamaları yapılacak
+                                            if (academianSemesterClassBool == true && academianSectionClassLastControl == true)
+                                            {
+                                                for (int a = 0; a < lessonDuration; a++)
+                                                {
+                                                    //akademisyen takvimini ayarla
+                                                    lessonAcademian.Dates[y + a, x].DateavAilability = false;    //akademisyenin müsaitlik durumunu güncelle
+                                                    lessonAcademian.Dates[y + a, x].LessonName = lesson.Name;  //akademisyenin dersini ayarla
+                                                    lessonAcademian.Dates[y + a, x].LessonClass = selectedClassroom.Name;   //akademisyen takviminde sınıfı ayarla
+                                                    lessonAcademian.Dates[y + a, x].LessonAcademian = null;    //akademisyenin kendi ders programı olacağı için akademisyen değerini atama
+
+                                                    //classroom info page için bilgileri ayarla
+                                                    selectedClassroom.Dates[y + a, x].DateavAilability = false;
+                                                    selectedClassroom.Dates[y + a, x].LessonName = lesson.Name;
+                                                    selectedClassroom.Dates[y + a, x].LessonClass = null;
+                                                    selectedClassroom.Dates[y + a, x].LessonAcademian = lessonAcademian.AcademianName;
+
+                                                    //tüm semesterlar için zaman müsaitliği ayarlıyor.
+                                                    foreach (SemesterClass selectedOneSemester in selectedSemesterList)
+                                                    {
+                                                        selectedOneSemester.Dates[y + a, x].DateavAilability = false;
+                                                        selectedOneSemester.Dates[y + a, x].LessonName = lesson.Name;
+                                                        selectedOneSemester.Dates[y + a, x].LessonClass = selectedClassroom.Name;
+                                                        selectedOneSemester.Dates[y + a, x].LessonAcademian = lessonAcademian.AcademianName;
+                                                    }
+
+
+                                                }
+
+                                                lessonAcademian.AcademianLessonCount++;
+
+                                                //isOK ataması ayarlandı
+                                                foreach (SemesterClass selectedOneSemester in selectedSemesterList)
+                                                {
+                                                    foreach (LessonClass lessons in selectedOneSemester.Lessons)
+                                                    {
+                                                        lesson.isOK = true;
+                                                    }
+                                                }
+
+                                                breakControl = true;
+                                                break;
+                                                //facultyAcademians.Remove(minAcademian); kısmını kullanmaya gerek yok çünkü map ile seçiliyor zaten
+
+                                                // !!! SemesterMapClasstan diğer semesterlarda da atamaları yapılacak
+                                            }
+
+                                            selectNewClass(infos);
+                                            if (breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
+                                            {
+                                                //MessageBox.Show("2. Kontrol Noktası");
+                                                break;
+                                            }
+
                                         }
 
-                                        selectNewClass(infos);
-
+                                        if (breakControl == true)    //genel döngüden çıkıp sonraki derse geçmesi için
+                                        {
+                                            //MessageBox.Show("2. Kontrol Noktası");
+                                            break;
+                                        }
                                     }
-                                }
-
+                               
 
                                 //Atamalardan önce kontroller sağlanmalı, sonrasında atamalar olmalı,
                                 //infos döngüsünü belki kısaltabilirim, kontrolleri genel olarak bir doğruluk olmalı, her saat dönerken bir doğruluk olmalı.
@@ -308,7 +326,8 @@ namespace Faculty_Course_scheduler
                                 //Log mesajı = "akademisyen dersleri güncellendi"
                                 selectedClassroom.UpdateClassDates();
                                 LogMessage(selectedClassroom.Name + " takvimi başarılı şekilde güncellendi");
-                                //log mesajı = "sınıf takvimi güncellendi"
+                                    //log mesajı = "sınıf takvimi güncellendi"
+                                }
 
                             }
                             

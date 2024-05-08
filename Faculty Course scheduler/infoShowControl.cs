@@ -62,10 +62,14 @@ namespace Faculty_Course_scheduler
             foreach (SemesterClass section in database.AllSemesterLessons)
             {
                 Button btn = new Button();
+               
                 sectionPanel.Controls.Add(btn);
                 btn.Size = sectionDefaultBtn.Size;
+                btn.Anchor = sectionDefaultBtn.Anchor;
                 btn.Margin = sectionDefaultBtn.Margin;
                 btn.Text = section.Name;
+                
+
                 btn.Click += (s, ev) => {
                     OpenTabControlForSection(section);
                 };
