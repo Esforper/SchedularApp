@@ -35,6 +35,7 @@ namespace Faculty_Course_scheduler
         public OneLessonDateClass[,] Dates;  //ders tarihleri olucak.
         public string FacultyName;
         public int StudentCapacity;     //fakülte tanımlarkenki öğrenci sayısını buraya kopyalanabilir ama kopyalanmaya da bilir duruma göre
+        public bool isOK;
 
         public SemesterClass()
         {

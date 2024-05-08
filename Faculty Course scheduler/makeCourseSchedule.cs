@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Faculty_Course_scheduler
 {
@@ -33,6 +34,10 @@ namespace Faculty_Course_scheduler
         /// All semesterların listeleri önceden tanımlanarak tanımsızlık sorununun önüne geçiliyor çünkü sonuçta liste tanımlı ama boş sadece
         /// 
         /// enrollment 4 gradelik bir bölüm için 4 değer tutacak sadece.
+        /// 
+        /// NEW !!!
+        /// bir bölümü 2 defa döndürüyor ayarlanmalı
+        ///2. sınıf dersleri 3. sınıflarda gözüküyor, ayarlanması lazım
         /// </summary>
 
         void makeScheduleFunc(string semester)
@@ -75,7 +80,9 @@ namespace Faculty_Course_scheduler
                     //enrollment 4 gradelik bir bölüm için 4 değer tutacak sadece.
 
                     oneSemester.FacultyName = department.Name;
-                    oneSemester.Lessons = department.courses[i+semesterNum];
+                    oneSemester.Lessons = department.courses[i*2+semesterNum];
+                    //Burası Ayarlanacak
+
                     //bu değerlerin kontrolleri sağlanacak
                     AllSemesters[i].Add(oneSemester);
                     
@@ -335,17 +342,17 @@ namespace Faculty_Course_scheduler
                                     }
                                
 
-                                //Atamalardan önce kontroller sağlanmalı, sonrasında atamalar olmalı,
-                                //infos döngüsünü belki kısaltabilirim, kontrolleri genel olarak bir doğruluk olmalı, her saat dönerken bir doğruluk olmalı.
+                                    //Atamalardan önce kontroller sağlanmalı, sonrasında atamalar olmalı,
+                                    //infos döngüsünü belki kısaltabilirim, kontrolleri genel olarak bir doğruluk olmalı, her saat dönerken bir doğruluk olmalı.
 
-                                //Buradaki dataları şimdi kaydetmesin, daha sonra sonuca göre kaydetsin.
+                                    //Buradaki dataları şimdi kaydetmesin, daha sonra sonuca göre kaydetsin.
 
-                                // !!! lessonların semesterda lessonların isOK değişkenini true yapmayı unutma
-                                lessonAcademian.UpdateWorkDates();
-                                LogMessage(lessonAcademian.AcademianName + " takvimi başarıyla güncellendi");
-                                //Log mesajı = "akademisyen dersleri güncellendi"
-                                selectedClassroom.UpdateClassDates();
-                                LogMessage(selectedClassroom.Name + " takvimi başarılı şekilde güncellendi");
+                                    // !!! lessonların semesterda lessonların isOK değişkenini true yapmayı unutma
+                                    lessonAcademian.UpdateWorkDates();
+                                    LogMessage(lessonAcademian.AcademianName + " takvimi başarıyla güncellendi");
+                                    //Log mesajı = "akademisyen dersleri güncellendi"
+                                    selectedClassroom.UpdateClassDates();
+                                    LogMessage(selectedClassroom.Name + " takvimi başarılı şekilde güncellendi");
                                     //log mesajı = "sınıf takvimi güncellendi"
                                 }
 
@@ -387,7 +394,7 @@ namespace Faculty_Course_scheduler
 
         }
         ClassClass selectNewClass(List<ScheduleMapClass> infos)
-        {
+        {/*
             ClassClass selectedClassroom = null;
             int minAvailableTime = int.MaxValue;
 
@@ -411,7 +418,10 @@ namespace Faculty_Course_scheduler
                     minAvailableTime = availableTime;
                     selectedClassroom = oneClassRoom;
                 }
-            }
+            }*/
+            Random rand = new Random();
+            int randomClassNumber = rand.Next(db.AllClasses.Count());    //rastgele bir sınıf almak için rastgele index değeri al
+            ClassClass selectedClassroom = db.AllClasses[randomClassNumber];
             return selectedClassroom;
         }
 
