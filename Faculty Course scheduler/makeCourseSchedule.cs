@@ -159,6 +159,8 @@ namespace Faculty_Course_scheduler
                             ClassClass selectedClassroom = selectNewClass(infos);
 
 
+                            int teoricLessonDay = -1 ;
+                            bool isUygulamaAssigment = false;
                             for (int k = 0; k < 2; k++)  //teorik ve uygulama
                             {
                                 //teorik dersi ile uygulama dersi aynı gün olamaz. (verim için de olmamalı.) bu sebeple teorik dersi bir gün seçilirse uygulama dersi başka bir gün seçilmeli.
@@ -209,6 +211,10 @@ namespace Faculty_Course_scheduler
                                     bool breakControl = false;
                                     for (int x = 0; x < lessonAcademian.Dates.GetLength(1); x++)
                                     {
+                                        if(k == 1 && x == teoricLessonDay) //sıra uygulama dersindeyse ve uygulama dersinin olduğu gün x ise
+                                        {
+                                            continue;   //döngünün sonraki adımına geç
+                                        }
                                         //lessonDuration - 1 , lessonDuration 0 iken -1 oluyor. eğer lesson duration != 0 ise döngüyü çalıştır şeklinde kontrol eklenmeli.
 
                                         for (int y = 0; y < lessonAcademian.Dates.GetLength(0) - (lessonDuration - 1); y++)
@@ -276,8 +282,15 @@ namespace Faculty_Course_scheduler
                                                         selectedOneSemester.Dates[y + a, x].LessonClass = selectedClassroom.Name;
                                                         selectedOneSemester.Dates[y + a, x].LessonAcademian = lessonAcademian.AcademianName;
                                                     }
+                                                }
 
-
+                                                if(k == 0)   //k == 0 durumunda teorik derste oluyor. bu günü tutuyoruz.
+                                                {
+                                                    teoricLessonDay = x;    //teorik dersin günü
+                                                }
+                                                if (k == 1)  //eğer uygulama dersi ise bu koşulda atanma sağlandı.
+                                                {
+                                                    isUygulamaAssigment = true;
                                                 }
 
                                                 lessonAcademian.AcademianLessonCount++;
@@ -312,6 +325,13 @@ namespace Faculty_Course_scheduler
                                             //MessageBox.Show("2. Kontrol Noktası");
                                             break;
                                         }
+
+                                        if(isUygulamaAssigment = true && x == lessonAcademian.Dates.GetLength(1) - 1)
+                                        {
+                                            x = 0;  //eğer bulamazsa bir daha dön.
+                                            //bu sistem genel olarak diğer kısımlara da uygulanabilir.
+                                        }
+                                        
                                     }
                                
 
