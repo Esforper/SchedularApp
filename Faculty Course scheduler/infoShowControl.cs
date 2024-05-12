@@ -67,7 +67,9 @@ namespace Faculty_Course_scheduler
                 btn.Size = sectionDefaultBtn.Size;
                 btn.Anchor = sectionDefaultBtn.Anchor;
                 btn.Margin = sectionDefaultBtn.Margin;
-                btn.Text = section.Name;
+                string[] namePieces = section.Name.Split('_');
+                int sectionYear = Convert.ToInt32(namePieces[1]);
+                btn.Text = namePieces[0] + " / " + (sectionYear+1) + " Sınıf" + " / " + namePieces[2] + " Dönemi";
                 
 
                 btn.Click += (s, ev) => {

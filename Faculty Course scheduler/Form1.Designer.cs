@@ -39,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.showFacultyTree = new FontAwesome.Sharp.IconButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -53,6 +54,7 @@
             this.flowLayoutPanel1.Controls.Add(this.ıconButton3);
             this.flowLayoutPanel1.Controls.Add(this.infoShowBtn);
             this.flowLayoutPanel1.Controls.Add(this.newMakeScheduleBtn);
+            this.flowLayoutPanel1.Controls.Add(this.showFacultyTree);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -169,7 +171,7 @@
             this.mainPanel.Location = new System.Drawing.Point(233, 0);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1328, 756);
+            this.mainPanel.Size = new System.Drawing.Size(1397, 756);
             this.mainPanel.TabIndex = 1;
             // 
             // panel2
@@ -182,7 +184,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(400, 161);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(566, 138);
+            this.panel2.Size = new System.Drawing.Size(635, 138);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -191,7 +193,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(566, 70);
+            this.label1.Size = new System.Drawing.Size(635, 70);
             this.label1.TabIndex = 0;
             this.label1.Text = "Faculty Schedular";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -202,16 +204,34 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(0, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(566, 68);
+            this.label2.Size = new System.Drawing.Size(635, 68);
             this.label2.TabIndex = 1;
             this.label2.Text = "Uygulamasına Hoş Geldiniz";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // showFacultyTree
+            // 
+            this.showFacultyTree.FlatAppearance.BorderSize = 0;
+            this.showFacultyTree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showFacultyTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.showFacultyTree.ForeColor = System.Drawing.SystemColors.Control;
+            this.showFacultyTree.IconChar = FontAwesome.Sharp.IconChar.ProjectDiagram;
+            this.showFacultyTree.IconColor = System.Drawing.Color.White;
+            this.showFacultyTree.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.showFacultyTree.Location = new System.Drawing.Point(0, 525);
+            this.showFacultyTree.Margin = new System.Windows.Forms.Padding(0);
+            this.showFacultyTree.Name = "showFacultyTree";
+            this.showFacultyTree.Size = new System.Drawing.Size(233, 82);
+            this.showFacultyTree.TabIndex = 6;
+            this.showFacultyTree.Text = "Fakülte Ağacını Görüntüle";
+            this.showFacultyTree.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.showFacultyTree.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1561, 756);
+            this.ClientSize = new System.Drawing.Size(1630, 756);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -239,6 +259,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton newMakeScheduleBtn;
+        private FontAwesome.Sharp.IconButton showFacultyTree;
     }
 }
 

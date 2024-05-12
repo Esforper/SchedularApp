@@ -192,6 +192,7 @@
             this.nextSemesterPeriod = new System.Windows.Forms.Button();
             this.addFacultyBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.isOnlineButton = new System.Windows.Forms.RadioButton();
             this.addLessonBtn = new System.Windows.Forms.Button();
             this.lessonTextBox = new System.Windows.Forms.TextBox();
             this.CreditInput = new System.Windows.Forms.MaskedTextBox();
@@ -221,7 +222,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.labelFacultyName = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.isOnlineButton = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -309,7 +309,7 @@
             this.academianLessonsLstBx.ItemHeight = 25;
             this.academianLessonsLstBx.Location = new System.Drawing.Point(1338, 140);
             this.academianLessonsLstBx.Name = "academianLessonsLstBx";
-            this.academianLessonsLstBx.Size = new System.Drawing.Size(257, 179);
+            this.academianLessonsLstBx.Size = new System.Drawing.Size(257, 204);
             this.academianLessonsLstBx.TabIndex = 48;
             // 
             // label12
@@ -1749,10 +1749,10 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.splitContainer2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1658, 743);
+            this.tabPage3.Size = new System.Drawing.Size(1658, 752);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Fakülte Bölüm Ekle";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1786,7 +1786,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.labelFacultyName);
             this.splitContainer2.Panel2.Controls.Add(this.label22);
             this.splitContainer2.Panel2.Enabled = false;
-            this.splitContainer2.Size = new System.Drawing.Size(1652, 737);
+            this.splitContainer2.Size = new System.Drawing.Size(1652, 746);
             this.splitContainer2.SplitterDistance = 345;
             this.splitContainer2.TabIndex = 1;
             // 
@@ -1799,7 +1799,7 @@
             this.goToSemesterPnl.Location = new System.Drawing.Point(0, 596);
             this.goToSemesterPnl.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.goToSemesterPnl.Name = "goToSemesterPnl";
-            this.goToSemesterPnl.Size = new System.Drawing.Size(345, 141);
+            this.goToSemesterPnl.Size = new System.Drawing.Size(345, 150);
             this.goToSemesterPnl.TabIndex = 35;
             this.goToSemesterPnl.Visible = false;
             // 
@@ -1815,7 +1815,7 @@
             // goToSemesterBtn
             // 
             this.goToSemesterBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.goToSemesterBtn.Location = new System.Drawing.Point(0, 84);
+            this.goToSemesterBtn.Location = new System.Drawing.Point(0, 93);
             this.goToSemesterBtn.Name = "goToSemesterBtn";
             this.goToSemesterBtn.Size = new System.Drawing.Size(345, 57);
             this.goToSemesterBtn.TabIndex = 32;
@@ -1942,7 +1942,7 @@
             // nextSemesterPeriod
             // 
             this.nextSemesterPeriod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.nextSemesterPeriod.Location = new System.Drawing.Point(33, 413);
+            this.nextSemesterPeriod.Location = new System.Drawing.Point(33, 422);
             this.nextSemesterPeriod.Name = "nextSemesterPeriod";
             this.nextSemesterPeriod.Size = new System.Drawing.Size(252, 60);
             this.nextSemesterPeriod.TabIndex = 47;
@@ -1953,7 +1953,7 @@
             // addFacultyBtn
             // 
             this.addFacultyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addFacultyBtn.Location = new System.Drawing.Point(312, 413);
+            this.addFacultyBtn.Location = new System.Drawing.Point(312, 422);
             this.addFacultyBtn.Name = "addFacultyBtn";
             this.addFacultyBtn.Size = new System.Drawing.Size(252, 60);
             this.addFacultyBtn.TabIndex = 27;
@@ -1987,6 +1987,17 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(372, 400);
             this.panel5.TabIndex = 46;
+            // 
+            // isOnlineButton
+            // 
+            this.isOnlineButton.AutoSize = true;
+            this.isOnlineButton.Location = new System.Drawing.Point(170, 293);
+            this.isOnlineButton.Name = "isOnlineButton";
+            this.isOnlineButton.Size = new System.Drawing.Size(136, 29);
+            this.isOnlineButton.TabIndex = 45;
+            this.isOnlineButton.TabStop = true;
+            this.isOnlineButton.Text = "Online Ders";
+            this.isOnlineButton.UseVisualStyleBackColor = true;
             // 
             // addLessonBtn
             // 
@@ -2140,7 +2151,7 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView.Location = new System.Drawing.Point(0, 501);
+            this.dataGridView.Location = new System.Drawing.Point(0, 510);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
@@ -2257,17 +2268,6 @@
             this.label22.Size = new System.Drawing.Size(136, 31);
             this.label22.TabIndex = 21;
             this.label22.Text = "Bölüm İsmi:";
-            // 
-            // isOnlineButton
-            // 
-            this.isOnlineButton.AutoSize = true;
-            this.isOnlineButton.Location = new System.Drawing.Point(170, 293);
-            this.isOnlineButton.Name = "isOnlineButton";
-            this.isOnlineButton.Size = new System.Drawing.Size(136, 29);
-            this.isOnlineButton.TabIndex = 45;
-            this.isOnlineButton.TabStop = true;
-            this.isOnlineButton.Text = "Online Ders";
-            this.isOnlineButton.UseVisualStyleBackColor = true;
             // 
             // informationEntry
             // 

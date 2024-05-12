@@ -92,6 +92,9 @@ namespace Faculty_Course_scheduler
                     //sonuç olarak bil 1. sınıflar 1.sınıfların listesinde, bil 2.sınıf 2.sınıfların listesinde kayıtlı olacak.
                 }
             }
+            // !!! Burada tanımlamalarda sorun yok
+
+
             //Bu kısım ön tanımlama, ortak ders saatleri olduğunda olası çakışmaları engellemesi için.
 
             //Ders programı oluşturmaya geçmeden önce ortak dersleri belirlemek lazım
@@ -368,8 +371,8 @@ namespace Faculty_Course_scheduler
 
                         
                     }
-                    db.SavePeriodLessonDataToJson(oneSemester);
-                    LogMessage(oneSemester.Name + " section dersleri kaydedildi");
+                    //db.SavePeriodLessonDataToJson(oneSemester);
+                    //LogMessage(oneSemester.Name + " section dersleri kaydedildi");
                     //Log mesajı = "oneSemester dersleri ataması başarılı şekilde tamamlandı"
                 }
 
