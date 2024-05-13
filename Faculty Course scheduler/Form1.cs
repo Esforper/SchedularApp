@@ -64,7 +64,11 @@ namespace Faculty_Course_scheduler
 
         private void showFacultyTree_Click(object sender, EventArgs e)
         {
-
+            Settings settingPage = new Settings();
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(settingPage);
+            settingPage.Dock = DockStyle.Fill;
+            settingPage.BringToFront();
         }
     }
 }

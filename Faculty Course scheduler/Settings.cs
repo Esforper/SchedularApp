@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Faculty_Course_scheduler
 {
-    public partial class showFacultyTree : UserControl
+    public partial class Settings : UserControl
     {
-        public showFacultyTree()
+        public Settings()
         {
             InitializeComponent();
+        }
+        Database db = new Database();
+        private void resetDatasBtn_Click(object sender, EventArgs e)
+        {
+            db.setTestData();
         }
     }
 }

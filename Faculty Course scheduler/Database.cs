@@ -377,28 +377,57 @@ internal class Database
     {
         try
         {
-            // Akademisyen test verilerini yükle ve jsonAcademianFilePath dosyasına yaz
-            string academianJsonData = File.ReadAllText("AllAcademianTestData.json");
-            File.WriteAllText(jsonAcademianFilePath, academianJsonData);
+            string documentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string sourceFolderPath = Path.Combine(documentsFolderPath, "ScheduleTestData");
+            string targetFolderPath = Path.Combine(documentsFolderPath, "SchedularApp");
 
-            // Sınıf test verilerini yükle ve jsonClassFilePath dosyasına yaz
-            string classesJsonData = File.ReadAllText("AllClassesTestData.json");
-            File.WriteAllText(jsonClassFilePath, classesJsonData);
+            if (Directory.Exists(sourceFolderPath))
+            {
+                if (!Directory.Exists(targetFolderPath))
+                {
+                    Directory.CreateDirectory(targetFolderPath);
+                }
 
-            // Bölüm test verilerini yükle ve jsonFacultyFilePath dosyasına yaz
-            string departmentJsonData = File.ReadAllText("AllDepartmentTestData.json");
-            File.WriteAllText(jsonFacultyFilePath, departmentJsonData);
+                string academianJsonData = File.ReadAllText(Path.Combine(sourceFolderPath, "AllAcademianTestData.json"));
+                File.WriteAllText(Path.Combine(targetFolderPath, "academiansData.json"), academianJsonData);
 
-            // Dönem dersleri test verilerini yükle ve jsonPeriodLessonFilePath dosyasına yaz
-            string periodLessonJsonData = File.ReadAllText("AllPeriodLessonTestData.json");
-            File.WriteAllText(jsonPeriodLessonFilePath, periodLessonJsonData);
+                string classesJsonData = File.ReadAllText(Path.Combine(sourceFolderPath, "AllClassesTestData.json"));
+                File.WriteAllText(Path.Combine(targetFolderPath, "classesData.json"), classesJsonData);
 
-            MessageBox.Show("Test verileri başarıyla yüklendi.");
+                string departmentJsonData = File.ReadAllText(Path.Combine(sourceFolderPath, "AllDepartmentTestData.json"));
+                File.WriteAllText(Path.Combine(targetFolderPath, "facultiesData.json"), departmentJsonData);
+
+                string jsonPeriodLessonFilePath = Path.Combine(targetFolderPath, "onePeriodLessonsData.json");
+                //MessageBox.Show("Test verileri başarıyla aktarıldı.");
+                if (File.Exists(jsonPeriodLessonFilePath))
+                {
+                    try
+                    {
+                        File.Delete(jsonPeriodLessonFilePath);
+                        MessageBox.Show("Test verileri başarıyla aktarıldı.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Hata: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("onePeriodLessonsData.json dosyası bulunamadı.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("ScheduleTestData klasörü bulunamadı.");
+            }
+
+
         }
         catch (Exception ex)
         {
             MessageBox.Show("Hata: " + ex.Message);
         }
+            
 
     }
 

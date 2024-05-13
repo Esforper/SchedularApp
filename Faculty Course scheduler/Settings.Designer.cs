@@ -1,6 +1,6 @@
 ﻿namespace Faculty_Course_scheduler
 {
-    partial class showFacultyTree
+    partial class Settings
     {
         /// <summary> 
         ///Gerekli tasarımcı değişkeni.
@@ -41,6 +41,7 @@
             this.resetDatasBtn.TabIndex = 0;
             this.resetDatasBtn.Text = "Test Datalarına Sıfırla";
             this.resetDatasBtn.UseVisualStyleBackColor = true;
+            this.resetDatasBtn.Click += new System.EventHandler(this.resetDatasBtn_Click);
             // 
             // label1
             // 
