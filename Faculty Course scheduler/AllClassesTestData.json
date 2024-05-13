@@ -1,0 +1,2936 @@
+[
+  {
+    "Name": "ClassRoom1",
+    "Capacity": 300,
+    "Dates": [
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ]
+    ]
+  },
+  {
+    "Name": "ClassRoom2",
+    "Capacity": 300,
+    "Dates": [
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ]
+    ]
+  },
+  {
+    "Name": "ClassRoom3",
+    "Capacity": 300,
+    "Dates": [
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ]
+    ]
+  },
+  {
+    "Name": "ClassRoom4",
+    "Capacity": 300,
+    "Dates": [
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ]
+    ]
+  },
+  {
+    "Name": "ClassRoom5",
+    "Capacity": 300,
+    "Dates": [
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ]
+    ]
+  },
+  {
+    "Name": "ClassRoom6",
+    "Capacity": 300,
+    "Dates": [
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ]
+    ]
+  },
+  {
+    "Name": "TestClass 8",
+    "Capacity": 300,
+    "Dates": [
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ]
+    ]
+  },
+  {
+    "Name": "TestClass 9",
+    "Capacity": 300,
+    "Dates": [
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ]
+    ]
+  },
+  {
+    "Name": "TestClass 10",
+    "Capacity": 300,
+    "Dates": [
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ],
+      [
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        },
+        {
+          "DateavAilability": true,
+          "LessonAcademian": null,
+          "LessonClass": null,
+          "LessonName": null
+        }
+      ]
+    ]
+  }
+]

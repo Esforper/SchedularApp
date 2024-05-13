@@ -80,7 +80,7 @@ namespace Faculty_Course_scheduler
                     //enrollment 4 gradelik bir bölüm için 4 değer tutacak sadece.
 
                     oneSemester.FacultyName = department.Name;
-                    oneSemester.Lessons = department.courses[i*2+semesterNum];
+                    oneSemester.Lessons = department.courses[(i*2)+semesterNum];
                     //Burası Ayarlanacak
 
                     //bu değerlerin kontrolleri sağlanacak
@@ -106,9 +106,10 @@ namespace Faculty_Course_scheduler
             
             Dictionary<string, List<ScheduleMapClass>> lessonDetails = new Dictionary<string, List<ScheduleMapClass>>();
             
+            // SORUN BURADA //
             foreach (DepartmentClass department in AllDepartments) 
             {
-                for (int gradeIndex = 0; gradeIndex < department.courses.Count(); gradeIndex++)
+                for (int gradeIndex = 0 + semesterNum; gradeIndex < department.courses.Count(); gradeIndex+=2 )
                 {
                     List<LessonClass> courses = department.courses[gradeIndex];
                     foreach (LessonClass lesson in courses)
@@ -209,7 +210,7 @@ namespace Faculty_Course_scheduler
                                         {
                                             foreach (SemesterClass selectedOneSemester in listOfSemesters)
                                             {
-                                                if (selectedOneSemester.Name == info.DepartmentName + "_" + info.Grade + "_" + IntToSemester(info.Fall_True_Spring_False))
+                                                if (selectedOneSemester.Name == info.DepartmentName + "_" + (info.Grade/2) + "_" + IntToSemester(info.Fall_True_Spring_False))
                                                 {
                                                     //selectedSemesterClass = selectedOneSemester;  //tek bir semester ile her ortak ders yeri yerine, listeye kaydedip
                                                     //daha sonra listeden atamaları gerçekleştirilebilir
@@ -305,6 +306,7 @@ namespace Faculty_Course_scheduler
 
                                                 lessonAcademian.AcademianLessonCount++;
 
+
                                                 //isOK ataması ayarlandı
                                                 foreach (SemesterClass selectedOneSemester in selectedSemesterList)
                                                 {
@@ -360,7 +362,6 @@ namespace Faculty_Course_scheduler
                                 }
 
                             }
-                            
 
                             for (int j = 1; j < 2; j++)   //sırf lab için tek sefer dönecek (verimsel olarak sıkıntılı ama kodun düzeni için şimdilik dursun)
                             {
@@ -374,6 +375,7 @@ namespace Faculty_Course_scheduler
                     //db.SavePeriodLessonDataToJson(oneSemester);
                     //LogMessage(oneSemester.Name + " section dersleri kaydedildi");
                     //Log mesajı = "oneSemester dersleri ataması başarılı şekilde tamamlandı"
+                
                 }
 
             }

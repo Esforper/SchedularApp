@@ -40,7 +40,7 @@ internal class Database
             }
         }
 
-        AllDepartments = LoadFacultyDataFromJson();
+        AllDepartments = LoadDepartmentDataFromJson();
         AllClasses = LoadClassDataFromJson();
         AllAcademians = LoadAcademianDataFromJson(); // LoadDataFromJson'dan gelen değeri AllAcademians'a ata
         AllSemesterLessons = LoadSemesterDataFromJson();
@@ -202,7 +202,7 @@ internal class Database
 
 
     //FACULTY DATA
-    public List<DepartmentClass> LoadFacultyDataFromJson()
+    public List<DepartmentClass> LoadDepartmentDataFromJson()
     {
         try
         {
@@ -221,7 +221,7 @@ internal class Database
     }
     public void SaveDepartment(DepartmentClass faculty)
     {
-        AllDepartments = LoadFacultyDataFromJson();
+        AllDepartments = LoadDepartmentDataFromJson();
 
         try
         {
@@ -237,13 +237,13 @@ internal class Database
 
     public List<string> Getfaculties()
     {
-        AllDepartments = LoadFacultyDataFromJson();
-        List<string> allfacultyNames = new List<string>();
-        foreach(DepartmentClass faculty in AllDepartments)
+        AllDepartments = LoadDepartmentDataFromJson();
+        List<string> allDepartmentNames = new List<string>();
+        foreach(DepartmentClass department in AllDepartments)
         {
-            allfacultyNames.Add(faculty.Name);
+            allDepartmentNames.Add(department.Name);
         }
-        return allfacultyNames;
+        return allDepartmentNames;
     }
 
 
@@ -373,5 +373,33 @@ internal class Database
         }
     }
 
+    public void setTestData()
+    {
+        try
+        {
+            // Akademisyen test verilerini yükle ve jsonAcademianFilePath dosyasına yaz
+            string academianJsonData = File.ReadAllText("AllAcademianTestData.json");
+            File.WriteAllText(jsonAcademianFilePath, academianJsonData);
+
+            // Sınıf test verilerini yükle ve jsonClassFilePath dosyasına yaz
+            string classesJsonData = File.ReadAllText("AllClassesTestData.json");
+            File.WriteAllText(jsonClassFilePath, classesJsonData);
+
+            // Bölüm test verilerini yükle ve jsonFacultyFilePath dosyasına yaz
+            string departmentJsonData = File.ReadAllText("AllDepartmentTestData.json");
+            File.WriteAllText(jsonFacultyFilePath, departmentJsonData);
+
+            // Dönem dersleri test verilerini yükle ve jsonPeriodLessonFilePath dosyasına yaz
+            string periodLessonJsonData = File.ReadAllText("AllPeriodLessonTestData.json");
+            File.WriteAllText(jsonPeriodLessonFilePath, periodLessonJsonData);
+
+            MessageBox.Show("Test verileri başarıyla yüklendi.");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Hata: " + ex.Message);
+        }
+
+    }
 
 }

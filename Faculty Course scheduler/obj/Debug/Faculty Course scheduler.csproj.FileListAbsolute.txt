@@ -23,3 +23,7 @@ C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\
 C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.makeCourseSchedule.resources
 C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.Controller.SectionStudentNumberControl.resources
 C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty_Course_scheduler.showFacultyTree.resources
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\Debug\Faculty Course scheduler.exe.manifest
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\bin\Debug\Faculty Course scheduler.application
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty Course scheduler.exe.manifest
+C:\Projects\Windows Forms\Faculty Course scheduler\Faculty Course scheduler\obj\Debug\Faculty Course scheduler.application

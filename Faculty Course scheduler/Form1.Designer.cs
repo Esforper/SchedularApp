@@ -35,11 +35,11 @@
             this.ıconButton3 = new FontAwesome.Sharp.IconButton();
             this.infoShowBtn = new FontAwesome.Sharp.IconButton();
             this.newMakeScheduleBtn = new FontAwesome.Sharp.IconButton();
+            this.showFacultyTree = new FontAwesome.Sharp.IconButton();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.showFacultyTree = new FontAwesome.Sharp.IconButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -47,7 +47,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.infoBtn);
             this.flowLayoutPanel1.Controls.Add(this.makeScheduleBtn);
@@ -164,6 +164,25 @@
             this.newMakeScheduleBtn.UseVisualStyleBackColor = true;
             this.newMakeScheduleBtn.Click += new System.EventHandler(this.newMakeScheduleBtn_Click);
             // 
+            // showFacultyTree
+            // 
+            this.showFacultyTree.FlatAppearance.BorderSize = 0;
+            this.showFacultyTree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showFacultyTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.showFacultyTree.ForeColor = System.Drawing.SystemColors.Control;
+            this.showFacultyTree.IconChar = FontAwesome.Sharp.IconChar.ProjectDiagram;
+            this.showFacultyTree.IconColor = System.Drawing.Color.White;
+            this.showFacultyTree.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.showFacultyTree.Location = new System.Drawing.Point(0, 525);
+            this.showFacultyTree.Margin = new System.Windows.Forms.Padding(0);
+            this.showFacultyTree.Name = "showFacultyTree";
+            this.showFacultyTree.Size = new System.Drawing.Size(233, 82);
+            this.showFacultyTree.TabIndex = 6;
+            this.showFacultyTree.Text = "Ayarlar";
+            this.showFacultyTree.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.showFacultyTree.UseVisualStyleBackColor = true;
+            this.showFacultyTree.Click += new System.EventHandler(this.showFacultyTree_Click);
+            // 
             // mainPanel
             // 
             this.mainPanel.Controls.Add(this.panel2);
@@ -208,24 +227,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Uygulamasına Hoş Geldiniz";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // showFacultyTree
-            // 
-            this.showFacultyTree.FlatAppearance.BorderSize = 0;
-            this.showFacultyTree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showFacultyTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.showFacultyTree.ForeColor = System.Drawing.SystemColors.Control;
-            this.showFacultyTree.IconChar = FontAwesome.Sharp.IconChar.ProjectDiagram;
-            this.showFacultyTree.IconColor = System.Drawing.Color.White;
-            this.showFacultyTree.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.showFacultyTree.Location = new System.Drawing.Point(0, 525);
-            this.showFacultyTree.Margin = new System.Windows.Forms.Padding(0);
-            this.showFacultyTree.Name = "showFacultyTree";
-            this.showFacultyTree.Size = new System.Drawing.Size(233, 82);
-            this.showFacultyTree.TabIndex = 6;
-            this.showFacultyTree.Text = "Fakülte Ağacını Görüntüle";
-            this.showFacultyTree.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.showFacultyTree.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

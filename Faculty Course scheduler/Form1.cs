@@ -61,5 +61,10 @@ namespace Faculty_Course_scheduler
             newSchedulePage.Dock = DockStyle.Fill;
             newSchedulePage.BringToFront();
         }
+
+        private void showFacultyTree_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

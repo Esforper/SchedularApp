@@ -47,7 +47,7 @@ namespace Faculty_Course_scheduler
         {
             FacultyClassNumberComboBox.Items.Clear();   
 
-            var faculties = database.LoadFacultyDataFromJson();
+            var faculties = database.LoadDepartmentDataFromJson();
             var onefaculty = faculties.Where(a => a.Name == facultiesComboBox.Text).First();
 
             for (int i = 0; i < onefaculty.numGrades; i++)
@@ -77,7 +77,7 @@ namespace Faculty_Course_scheduler
             int selectedPeriod = springAutumnComboBox.SelectedIndex;
             int selectedClass = Convert.ToInt16(FacultyClassNumberComboBox.Text);
 
-            var allfaculties = database.LoadFacultyDataFromJson();
+            var allfaculties = database.LoadDepartmentDataFromJson();
 
             var selectedFaculty = allfaculties.Find(a => a.Name.Equals(facultiesComboBox.Text));
             int selectedPeriodInt = selectedPeriod + (selectedClass - 1) * 2;   

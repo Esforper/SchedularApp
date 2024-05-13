@@ -1,0 +1,614 @@
+[
+  {
+    "Name": "Bilgisayar Mühendisliği (TR)",
+    "NumSemesters": 8,
+    "enrollment": [
+      40,
+      30,
+      20,
+      10
+    ],
+    "courses": [
+      [
+        {
+          "Name": "Bilgisayar Mühendisliğine Giriş",
+          "LessonCode": "BIL101",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 1,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 5,
+          "Credit": 3
+        },
+        {
+          "Name": "Atatürk İlkeleri ve İnkılap Tarihi 1",
+          "LessonCode": "ATA101",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 1,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 2,
+          "Credit": 2
+        },
+        {
+          "Name": "Türk Dili I",
+          "LessonCode": "TRD101",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 1,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 2,
+          "Credit": 2
+        },
+        {
+          "Name": "Temel İngilizce 1",
+          "LessonCode": "İNG101",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 1,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 2,
+          "Credit": 2
+        },
+        {
+          "Name": "Fizik I",
+          "LessonCode": "FIZ101",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 1,
+          "LessonDuration": [
+            3,
+            0,
+            2
+          ],
+          "AKTS": 5,
+          "Credit": 4
+        },
+        {
+          "Name": "Matematik I",
+          "LessonCode": "MAT101",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 1,
+          "LessonDuration": [
+            3,
+            2,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 4
+        }
+      ],
+      [
+        {
+          "Name": "Bilgisayar Programlama II",
+          "LessonCode": "BYM102",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 2,
+          "LessonDuration": [
+            3,
+            0,
+            2
+          ],
+          "AKTS": 8,
+          "Credit": 4
+        },
+        {
+          "Name": "Mühendislik Tarihi",
+          "LessonCode": "BIL104",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 2,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 3,
+          "Credit": 2
+        },
+        {
+          "Name": "Atatürk İlkeleri ve İnkılap Tarihi 2",
+          "LessonCode": "ATA102",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 2,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 2,
+          "Credit": 2
+        },
+
+        {
+          "Name": "Türk Dili II",
+          "LessonCode": "TRD102",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 2,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 2,
+          "Credit": 2
+        },
+        {
+          "Name": "Temel İngilizce 2",
+          "LessonCode": "İNG102",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 2,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 2,
+          "Credit": 2
+        },
+
+        {
+          "Name": "Fizik II",
+          "LessonCode": "FIZ102",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 2,
+          "LessonDuration": [
+            3,
+            0,
+            2
+          ],
+          "AKTS": 5,
+          "Credit": 4
+        },
+        {
+          "Name": "Matematik II",
+          "LessonCode": "MAT102",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 2,
+          "LessonDuration": [
+            3,
+            2,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 4
+        },
+        {
+          "Name": "Kariyer Planlama",
+          "LessonCode": "KRY102",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 2,
+          "LessonDuration": [
+            1,
+            0,
+            0
+          ],
+          "AKTS": 2,
+          "Credit": 1
+        }
+      ],
+      [
+        {
+          "Name": "Nesne Yönelimli Programlama",
+          "LessonCode": "BYM201",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 3,
+          "LessonDuration": [
+            3,
+            0,
+            2
+          ],
+          "AKTS": 7,
+          "Credit": 4
+        },
+        {
+          "Name": "Ayrık Matematik",
+          "LessonCode": "MAT205",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 3,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 3
+        },
+        {
+          "Name": "Elektronik Devreler",
+          "LessonCode": "MEK201",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 3,
+          "LessonDuration": [
+            2,
+            0,
+            2
+          ],
+          "AKTS": 5,
+          "Credit": 3
+        },
+        {
+          "Name": "Lineer Cebir",
+          "LessonCode": "MAT201",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 3,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 4,
+          "Credit": 3
+        },
+        {
+          "Name": "İş Sağlığı ve Güvenliği I",
+          "LessonCode": "İSG201",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 3,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 2,
+          "Credit": 2
+        },
+        {
+          "Name": "Bölüm Seçmeli Ders",
+          "LessonCode": "BIL207",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 3,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 3
+        }
+      ],
+      [
+        {
+          "Name": "Bilgisayar Ağları",
+          "LessonCode": "BIL214",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 4,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 3,
+          "Credit": 2
+        },
+        {
+          "Name": "Veri Yapıları ve Algoritmalar",
+          "LessonCode": "BYM202",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 4,
+          "LessonDuration": [
+            3,
+            0,
+            2
+          ],
+          "AKTS": 6,
+          "Credit": 4
+        },
+        {
+          "Name": "Sayısal Analiz",
+          "LessonCode": "MAT202",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 4,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 5,
+          "Credit": 3
+        },
+        {
+          "Name": "İşaretler ve Sistemler",
+          "LessonCode": "BIL216",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 4,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 3,
+          "Credit": 3
+        },
+        {
+          "Name": "Mantıksal Devreler Tasarımı",
+          "LessonCode": "BIL208",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 4,
+          "LessonDuration": [
+            3,
+            0,
+            2
+          ],
+          "AKTS": 5,
+          "Credit": 3
+        },
+        {
+          "Name": "İş Sağlığı ve Güvenliği II",
+          "LessonCode": "İSG202",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 4,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 2,
+          "Credit": 2
+        },
+        {
+          "Name": "Fakülte Seçmeli Ders",
+          "LessonCode": "BYM441",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 4,
+          "LessonDuration": [
+            3,
+            0,
+            2
+          ],
+          "AKTS": 6,
+          "Credit": 4
+        }
+      ],
+      [
+        {
+          "Name": "Veritabanı Yönetimi",
+          "LessonCode": "BYM301",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 5,
+          "LessonDuration": [
+            3,
+            2,
+            0
+          ],
+          "AKTS": 7,
+          "Credit": 4
+        },
+        {
+          "Name": "Algoritma Analizi",
+          "LessonCode": "BYM303",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 5,
+          "LessonDuration": [
+            2,
+            0,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 3
+        },
+        {
+          "Name": "Yazılım Proje Yönetimi",
+          "LessonCode": "BIL305",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 5,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 5,
+          "Credit": 3
+        },
+        {
+          "Name": "Staj I",
+          "LessonCode": "BIL309",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 5,
+          "LessonDuration": [
+            0,
+            0,
+            0
+          ],
+          "AKTS": 2,
+          "Credit": 0
+        },
+        {
+          "Name": "Olasılık ve İstatistik",
+          "LessonCode": "MAT301",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 5,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 5,
+          "Credit": 3
+        },
+        {
+          "Name": "Bilgisayar Mimarisi",
+          "LessonCode": "BIL301",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 5,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 5,
+          "Credit": 3
+        }
+
+      ],
+      [
+        {
+          "Name": "İşletim Sistemleri",
+          "LessonCode": "BIL302",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 6,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 3
+        },
+        {
+          "Name": "Yazılım Mimarisi ve Tasarımı",
+          "LessonCode": "BYM304",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 6,
+          "LessonDuration": [
+            2,
+            2,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 3
+        },
+        {
+          "Name": "Yapay Zekaya Giriş",
+          "LessonCode": "BYM308",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 6,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 3
+        },
+        {
+          "Name": "Mikroişlemciler ve Gömülü Sistemler",
+          "LessonCode": "BIL306",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 6,
+          "LessonDuration": [
+            2,
+            0,
+            2
+          ],
+          "AKTS": 6,
+          "Credit": 3
+        },
+        {
+          "Name": "Fakülte Seçmeli Ders",
+          "LessonCode": "BYM442",
+          "Department": "Bilgisayar Mühendisliği (TR)",
+          "LessonSemester": 6,
+          "LessonDuration": [
+            3,
+            0,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 3
+        }
+      ],
+      [],
+      []
+    ],
+    "numGrades": 4
+  },
+  {
+    "Name": "Yazılım Mühendisliği",
+    "NumSemesters": 8,
+    "enrollment": [
+      40,
+      30,
+      20,
+      10
+    ],
+    "courses": [
+      [
+        {
+          "Name": "Programlama Temelleri",
+          "LessonCode": "PMT101",
+          "Department": "Yazılım Mühendisliği",
+          "LessonSemester": 1,
+          "LessonDuration": [
+            4,
+            2,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 4
+        },
+        {
+          "Name": "Algoritma ve Veri Yapıları",
+          "LessonCode": "ALG201",
+          "Department": "Yazılım Mühendisliği",
+          "LessonSemester": 1,
+          "LessonDuration": [
+            4,
+            2,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 4
+        },
+        {
+          "Name": "Bilgisayar Mimarisi",
+          "LessonCode": "BMA301",
+          "Department": "Yazılım Mühendisliği",
+          "LessonSemester": 1,
+          "LessonDuration": [
+            4,
+            0,
+            2
+          ],
+          "AKTS": 7,
+          "Credit": 5
+        }
+      ],
+      [
+        {
+          "Name": "Nesne Yönelimli Programlama",
+          "LessonCode": "NYP102",
+          "Department": "Yazılım Mühendisliği",
+          "LessonSemester": 2,
+          "LessonDuration": [
+            4,
+            2,
+            0
+          ],
+          "AKTS": 6,
+          "Credit": 4
+        },
+        {
+          "Name": "Web Programlama",
+          "LessonCode": "WPR202",
+          "Department": "Yazılım Mühendisliği",
+          "LessonSemester": 2,
+          "LessonDuration": [
+            4,
+            0,
+            2
+          ],
+          "AKTS": 6,
+          "Credit": 4
+        }
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "numGrades": 4
+  }
+]
